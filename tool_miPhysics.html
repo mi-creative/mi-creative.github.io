@@ -1,0 +1,447 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <title>mi-Creative</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="description" content="mi Creative" />
+        <meta name="keywords" content="Physical, Modeling, Mass, Spring, Digital, Arts, Grenoble, Gipsa" />
+        <meta name="author" content="miCreative" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link rel="shortcut icon" href="images/favicon.ico" />    
+        <link href='http://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800%7CPlayfair%20Display:700%7CPT%20Serif:400i' rel='stylesheet' type='text/css'>		
+        <link rel="stylesheet" type="text/css"  href='style.css' />
+
+        <!--[if lt IE 9]>
+                <script src="js/html5shiv.js"></script>            
+                <script src="js/respond.min.js"></script>                   
+        <![endif]-->         
+    </head>
+
+    <body class="single single-portfolio tool">
+
+        <div class="site-wrapper">
+            <div class="doc-loader"></div>
+
+            <!-- Left Part Sidebar -->
+            <div class="menu-left-part">
+
+                <!-- Menu from nav.js -->
+                <nav id="header-main-menu"></nav>
+
+                <!-- Hello text in menu from nav.js -->
+                <div id="header-main-text" class="menu-right-text"></div>
+
+            </div>
+
+            <!-- Right Part Sidebar -->
+            <div id="nav-top" class="menu-right-part">
+                <div class="header-logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="miCreative">
+                    </a>               
+                </div>
+
+                <div class="toggle-holder">
+                    <div id="toggle">
+                        <div class="menu-line"></div>
+                    </div>                
+                </div>   
+
+            </div> 
+
+            <!-- Page Content Holder -->
+            <div id="content" class="site-content">
+                <div class="portfolio-item-wrapper">
+                    <div class="portfolio-content center-relative content-1170">
+                        <div id="slider" class="simple-image-slider-wrapper relative swiper-container">
+                            <div class="swiper-wrapper image-slider slider">
+
+                                <video id="player0" controls loop enableAutosize="true" height="100%"
+                                       width="100%" poster="images/tools/tool_miPhysics_01.png" preload="none" playsinline webkit-playsinline>
+                                    <source src="video/ThreeSyst.mov" type="video/mp4">
+                                </video>
+                                <div class="swiper-slide">
+                                    <img src="images/tools/tool_miPhysics_02.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/tools/tool_miPhysics_03.jpg" alt="">
+                                </div>
+
+
+                            </div>
+                            <div class="clear"></div>
+                            <div class="swiper-pagination simple-image-slider-pagination swiper-pagination-slider"></div>                                
+                        </div>
+
+                        <div class="two_third">
+                            <h1>miPhysics (Processing)</h1>
+                            <div class="medium-text">
+                                miPhysics is a mass-interaction physical modelling library, coded in Java and designed primarily for the Processing sketching environment.
+                            </div>
+                            <br>
+                            <p>
+                                Using elementary physical elements (such as masses, springs, contact interactions...) in a 3D space, it allows for the modular design of any type of physical object for visual generation, audio synthesis or haptic interaction purposes - or even all three at the same time !
+                            </p>
+                            <p>
+                                Examples of applications range from sound synthesis to interactive visual arts, virtual reality, or even multisensory interaction (hearing, seeing & touching) with virtual musical instruments.
+                            </p>
+                            <p>
+                                Download the tool and head over to the examples to see for yourself! Regarding sound synthesis possibilities of this tool, you might want to investigate emerging non-linear behaviours inherent to 3D mass-interaction models. For instance, listen to the model below, struck lightly (the first one), then hard (the second one) :
+                            </p>
+                                <div style="text-align: center;">
+
+                                <audio id="player_audio_1" preload="none" controls style="max-width: 100%">
+                                    <source src="audio/miPhysics_3DBeam_Low.mp3" type="audio/mp3">
+                                </audio>
+                                <audio id="player_audio_2" preload="none" controls style="max-width: 100%">
+                                    <source src="audio/miPhysics_3DBeam_High.mp3" type="audio/mp3">
+                                </audio>
+
+                                </div>
+
+
+                            <h2>Videos</h2>
+                            <video id="player1" style="width:100%;" poster="images/papers/paper_haid19_head.jpg" preload="none" controls playsinline webkit-playsinline>
+                                <source src="video/Conf_HAID19.m4v" type="video/mp4">
+                            </video>
+                            <div style="display: inline-block; text-align: center;">
+                                <div style="width:49.5%; display: inline-block; padding-left: auto; padding-right: auto">
+                                    <video id="player2" style="width:100%;" poster="images/expe_miPhysics_Beams.jpg" preload="none" controls playsinline webkit-playsinline>
+                                        <source src="video/Expe_miPhysics_Beams.m4v" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div style="width:49.5%; display: inline-block; padding-left: auto; padding-right: auto">
+                                    <video id="player3" style="width:100%;" poster="images/expe_miPhysics_miTouch.jpg" preload="none" controls playsinline webkit-playsinline>
+                                        <source src="video/Expe_miPhysics_miTouch.m4v" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+
+                            <h2>Sound Synthesis Examples</h2>
+
+                            <div class="french">
+                                <p class="video-title">
+                                    Plucking a Simulated String
+                                </p>
+                            </div>
+                            <div class="english">
+                                <p class="video-title">
+                                    Plucking a Simulated String
+                                </p>
+                            </div>
+
+                            <div class="mi-video">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/FnApvYs2RNg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen modestbranding=1></iframe>
+                            </div>
+
+                            <div class="french">
+                                <p class="video-title">
+                                    Exciting a Simulated String with an eBow
+                                </p>
+                            </div>
+                            <div class="english">
+                                <p class="video-title">
+                                    Exciting a Simulated String with an eBow
+                                </p>
+                            </div>
+
+                            <div class="mi-video">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/wvYFbuv8b-Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+
+                            <div class="french">
+                                <p class="video-title">
+                                    Two Colliding Strings
+                                </p>
+                            </div>
+                            <div class="english">
+                                <p class="video-title">
+                                    Two Colliding Strings
+                                </p>
+                            </div>
+
+                            <div class="mi-video">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/i_DdIAJCjG8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+
+                            <div class="french">
+                                <p class="video-title">
+                                    Exploring a Beam Model
+                                </p>
+                            </div>
+                            <div class="english">
+                                <p class="video-title">
+                                    Exploring a Beam Model
+                                </p>
+                            </div>
+
+                            <div class="mi-video">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/jgzVsZeTNGo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+
+                            <div class="french">
+                                <p class="video-title">
+                                    More Complex Structures: A Bell
+                                </p>
+                            </div>
+                            <div class="english">
+                                <p class="video-title">
+                                    More Complex Structures: A Bell
+                                </p>
+                            </div>
+
+                            <div class="mi-video">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/XmRJot6RnFE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+
+                            <div class="french">
+                                <p class="video-title">
+                                    Sculpting Physical Matter in Real-time
+                                </p>
+                            </div>
+                            <div class="english">
+                                <p class="video-title">
+                                    Sculpting Physical Matter in Real-time
+                                </p>
+                            </div>
+
+                            <div class="mi-video">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/hV0yU69OUhI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+
+                            <div class="french">
+                                <p class="video-title">
+                                    Cymbal-like Models
+                                </p>
+                            </div>
+                            <div class="english">
+                                <p class="video-title">
+                                    Cymbal-like Models
+                                </p>
+                            </div>
+
+                            <div class="mi-video">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/vBVyT2zJ3_Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+
+                            <div class="french">
+                                <p class="video-title">
+                                    A Flat Plank
+                                </p>
+                            </div>
+                            <div class="english">
+                                <p class="video-title">
+                                    A Flat Plank
+                                </p>
+                            </div>
+
+                            <div class="mi-video">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/TiUVX5omZJQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+
+
+
+                            <br>
+                            <br>
+
+
+
+
+                            <h2>Visual Examples</h2>
+
+
+
+                            <div class="french">
+                                <p class="video-title">
+                                    Hello Mass !
+                                </p>
+                            </div>
+                            <div class="english">
+                                <p class="video-title">
+                                    Hello Mass !
+                                </p>
+                            </div>
+
+                            <div class="mi-video">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/Ry26WW2IK8I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+
+                            <div class="french">
+                                <p class="video-title">
+                                    Sculpting a Propagation Mesh
+                                </p>
+                            </div>
+                            <div class="english">
+                                <p class="video-title">
+                                    Sculpting a Propagation Mesh
+                                </p>
+                            </div>
+
+                            <div class="mi-video">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/xQV5_UgrXBA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+
+                            <div class="french">
+                                <p class="video-title">
+                                    A Three-Dimensional Pin Screen
+                                </p>
+                            </div>
+                            <div class="english">
+                                <p class="video-title">
+                                    A Three-Dimensional Pin Screen
+                                </p>
+                            </div>
+
+                            <div class="mi-video">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/yRKNbdwqMLY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+
+                            <div class="french">
+                                <p class="video-title">
+                                    Handling Multiple Collisions
+                                </p>
+                            </div>
+                            <div class="english">
+                                <p class="video-title">
+                                    Handling Multiple Collisions
+                                </p>
+                            </div>
+
+                            <div class="mi-video">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/_ZEMKg4BjVA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+
+                            <div class="french">
+                                <p class="video-title">
+                                    Visualising Strain in a Beam Model
+                                </p>
+                            </div>
+                            <div class="english">
+                                <p class="video-title">
+                                    Visualising Strain in a Beam Model
+                                </p>
+                            </div>
+
+                            <div class="mi-video">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/a-8Xp7F-Fyc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+
+                            <div class="french">
+                                <p class="video-title">
+                                    Scenes Composed of Multiple Objects
+                                </p>
+                            </div>
+                            <div class="english">
+                                <p class="video-title">
+                                    Scenes Composed of Multiple Objects
+                                </p>
+                            </div>
+
+                            <div class="mi-video">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/fM-YgmDBVjo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                            </div>
+
+                            <div class="french">
+                                <p class="video-title">
+                                    Unravelling a Huge String
+                                </p>
+                            </div>
+                            <div class="english">
+                                <p class="video-title">
+                                    Unravelling a Huge String
+                                </p>
+                            </div>
+
+                            <div class="mi-video">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/43F0OSLWbBI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+
+                            <div class="french">
+                                <p class="video-title">
+                                    The Wrecking Ball
+                                </p>
+                            </div>
+                            <div class="english">
+                                <p class="video-title">
+                                    The Wrecking Ball
+                                </p>
+                            </div>
+
+                            <div class="mi-video">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/DUgNvFIVvAQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+
+                            <div class="french">
+                                <p class="video-title">
+                                    Particle Attractors
+                                </p>
+                            </div>
+                            <div class="english">
+                                <p class="video-title">
+                                    Particle Attractors
+                                </p>
+                            </div>
+
+                            <div class="mi-video">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/QWqG7C7yuxU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+
+
+                        </div>
+
+                        <div class="one_third last">
+                            <br>                            
+                            <div class="info-code findit">
+                                <p class="info-code-title">FIND IT</p>
+                                <p class="info-code-content"><a target="_blank" rel="noopener noreferrer" href="https://github.com/mi-creative/miPhysics_Processing">On Github</a>
+                                <p class="info-code-content"><a target="_blank" rel="noopener noreferrer" href="distribs/miPhysics_2.0.0_200505.zip">Direct Download</a>
+                            </div>
+                            <div class="info-code">
+                                <p class="info-code-title">LAST UPDATE</p>
+                                <p class="info-code-content">05/05/2020</p>
+                            </div>
+                            <div class="info-code">
+                                <p class="info-code-title">DOCUMENTATION</p>
+                                <p class="info-code-content"><a target="_blank" rel="noopener noreferrer" href="http://mi-creative.eu/miPhysics_doc/">Online JavaDoc</a>
+                            </div>
+                            <div class="info-code">
+                                <p class="info-code-title">RELATED PAPERS</p>
+                                <p class="info-code-content" style="margin-bottom: 0px"><a href="paper_smc19_proc.html">SMC 2019</a>
+                                <p class="info-code-content"><a href="paper_haid19.html">HAID 2019</a>
+
+                            </div>
+                            <div class="info-code">
+                                <p class="info-code-title">COMPATIBILITY</p>
+                                <p class="info-code-content">Built in Processing, compatible with OsX, Linux and Window systems</p>
+                            </div>
+                        </div>
+                        <div class="clear"></div>                            
+                    </div>
+                    <div class="nav-links">
+                        <a class="nav-next tooltip" data-title="mi-gen~" href="tool_migen.html">
+                            <span class="fa fa-chevron-right" aria-hidden="true"></span> 
+                        </a>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div> 
+            <!-- End Page Content Holder -->            
+        </div>
+
+        <!--Load JavaScript-->
+        <script src="js/jquery.js"></script>
+        <script src='js/jquery.smartmenus.min.js'></script>
+        <script src='js/jquery.prettyPhoto.js'></script>
+        <script src="js/jquery.sticky-kit.min.js"></script>
+        <script src='js/imagesloaded.pkgd.js'></script>
+        <script src='js/jquery.fitvids.js'></script>
+        <script src='js/tipper.js'></script>
+        <script src='js/swiper.min.js'></script>
+        <script src='nav.js'></script>
+        <script src='js/main.js'></script>
+    
+
+    </body>
+</html>

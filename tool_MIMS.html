@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <title>mi-Creative</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="description" content="mi Creative" />
+        <meta name="keywords" content="Physical, Modeling, Mass, Spring, Digital, Arts, Grenoble, Gipsa" />
+        <meta name="author" content="miCreative" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link rel="shortcut icon" href="images/favicon.ico" />    
+        <link href='http://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800%7CPlayfair%20Display:700%7CPT%20Serif:400i' rel='stylesheet' type='text/css'>		
+        <link rel="stylesheet" type="text/css"  href='style.css' />
+
+        <!--[if lt IE 9]>
+                <script src="js/html5shiv.js"></script>            
+                <script src="js/respond.min.js"></script>                   
+        <![endif]-->         
+    </head>
+
+    <body class="single single-portfolio tool">
+
+        <div class="site-wrapper">
+            <div class="doc-loader"></div>
+
+            <!-- Left Part Sidebar -->
+            <div class="menu-left-part">
+
+                <!-- Menu from nav.js -->
+                <nav id="header-main-menu"></nav>
+
+                <!-- Hello text in menu from nav.js -->
+                <div id="header-main-text" class="menu-right-text"></div>
+
+            </div>
+
+            <!-- Right Part Sidebar -->
+            <div id="nav-top" class="menu-right-part">
+                <div class="header-logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="miCreative">
+                    </a>               
+                </div>
+
+                <div class="toggle-holder">
+                    <div id="toggle">
+                        <div class="menu-line"></div>
+                    </div>                
+                </div>   
+
+            </div> 
+
+            <!-- Page Content Holder -->
+            <div id="content" class="site-content">
+                <div class="portfolio-item-wrapper">
+                    <div class="portfolio-content center-relative content-1170">
+                        <div id="slider" class="simple-image-slider-wrapper relative swiper-container">
+                            <div class="swiper-wrapper image-slider slider">
+                                <div class="swiper-slide">
+                                    <img src="images/tools/tool_mims_00.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/tools/tool_mims_01.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/tools/tool_mims_02.jpg" alt="">
+                                </div>
+
+                            </div>
+                            <div class="clear"></div>
+                            <div class="swiper-pagination simple-image-slider-pagination swiper-pagination-slider swip"></div>
+                        </div>
+
+                        <div class="one">
+                            <h1>MIMS</h1>
+                            <div class="medium-text">
+                                Mass Interaction Model Scripter allows designing mass-interaction models with a unified simple scripting language.
+                            </div>
+                            <br>
+                            <p>
+                                MIMS is very much a work in progress, and has seen several implementations and tweaks over the last couple of years. While the tool is destined to evolve into a unified and complete framework for 1D, 2D or 3D mass-interaction models with advanced functionalities, current versions will allow you to start creating physical models and running them either in FAUST (using mi_faust) or in Max/MSP (using mi-gen~).
+                            </p>
+                            <p>
+                                In the past years, MIMS has been ported in several environments and languages. A first prototype was developed as a Python stand-alone application (still available down below). More recently, javascript/NodeJS versions have been created. One has been directly integrated into mi-gen~ (running in Max/MSP). The other runs in a generic web-based application.
+                            </p>
+
+
+                        </div>
+
+                        <div class="two_third">
+                            <h3>MIMS_online</h3>
+                            <p>
+                                MIMS_online is a javascript-based tool that allows to describe physical models with a simple and concise syntax, focused on the physical topology and parameters. The model script is then parsed and can be compiled into DSP code for real-time simulation. As of yet, MIMS_online compiles 1D models either into gen~ dsp code (for Max/MSP), or into FAUST dsp code (with a small limitation on some macro structures that are not yet implemented in FAUST). Additionally, simple scripts allow for the generation of regular topologies such as strings, meshes or volumes, and models can be visualised and interacted with via a 3D rendering window.
+                            </p>
+                            <p>
+                                MIMS_online is still in pre-alpha version, so be kind to the many bugs you might find and please report them to the MI team !
+                            </p>
+                            <p>
+                                Happy modelling !
+                            </p>
+
+                        </div>
+
+                        <div class="one_third last">
+                            <br>                            
+                            <div class="info-code findit">
+                                <p class="info-code-title"> FIND IT</p>
+                                <p class="info-code-content"><a target="_blank" rel="noopener noreferrer" href="http://mi-creative.eu/tool_MIMS_online.html">Online</a>
+                            </div>
+
+                            <div class="info-code">
+                                <p class="info-code-title">COMPATIBILITY</p>
+                                <p class="info-code-content">Tested in Chrome</p>
+                            </div>
+                        </div>
+
+                        <div class="two_third">
+                            <h3>MIMS4Max</h3>
+                            <p>
+                                MIMS is also available directly inside the mi-gen~ toolkit! It runs on NodeJS (which means it will only run in Max 8) and uses the same scripting and compilation engine as the online version. Models can be compiled to gen~ code or FAUST dsp, and the compiler informs of any errors in real time. A large base of examples using mi-gen~/MIMS4Max are available in the Max package and should help you get started!
+                            </p>
+
+
+                        </div>
+
+                        <div class="one_third last">
+                            <br>
+                            <div class="info-code findit">
+                                <p class="info-code-title"> FIND IT</p>
+                                <p class="info-code-content"><a target="_blank" rel="noopener noreferrer" href="https://mi-creative.eu/tool_migen.html">Within mi-gen~</a>
+                            </div>
+                            <div class="info-code">
+                                <p class="info-code-title">COMPATIBILITY</p>
+                                <p class="info-code-content">MAX 8 running on OsX & Windows</p>
+                            </div>
+                        </div>
+
+                        <div class="two_third">
+                            <h3>“Legacy” MIMS</h3>
+                            <p>
+                                The first prototype of MIMS is based in Python (using PyQt) and was presented in papers in LAC’19 and SMC’19. Although it is still available, it is no longer maintained and certain scripting and compilation features are not supported. We strongly recommend using either the online or the Max-based versions of MIMS as they will continue to be updated, but feel free to check out this old version if you like old-school Qt apps !
+                            </p>
+
+                        </div>
+
+                        <div class="one_third last">
+                            <br>
+                            <div class="info-code findit">
+                                <p class="info-code-title"> FIND IT</p>
+                                <p class="info-code-content"><a target="_blank" rel="noopener noreferrer" href="https://github.com/mi-creative/MIMS">On Github</a>
+                            </div>
+                            <div class="info-code">
+                                <p class="info-code-title">LAST UPDATE</p>
+                                <p class="info-code-content">12/02/2019</p>
+                            </div>
+                            <div class="info-code">
+                                <p class="info-code-title">RELATED PAPERS</p>
+                                <p class="info-code-content" style="margin-bottom: 0px"><a href="##">SMC 2019</a>
+                                <p class="info-code-content"><a href="paper_lac19.html">LAC 2019</a>
+
+                            </div>
+                            <div class="info-code">
+                                <p class="info-code-title">COMPATIBILITY</p>
+                                <p class="info-code-content">Built in Python, compatible with OsX, Linux and Window systems</p>
+                            </div>
+                        </div>
+                        <div class="clear"></div>                            
+                    </div>
+                    <div class="nav-links">
+                        <a class="nav-previous tooltip" data-title="miFaust" href="tool_miFaust.html">
+                            <span class="fa fa-chevron-left" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div> 
+            <!-- End Page Content Holder -->            
+        </div>
+
+        <!--Load JavaScript-->
+        <script src="js/jquery.js"></script>
+        <script src='js/jquery.smartmenus.min.js'></script>
+        <script src='js/jquery.prettyPhoto.js'></script>
+        <script src="js/jquery.sticky-kit.min.js"></script>
+        <script src='js/imagesloaded.pkgd.js'></script>
+        <script src='js/jquery.fitvids.js'></script>
+        <script src='js/tipper.js'></script>
+        <script src='js/swiper.min.js'></script>
+        <script src='nav.js'></script>
+        <script src='js/main.js'></script>
+
+    </body>
+</html>

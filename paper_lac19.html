@@ -1,0 +1,626 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <title>mi-Creative</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="description" content="mi Creative" />
+        <meta name="keywords" content="Physical, Modeling, Mass, Spring, Digital, Arts, Grenoble, Gipsa" />
+        <meta name="author" content="miCreative" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link rel="shortcut icon" href="images/favicon.ico" />
+        <link href='http://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800%7CPlayfair%20Display:700%7CPT%20Serif:400i' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css"  href='style.css' />
+
+        <!--[if lt IE 9]>
+                <script src="js/html5shiv.js"></script>
+                <script src="js/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body class="single single-post paper">
+
+        <div class="site-wrapper">
+            <div class="doc-loader"></div>
+
+            <!-- Left Part Sidebar -->
+            <div class="menu-left-part">
+
+                <!-- Menu from nav.js -->
+                <nav id="header-main-menu"></nav>
+
+                <!-- Hello text in menu from nav.js -->
+                <div id="header-main-text" class="menu-right-text"></div>
+
+            </div>
+
+            <!-- Right Part Sidebar -->
+            <div id="nav-top" class="menu-right-part">
+                <div class="header-logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="miCreative">
+                    </a>
+                </div>
+
+                <div class="toggle-holder">
+                    <div id="toggle">
+                        <div class="menu-line"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Page Content Holder -->
+            <div id="content" class="site-content">
+                <article>
+                    <div class="single-post-header-content content-1170 center-relative">
+                        <div id="slider" class="simple-image-slider-wrapper relative swiper-container">
+                            <div class="swiper-wrapper image-slider slider">
+                                <div class="swiper-slide">
+                                    <img src="images/papers/paper_lac19.png" alt="">
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="swiper-pagination simple-image-slider-pagination swiper-pagination-slider"></div>
+                        </div>
+
+                        <div class="post-wrapper center-relative">
+                            <div class="single-content-wrapper content-960 center-relative">
+                                <h1 class="entry-title">
+                                    Formalizing Mass-Interaction Physical Modeling in FAUST
+                                </h1>
+                                <h1 class="entry-subtitle">
+                                    Linux Audio Conference 2019
+                                </h1>
+
+                                <div class="post-info-wrapper">
+                                    <div class="sticky-spacer">
+                                        <div class="entry-info">
+                                            <div>
+                                                <div class="text-holder">
+                                                    DATE
+                                                </div>
+                                                <div class="entry-date published">
+                                                    March 2019
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="text-holder">
+                                                    AUTHOR
+                                                </div>
+                                                <div class="author-nickname">
+                                                    <a href="#" rel="author">
+                                                        James Leonard,
+                                                    </a><br>
+                                                    <a href="#" rel="author">
+                                                        Jerome Villeneuve,
+                                                    </a>
+                                                    <br>
+                                                    <a href="#" rel="author">
+                                                        Romain Michon,
+                                                    </a>
+                                                    <br>
+                                                    <a href="#" rel="author">
+                                                        Yann Orlarey,
+                                                    </a>
+                                                    <br>
+                                                    <a href="#" rel="author">
+                                                        Stephane Letz,
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="text-holder">
+                                                    DOWNLOAD
+                                                </div>
+                                                <div class="cat-links">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="http://lac.linuxaudio.org/2019/doc/leonard.pdf">On LAC website</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="entry-content">
+                                    <div class="paper-abstract">
+                                        <p>
+                                            This paper presents recent work conducted on the integration of mass-interaction physical models in the FAUST programming language. After a brief introduction to mass-interaction networks, FAUST, and previous works on this topic, we present a simple modeling framework, a FAUST code generator and its associated library, allowing to implement 1D mass-interaction models.
+                                            In addition to the open-source tool itself, this research offers a perspective on formalizing arbitrarily large networks of bidirectional feedback couplings and state-space models in FAUST, through routing patterns.
+                                            We finish with a set of examples, and discuss future perspectives and challenges.
+                                        </p>
+                                    </div>
+
+                                    <h1 id="sec:intro">Introduction</h1>
+                                    <p>For several decades, physical modeling has been used to synthesize audio by means of simulating the behaviour of vibrating objects. A panoply of methods have been proposed over the years, from lumped discrete models <span class="citation">[1]</span>, to Waveguides <span class="citation">[2]</span>, to large scale Finite Difference schemes <span class="citation">[3]</span>, that have gained in popularity with the increase of computing power. Creating a model of a mechanical instrumental system can be simpler than explicitly formulating the signal that it produces (as sound properties emerge from the physical conditions of the matter) and offers direct means for control and interaction, either by simulating musical gestures or by coupling the user and the virtual object, for instance using haptic technologies <span class="citation">[4]</span>.</p>
+                                    <p>FAUST <span class="citation">[5]</span> is a functional programming language for real-time Digital Signal Processing (DSP) with a strong focus on the design of synthesizers, musical instruments, audio effects, etc. The FAUST compiler can be used to “translate” a FAUST program to various non-domain-specific-languages such as C++, C, JAVA, JavaScript, LLVM bit code, WebAssembly, etc. Thanks to a wrapping system, code generated by FAUST can be easily compiled into a variety of objects ranging from audio plug-ins to standalone applications, smartphone apps, web apps, etc.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> This mechanism also makes it possible to add MIDI, OSC, polyphony, etc. support to any FAUST-generated program.</p>
+                                    <h2 id="mass-interaction-physical-models">Mass-Interaction Physical Models</h2>
+                                    <p>Pioneered in artistic applications by the CORDIS-ANIMA system <span class="citation">[1]</span> at ACROE, mass-interaction physical modeling allows to formulate physical systems in the form of lumped networks, composed of two main components: masses, representing material points in a given space (1D, 2D, 3D) with a given inertial behaviour, and interactions, each representing a specific type of physical coupling (i.e., visco-elastic, collision, non-linear, etc.) between two mass elements. Mass-interaction systems are now used in a variety of contexts (musical &amp; other), partly for the fact that arbitrarily complex virtual objects can be described simply as a construction of elementary physical components. A basic model is shown in Figure 1.</p>
+                                    <div class="figure">
+                                        <img src="images/papers/lac2019/topo.jpg" style=""/>
+                                        <p class="caption">Figure 1: Topological representation of a mass-interaction model. Here, a fixed point (represented on the left) is connected to a triangle composed of masses and dampened springs. An input module interacts with the top mass through a non-linear pluck interaction.</p>
+                                    </div>
+                                    <p>Unlike FDTD methods <span class="citation">[3]</span>, creating physical models with this formalism avoids the need to explicitly define a mathematical model (partial difference equations systems, boundary conditions, etc.) for a given physical structure beforehand. Therefore, it lends itself particularly well to iterative and exploratory design of “physically plausible” virtual objects, grounded in the laws of Newtonian physics but not necessarily limited to the mechanical constraints of the real world.</p>
+                                    <p>Mass-interaction physical models can contain anything from a couple of physical elements to tens or hundreds of thousands of them. Assembling and configuring the models element by element can be very time consuming. To this end, user-friendly modeling environments have been proposed, namely GENESIS <span class="citation">[6]</span> (and more recently <em>Synth-A-Modeler</em> <span class="citation">[7]</span>) for 1D audio applications. The former offers high level tools for generating topological structures, and analyzing/tuning physical constructions through modal analysis <span class="citation">[8]</span>.</p>
+                                    <h2 id="current-state-of-physical-modeling-in-faust">Current State of Physical Modeling in Faust</h2>
+                                    <p>Various projects have been using FAUST to implement physical models of musical instruments.</p>
+                                    <p>The FAUST-STK <span class="citation">[9]</span> is a complete re-implementation of the waveguide and modal models of the Synthesis ToolKit (STK) <span class="citation">[10]</span>. It also contains various models from the <em>Soundius Project</em>. <a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
+                                    <p>Julius O. Smith implemented a series of waveguide meshes that landed in the FAUST libraries<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> but that were never documented/published.</p>
+                                    <p>More recently, the FAUST physical modeling toolkit <span class="citation">[11]</span> was introduced. It is based on a library allowing for the implementation of bi-directional block diagrams in FAUST and containing a wide range of musical instrument parts that can be assembled in a modular way. It also comes with mesh2faust <span class="citation">[12]</span>, a tool to generate modal physical models compatible with the FAUST physical modeling library using Finite Element Analysis (FEA).</p>
+                                    <p>The work presented in this paper was partly inspired by Ed Berdahl’s <em>Synth-A-Modeler</em> <span class="citation">[7]</span> (which itself direcly draws upon CORDIS-ANIMA <span class="citation">[1]</span> and GENESIS <span class="citation">[6]</span>). This environment allows for the implementation of hybrid models combining mass-interaction systems with waveguide models using a graphical user interface (GUI). <em>Synth-A-Modeler</em> is based on a series of FAUST libraries and generates custom FAUST programs corresponding to the models implemented in the GUI. While it successfully combines various types of modeling techniques at a high level and facilitates their control using custom haptic interfaces such as the FireFader <span class="citation">[13]</span>, it has, to our knowledge, never been used to implement large scale mass-interaction models.</p>
+                                    <p>Our proposed approach does not aim to supplant Berdahl’s; rather, from a similar starting point it questions how the FAUST language’s versatility can be used to formalize arbitrarily large mass-interaction models – and more generally speaking complex feedback networks – in a direct, concise and clear manner.</p>
+                                    <h1 id="mass-interaction-paradigm-in-faust">Mass Interaction Paradigm in Faust</h1>
+                                    <p>Before getting into implementation specifities, this section presents the basics of mass-interaction networks, in the case of 1D systems, in which all masses vibrate along a single <em>z</em> axis. These models are sometimes referred to as “zero-D”, since they are purely topological and contain no direct geometrical information. First, discrete-time mass and interaction physical algorithms are presented and assembled into an explicit computational scheme.</p>
+                                    <p>Then, relying on a matrix-based representation of the topological network, we present a generic FAUST architecture that implements this computational scheme.</p>
+                                    <h2 id="discrete-time-physical-algorithms">Discrete-Time Physical Algorithms</h2>
+                                    <p>Below, we present finite difference implementations of two of the most basic elements in a mass-interaction network: punctual masses and springs.</p>
+                                    <h3 id="discrete-time-implementation-of-a-punctual-mass">Discrete-time implementation of a punctual mass</h3>
+                                    <p>The motion equation for a continuous time mass is given by Newton’s second law:</p>
+
+                                    <div class="equation">
+                                        \begin{equation}
+                                        \label{eq:fma}
+                                        \begin{aligned}
+                                        f = ma = m \frac{d^2 x}{dt^2}
+                                        \end{aligned}
+                                        \end{equation}
+                                    </div>
+                                    <p>Where <span class="math"><em>f</em></span> is the force applied to the mass, <span class="math"><em>m</em></span> is its inertia <span class="math"><em>a</em></span> its acceleration, and <span class="math"><em>x</em></span> its position. Applying the second-order central difference scheme, with the sampling interval noted <span class="math">Δ<em>T</em></span>, a discrete equation of the mass can be formulated as follows:</p>
+                                    <div class="equation">
+                                        \begin{equation}
+                                        \label{eq:centraldiff}
+                                        \begin{aligned}
+                                        f(t) = m.\frac{x(t\!+\!\Delta{T}) - 2 x (t) + x(t\!-\!\Delta{T}) }{\Delta{T}^2}
+                                        \end{aligned}
+                                        \end{equation}
+                                    </div>
+                                    <p>Equation (2) can be normalized to unity, and rearranged in order to express the mass’ position update scheme (discrete-time positions and forces are noted <span class="math"><em>X</em></span> and <span class="math"><em>F</em></span>) :</p>
+                                    <div class="equation">
+                                        \begin{equation}
+                                        \label{eq:discretetimemass}
+                                        \begin{aligned}
+                                        X_{(n+1)} = 2 X_{(n)}- X_{(n-1)} + \frac{F_{(n)}}{M}
+                                        \end{aligned}
+                                        \end{equation}
+                                    </div>
+                                    <p>With <span class="math"><em>M</em></span>, the discrete time inertial parameter defined as :</p>
+                                    <div class="equation">
+                                        \begin{equation}\label{eq:discretInertia}
+                                        \begin{aligned}
+                                        M =\frac{m}{\Delta{T}^2}
+                                        \end{aligned}
+                                        \end{equation}
+                                    </div>
+                                    <p>Hence, the basic discrete-time mass module produces new position data based on its current position, previous position, the “discrete-time” mass parameter <span class="math"><em>M</em></span>, and the sum of forces applied to the mass from the previous interaction computation step.</p>
+                                    <p>The initial position <span class="math"><em>X</em><sub>(0)</sub></span>, delayed initial position <span class="math"><em>X</em><sub>( − 1)</sub></span> (which infers initial velocity) and initial force <span class="math"><em>F</em><sub>(0)</sub></span> must be supplied at the start of the computation.</p>
+                                    <h3 id="discrete-time-implementation-of-a-dampened-spring">Discrete-time implementation of a dampened spring</h3>
+                                    <p>The elastic force applied by a linear spring with a stiffness <span class="math"><em>k</em></span> and a resting length of <span class="math"><em>l</em><sub>0</sub> = 0</span> connecting a mass <span class="math"><em>m</em>2</span> at the position <span class="math"><em>x</em><sub>2</sub></span> to a mass <span class="math"><em>m</em>1</span> at the position <span class="math"><em>x</em><sub>1</sub></span> is given by Hookes law:</p>
+                                    <div class="equation">
+                                        \begin{equation}\label{eq:HookeSpring}
+                                        \begin{aligned}
+                                        f_{s{1\rightarrow2}} = -k.(x_2 - x_1)
+                                        \end{aligned}
+                                        \end{equation}
+                                    </div>
+                                    <p>The exact equivalent of this equation in discrete time is :</p>
+                                    <div class="equation">
+                                        \begin{equation}\label{eq:discreteSpring2}
+                                        \begin{aligned}
+                                        F_{s{1\rightarrow2}(n)} = -K.(X_{2(n)} - X_{1(n)})
+                                        \end{aligned}
+                                        \end{equation}
+                                    </div>
+                                    <p>Where the discrete-time stiffness parameter <span class="math"><em>K</em> = <em>k</em></span>. The friction force applied by a linear damper with a damping parameter <span class="math"><em>z</em></span> connecting the same two masses is :</p>
+                                    <div class="equation">
+                                        \begin{equation}\label{eq:Damper}
+\begin{aligned}
+f_{d{1\rightarrow2}} = -z.\frac{d (x_2\! -\! x_1)}{dt}
+\end{aligned}
+                                        \end{equation}
+                                    </div>
+                                    <p>Using the Backward Euler difference scheme, the frictional force can be formulated in discrete-time as :</p>
+                                    <div class="equation">
+                                        \begin{equation}\label{eq:DiscreteDamper}
+\begin{aligned}
+f_{d{1\rightarrow2}}(t) = -z .\frac{(x_2(t)\!  -\!  x_1(t)) - (x_2(t\! -\! \Delta{T}) - x_1(t\! -\! \Delta{T}))}{\Delta{T}}
+\end{aligned}
+                                        \end{equation}
+                                    </div>
+                                    <p>Which after normalization becomes :</p>
+                                    <div class="equation">
+                                        \begin{equation}\label{eq:normDamper}
+\begin{aligned}
+F_{d{1\rightarrow2}(n)} = -Z .((X_{2(n)}\!-\!X_{2(n-1)})\!-\!(X_{1(n)} - X_{1(n-1)}))
+\end{aligned}
+                                        \end{equation}
+                                    </div>
+                                    <p>With the discrete time inertial parameter <span class="math"><em>Z</em></span> defined as :</p>
+                                    <div class="equation">
+                                        \begin{equation}\label{eq:discreteDampParam}
+\begin{aligned}
+Z =\frac{z}{\Delta{T}}
+\end{aligned}
+                                        \end{equation}
+                                    </div>
+                                    <p>The global equation of the force applied by the dampened spring is composed of <span class="math"><em>F</em><sub><em>s</em></sub></span> and <span class="math"><em>F</em><sub><em>d</em></sub></span> :</p>
+                                    <div class="equation">
+                                        \begin{equation}\label{eq:springDampAll}
+\begin{aligned}
+F_{(n)} =&amp; -K.(X_{2(n)}\!-\!X_{1(n)})\\
+ &amp; -Z .((X_{2(n)}\!-\!X_{2(n-1)}) - (X_{1(n)}\!-\!X_{1(n-1)}))
+\end{aligned}
+                                        \end{equation}
+                                    </div>
+                                    <p>It is applied symmetrically to each mass (Newton’s third law):</p>
+                                    <div class="equation">
+                                        \begin{equation}\label{eq:springFrcApply}
+\begin{aligned}
+F_{{2\rightarrow1}(n)} &amp;= - F_{(n)} \\
+F_{{1\rightarrow2}(n)} &amp;= + F_{(n)}
+\end{aligned}
+                                        \end{equation}
+                                    </div>
+                                    <h3 id="discrete-mass---dampened-spring---fixed-point-oscillator">Discrete mass - dampened spring - fixed point oscillator</h3>
+                                    <p>A linear harmonic oscillator is obtained by combining equations (3) and (11), in the case where <span class="math"><em>X</em><sub>1</sub></span> is a fixed point set to <span class="math"><em>X</em><sub>1(<em>n</em>)</sub> = 0</span>, <span class="math"><em>n</em> ∈ Z</span>. This results in :</p>
+                                    <div class="equation">
+                                        \begin{equation}\label{eq:discreteOsc}
+\begin{aligned}
+X_{(n+1)} = \Big(2\!-\!\frac{K\!+\!Z}{M}\Big).X_{(n)} + \Big(\frac{Z}{M}\!-\!1\Big).X_{(n-1)} + \frac{F_{(n)}}{M}
+\end{aligned}
+                                        \end{equation}
+                                    </div>
+                                    <p>Since the basic oscillator is a very common element in modeling, the integrated form given in (13) can be implemented in the form a specific mass-type module (although it is identical to assembling a mass, dampened spring and a fixed point).</p>
+                                    <h3 id="generalization">Generalization</h3>
+                                    <p>Any element in a mass-interaction model follows the basic template of the elements described above. More complex interactions stem from conditional statements (e.g. springs only active during interpenetration of two material points, as in visco-elastic collisions) or dynamic stiffness or damping parameters that depend on the position and/or velocity of the connected material points (e.g. through non-linear lookup tables, such as in plucking or bowing interactions <span class="citation">[14]</span>).</p>
+                                    <p>It is important to note that the <span class="math"><em>M</em></span> and <span class="math"><em>Z</em></span> parameters are dependent on the sampling interval. Hence, the oscillatory behaviour of physical models will be dependent on the sampling rate of the simulation.</p>
+                                    <h2 id="computation-scheme">Computation Scheme</h2>
+                                    <p>Computing a mass-interaction model consists in calculating the <em>mass-type</em> and <em>interaction-type</em> algorithms in a closed loop. The explicit time step increment is carried by the masses, as shown in the discrete-time equation (3). The interactions in themselves are delay-less operations, but can be computed since their output is fed back into the masses for the next calculation step (cf. Figure 2). In other words, calculating a step of real-time audio requires to run all the masses’ algorithms once, then all the interactions’ algorithms.</p>
+                                    <div class="figure">
+                                        <a href="images/papers/lac2019/algo.jpg" data-rel="prettyPhoto[gallerySlider]" title="Graphic Design">
+                                            <img alt="Computation cycles of the model presented before. At each time step, the mass-type algorithms are first computed using the forces calculated in the previous step, then the interaction-type algorithms are computed using the new positions." src="images/papers/lac2019/algo.jpg">
+                                        </a>
+                                        <p class="caption">
+                                            Figure 2: Computation cycles of the model presented in Figure 1. At each time step, the mass-type algorithms are first computed using the forces calculated in the previous step, then the interaction-type algorithms are computed using the new positions.
+                                        </p>
+                                    </div>
+
+
+
+
+                                    <h2 id="representing-the-topological-network">Representing the Topological Network</h2>
+                                    <p>The topological connections of a mass-interaction model can be formalized as a routing matrix of dimensions <span class="math"><em>J</em> × 2<em>K</em></span>, where <span class="math"><em>J</em></span> is the number of material elements (or <em>M points</em>) in the network, and <span class="math"><em>K</em></span> is the number of interactions (each interaction module has two connections - or <em>L points</em> in the usual terminology<span class="citation">[1]</span>) :</p>
+
+                                    <div class="equation">
+                                        <img src="images/papers/lac2019/eq/eq14.png" style="width: 50%" alt="image" />
+                                        \begin{equation}
+                                        \end{equation}
+                                    </div>
+
+                                    <p>Each column in the matrix must have a single connection set to 1 and all others to 0, as an <em>L point</em> only connects to a single <em>M point</em> (partially connected interactions are not allowed). On the other hand, a material point could be connected to any number of interactions in a given model (many connections set to 1 for a single line).</p>
+                                    <p>As an example, (15) presents the routing matrix for the topological structure shown in Figure 1. The material elements (fixed point, three masses and a position input module) are represented vertically and the <em>L points</em> of the four springs and the non-linear interaction are represented horizontally.</p>
+
+                                    <div class="equation">
+                                        <img src="images/papers/lac2019/eq/eq15.png" style="width: 70%" alt="image" />
+                                        \begin{equation}
+                                        \end{equation}
+                                    </div>
+
+                                    <p>The closed-loop physical calculation scheme performed by FAUST is shown in Fig. [faustDiag]. On the left, a <span style="font-variant: small-caps;">LinkToMass</span> connection function routes the force feedback signals produced by the interactions based on the routing matrix (thus calculating the sum of forces for each mass). The new positions of the material elements modules are then calculated. These positions are then fed into a <span style="font-variant: small-caps;">MassToLink</span> connection function, that routes the signals to all of the concerned interactions. Finally, the pairs of force signals produced by the interactions are fed back for the next calculation step.</p>
+                                    <p>Position and force inputs are directly incorporated into the <span style="font-variant: small-caps;">LinkToMass</span> function, so that they are applied to the correct input module. Similarly, modules whose positions are observed as audio outputs are simply added as extra signals at the end of the <span style="font-variant: small-caps;">MassToLink</span> function.</p>
+                                    <div class="figure">
+                                        <img src="images/papers/lac2019/model.png" alt="image" />
+                                        <p class="caption">
+                                            Figure 3: FAUST-generated diagram corresponding to the model presented in Figure 1.
+                                        </p>
+                                    </div>
+                                    <h2 id="faust-implementation-of-mass-and-interaction-elements">FAUST Implementation of Mass and Interaction Elements</h2>
+                                    <p>The mi.lib library contains the FAUST implementation of most elementary mass-type elements (i.e., masses, fixed points, oscillators, etc.) and link-type elements (i.e., springs, collisions, non-linear plucking / bowing, etc.). Since the implementations are similar, we will explicit only the two simplest and most common elements below: the mass and the spring.</p>
+                                    <h3 id="mass">Mass</h3>
+                                    <p>The discrete-time algorithm of a basic mass module described in (3) can be easily expressed with letrec environment expression in FAUST:</p>
+                                    <div class="code">
+                                        <pre><code>
+mass(m,x0,x1) = equation
+with{
+    A = 2;
+    B = -1;
+    C = 1/m;
+    equation = x
+    letrec{
+        &#39;x = A*(x : initState(x0)) +
+             B*(x&#39; : iniState((x0,x1))) +
+             *(C);
+    };
+};
+                                        </code></pre>
+                                    </div>
+                                    <p class="code-caption">Listing 1: The discrete-time mass algorithm in FAUST.</p>
+
+                                    <p>The module takes an input signal (the sum of all forces fed back through the interaction feedback loop and routing function) and produces a position output. The initial position and delayed position of the module are dealt with using the initState function, which initializes the first step with the correct values.</p>
+                                    <h3 id="dampened-spring">Dampened spring</h3>
+                                    <p>Similarly, a visco-elastic spring expressed in FAUST is shown in Listing 2. Interaction modules such as the spring take two input signals (the positions of the masses connected together by the link) and produce two identical and opposite force signals.</p>
+                                    <p>Attention must be paid to the correct initialization of velocity based interactions, especially when the initial position or speed of the masses is non-zero. To this end, the delayed initial positions of the two connected mass elements are supplied as arguments to the interaction function, which initializes them with the initState() function.</p>
+                                    <div class="code">
+                                        <pre><code>
+spring(k,z,x1r0,x2r0,x1,x2) =
+    k*(x1-x2) +
+    z*(
+        (x1 - (x1&#39; : initState(x1r0))) -
+        (x2 - (x2&#39; : initState(x2r0)))
+    )
+    : *(-1),_;
+                                    </code></pre>
+                                    </div>
+                                    <p class="code-caption">Listing 2: The discrete-time dampened spring algorithm in FAUST.</p>
+
+                                    <h1 id="creating-models-with-mims">Creating Models with MIMS</h1>
+                                    <p><span style="font-variant: small-caps;">Mass Interaction Model Scripter</span><a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> is a simple graphical or command-line tool written in Python to generate structured FAUST code from a textual description of a physical model.</p>
+                                    <p>Models are described in a format similar to the PNSL language <span class="citation">[15]</span>: each physical element has a specific label, specific physical parameters and/or initial conditions, etc. Parameters can be added to this description and shared by any number of physical modules, allowing global variation of the physical attributes (i.e., stiffness, damping, mass, etc.) of a subset of modules in real-time.</p>
+                                    <p>MIMS’ physics2faust tool compiles the model by :</p>
+                                    <ul>
+                                        <li><p>parsing all of the physical modules and noting any specific elements (i.e., position or force inputs, audio outputs, etc.)</p></li>
+                                        <li><p>creating the routing matrix and translating it into the two dual FAUST routing functions.</p></li>
+                                        <li><p>ordering the resulting data into the output <em>.dsp</em> file. “Placeholder” functions are created for position / force inputs, allowing the user to describe his input functions directly in the FAUST code.</p></li>
+                                    </ul>
+                                    
+                                    <div class="code">
+                                        <pre><code>
+# Define global parameter attributes
+@m_K param 0.1
+@m_Z param 0.001
+
+@nlK param 0.05
+@nlScale param 0.01
+
+# Create material points
+@m_s0 ground 0.
+@m_m0 mass 1. 0. 0.
+@m_m1 mass 1. 0. 0.
+@m_m2 mass 1. 0. 0.
+
+# Create and connect interaction modules
+@m_r0 spring @m_s0 @m_m0 0.05 0.01
+@m_r1 spring @m_m0 @m_m1 m_K m_Z
+@m_r2 spring @m_m1 @m_m2 m_K m_Z
+@m_r2 spring @m_m2 @m_m0 m_K m_Z
+
+# Inputs and outputs
+@in1 posInput 0.
+@out1 posOutput @m_m2
+
+# Add plucking interaction
+@pick nlPluck @in1 @m_m1 nlK nlScale 
+                                        </code></pre>
+                                    </div>
+                                    <p class="code-caption">Listing 3: MIMS description for the model presented in Figure 1.</p>
+
+                                    <p>The graphical UI version of MIMS also provides basic tools for generating certain categories of physical structures (i.e., strings, membranes, etc.) and performing modal analysis of linear structures.</p>
+                                    <div class="figure">
+                                        <img src="images/papers/lac2019/MIMS_screenshot.png" alt="[mimsscreen]The MIMS model editor prototype." />
+                                        <p class="caption">Figure 4: The MIMS model editor prototype.</p>
+                                    </div>
+                                    <p>The FAUST code generated from the model in Code Listing 3 is presented in Code Listing 4. The only hand-written element is the inPos function, that adds a graphical slider to control the position of the input mass. The control-rate output of the slider is smoothed to avoid artifacts.</p>
+                                    <div class="code">
+                                        <pre><code>
+import(&quot;stdfaust.lib&quot;);
+import(&quot;mi.lib&quot;);
+
+inPos = hslider(&quot;pos&quot;,1,-1,1,0.0001) : si.smoo;
+
+OutGain = 10.;
+
+m_K = 0.1;
+m_Z = 0.001;
+nlK = 0.05;
+nlScale = 0.01;
+
+model = (
+    RoutingLinkToMass:
+        ground(0.),
+        mass(1.,0., 0.),
+        mass(1.,0., 0.),
+        mass(1.,0., 0.),
+        posInput(0.) :
+    RoutingMassToLink :
+        spring(0.05,0.01, 0., 0.),
+        spring(m_K,m_Z, 0., 0.),
+        spring(m_K,m_Z, 0., 0.),
+        spring(m_K,m_Z, 0., 0.),
+        nlPluck(nlK,nlScale),
+    par(i, 1,_)
+)~par(i, 10, _): par(i, 10,!), par(i,  1, _)
+with{
+RoutingLinkToMass(l0_f1,l0_f2,l1_f1,l1_f2,l2_f1,l2_f2,l3_f1,l3_f2,l4_f1,l4_f2,in1) = l0_f1, l0_f2+l1_f1+l3_f2, l1_f2+l2_f1+l4_f2, l2_f2+l3_f1, l4_f1, in1;
+RoutingMassToLink(m0,m1,m2,m3,m4) = m0, m1, m1, m2, m2, m3, m3, m1, m4, m2,m3;
+};
+process = inPos : model: *(OutGain);
+                                        </code></pre>
+                                    </div>
+                                    <p class="code-caption">Listing 4: MIMS description for the model presented in Figure 1.</p>
+
+                                    <h1 id="sec:examples">Examples and Evaluation</h1>
+                                    <p>The basic <em>mi_faust</em> package contains several examples of virtual instruments and use-cases of mass-interaction physics in FAUST. All of these examples can be compiled and executed directly as web applications via the FAUST online editor,<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> with generic user interfaces. They can also be found as pre-compiled web-apps on the <em>mi_faust</em> project web-page.<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a></p>
+                                    <ul>
+                                        <li><p>IPlayTheTriangle: the demonstration model discussed previously in this paper (Figure 1).</p></li>
+                                        <li><p>PolyTriangle: the same model (with a direct force impulse applied instead of a pluck system), using ’s ability to automatically handle polyphonic voice allocation for MIDI instruments.</p></li>
+                                        <li><p>PluckedHarmonics: a 150-mass string terminated by two fixed points. The first position input allows plucking the string, and three others are used to press down lightly on the string at specific areas in order to bring out natural harmonics.</p></li>
+                                        <li><p>BowedString: a bowed string, using the <em>nlBow</em> interaction. The user can control bow pressure and velocity, as well as the stiffness of the string.</p></li>
+                                        <li><p>LargeTriangleMesh: a big triangular mesh, fixed at one summit, excited by a plucking system and damped by user input.</p></li>
+                                        <li><p>Resonator: the audio input is fed into one end of a resonating physical model. The user can alter the properties of the resonator.</p></li>
+                                        <li><p>PhysicalLFO: Using a physical model with slow dynamics as a control variable for another synthesis process. Here, the wave propagation observed along a very loose string is used to modulate the amplitude of a white noise source, generating AM modulation going from complex patterns at the onset to quasi-sinusoidal modulation as the higher modes of the string decay.</p></li>
+                                    </ul>
+                                    <p>In addition to these examples, two large structures (a 20 by 30 mass mesh: 20x30mesh and a 1000 mass string: 1000massString) were created for model complexity tests. The bench test results in Table 1 show the compile time and CPU load for various models. Large routing functions result in slower compilation, and maximum complexity is reached for approx. 1800 physical elements. Overall, fairly complex models run well, with a reasonable CPU load.</p>
+
+
+                                    <table>
+                                        <thead>
+                                        <tr class="header">
+                                            <th align="center">Model Name</th>
+                                            <th align="center">N. Masses</th>
+                                            <th align="center">N. Springs</th>
+                                            <th align="center">FAUST Comp. Dur.</th>
+                                            <th align="center">CPU Load</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr class="odd">
+                                            <td align="center"><code>1000massString</code></td>
+                                            <td align="center">1000</td>
+                                            <td align="center">1002</td>
+                                            <td align="center">-</td>
+                                            <td align="center">-</td>
+                                        </tr>
+                                        <tr class="even">
+                                            <td align="center"><code>20x30mesh</code></td>
+                                            <td align="center">598</td>
+                                            <td align="center">1151</td>
+                                            <td align="center">20.576s</td>
+                                            <td align="center">45%</td>
+                                        </tr>
+                                        <tr class="odd">
+                                            <td align="center"><code>BowedString</code></td>
+                                            <td align="center">150</td>
+                                            <td align="center">152</td>
+                                            <td align="center">1.962s</td>
+                                            <td align="center">14%</td>
+                                        </tr>
+                                        <tr class="even">
+                                            <td align="center"><code>IPlayTheTriangle</code></td>
+                                            <td align="center">3</td>
+                                            <td align="center">5</td>
+                                            <td align="center">0.029s</td>
+                                            <td align="center">1%</td>
+                                        </tr>
+                                        <tr class="odd">
+                                            <td align="center"><code>LargeTriangleMesh</code></td>
+                                            <td align="center">324</td>
+                                            <td align="center">901</td>
+                                            <td align="center">12.083s</td>
+                                            <td align="center">48%</td>
+                                        </tr>
+                                        <tr class="even">
+                                            <td align="center"><code>PhysicalLFO</code></td>
+                                            <td align="center">10</td>
+                                            <td align="center">12</td>
+                                            <td align="center">0.032s</td>
+                                            <td align="center">1%</td>
+                                        </tr>
+                                        <tr class="odd">
+                                            <td align="center"><code>PluckedHarmonics</code></td>
+                                            <td align="center">150</td>
+                                            <td align="center">152</td>
+                                            <td align="center">2.192s</td>
+                                            <td align="center">14%</td>
+                                        </tr>
+                                        <tr class="even">
+                                            <td align="center"><code>PolyTriangle</code></td>
+                                            <td align="center">3</td>
+                                            <td align="center">5</td>
+                                            <td align="center">0.027s</td>
+                                            <td align="center">1%</td>
+                                        </tr>
+                                        <tr class="odd">
+                                            <td align="center"><code>Resonator</code></td>
+                                            <td align="center">30</td>
+                                            <td align="center">32</td>
+                                            <td align="center">0.056s</td>
+                                            <td align="center">4%</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <p class="caption">Table 1: Number of masses and springs, compilation duration, and CPU load of the examples. Measurements were made on a Lenovo ThinkPad X1 Carbon with the following configuration: Linux Manjaro, Intel i7-7500U 4 cores at 2.7GHz, 16GiB of RAM, sampling rate of 48KHz, buffer size of 256 samples. Programs were compiled as ALSA applications with a GTK interface using faust2alsa.
+                                    </p>
+
+
+                                    <h1 id="future-works">Future Works</h1>
+                                    <h2 id="faust">Faust</h2>
+                                    <p>FAUST proves to be well adapted to implement mass-interaction physical models. The combination of connection matrices and of the use of the letrec environment expression allowed us to seamlessly implement the various elements of mi.lib. However, this raised some issues that will need to be solved in the future. They are presented below.</p>
+                                    <h3 id="specifying-initial-states-in-letrec">Specifying Initial States in <code>letrec</code></h3>
+                                    <p>The letrec environment expression doesn’t allow us to specify an initial state (i.e., the value of <span class="math"><em>y</em>(<em>n</em> − 1)</span>, <span class="math"><em>y</em>(<em>n</em> − 2)</span>, etc. at <span class="math"><em>n</em> = 0</span>). We got around this problem by implementing the initState function which requires some unneeded computation. Hence, letrec could be modified to allow this type of expression to be written (rewriting Code Listing 1):</p>
+                                    <div class="code">
+                                        <pre><code>
+equation = x
+letrec{
+    x&#39; = x0;
+    x&#39;&#39; = x1;
+    &#39;x = A*x +B*x&#39; + *(C);
+};
+                                        </code></pre>
+                                    </div>
+
+                                    <p>We believe that this would significantly reduce computation for large scale models.</p>
+                                    <h3 id="optimizing-routing-matrices">Optimizing Routing Matrices</h3>
+                                    <p>The current “bare bone” implementation of connection matrices (e.g., RoutingLinkToMass in Code Listing 3) is hard to solve by the FAUST compiler, preventing large models to be generated (see §4). This could be solved by turning this operation into a primitive of the language. Compilation time would be significantly reduced since pattern matching <span class="citation">[5]</span> wouldn’t be involved to solve this type of expression.</p>
+                                    <h1 id="conclusions">Conclusions</h1>
+                                    <p>In this paper, we have presented early results of formal integration of 1D mass-interaction physical modeling into the FAUST environment, resulting in a new library. The MIMS and <em>physics2faust</em> tools allow to automatically generate FAUST dsp code for complex topological models, by expliciting the routing scheme for the model’s position and force signals. Several basic models have been implemented and benchmarked, showing promising results. Furthermore, FAUST’s capabilities offer an efficient solution for playing several dynamically allocated and parameter-mapped instances of a physical model across large ranges. More generally, this work extends beyond mass-interaction modeling and explores the possibilities for describing complex feedback networks and state space-models in FAUST.</p>
+                                    <h1 id="bibliography">Bibliography</h1>
+                                    <p>[1] Claude Cadoz, Annie Luciani, and Jean-Loup Florens, “Cordis-anima: a modeling and simulation system for sound and image synthesis: the general formalism,” Computer music journal, vol. 17, no. 1, pp. 19–29, 1993.
+                                    <p>[2] Julius O. Smith, “Physical modeling using digital waveguides,” Computer Music Journal, vol. 16, no. 4, pp. 74–91, Winter 1992.
+                                    <p>[3] Stefan Bilbao, Numerical Sound Synthesis: Finite Difference Schemes and Simulation in Musical Acoustics, John Wiley and Sons, Chichester, UK, 2009.
+                                    <p>[4] James Leonard, Nicolas Castagné, Claude Cadoz,and Annie Luciani, The MSCI Platform: A Framework for the Design and Simulation of Multisensory Virtual Musical Instruments, pp. 151–169, Springer International Publishing, Cham, 2018.
+                                    <p>[5] Yann Orlarey, Stéphane Letz, and Dominique Fober, New Computational Paradigms for Computer Music, chapter “Faust: an Efficient Functional Approach to DSP Programming”, Delatour, Paris, France, 2009.
+                                    <p>[6] Nicolas Castagné and Claude Cadoz, “Genesis: a friendly musician-oriented environment for mass-interaction physical modeling,” in ICMC 2002-International Computer Music Conference. MPublishing, 2002, pp. 330–337.
+                                    <p>[7] Edgar Berdahl,“An introduction to the Synth-A-Modeler compiler: Modular and open-source sound synthesis using physical models,” in Proceedings of the Linux Audio Conference (LAC- 12), Stanford, USA, May 2012.
+                                    <p>[8] Jérôme Villeneuve and Claude Cadoz, “Understanding and tuning mass-interaction networks through their modal representation,” in 40th International Computer Music Conference/11th Sound and Music Computing Conference, 2014, pp. 1490–1496.
+                                    <p>[9] Romain Michon and Julius O. Smith, “Faust-STK: a set of linear and nonlinear physical models for the Faust programming language,” in Proceedings of the 14th International Conference on Digital Audio Effects (DAFx-11), Paris, France, September 2011.
+                                    <p>[10] Perry Cook and Gary Scavone, “The Synthesis Toolkit (stk),” in Proceedings of the International Computer Music Conference (ICMC-99), Beijing, China, 1999.
+                                    <p>[11] Romain Michon, Julius O. Smith, Chris Chafe, Ge Wang, and Matt Wright, “The faust physical modeling library: a modular playground for the digital luthier,” in Proceedings of the 1st International Faust Conference (IFC-18), Mainz (Germany), 2018.
+                                    <p>[12] Romain Michon, Sara R Martin, and Julius O Smith, MESH2FAUST: a Modal Physical Model Generator for the Faust Programming Language - Application to Bell Modeling, Ann Arbor, MI: Michigan Publishing, University of Michigan Library, 2017.
+                                    <p>[13] Edgar Berdahl and Alexandros Kontogeorgakopoulos, “The firefader: Simple, open-source, and reconfigurable haptic force feedback for musicians,” Computer Music Journal, vol. 37, no. 1, pp. 23–34, 2013.
+                                    <p>[14] James Leonard and Claude Cadoz, “Physical modelling concepts for a collection of multisensory virtual musical instruments,” in Proceedings of the Conference on New Interfaces for Musical (NIME15), Baton Rouge, USA, May 2015.
+                                    <p>[15] Nicolas Castagné, Claude Cadoz, Ali Allaoui, and Olivier Tache, “G3: Genesis software environment update,” in ICMC 2009. MPublishing, 2009, pp. 407–410.
+
+
+                                    <div class="footnotes">
+                                        <hr />
+                                        <ol>
+                                            <li id="fn1"><p>The FAUST website contains an exhaustive list of all the FAUST targets: <a href="https://faust.grame.fr">https://faust.grame.fr</a>.<a href="#fnref1">↩</a></p></li>
+                                            <li id="fn2"><p>Unfortunately, there is no documentation/publication on this project yet.<a href="#fnref2">↩</a></p></li>
+                                            <li id="fn3"><p><a href="https://github.com/grame-cncm/faustlibraries">https://github.com/grame-cncm/faustlibraries</a><a href="#fnref3">↩</a></p></li>
+                                            <li id="fn4"><p>https://github.com/mi-creative/MIMS<a href="#fnref4">↩</a></p></li>
+                                            <li id="fn5"><p><a href="https://faust.grame.fr/tools/editor/">https://faust.grame.fr/tools/editor/</a><a href="#fnref5">↩</a></p></li>
+                                            <li id="fn6"><p><a href="https://faust.grame.fr/community/made-with-faust/mi-faust">https://faust.grame.fr/community/made-with-faust/mi-faust</a><a href="#fnref6">↩</a></p></li>
+                                        </ol>
+                                    </div>
+
+
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+
+                </article>
+                <div class="nav-links">
+                    <a class="nav-next tooltip" data-title="HAID 2019" href="paper_haid19.html">
+                        <span class="fa fa-chevron-right" aria-hidden="true"></span>
+                    </a>
+                    <!--<a class="nav-next tooltip" data-title="SMC 2019" href="paper_smc19_gen.html">-->
+                        <!--<span class="fa fa-chevron-right" aria-hidden="true"></span>-->
+                    <!--</a>-->
+                </div>
+                <div class="clear"></div>
+            </div>
+            <!-- End Page Content Holder -->
+        </div>
+
+        <!--Load JavaScript-->
+        <script src="js/jquery.js"></script>
+        <script src='js/jquery.smartmenus.min.js'></script>
+        <script src='js/jquery.prettyPhoto.js'></script>
+        <script src="js/jquery.sticky-kit.min.js"></script>
+        <script src='js/imagesloaded.pkgd.js'></script>
+        <script src='js/jquery.fitvids.js'></script>
+        <script src='js/tipper.js'></script>
+        <script src='js/swiper.min.js'></script>
+        <script src='nav.js'></script>
+        <script src='js/main.js'></script>
+
+        <!--Equation Display-->
+        <script src="js/MathJax/MathJax.js?config=default"></script>
+
+    </body>
+</html>
+
+

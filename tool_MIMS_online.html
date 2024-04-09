@@ -1,0 +1,1628 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <title>mi-Creative</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="mi Creative"/>
+    <meta name="keywords" content="Physical, Modeling, Mass, Spring, Digital, Arts, Grenoble, Gipsa"/>
+    <meta name="author" content="miCreative"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="shortcut icon" href="images/favicon.ico"/>
+    <link href='http://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800%7CPlayfair%20Display:700%7CPT%20Serif:400i'
+          rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href='js/mimsOnline/mimsOnline.css'/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="js/mimsOnline/codemirror/lib/codemirror.js"></script>
+    <script src="js/mimsOnline/codemirror/active-line.js"></script>
+
+    <script src="js/mimsOnline/codemirror/mode/javascript.js"></script>
+    <script src="js/mimsOnline/codemirror/mode/faust/faust.js"></script>
+    <script src="js/mimsOnline/codemirror/mode/faust/faustsnippets.js"></script>
+    <script src="js/mimsOnline/codemirror/mode/clike/clike.js"></script>
+    <script src="js/mimsOnline/codemirror/addon/show-hint.js"></script>
+
+
+
+    <link rel="stylesheet" href="js/mimsOnline/codemirror/lib/codemirror.css">
+
+
+    <script src="js/mimsOnline/three.min.js"></script>
+    <script type="module" src="js/mimsOnline/OrbitControls.js"></script>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/mimsOnline/math.min.js"></script>
+
+    <script src="js/mimsOnline/mimsBrowser.js"></script>
+    <script src="js/mimsOnline/mimsGenerators.js"></script>
+
+
+
+
+
+</head>
+
+<body class="mims-online" style="display: flex; flex-direction: column;
+">
+<div id="container">
+
+    <div class="split-parent">
+        <div id="split1">
+            <div class="codearea-header">
+                MIMS Scripting Language - Model Name :
+                <input type="text" id="modelName" placeholder="Default">
+                <div class="mims-buttons" style="float: right">
+                    <a href="javascript:;" id="mimsExport"><i class="fa fa-save" style="color: white"></i></a>
+                </div>
+                <div class="mims-buttons" style="float: right; padding-right: 10px">
+                    <a href="javascript:;" id="mimsImport"><i class="fa fa-upload" style="color: white"></i></a>
+                    <input type="file" id="mimsFile" name="mimsFile" ; style="display: none;" accept=".mdl">
+                </div>
+
+            </div>
+            <!-- Page Content Holder -->
+            <div class="mims">
+
+                <div class="codearea">
+                    <div id="viewOverlay-simulationVisualParameters">
+                        <div class="inputs">
+                            <div class="input">
+                                <input type="color" id="interface_main" name="interface_main"
+                                       value="#8CC63F">
+                                <label for="interface_main">Model Bench (& Interface Main)</label>
+                            </div>
+
+                            <div class="input">
+                                <input type="color" id="interface_sec" name="interface_sec"
+                                       value="#e4f2d0">
+                                <label for="interface_sec">Model Background (& Interface Secondary)</label>
+                            </div>
+
+                            <div class="input">
+                                <input type="color" id="model_mas" name="model_mas"
+                                       value="#c63f8c">
+                                <label for="model_mas">Model Masses</label>
+                            </div>
+
+                            <div class="input">
+                                <input type="color" id="model_gnd" name="model_gnd"
+                                       value="#3f8cc6">
+                                <label for="model_gnd">Model Grounds</label>
+                            </div>
+
+                            <div class="input">
+                                <input type="color" id="model_posIN" name="model_posIN"
+                                       value="#e8831e">
+                                <label for="model_posIN">Model Position Inputs</label>
+                            </div>
+
+                            <div class="input">
+                                <input type="color" id="model_posOUT" name="model_posOUT"
+                                       value="#e8831e">
+                                <label for="model_posOUT">Model Position Outputs</label>
+                            </div>
+
+                            <div class="input">
+                                <input type="color" id="model_frcIN" name="model_frcIN"
+                                       value="#e8de1e">
+                                <label for="model_frcIN">Model Force Inputs</label>
+                            </div>
+
+                            <div class="input">
+                                <input type="color" id="model_frcOUT" name="model_frcOUT"
+                                       value="#e8de1e">
+                                <label for="model_frcOUT">Model Force Outputs</label>
+                            </div>
+
+                            <div class="input">
+                                <label class="switch">
+                                    <input type="checkbox" class="toggle-MATView" id="toggle-MAT" checked onclick="toggleMATView()">
+                                    <span class="slider"></span>
+                                </label>
+                                <label for="toggle-MAT">Display Masses</label>
+                            </div>
+
+                            <div class="input">
+                                <label class="switch">
+                                    <input type="checkbox" class="toggle-LIAView" id="toggle-LIA" checked onclick="toggleLIAView()">
+                                    <span class="slider"></span>
+                                </label>
+                                <label for="toggle-LIA">Display Interactions</label>
+                            </div>
+
+                            <div class="input">
+                                <label class="switch">
+                                    <input type="checkbox" class="toggle-Shadows" id="toggle-Shadows" checked onclick="toggleShadows()">
+                                    <span class="slider"></span>
+                                </label>
+                                <label for="toggle-Shadows">Display Shadows</label>
+
+                            </div>
+
+                            <div class="input">
+                                <label class="switch">
+                                    <input type="checkbox" class="toggle-WireBench" id="toggle-WireBench" onclick="toggleWireBench()">
+                                    <span class="slider"></span>
+                                </label>
+                                <label for="toggle-WireBench">Wire Bench</label>
+                            </div>
+
+                            <div class="input slide-entry">
+                                <input type="range" min="0" max="1" value="1" step="0.01" class="continuousSlider" id="slide-BenchAlpha">
+                                <label for="slide-BenchAlpha">Bench Transparency</label>
+                            </div>
+
+                            <div class="input slide-entry">
+                                <input type="range" min="3" max="32" value="15" step="1" class="continuousSlider" id="slide-SphereDefinition">
+                                <label for="slide-SphereDefinition">Sphere Width Segments</label>
+                            </div>
+
+                            <div class="input slide-entry">
+                                <input type="range" min="0.01" max="10" value="1" step="0.01" class="continuousSlider" id="slide-SphereSize">
+                                <label for="slide-SphereSize">Sphere Size</label>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div id="viewOverlay-simulationControls">
+
+                        <div class="inputs" id="sim_ScaleControls">
+
+                            <div class="number entry">
+                                <p class="header">Simulation Steps by Frame</p>
+                                <input type="number" value="1" id="stepsByFrame">
+                            </div>
+
+                            <div class="continuousSlider">
+                                <p class="header">z Scale Factor</p>
+                                <input type="text" value="0.01" class="inputLeft">
+                                <input type="text" value="100" class="inputRight">
+                                <input type="range" class="continuousSlider_range" id="slide-zFactor" value="1" min="0.01" max="100" step="0.1">
+                                <div class="continuousSlider_value">1</div>
+                            </div>
+
+                        </div>
+
+                        <div class="inputs" id="sim_PhysicalParametersControls">
+                        </div>
+
+                        <div class="inputs" id="sim_InputsControls">
+                        </div>
+
+                        <div class="frcInput">
+                            <p class="header">Controller : Force Input for any selected mass</p>
+                            <button class="btn-secondary " id="genericFrcInput_btn">Apply</button>
+                            <span> a Force Input of </span>
+                            <input type="text" value="1" id="genericFrcInput_val">
+                            <span id="moduleToStrike"></span>
+                        </div>
+
+
+                    </div>
+
+
+                    <textarea id="mimscode" class="scripting-environment">
+
+
+
+# MIMS code generated by generateMesh
+@myMesh_M param 1.0
+@myMesh_K param 0.01
+@myMesh_Z param 0.0001
+@myMesh_Zo param 0.0
+
+@myMesh_m0_0 ground  [-10.00 -10.00 0]
+@myMesh_m0_1 osc myMesh_M 0 myMesh_Zo [-8.57 -10.00 0] 0
+@myMesh_m0_2 osc myMesh_M 0 myMesh_Zo [-7.14 -10.00 0] 0
+@myMesh_m0_3 osc myMesh_M 0 myMesh_Zo [-5.71 -10.00 0] 0
+@myMesh_m0_4 osc myMesh_M 0 myMesh_Zo [-4.29 -10.00 0] 0
+@myMesh_m0_5 osc myMesh_M 0 myMesh_Zo [-2.86 -10.00 0] 0
+@myMesh_m0_6 osc myMesh_M 0 myMesh_Zo [-1.43 -10.00 0] 0
+@myMesh_m0_7 osc myMesh_M 0 myMesh_Zo [0.00 -10.00 0] 0
+@myMesh_m0_8 osc myMesh_M 0 myMesh_Zo [1.43 -10.00 0] 0
+@myMesh_m0_9 osc myMesh_M 0 myMesh_Zo [2.86 -10.00 0] 0
+@myMesh_m0_10 osc myMesh_M 0 myMesh_Zo [4.29 -10.00 0] 0
+@myMesh_m0_11 osc myMesh_M 0 myMesh_Zo [5.71 -10.00 0] 0
+@myMesh_m0_12 osc myMesh_M 0 myMesh_Zo [7.14 -10.00 0] 0
+@myMesh_m0_13 osc myMesh_M 0 myMesh_Zo [8.57 -10.00 0] 0
+@myMesh_m0_14 ground  [10.00 -10.00 0]
+@myMesh_m1_0 osc myMesh_M 0 myMesh_Zo [-10.00 -8.57 0] 0
+@myMesh_m1_1 osc myMesh_M 0 myMesh_Zo [-8.57 -8.57 0] 0
+@myMesh_m1_2 osc myMesh_M 0 myMesh_Zo [-7.14 -8.57 0] 0
+@myMesh_m1_3 osc myMesh_M 0 myMesh_Zo [-5.71 -8.57 0] 0
+@myMesh_m1_4 osc myMesh_M 0 myMesh_Zo [-4.29 -8.57 0] 0
+@myMesh_m1_5 osc myMesh_M 0 myMesh_Zo [-2.86 -8.57 0] 0
+@myMesh_m1_6 osc myMesh_M 0 myMesh_Zo [-1.43 -8.57 0] 0
+@myMesh_m1_7 osc myMesh_M 0 myMesh_Zo [0.00 -8.57 0] 0
+@myMesh_m1_8 osc myMesh_M 0 myMesh_Zo [1.43 -8.57 0] 0
+@myMesh_m1_9 osc myMesh_M 0 myMesh_Zo [2.86 -8.57 0] 0
+@myMesh_m1_10 osc myMesh_M 0 myMesh_Zo [4.29 -8.57 0] 0
+@myMesh_m1_11 osc myMesh_M 0 myMesh_Zo [5.71 -8.57 0] 0
+@myMesh_m1_12 osc myMesh_M 0 myMesh_Zo [7.14 -8.57 0] 0
+@myMesh_m1_13 osc myMesh_M 0 myMesh_Zo [8.57 -8.57 0] 0
+@myMesh_m1_14 osc myMesh_M 0 myMesh_Zo [10.00 -8.57 0] 0
+@myMesh_m2_0 osc myMesh_M 0 myMesh_Zo [-10.00 -7.14 0] 0
+@myMesh_m2_1 osc myMesh_M 0 myMesh_Zo [-8.57 -7.14 0] 0
+@myMesh_m2_2 osc myMesh_M 0 myMesh_Zo [-7.14 -7.14 0] 0
+@myMesh_m2_3 osc myMesh_M 0 myMesh_Zo [-5.71 -7.14 0] 0
+@myMesh_m2_4 osc myMesh_M 0 myMesh_Zo [-4.29 -7.14 0] 0
+@myMesh_m2_5 osc myMesh_M 0 myMesh_Zo [-2.86 -7.14 0] 0
+@myMesh_m2_6 osc myMesh_M 0 myMesh_Zo [-1.43 -7.14 0] 0
+@myMesh_m2_7 osc myMesh_M 0 myMesh_Zo [0.00 -7.14 0] 0
+@myMesh_m2_8 osc myMesh_M 0 myMesh_Zo [1.43 -7.14 0] 0
+@myMesh_m2_9 osc myMesh_M 0 myMesh_Zo [2.86 -7.14 0] 0
+@myMesh_m2_10 osc myMesh_M 0 myMesh_Zo [4.29 -7.14 0] 0
+@myMesh_m2_11 osc myMesh_M 0 myMesh_Zo [5.71 -7.14 0] 0
+@myMesh_m2_12 osc myMesh_M 0 myMesh_Zo [7.14 -7.14 0] 0
+@myMesh_m2_13 osc myMesh_M 0 myMesh_Zo [8.57 -7.14 0] 100000
+@myMesh_m2_14 osc myMesh_M 0 myMesh_Zo [10.00 -7.14 0] 0
+@myMesh_m3_0 osc myMesh_M 0 myMesh_Zo [-10.00 -5.71 0] 0
+@myMesh_m3_1 osc myMesh_M 0 myMesh_Zo [-8.57 -5.71 0] 0
+@myMesh_m3_2 osc myMesh_M 0 myMesh_Zo [-7.14 -5.71 0] 0
+@myMesh_m3_3 osc myMesh_M 0 myMesh_Zo [-5.71 -5.71 0] 0
+@myMesh_m3_4 osc myMesh_M 0 myMesh_Zo [-4.29 -5.71 0] 0
+@myMesh_m3_5 osc myMesh_M 0 myMesh_Zo [-2.86 -5.71 0] 0
+@myMesh_m3_6 osc myMesh_M 0 myMesh_Zo [-1.43 -5.71 0] 0
+@myMesh_m3_7 osc myMesh_M 0 myMesh_Zo [0.00 -5.71 0] 0
+@myMesh_m3_8 osc myMesh_M 0 myMesh_Zo [1.43 -5.71 0] 0
+@myMesh_m3_9 osc myMesh_M 0 myMesh_Zo [2.86 -5.71 0] 0
+@myMesh_m3_10 osc myMesh_M 0 myMesh_Zo [4.29 -5.71 0] 0
+@myMesh_m3_11 osc myMesh_M 0 myMesh_Zo [5.71 -5.71 0] 0
+@myMesh_m3_12 osc myMesh_M 0 myMesh_Zo [7.14 -5.71 0] 0
+@myMesh_m3_13 osc myMesh_M 0 myMesh_Zo [8.57 -5.71 0] 0
+@myMesh_m3_14 osc myMesh_M 0 myMesh_Zo [10.00 -5.71 0] 0
+@myMesh_m4_0 osc myMesh_M 0 myMesh_Zo [-10.00 -4.29 0] 0
+@myMesh_m4_1 osc myMesh_M 0 myMesh_Zo [-8.57 -4.29 0] 0
+@myMesh_m4_2 osc myMesh_M 0 myMesh_Zo [-7.14 -4.29 0] 0
+@myMesh_m4_3 osc myMesh_M 0 myMesh_Zo [-5.71 -4.29 0] 0
+@myMesh_m4_4 osc myMesh_M 0 myMesh_Zo [-4.29 -4.29 0] 0
+@myMesh_m4_5 osc myMesh_M 0 myMesh_Zo [-2.86 -4.29 0] 0
+@myMesh_m4_6 osc myMesh_M 0 myMesh_Zo [-1.43 -4.29 0] 0
+@myMesh_m4_7 osc myMesh_M 0 myMesh_Zo [0.00 -4.29 0] 0
+@myMesh_m4_8 osc myMesh_M 0 myMesh_Zo [1.43 -4.29 0] 0
+@myMesh_m4_9 osc myMesh_M 0 myMesh_Zo [2.86 -4.29 0] 0
+@myMesh_m4_10 osc myMesh_M 0 myMesh_Zo [4.29 -4.29 0] 0
+@myMesh_m4_11 osc myMesh_M 0 myMesh_Zo [5.71 -4.29 0] 0
+@myMesh_m4_12 osc myMesh_M 0 myMesh_Zo [7.14 -4.29 0] 0
+@myMesh_m4_13 osc myMesh_M 0 myMesh_Zo [8.57 -4.29 0] 0
+@myMesh_m4_14 osc myMesh_M 0 myMesh_Zo [10.00 -4.29 0] 0
+@myMesh_m5_0 osc myMesh_M 0 myMesh_Zo [-10.00 -2.86 0] 0
+@myMesh_m5_1 osc myMesh_M 0 myMesh_Zo [-8.57 -2.86 0] 0
+@myMesh_m5_2 osc myMesh_M 0 myMesh_Zo [-7.14 -2.86 0] 0
+@myMesh_m5_3 osc myMesh_M 0 myMesh_Zo [-5.71 -2.86 0] 0
+@myMesh_m5_4 osc myMesh_M 0 myMesh_Zo [-4.29 -2.86 0] 0
+@myMesh_m5_5 osc myMesh_M 0 myMesh_Zo [-2.86 -2.86 0] 0
+@myMesh_m5_6 osc myMesh_M 0 myMesh_Zo [-1.43 -2.86 0] 0
+@myMesh_m5_7 osc myMesh_M 0 myMesh_Zo [0.00 -2.86 0] 0
+@myMesh_m5_8 osc myMesh_M 0 myMesh_Zo [1.43 -2.86 0] 0
+@myMesh_m5_9 osc myMesh_M 0 myMesh_Zo [2.86 -2.86 0] 0
+@myMesh_m5_10 osc myMesh_M 0 myMesh_Zo [4.29 -2.86 0] 0
+@myMesh_m5_11 osc myMesh_M 0 myMesh_Zo [5.71 -2.86 0] 0
+@myMesh_m5_12 osc myMesh_M 0 myMesh_Zo [7.14 -2.86 0] 0
+@myMesh_m5_13 osc myMesh_M 0 myMesh_Zo [8.57 -2.86 0] 0
+@myMesh_m5_14 osc myMesh_M 0 myMesh_Zo [10.00 -2.86 0] 0
+@myMesh_m6_0 osc myMesh_M 0 myMesh_Zo [-10.00 -1.43 0] 0
+@myMesh_m6_1 osc myMesh_M 0 myMesh_Zo [-8.57 -1.43 0] 0
+@myMesh_m6_2 osc myMesh_M 0 myMesh_Zo [-7.14 -1.43 0] 0
+@myMesh_m6_3 osc myMesh_M 0 myMesh_Zo [-5.71 -1.43 0] 0
+@myMesh_m6_4 osc myMesh_M 0 myMesh_Zo [-4.29 -1.43 0] 0
+@myMesh_m6_5 osc myMesh_M 0 myMesh_Zo [-2.86 -1.43 0] 0
+@myMesh_m6_6 osc myMesh_M 0 myMesh_Zo [-1.43 -1.43 0] 0
+@myMesh_m6_7 osc myMesh_M 0 myMesh_Zo [0.00 -1.43 0] 0
+@myMesh_m6_8 osc myMesh_M 0 myMesh_Zo [1.43 -1.43 0] 0
+@myMesh_m6_9 osc myMesh_M 0 myMesh_Zo [2.86 -1.43 0] 0
+@myMesh_m6_10 osc myMesh_M 0 myMesh_Zo [4.29 -1.43 0] 0
+@myMesh_m6_11 osc myMesh_M 0 myMesh_Zo [5.71 -1.43 0] 0
+@myMesh_m6_12 osc myMesh_M 0 myMesh_Zo [7.14 -1.43 0] 0
+@myMesh_m6_13 osc myMesh_M 0 myMesh_Zo [8.57 -1.43 0] 0
+@myMesh_m6_14 osc myMesh_M 0 myMesh_Zo [10.00 -1.43 0] 0
+@myMesh_m7_0 osc myMesh_M 0 myMesh_Zo [-10.00 0.00 0] 0
+@myMesh_m7_1 osc myMesh_M 0 myMesh_Zo [-8.57 0.00 0] 0
+@myMesh_m7_2 osc myMesh_M 0 myMesh_Zo [-7.14 0.00 0] 0
+@myMesh_m7_3 osc myMesh_M 0 myMesh_Zo [-5.71 0.00 0] 0
+@myMesh_m7_4 osc myMesh_M 0 myMesh_Zo [-4.29 0.00 0] 0
+@myMesh_m7_5 osc myMesh_M 0 myMesh_Zo [-2.86 0.00 0] 0
+@myMesh_m7_6 osc myMesh_M 0 myMesh_Zo [-1.43 0.00 0] 0
+@myMesh_m7_7 osc myMesh_M 0 myMesh_Zo [0.00 0.00 0] 0
+@myMesh_m7_8 osc myMesh_M 0 myMesh_Zo [1.43 0.00 0] 0
+@myMesh_m7_9 osc myMesh_M 0 myMesh_Zo [2.86 0.00 0] 0
+@myMesh_m7_10 osc myMesh_M 0 myMesh_Zo [4.29 0.00 0] 0
+@myMesh_m7_11 osc myMesh_M 0 myMesh_Zo [5.71 0.00 0] 0
+@myMesh_m7_12 osc myMesh_M 0 myMesh_Zo [7.14 0.00 0] 0
+@myMesh_m7_13 osc myMesh_M 0 myMesh_Zo [8.57 0.00 0] 0
+@myMesh_m7_14 osc myMesh_M 0 myMesh_Zo [10.00 0.00 0] 0
+@myMesh_m8_0 osc myMesh_M 0 myMesh_Zo [-10.00 1.43 0] 0
+@myMesh_m8_1 osc myMesh_M 0 myMesh_Zo [-8.57 1.43 0] 0
+@myMesh_m8_2 osc myMesh_M 0 myMesh_Zo [-7.14 1.43 0] 0
+@myMesh_m8_3 osc myMesh_M 0 myMesh_Zo [-5.71 1.43 0] 0
+@myMesh_m8_4 osc myMesh_M 0 myMesh_Zo [-4.29 1.43 0] 0
+@myMesh_m8_5 osc myMesh_M 0 myMesh_Zo [-2.86 1.43 0] 0
+@myMesh_m8_6 osc myMesh_M 0 myMesh_Zo [-1.43 1.43 0] 0
+@myMesh_m8_7 osc myMesh_M 0 myMesh_Zo [0.00 1.43 0] 0
+@myMesh_m8_8 osc myMesh_M 0 myMesh_Zo [1.43 1.43 0] 0
+@myMesh_m8_9 osc myMesh_M 0 myMesh_Zo [2.86 1.43 0] 0
+@myMesh_m8_10 osc myMesh_M 0 myMesh_Zo [4.29 1.43 0] 0
+@myMesh_m8_11 osc myMesh_M 0 myMesh_Zo [5.71 1.43 0] 0
+@myMesh_m8_12 osc myMesh_M 0 myMesh_Zo [7.14 1.43 0] 0
+@myMesh_m8_13 osc myMesh_M 0 myMesh_Zo [8.57 1.43 0] 0
+@myMesh_m8_14 osc myMesh_M 0 myMesh_Zo [10.00 1.43 0] 0
+@myMesh_m9_0 osc myMesh_M 0 myMesh_Zo [-10.00 2.86 0] 0
+@myMesh_m9_1 osc myMesh_M 0 myMesh_Zo [-8.57 2.86 0] 0
+@myMesh_m9_2 osc myMesh_M 0 myMesh_Zo [-7.14 2.86 0] 0
+@myMesh_m9_3 osc myMesh_M 0 myMesh_Zo [-5.71 2.86 0] 0
+@myMesh_m9_4 osc myMesh_M 0 myMesh_Zo [-4.29 2.86 0] 0
+@myMesh_m9_5 osc myMesh_M 0 myMesh_Zo [-2.86 2.86 0] 0
+@myMesh_m9_6 osc myMesh_M 0 myMesh_Zo [-1.43 2.86 0] 0
+@myMesh_m9_7 osc myMesh_M 0 myMesh_Zo [0.00 2.86 0] 0
+@myMesh_m9_8 osc myMesh_M 0 myMesh_Zo [1.43 2.86 0] 0
+@myMesh_m9_9 osc myMesh_M 0 myMesh_Zo [2.86 2.86 0] 0
+@myMesh_m9_10 osc myMesh_M 0 myMesh_Zo [4.29 2.86 0] 0
+@myMesh_m9_11 osc myMesh_M 0 myMesh_Zo [5.71 2.86 0] 0
+@myMesh_m9_12 osc myMesh_M 0 myMesh_Zo [7.14 2.86 0] 0
+@myMesh_m9_13 osc myMesh_M 0 myMesh_Zo [8.57 2.86 0] 0
+@myMesh_m9_14 osc myMesh_M 0 myMesh_Zo [10.00 2.86 0] 0
+@myMesh_m10_0 osc myMesh_M 0 myMesh_Zo [-10.00 4.29 0] 0
+@myMesh_m10_1 osc myMesh_M 0 myMesh_Zo [-8.57 4.29 0] 0
+@myMesh_m10_2 osc myMesh_M 0 myMesh_Zo [-7.14 4.29 0] 0
+@myMesh_m10_3 osc myMesh_M 0 myMesh_Zo [-5.71 4.29 0] 0
+@myMesh_m10_4 osc myMesh_M 0 myMesh_Zo [-4.29 4.29 0] 0
+@myMesh_m10_5 osc myMesh_M 0 myMesh_Zo [-2.86 4.29 0] 0
+@myMesh_m10_6 osc myMesh_M 0 myMesh_Zo [-1.43 4.29 0] 0
+@myMesh_m10_7 osc myMesh_M 0 myMesh_Zo [0.00 4.29 0] 0
+@myMesh_m10_8 osc myMesh_M 0 myMesh_Zo [1.43 4.29 0] 0
+@myMesh_m10_9 osc myMesh_M 0 myMesh_Zo [2.86 4.29 0] 0
+@myMesh_m10_10 osc myMesh_M 0 myMesh_Zo [4.29 4.29 0] 0
+@myMesh_m10_11 osc myMesh_M 0 myMesh_Zo [5.71 4.29 0] 0
+@myMesh_m10_12 osc myMesh_M 0 myMesh_Zo [7.14 4.29 0] 0
+@myMesh_m10_13 osc myMesh_M 0 myMesh_Zo [8.57 4.29 0] 0
+@myMesh_m10_14 osc myMesh_M 0 myMesh_Zo [10.00 4.29 0] 0
+@myMesh_m11_0 osc myMesh_M 0 myMesh_Zo [-10.00 5.71 0] 0
+@myMesh_m11_1 osc myMesh_M 0 myMesh_Zo [-8.57 5.71 0] 0
+@myMesh_m11_2 osc myMesh_M 0 myMesh_Zo [-7.14 5.71 0] 0
+@myMesh_m11_3 osc myMesh_M 0 myMesh_Zo [-5.71 5.71 0] 0
+@myMesh_m11_4 osc myMesh_M 0 myMesh_Zo [-4.29 5.71 0] 0
+@myMesh_m11_5 osc myMesh_M 0 myMesh_Zo [-2.86 5.71 0] 0
+@myMesh_m11_6 osc myMesh_M 0 myMesh_Zo [-1.43 5.71 0] 0
+@myMesh_m11_7 osc myMesh_M 0 myMesh_Zo [0.00 5.71 0] 0
+@myMesh_m11_8 osc myMesh_M 0 myMesh_Zo [1.43 5.71 0] 0
+@myMesh_m11_9 osc myMesh_M 0 myMesh_Zo [2.86 5.71 0] 0
+@myMesh_m11_10 osc myMesh_M 0 myMesh_Zo [4.29 5.71 0] 0
+@myMesh_m11_11 osc myMesh_M 0 myMesh_Zo [5.71 5.71 0] 0
+@myMesh_m11_12 osc myMesh_M 0 myMesh_Zo [7.14 5.71 0] 0
+@myMesh_m11_13 osc myMesh_M 0 myMesh_Zo [8.57 5.71 0] 0
+@myMesh_m11_14 osc myMesh_M 0 myMesh_Zo [10.00 5.71 0] 0
+@myMesh_m12_0 osc myMesh_M 0 myMesh_Zo [-10.00 7.14 0] 0
+@myMesh_m12_1 osc myMesh_M 0 myMesh_Zo [-8.57 7.14 0] 0
+@myMesh_m12_2 osc myMesh_M 0 myMesh_Zo [-7.14 7.14 0] 0
+@myMesh_m12_3 osc myMesh_M 0 myMesh_Zo [-5.71 7.14 0] 0
+@myMesh_m12_4 osc myMesh_M 0 myMesh_Zo [-4.29 7.14 0] 0
+@myMesh_m12_5 osc myMesh_M 0 myMesh_Zo [-2.86 7.14 0] 0
+@myMesh_m12_6 osc myMesh_M 0 myMesh_Zo [-1.43 7.14 0] 0
+@myMesh_m12_7 osc myMesh_M 0 myMesh_Zo [0.00 7.14 0] 0
+@myMesh_m12_8 osc myMesh_M 0 myMesh_Zo [1.43 7.14 0] 0
+@myMesh_m12_9 osc myMesh_M 0 myMesh_Zo [2.86 7.14 0] 0
+@myMesh_m12_10 osc myMesh_M 0 myMesh_Zo [4.29 7.14 0] 0
+@myMesh_m12_11 osc myMesh_M 0 myMesh_Zo [5.71 7.14 0] 0
+@myMesh_m12_12 osc myMesh_M 0 myMesh_Zo [7.14 7.14 0] 0
+@myMesh_m12_13 osc myMesh_M 0 myMesh_Zo [8.57 7.14 0] 0
+@myMesh_m12_14 osc myMesh_M 0 myMesh_Zo [10.00 7.14 0] 0
+@myMesh_m13_0 osc myMesh_M 0 myMesh_Zo [-10.00 8.57 0] 0
+@myMesh_m13_1 osc myMesh_M 0 myMesh_Zo [-8.57 8.57 0] 0
+@myMesh_m13_2 osc myMesh_M 0 myMesh_Zo [-7.14 8.57 0] 0
+@myMesh_m13_3 osc myMesh_M 0 myMesh_Zo [-5.71 8.57 0] 0
+@myMesh_m13_4 osc myMesh_M 0 myMesh_Zo [-4.29 8.57 0] 0
+@myMesh_m13_5 osc myMesh_M 0 myMesh_Zo [-2.86 8.57 0] 0
+@myMesh_m13_6 osc myMesh_M 0 myMesh_Zo [-1.43 8.57 0] 0
+@myMesh_m13_7 osc myMesh_M 0 myMesh_Zo [0.00 8.57 0] 0
+@myMesh_m13_8 osc myMesh_M 0 myMesh_Zo [1.43 8.57 0] 0
+@myMesh_m13_9 osc myMesh_M 0 myMesh_Zo [2.86 8.57 0] 0
+@myMesh_m13_10 osc myMesh_M 0 myMesh_Zo [4.29 8.57 0] 0
+@myMesh_m13_11 osc myMesh_M 0 myMesh_Zo [5.71 8.57 0] 0
+@myMesh_m13_12 osc myMesh_M 0 myMesh_Zo [7.14 8.57 0] 0
+@myMesh_m13_13 osc myMesh_M 0 myMesh_Zo [8.57 8.57 0] 0
+@myMesh_m13_14 osc myMesh_M 0 myMesh_Zo [10.00 8.57 0] 0
+@myMesh_m14_0 ground  [-10.00 10.00 0]
+@myMesh_m14_1 osc myMesh_M 0 myMesh_Zo [-8.57 10.00 0] 0
+@myMesh_m14_2 osc myMesh_M 0 myMesh_Zo [-7.14 10.00 0] 0
+@myMesh_m14_3 osc myMesh_M 0 myMesh_Zo [-5.71 10.00 0] 0
+@myMesh_m14_4 osc myMesh_M 0 myMesh_Zo [-4.29 10.00 0] 0
+@myMesh_m14_5 osc myMesh_M 0 myMesh_Zo [-2.86 10.00 0] 0
+@myMesh_m14_6 osc myMesh_M 0 myMesh_Zo [-1.43 10.00 0] 0
+@myMesh_m14_7 osc myMesh_M 0 myMesh_Zo [0.00 10.00 0] 0
+@myMesh_m14_8 osc myMesh_M 0 myMesh_Zo [1.43 10.00 0] 0
+@myMesh_m14_9 osc myMesh_M 0 myMesh_Zo [2.86 10.00 0] 0
+@myMesh_m14_10 osc myMesh_M 0 myMesh_Zo [4.29 10.00 0] 0
+@myMesh_m14_11 osc myMesh_M 0 myMesh_Zo [5.71 10.00 0] 0
+@myMesh_m14_12 osc myMesh_M 0 myMesh_Zo [7.14 10.00 0] 0
+@myMesh_m14_13 osc myMesh_M 0 myMesh_Zo [8.57 10.00 0] 0
+@myMesh_m14_14 ground  [10.00 10.00 0]
+
+@myMesh_r0 springDamper @myMesh_m0_0 @myMesh_m0_1 myMesh_K myMesh_Z
+@myMesh_r1 springDamper @myMesh_m0_1 @myMesh_m0_2 myMesh_K myMesh_Z
+@myMesh_r2 springDamper @myMesh_m0_2 @myMesh_m0_3 myMesh_K myMesh_Z
+@myMesh_r3 springDamper @myMesh_m0_3 @myMesh_m0_4 myMesh_K myMesh_Z
+@myMesh_r4 springDamper @myMesh_m0_4 @myMesh_m0_5 myMesh_K myMesh_Z
+@myMesh_r5 springDamper @myMesh_m0_5 @myMesh_m0_6 myMesh_K myMesh_Z
+@myMesh_r6 springDamper @myMesh_m0_6 @myMesh_m0_7 myMesh_K myMesh_Z
+@myMesh_r7 springDamper @myMesh_m0_7 @myMesh_m0_8 myMesh_K myMesh_Z
+@myMesh_r8 springDamper @myMesh_m0_8 @myMesh_m0_9 myMesh_K myMesh_Z
+@myMesh_r9 springDamper @myMesh_m0_9 @myMesh_m0_10 myMesh_K myMesh_Z
+@myMesh_r10 springDamper @myMesh_m0_10 @myMesh_m0_11 myMesh_K myMesh_Z
+@myMesh_r11 springDamper @myMesh_m0_11 @myMesh_m0_12 myMesh_K myMesh_Z
+@myMesh_r12 springDamper @myMesh_m0_12 @myMesh_m0_13 myMesh_K myMesh_Z
+@myMesh_r13 springDamper @myMesh_m0_13 @myMesh_m0_14 myMesh_K myMesh_Z
+@myMesh_r14 springDamper @myMesh_m1_0 @myMesh_m1_1 myMesh_K myMesh_Z
+@myMesh_r15 springDamper @myMesh_m1_1 @myMesh_m1_2 myMesh_K myMesh_Z
+@myMesh_r16 springDamper @myMesh_m1_2 @myMesh_m1_3 myMesh_K myMesh_Z
+@myMesh_r17 springDamper @myMesh_m1_3 @myMesh_m1_4 myMesh_K myMesh_Z
+@myMesh_r18 springDamper @myMesh_m1_4 @myMesh_m1_5 myMesh_K myMesh_Z
+@myMesh_r19 springDamper @myMesh_m1_5 @myMesh_m1_6 myMesh_K myMesh_Z
+@myMesh_r20 springDamper @myMesh_m1_6 @myMesh_m1_7 myMesh_K myMesh_Z
+@myMesh_r21 springDamper @myMesh_m1_7 @myMesh_m1_8 myMesh_K myMesh_Z
+@myMesh_r22 springDamper @myMesh_m1_8 @myMesh_m1_9 myMesh_K myMesh_Z
+@myMesh_r23 springDamper @myMesh_m1_9 @myMesh_m1_10 myMesh_K myMesh_Z
+@myMesh_r24 springDamper @myMesh_m1_10 @myMesh_m1_11 myMesh_K myMesh_Z
+@myMesh_r25 springDamper @myMesh_m1_11 @myMesh_m1_12 myMesh_K myMesh_Z
+@myMesh_r26 springDamper @myMesh_m1_12 @myMesh_m1_13 myMesh_K myMesh_Z
+@myMesh_r27 springDamper @myMesh_m1_13 @myMesh_m1_14 myMesh_K myMesh_Z
+@myMesh_r28 springDamper @myMesh_m2_0 @myMesh_m2_1 myMesh_K myMesh_Z
+@myMesh_r29 springDamper @myMesh_m2_1 @myMesh_m2_2 myMesh_K myMesh_Z
+@myMesh_r30 springDamper @myMesh_m2_2 @myMesh_m2_3 myMesh_K myMesh_Z
+@myMesh_r31 springDamper @myMesh_m2_3 @myMesh_m2_4 myMesh_K myMesh_Z
+@myMesh_r32 springDamper @myMesh_m2_4 @myMesh_m2_5 myMesh_K myMesh_Z
+@myMesh_r33 springDamper @myMesh_m2_5 @myMesh_m2_6 myMesh_K myMesh_Z
+@myMesh_r34 springDamper @myMesh_m2_6 @myMesh_m2_7 myMesh_K myMesh_Z
+@myMesh_r35 springDamper @myMesh_m2_7 @myMesh_m2_8 myMesh_K myMesh_Z
+@myMesh_r36 springDamper @myMesh_m2_8 @myMesh_m2_9 myMesh_K myMesh_Z
+@myMesh_r37 springDamper @myMesh_m2_9 @myMesh_m2_10 myMesh_K myMesh_Z
+@myMesh_r38 springDamper @myMesh_m2_10 @myMesh_m2_11 myMesh_K myMesh_Z
+@myMesh_r39 springDamper @myMesh_m2_11 @myMesh_m2_12 myMesh_K myMesh_Z
+@myMesh_r40 springDamper @myMesh_m2_12 @myMesh_m2_13 myMesh_K myMesh_Z
+@myMesh_r41 springDamper @myMesh_m2_13 @myMesh_m2_14 myMesh_K myMesh_Z
+@myMesh_r42 springDamper @myMesh_m3_0 @myMesh_m3_1 myMesh_K myMesh_Z
+@myMesh_r43 springDamper @myMesh_m3_1 @myMesh_m3_2 myMesh_K myMesh_Z
+@myMesh_r44 springDamper @myMesh_m3_2 @myMesh_m3_3 myMesh_K myMesh_Z
+@myMesh_r45 springDamper @myMesh_m3_3 @myMesh_m3_4 myMesh_K myMesh_Z
+@myMesh_r46 springDamper @myMesh_m3_4 @myMesh_m3_5 myMesh_K myMesh_Z
+@myMesh_r47 springDamper @myMesh_m3_5 @myMesh_m3_6 myMesh_K myMesh_Z
+@myMesh_r48 springDamper @myMesh_m3_6 @myMesh_m3_7 myMesh_K myMesh_Z
+@myMesh_r49 springDamper @myMesh_m3_7 @myMesh_m3_8 myMesh_K myMesh_Z
+@myMesh_r50 springDamper @myMesh_m3_8 @myMesh_m3_9 myMesh_K myMesh_Z
+@myMesh_r51 springDamper @myMesh_m3_9 @myMesh_m3_10 myMesh_K myMesh_Z
+@myMesh_r52 springDamper @myMesh_m3_10 @myMesh_m3_11 myMesh_K myMesh_Z
+@myMesh_r53 springDamper @myMesh_m3_11 @myMesh_m3_12 myMesh_K myMesh_Z
+@myMesh_r54 springDamper @myMesh_m3_12 @myMesh_m3_13 myMesh_K myMesh_Z
+@myMesh_r55 springDamper @myMesh_m3_13 @myMesh_m3_14 myMesh_K myMesh_Z
+@myMesh_r56 springDamper @myMesh_m4_0 @myMesh_m4_1 myMesh_K myMesh_Z
+@myMesh_r57 springDamper @myMesh_m4_1 @myMesh_m4_2 myMesh_K myMesh_Z
+@myMesh_r58 springDamper @myMesh_m4_2 @myMesh_m4_3 myMesh_K myMesh_Z
+@myMesh_r59 springDamper @myMesh_m4_3 @myMesh_m4_4 myMesh_K myMesh_Z
+@myMesh_r60 springDamper @myMesh_m4_4 @myMesh_m4_5 myMesh_K myMesh_Z
+@myMesh_r61 springDamper @myMesh_m4_5 @myMesh_m4_6 myMesh_K myMesh_Z
+@myMesh_r62 springDamper @myMesh_m4_6 @myMesh_m4_7 myMesh_K myMesh_Z
+@myMesh_r63 springDamper @myMesh_m4_7 @myMesh_m4_8 myMesh_K myMesh_Z
+@myMesh_r64 springDamper @myMesh_m4_8 @myMesh_m4_9 myMesh_K myMesh_Z
+@myMesh_r65 springDamper @myMesh_m4_9 @myMesh_m4_10 myMesh_K myMesh_Z
+@myMesh_r66 springDamper @myMesh_m4_10 @myMesh_m4_11 myMesh_K myMesh_Z
+@myMesh_r67 springDamper @myMesh_m4_11 @myMesh_m4_12 myMesh_K myMesh_Z
+@myMesh_r68 springDamper @myMesh_m4_12 @myMesh_m4_13 myMesh_K myMesh_Z
+@myMesh_r69 springDamper @myMesh_m4_13 @myMesh_m4_14 myMesh_K myMesh_Z
+@myMesh_r70 springDamper @myMesh_m5_0 @myMesh_m5_1 myMesh_K myMesh_Z
+@myMesh_r71 springDamper @myMesh_m5_1 @myMesh_m5_2 myMesh_K myMesh_Z
+@myMesh_r72 springDamper @myMesh_m5_2 @myMesh_m5_3 myMesh_K myMesh_Z
+@myMesh_r73 springDamper @myMesh_m5_3 @myMesh_m5_4 myMesh_K myMesh_Z
+@myMesh_r74 springDamper @myMesh_m5_4 @myMesh_m5_5 myMesh_K myMesh_Z
+@myMesh_r75 springDamper @myMesh_m5_5 @myMesh_m5_6 myMesh_K myMesh_Z
+@myMesh_r76 springDamper @myMesh_m5_6 @myMesh_m5_7 myMesh_K myMesh_Z
+@myMesh_r77 springDamper @myMesh_m5_7 @myMesh_m5_8 myMesh_K myMesh_Z
+@myMesh_r78 springDamper @myMesh_m5_8 @myMesh_m5_9 myMesh_K myMesh_Z
+@myMesh_r79 springDamper @myMesh_m5_9 @myMesh_m5_10 myMesh_K myMesh_Z
+@myMesh_r80 springDamper @myMesh_m5_10 @myMesh_m5_11 myMesh_K myMesh_Z
+@myMesh_r81 springDamper @myMesh_m5_11 @myMesh_m5_12 myMesh_K myMesh_Z
+@myMesh_r82 springDamper @myMesh_m5_12 @myMesh_m5_13 myMesh_K myMesh_Z
+@myMesh_r83 springDamper @myMesh_m5_13 @myMesh_m5_14 myMesh_K myMesh_Z
+@myMesh_r84 springDamper @myMesh_m6_0 @myMesh_m6_1 myMesh_K myMesh_Z
+@myMesh_r85 springDamper @myMesh_m6_1 @myMesh_m6_2 myMesh_K myMesh_Z
+@myMesh_r86 springDamper @myMesh_m6_2 @myMesh_m6_3 myMesh_K myMesh_Z
+@myMesh_r87 springDamper @myMesh_m6_3 @myMesh_m6_4 myMesh_K myMesh_Z
+@myMesh_r88 springDamper @myMesh_m6_4 @myMesh_m6_5 myMesh_K myMesh_Z
+@myMesh_r89 springDamper @myMesh_m6_5 @myMesh_m6_6 myMesh_K myMesh_Z
+@myMesh_r90 springDamper @myMesh_m6_6 @myMesh_m6_7 myMesh_K myMesh_Z
+@myMesh_r91 springDamper @myMesh_m6_7 @myMesh_m6_8 myMesh_K myMesh_Z
+@myMesh_r92 springDamper @myMesh_m6_8 @myMesh_m6_9 myMesh_K myMesh_Z
+@myMesh_r93 springDamper @myMesh_m6_9 @myMesh_m6_10 myMesh_K myMesh_Z
+@myMesh_r94 springDamper @myMesh_m6_10 @myMesh_m6_11 myMesh_K myMesh_Z
+@myMesh_r95 springDamper @myMesh_m6_11 @myMesh_m6_12 myMesh_K myMesh_Z
+@myMesh_r96 springDamper @myMesh_m6_12 @myMesh_m6_13 myMesh_K myMesh_Z
+@myMesh_r97 springDamper @myMesh_m6_13 @myMesh_m6_14 myMesh_K myMesh_Z
+@myMesh_r98 springDamper @myMesh_m7_0 @myMesh_m7_1 myMesh_K myMesh_Z
+@myMesh_r99 springDamper @myMesh_m7_1 @myMesh_m7_2 myMesh_K myMesh_Z
+@myMesh_r100 springDamper @myMesh_m7_2 @myMesh_m7_3 myMesh_K myMesh_Z
+@myMesh_r101 springDamper @myMesh_m7_3 @myMesh_m7_4 myMesh_K myMesh_Z
+@myMesh_r102 springDamper @myMesh_m7_4 @myMesh_m7_5 myMesh_K myMesh_Z
+@myMesh_r103 springDamper @myMesh_m7_5 @myMesh_m7_6 myMesh_K myMesh_Z
+@myMesh_r104 springDamper @myMesh_m7_6 @myMesh_m7_7 myMesh_K myMesh_Z
+@myMesh_r105 springDamper @myMesh_m7_7 @myMesh_m7_8 myMesh_K myMesh_Z
+@myMesh_r106 springDamper @myMesh_m7_8 @myMesh_m7_9 myMesh_K myMesh_Z
+@myMesh_r107 springDamper @myMesh_m7_9 @myMesh_m7_10 myMesh_K myMesh_Z
+@myMesh_r108 springDamper @myMesh_m7_10 @myMesh_m7_11 myMesh_K myMesh_Z
+@myMesh_r109 springDamper @myMesh_m7_11 @myMesh_m7_12 myMesh_K myMesh_Z
+@myMesh_r110 springDamper @myMesh_m7_12 @myMesh_m7_13 myMesh_K myMesh_Z
+@myMesh_r111 springDamper @myMesh_m7_13 @myMesh_m7_14 myMesh_K myMesh_Z
+@myMesh_r112 springDamper @myMesh_m8_0 @myMesh_m8_1 myMesh_K myMesh_Z
+@myMesh_r113 springDamper @myMesh_m8_1 @myMesh_m8_2 myMesh_K myMesh_Z
+@myMesh_r114 springDamper @myMesh_m8_2 @myMesh_m8_3 myMesh_K myMesh_Z
+@myMesh_r115 springDamper @myMesh_m8_3 @myMesh_m8_4 myMesh_K myMesh_Z
+@myMesh_r116 springDamper @myMesh_m8_4 @myMesh_m8_5 myMesh_K myMesh_Z
+@myMesh_r117 springDamper @myMesh_m8_5 @myMesh_m8_6 myMesh_K myMesh_Z
+@myMesh_r118 springDamper @myMesh_m8_6 @myMesh_m8_7 myMesh_K myMesh_Z
+@myMesh_r119 springDamper @myMesh_m8_7 @myMesh_m8_8 myMesh_K myMesh_Z
+@myMesh_r120 springDamper @myMesh_m8_8 @myMesh_m8_9 myMesh_K myMesh_Z
+@myMesh_r121 springDamper @myMesh_m8_9 @myMesh_m8_10 myMesh_K myMesh_Z
+@myMesh_r122 springDamper @myMesh_m8_10 @myMesh_m8_11 myMesh_K myMesh_Z
+@myMesh_r123 springDamper @myMesh_m8_11 @myMesh_m8_12 myMesh_K myMesh_Z
+@myMesh_r124 springDamper @myMesh_m8_12 @myMesh_m8_13 myMesh_K myMesh_Z
+@myMesh_r125 springDamper @myMesh_m8_13 @myMesh_m8_14 myMesh_K myMesh_Z
+@myMesh_r126 springDamper @myMesh_m9_0 @myMesh_m9_1 myMesh_K myMesh_Z
+@myMesh_r127 springDamper @myMesh_m9_1 @myMesh_m9_2 myMesh_K myMesh_Z
+@myMesh_r128 springDamper @myMesh_m9_2 @myMesh_m9_3 myMesh_K myMesh_Z
+@myMesh_r129 springDamper @myMesh_m9_3 @myMesh_m9_4 myMesh_K myMesh_Z
+@myMesh_r130 springDamper @myMesh_m9_4 @myMesh_m9_5 myMesh_K myMesh_Z
+@myMesh_r131 springDamper @myMesh_m9_5 @myMesh_m9_6 myMesh_K myMesh_Z
+@myMesh_r132 springDamper @myMesh_m9_6 @myMesh_m9_7 myMesh_K myMesh_Z
+@myMesh_r133 springDamper @myMesh_m9_7 @myMesh_m9_8 myMesh_K myMesh_Z
+@myMesh_r134 springDamper @myMesh_m9_8 @myMesh_m9_9 myMesh_K myMesh_Z
+@myMesh_r135 springDamper @myMesh_m9_9 @myMesh_m9_10 myMesh_K myMesh_Z
+@myMesh_r136 springDamper @myMesh_m9_10 @myMesh_m9_11 myMesh_K myMesh_Z
+@myMesh_r137 springDamper @myMesh_m9_11 @myMesh_m9_12 myMesh_K myMesh_Z
+@myMesh_r138 springDamper @myMesh_m9_12 @myMesh_m9_13 myMesh_K myMesh_Z
+@myMesh_r139 springDamper @myMesh_m9_13 @myMesh_m9_14 myMesh_K myMesh_Z
+@myMesh_r140 springDamper @myMesh_m10_0 @myMesh_m10_1 myMesh_K myMesh_Z
+@myMesh_r141 springDamper @myMesh_m10_1 @myMesh_m10_2 myMesh_K myMesh_Z
+@myMesh_r142 springDamper @myMesh_m10_2 @myMesh_m10_3 myMesh_K myMesh_Z
+@myMesh_r143 springDamper @myMesh_m10_3 @myMesh_m10_4 myMesh_K myMesh_Z
+@myMesh_r144 springDamper @myMesh_m10_4 @myMesh_m10_5 myMesh_K myMesh_Z
+@myMesh_r145 springDamper @myMesh_m10_5 @myMesh_m10_6 myMesh_K myMesh_Z
+@myMesh_r146 springDamper @myMesh_m10_6 @myMesh_m10_7 myMesh_K myMesh_Z
+@myMesh_r147 springDamper @myMesh_m10_7 @myMesh_m10_8 myMesh_K myMesh_Z
+@myMesh_r148 springDamper @myMesh_m10_8 @myMesh_m10_9 myMesh_K myMesh_Z
+@myMesh_r149 springDamper @myMesh_m10_9 @myMesh_m10_10 myMesh_K myMesh_Z
+@myMesh_r150 springDamper @myMesh_m10_10 @myMesh_m10_11 myMesh_K myMesh_Z
+@myMesh_r151 springDamper @myMesh_m10_11 @myMesh_m10_12 myMesh_K myMesh_Z
+@myMesh_r152 springDamper @myMesh_m10_12 @myMesh_m10_13 myMesh_K myMesh_Z
+@myMesh_r153 springDamper @myMesh_m10_13 @myMesh_m10_14 myMesh_K myMesh_Z
+@myMesh_r154 springDamper @myMesh_m11_0 @myMesh_m11_1 myMesh_K myMesh_Z
+@myMesh_r155 springDamper @myMesh_m11_1 @myMesh_m11_2 myMesh_K myMesh_Z
+@myMesh_r156 springDamper @myMesh_m11_2 @myMesh_m11_3 myMesh_K myMesh_Z
+@myMesh_r157 springDamper @myMesh_m11_3 @myMesh_m11_4 myMesh_K myMesh_Z
+@myMesh_r158 springDamper @myMesh_m11_4 @myMesh_m11_5 myMesh_K myMesh_Z
+@myMesh_r159 springDamper @myMesh_m11_5 @myMesh_m11_6 myMesh_K myMesh_Z
+@myMesh_r160 springDamper @myMesh_m11_6 @myMesh_m11_7 myMesh_K myMesh_Z
+@myMesh_r161 springDamper @myMesh_m11_7 @myMesh_m11_8 myMesh_K myMesh_Z
+@myMesh_r162 springDamper @myMesh_m11_8 @myMesh_m11_9 myMesh_K myMesh_Z
+@myMesh_r163 springDamper @myMesh_m11_9 @myMesh_m11_10 myMesh_K myMesh_Z
+@myMesh_r164 springDamper @myMesh_m11_10 @myMesh_m11_11 myMesh_K myMesh_Z
+@myMesh_r165 springDamper @myMesh_m11_11 @myMesh_m11_12 myMesh_K myMesh_Z
+@myMesh_r166 springDamper @myMesh_m11_12 @myMesh_m11_13 myMesh_K myMesh_Z
+@myMesh_r167 springDamper @myMesh_m11_13 @myMesh_m11_14 myMesh_K myMesh_Z
+@myMesh_r168 springDamper @myMesh_m12_0 @myMesh_m12_1 myMesh_K myMesh_Z
+@myMesh_r169 springDamper @myMesh_m12_1 @myMesh_m12_2 myMesh_K myMesh_Z
+@myMesh_r170 springDamper @myMesh_m12_2 @myMesh_m12_3 myMesh_K myMesh_Z
+@myMesh_r171 springDamper @myMesh_m12_3 @myMesh_m12_4 myMesh_K myMesh_Z
+@myMesh_r172 springDamper @myMesh_m12_4 @myMesh_m12_5 myMesh_K myMesh_Z
+@myMesh_r173 springDamper @myMesh_m12_5 @myMesh_m12_6 myMesh_K myMesh_Z
+@myMesh_r174 springDamper @myMesh_m12_6 @myMesh_m12_7 myMesh_K myMesh_Z
+@myMesh_r175 springDamper @myMesh_m12_7 @myMesh_m12_8 myMesh_K myMesh_Z
+@myMesh_r176 springDamper @myMesh_m12_8 @myMesh_m12_9 myMesh_K myMesh_Z
+@myMesh_r177 springDamper @myMesh_m12_9 @myMesh_m12_10 myMesh_K myMesh_Z
+@myMesh_r178 springDamper @myMesh_m12_10 @myMesh_m12_11 myMesh_K myMesh_Z
+@myMesh_r179 springDamper @myMesh_m12_11 @myMesh_m12_12 myMesh_K myMesh_Z
+@myMesh_r180 springDamper @myMesh_m12_12 @myMesh_m12_13 myMesh_K myMesh_Z
+@myMesh_r181 springDamper @myMesh_m12_13 @myMesh_m12_14 myMesh_K myMesh_Z
+@myMesh_r182 springDamper @myMesh_m13_0 @myMesh_m13_1 myMesh_K myMesh_Z
+@myMesh_r183 springDamper @myMesh_m13_1 @myMesh_m13_2 myMesh_K myMesh_Z
+@myMesh_r184 springDamper @myMesh_m13_2 @myMesh_m13_3 myMesh_K myMesh_Z
+@myMesh_r185 springDamper @myMesh_m13_3 @myMesh_m13_4 myMesh_K myMesh_Z
+@myMesh_r186 springDamper @myMesh_m13_4 @myMesh_m13_5 myMesh_K myMesh_Z
+@myMesh_r187 springDamper @myMesh_m13_5 @myMesh_m13_6 myMesh_K myMesh_Z
+@myMesh_r188 springDamper @myMesh_m13_6 @myMesh_m13_7 myMesh_K myMesh_Z
+@myMesh_r189 springDamper @myMesh_m13_7 @myMesh_m13_8 myMesh_K myMesh_Z
+@myMesh_r190 springDamper @myMesh_m13_8 @myMesh_m13_9 myMesh_K myMesh_Z
+@myMesh_r191 springDamper @myMesh_m13_9 @myMesh_m13_10 myMesh_K myMesh_Z
+@myMesh_r192 springDamper @myMesh_m13_10 @myMesh_m13_11 myMesh_K myMesh_Z
+@myMesh_r193 springDamper @myMesh_m13_11 @myMesh_m13_12 myMesh_K myMesh_Z
+@myMesh_r194 springDamper @myMesh_m13_12 @myMesh_m13_13 myMesh_K myMesh_Z
+@myMesh_r195 springDamper @myMesh_m13_13 @myMesh_m13_14 myMesh_K myMesh_Z
+@myMesh_r196 springDamper @myMesh_m14_0 @myMesh_m14_1 myMesh_K myMesh_Z
+@myMesh_r197 springDamper @myMesh_m14_1 @myMesh_m14_2 myMesh_K myMesh_Z
+@myMesh_r198 springDamper @myMesh_m14_2 @myMesh_m14_3 myMesh_K myMesh_Z
+@myMesh_r199 springDamper @myMesh_m14_3 @myMesh_m14_4 myMesh_K myMesh_Z
+@myMesh_r200 springDamper @myMesh_m14_4 @myMesh_m14_5 myMesh_K myMesh_Z
+@myMesh_r201 springDamper @myMesh_m14_5 @myMesh_m14_6 myMesh_K myMesh_Z
+@myMesh_r202 springDamper @myMesh_m14_6 @myMesh_m14_7 myMesh_K myMesh_Z
+@myMesh_r203 springDamper @myMesh_m14_7 @myMesh_m14_8 myMesh_K myMesh_Z
+@myMesh_r204 springDamper @myMesh_m14_8 @myMesh_m14_9 myMesh_K myMesh_Z
+@myMesh_r205 springDamper @myMesh_m14_9 @myMesh_m14_10 myMesh_K myMesh_Z
+@myMesh_r206 springDamper @myMesh_m14_10 @myMesh_m14_11 myMesh_K myMesh_Z
+@myMesh_r207 springDamper @myMesh_m14_11 @myMesh_m14_12 myMesh_K myMesh_Z
+@myMesh_r208 springDamper @myMesh_m14_12 @myMesh_m14_13 myMesh_K myMesh_Z
+@myMesh_r209 springDamper @myMesh_m14_13 @myMesh_m14_14 myMesh_K myMesh_Z
+
+@myMesh_r210 springDamper @myMesh_m0_0 @myMesh_m1_0 myMesh_K myMesh_Z
+@myMesh_r211 springDamper @myMesh_m0_1 @myMesh_m1_1 myMesh_K myMesh_Z
+@myMesh_r212 springDamper @myMesh_m0_2 @myMesh_m1_2 myMesh_K myMesh_Z
+@myMesh_r213 springDamper @myMesh_m0_3 @myMesh_m1_3 myMesh_K myMesh_Z
+@myMesh_r214 springDamper @myMesh_m0_4 @myMesh_m1_4 myMesh_K myMesh_Z
+@myMesh_r215 springDamper @myMesh_m0_5 @myMesh_m1_5 myMesh_K myMesh_Z
+@myMesh_r216 springDamper @myMesh_m0_6 @myMesh_m1_6 myMesh_K myMesh_Z
+@myMesh_r217 springDamper @myMesh_m0_7 @myMesh_m1_7 myMesh_K myMesh_Z
+@myMesh_r218 springDamper @myMesh_m0_8 @myMesh_m1_8 myMesh_K myMesh_Z
+@myMesh_r219 springDamper @myMesh_m0_9 @myMesh_m1_9 myMesh_K myMesh_Z
+@myMesh_r220 springDamper @myMesh_m0_10 @myMesh_m1_10 myMesh_K myMesh_Z
+@myMesh_r221 springDamper @myMesh_m0_11 @myMesh_m1_11 myMesh_K myMesh_Z
+@myMesh_r222 springDamper @myMesh_m0_12 @myMesh_m1_12 myMesh_K myMesh_Z
+@myMesh_r223 springDamper @myMesh_m0_13 @myMesh_m1_13 myMesh_K myMesh_Z
+@myMesh_r224 springDamper @myMesh_m0_14 @myMesh_m1_14 myMesh_K myMesh_Z
+@myMesh_r225 springDamper @myMesh_m1_0 @myMesh_m2_0 myMesh_K myMesh_Z
+@myMesh_r226 springDamper @myMesh_m1_1 @myMesh_m2_1 myMesh_K myMesh_Z
+@myMesh_r227 springDamper @myMesh_m1_2 @myMesh_m2_2 myMesh_K myMesh_Z
+@myMesh_r228 springDamper @myMesh_m1_3 @myMesh_m2_3 myMesh_K myMesh_Z
+@myMesh_r229 springDamper @myMesh_m1_4 @myMesh_m2_4 myMesh_K myMesh_Z
+@myMesh_r230 springDamper @myMesh_m1_5 @myMesh_m2_5 myMesh_K myMesh_Z
+@myMesh_r231 springDamper @myMesh_m1_6 @myMesh_m2_6 myMesh_K myMesh_Z
+@myMesh_r232 springDamper @myMesh_m1_7 @myMesh_m2_7 myMesh_K myMesh_Z
+@myMesh_r233 springDamper @myMesh_m1_8 @myMesh_m2_8 myMesh_K myMesh_Z
+@myMesh_r234 springDamper @myMesh_m1_9 @myMesh_m2_9 myMesh_K myMesh_Z
+@myMesh_r235 springDamper @myMesh_m1_10 @myMesh_m2_10 myMesh_K myMesh_Z
+@myMesh_r236 springDamper @myMesh_m1_11 @myMesh_m2_11 myMesh_K myMesh_Z
+@myMesh_r237 springDamper @myMesh_m1_12 @myMesh_m2_12 myMesh_K myMesh_Z
+@myMesh_r238 springDamper @myMesh_m1_13 @myMesh_m2_13 myMesh_K myMesh_Z
+@myMesh_r239 springDamper @myMesh_m1_14 @myMesh_m2_14 myMesh_K myMesh_Z
+@myMesh_r240 springDamper @myMesh_m2_0 @myMesh_m3_0 myMesh_K myMesh_Z
+@myMesh_r241 springDamper @myMesh_m2_1 @myMesh_m3_1 myMesh_K myMesh_Z
+@myMesh_r242 springDamper @myMesh_m2_2 @myMesh_m3_2 myMesh_K myMesh_Z
+@myMesh_r243 springDamper @myMesh_m2_3 @myMesh_m3_3 myMesh_K myMesh_Z
+@myMesh_r244 springDamper @myMesh_m2_4 @myMesh_m3_4 myMesh_K myMesh_Z
+@myMesh_r245 springDamper @myMesh_m2_5 @myMesh_m3_5 myMesh_K myMesh_Z
+@myMesh_r246 springDamper @myMesh_m2_6 @myMesh_m3_6 myMesh_K myMesh_Z
+@myMesh_r247 springDamper @myMesh_m2_7 @myMesh_m3_7 myMesh_K myMesh_Z
+@myMesh_r248 springDamper @myMesh_m2_8 @myMesh_m3_8 myMesh_K myMesh_Z
+@myMesh_r249 springDamper @myMesh_m2_9 @myMesh_m3_9 myMesh_K myMesh_Z
+@myMesh_r250 springDamper @myMesh_m2_10 @myMesh_m3_10 myMesh_K myMesh_Z
+@myMesh_r251 springDamper @myMesh_m2_11 @myMesh_m3_11 myMesh_K myMesh_Z
+@myMesh_r252 springDamper @myMesh_m2_12 @myMesh_m3_12 myMesh_K myMesh_Z
+@myMesh_r253 springDamper @myMesh_m2_13 @myMesh_m3_13 myMesh_K myMesh_Z
+@myMesh_r254 springDamper @myMesh_m2_14 @myMesh_m3_14 myMesh_K myMesh_Z
+@myMesh_r255 springDamper @myMesh_m3_0 @myMesh_m4_0 myMesh_K myMesh_Z
+@myMesh_r256 springDamper @myMesh_m3_1 @myMesh_m4_1 myMesh_K myMesh_Z
+@myMesh_r257 springDamper @myMesh_m3_2 @myMesh_m4_2 myMesh_K myMesh_Z
+@myMesh_r258 springDamper @myMesh_m3_3 @myMesh_m4_3 myMesh_K myMesh_Z
+@myMesh_r259 springDamper @myMesh_m3_4 @myMesh_m4_4 myMesh_K myMesh_Z
+@myMesh_r260 springDamper @myMesh_m3_5 @myMesh_m4_5 myMesh_K myMesh_Z
+@myMesh_r261 springDamper @myMesh_m3_6 @myMesh_m4_6 myMesh_K myMesh_Z
+@myMesh_r262 springDamper @myMesh_m3_7 @myMesh_m4_7 myMesh_K myMesh_Z
+@myMesh_r263 springDamper @myMesh_m3_8 @myMesh_m4_8 myMesh_K myMesh_Z
+@myMesh_r264 springDamper @myMesh_m3_9 @myMesh_m4_9 myMesh_K myMesh_Z
+@myMesh_r265 springDamper @myMesh_m3_10 @myMesh_m4_10 myMesh_K myMesh_Z
+@myMesh_r266 springDamper @myMesh_m3_11 @myMesh_m4_11 myMesh_K myMesh_Z
+@myMesh_r267 springDamper @myMesh_m3_12 @myMesh_m4_12 myMesh_K myMesh_Z
+@myMesh_r268 springDamper @myMesh_m3_13 @myMesh_m4_13 myMesh_K myMesh_Z
+@myMesh_r269 springDamper @myMesh_m3_14 @myMesh_m4_14 myMesh_K myMesh_Z
+@myMesh_r270 springDamper @myMesh_m4_0 @myMesh_m5_0 myMesh_K myMesh_Z
+@myMesh_r271 springDamper @myMesh_m4_1 @myMesh_m5_1 myMesh_K myMesh_Z
+@myMesh_r272 springDamper @myMesh_m4_2 @myMesh_m5_2 myMesh_K myMesh_Z
+@myMesh_r273 springDamper @myMesh_m4_3 @myMesh_m5_3 myMesh_K myMesh_Z
+@myMesh_r274 springDamper @myMesh_m4_4 @myMesh_m5_4 myMesh_K myMesh_Z
+@myMesh_r275 springDamper @myMesh_m4_5 @myMesh_m5_5 myMesh_K myMesh_Z
+@myMesh_r276 springDamper @myMesh_m4_6 @myMesh_m5_6 myMesh_K myMesh_Z
+@myMesh_r277 springDamper @myMesh_m4_7 @myMesh_m5_7 myMesh_K myMesh_Z
+@myMesh_r278 springDamper @myMesh_m4_8 @myMesh_m5_8 myMesh_K myMesh_Z
+@myMesh_r279 springDamper @myMesh_m4_9 @myMesh_m5_9 myMesh_K myMesh_Z
+@myMesh_r280 springDamper @myMesh_m4_10 @myMesh_m5_10 myMesh_K myMesh_Z
+@myMesh_r281 springDamper @myMesh_m4_11 @myMesh_m5_11 myMesh_K myMesh_Z
+@myMesh_r282 springDamper @myMesh_m4_12 @myMesh_m5_12 myMesh_K myMesh_Z
+@myMesh_r283 springDamper @myMesh_m4_13 @myMesh_m5_13 myMesh_K myMesh_Z
+@myMesh_r284 springDamper @myMesh_m4_14 @myMesh_m5_14 myMesh_K myMesh_Z
+@myMesh_r285 springDamper @myMesh_m5_0 @myMesh_m6_0 myMesh_K myMesh_Z
+@myMesh_r286 springDamper @myMesh_m5_1 @myMesh_m6_1 myMesh_K myMesh_Z
+@myMesh_r287 springDamper @myMesh_m5_2 @myMesh_m6_2 myMesh_K myMesh_Z
+@myMesh_r288 springDamper @myMesh_m5_3 @myMesh_m6_3 myMesh_K myMesh_Z
+@myMesh_r289 springDamper @myMesh_m5_4 @myMesh_m6_4 myMesh_K myMesh_Z
+@myMesh_r290 springDamper @myMesh_m5_5 @myMesh_m6_5 myMesh_K myMesh_Z
+@myMesh_r291 springDamper @myMesh_m5_6 @myMesh_m6_6 myMesh_K myMesh_Z
+@myMesh_r292 springDamper @myMesh_m5_7 @myMesh_m6_7 myMesh_K myMesh_Z
+@myMesh_r293 springDamper @myMesh_m5_8 @myMesh_m6_8 myMesh_K myMesh_Z
+@myMesh_r294 springDamper @myMesh_m5_9 @myMesh_m6_9 myMesh_K myMesh_Z
+@myMesh_r295 springDamper @myMesh_m5_10 @myMesh_m6_10 myMesh_K myMesh_Z
+@myMesh_r296 springDamper @myMesh_m5_11 @myMesh_m6_11 myMesh_K myMesh_Z
+@myMesh_r297 springDamper @myMesh_m5_12 @myMesh_m6_12 myMesh_K myMesh_Z
+@myMesh_r298 springDamper @myMesh_m5_13 @myMesh_m6_13 myMesh_K myMesh_Z
+@myMesh_r299 springDamper @myMesh_m5_14 @myMesh_m6_14 myMesh_K myMesh_Z
+@myMesh_r300 springDamper @myMesh_m6_0 @myMesh_m7_0 myMesh_K myMesh_Z
+@myMesh_r301 springDamper @myMesh_m6_1 @myMesh_m7_1 myMesh_K myMesh_Z
+@myMesh_r302 springDamper @myMesh_m6_2 @myMesh_m7_2 myMesh_K myMesh_Z
+@myMesh_r303 springDamper @myMesh_m6_3 @myMesh_m7_3 myMesh_K myMesh_Z
+@myMesh_r304 springDamper @myMesh_m6_4 @myMesh_m7_4 myMesh_K myMesh_Z
+@myMesh_r305 springDamper @myMesh_m6_5 @myMesh_m7_5 myMesh_K myMesh_Z
+@myMesh_r306 springDamper @myMesh_m6_6 @myMesh_m7_6 myMesh_K myMesh_Z
+@myMesh_r307 springDamper @myMesh_m6_7 @myMesh_m7_7 myMesh_K myMesh_Z
+@myMesh_r308 springDamper @myMesh_m6_8 @myMesh_m7_8 myMesh_K myMesh_Z
+@myMesh_r309 springDamper @myMesh_m6_9 @myMesh_m7_9 myMesh_K myMesh_Z
+@myMesh_r310 springDamper @myMesh_m6_10 @myMesh_m7_10 myMesh_K myMesh_Z
+@myMesh_r311 springDamper @myMesh_m6_11 @myMesh_m7_11 myMesh_K myMesh_Z
+@myMesh_r312 springDamper @myMesh_m6_12 @myMesh_m7_12 myMesh_K myMesh_Z
+@myMesh_r313 springDamper @myMesh_m6_13 @myMesh_m7_13 myMesh_K myMesh_Z
+@myMesh_r314 springDamper @myMesh_m6_14 @myMesh_m7_14 myMesh_K myMesh_Z
+@myMesh_r315 springDamper @myMesh_m7_0 @myMesh_m8_0 myMesh_K myMesh_Z
+@myMesh_r316 springDamper @myMesh_m7_1 @myMesh_m8_1 myMesh_K myMesh_Z
+@myMesh_r317 springDamper @myMesh_m7_2 @myMesh_m8_2 myMesh_K myMesh_Z
+@myMesh_r318 springDamper @myMesh_m7_3 @myMesh_m8_3 myMesh_K myMesh_Z
+@myMesh_r319 springDamper @myMesh_m7_4 @myMesh_m8_4 myMesh_K myMesh_Z
+@myMesh_r320 springDamper @myMesh_m7_5 @myMesh_m8_5 myMesh_K myMesh_Z
+@myMesh_r321 springDamper @myMesh_m7_6 @myMesh_m8_6 myMesh_K myMesh_Z
+@myMesh_r322 springDamper @myMesh_m7_7 @myMesh_m8_7 myMesh_K myMesh_Z
+@myMesh_r323 springDamper @myMesh_m7_8 @myMesh_m8_8 myMesh_K myMesh_Z
+@myMesh_r324 springDamper @myMesh_m7_9 @myMesh_m8_9 myMesh_K myMesh_Z
+@myMesh_r325 springDamper @myMesh_m7_10 @myMesh_m8_10 myMesh_K myMesh_Z
+@myMesh_r326 springDamper @myMesh_m7_11 @myMesh_m8_11 myMesh_K myMesh_Z
+@myMesh_r327 springDamper @myMesh_m7_12 @myMesh_m8_12 myMesh_K myMesh_Z
+@myMesh_r328 springDamper @myMesh_m7_13 @myMesh_m8_13 myMesh_K myMesh_Z
+@myMesh_r329 springDamper @myMesh_m7_14 @myMesh_m8_14 myMesh_K myMesh_Z
+@myMesh_r330 springDamper @myMesh_m8_0 @myMesh_m9_0 myMesh_K myMesh_Z
+@myMesh_r331 springDamper @myMesh_m8_1 @myMesh_m9_1 myMesh_K myMesh_Z
+@myMesh_r332 springDamper @myMesh_m8_2 @myMesh_m9_2 myMesh_K myMesh_Z
+@myMesh_r333 springDamper @myMesh_m8_3 @myMesh_m9_3 myMesh_K myMesh_Z
+@myMesh_r334 springDamper @myMesh_m8_4 @myMesh_m9_4 myMesh_K myMesh_Z
+@myMesh_r335 springDamper @myMesh_m8_5 @myMesh_m9_5 myMesh_K myMesh_Z
+@myMesh_r336 springDamper @myMesh_m8_6 @myMesh_m9_6 myMesh_K myMesh_Z
+@myMesh_r337 springDamper @myMesh_m8_7 @myMesh_m9_7 myMesh_K myMesh_Z
+@myMesh_r338 springDamper @myMesh_m8_8 @myMesh_m9_8 myMesh_K myMesh_Z
+@myMesh_r339 springDamper @myMesh_m8_9 @myMesh_m9_9 myMesh_K myMesh_Z
+@myMesh_r340 springDamper @myMesh_m8_10 @myMesh_m9_10 myMesh_K myMesh_Z
+@myMesh_r341 springDamper @myMesh_m8_11 @myMesh_m9_11 myMesh_K myMesh_Z
+@myMesh_r342 springDamper @myMesh_m8_12 @myMesh_m9_12 myMesh_K myMesh_Z
+@myMesh_r343 springDamper @myMesh_m8_13 @myMesh_m9_13 myMesh_K myMesh_Z
+@myMesh_r344 springDamper @myMesh_m8_14 @myMesh_m9_14 myMesh_K myMesh_Z
+@myMesh_r345 springDamper @myMesh_m9_0 @myMesh_m10_0 myMesh_K myMesh_Z
+@myMesh_r346 springDamper @myMesh_m9_1 @myMesh_m10_1 myMesh_K myMesh_Z
+@myMesh_r347 springDamper @myMesh_m9_2 @myMesh_m10_2 myMesh_K myMesh_Z
+@myMesh_r348 springDamper @myMesh_m9_3 @myMesh_m10_3 myMesh_K myMesh_Z
+@myMesh_r349 springDamper @myMesh_m9_4 @myMesh_m10_4 myMesh_K myMesh_Z
+@myMesh_r350 springDamper @myMesh_m9_5 @myMesh_m10_5 myMesh_K myMesh_Z
+@myMesh_r351 springDamper @myMesh_m9_6 @myMesh_m10_6 myMesh_K myMesh_Z
+@myMesh_r352 springDamper @myMesh_m9_7 @myMesh_m10_7 myMesh_K myMesh_Z
+@myMesh_r353 springDamper @myMesh_m9_8 @myMesh_m10_8 myMesh_K myMesh_Z
+@myMesh_r354 springDamper @myMesh_m9_9 @myMesh_m10_9 myMesh_K myMesh_Z
+@myMesh_r355 springDamper @myMesh_m9_10 @myMesh_m10_10 myMesh_K myMesh_Z
+@myMesh_r356 springDamper @myMesh_m9_11 @myMesh_m10_11 myMesh_K myMesh_Z
+@myMesh_r357 springDamper @myMesh_m9_12 @myMesh_m10_12 myMesh_K myMesh_Z
+@myMesh_r358 springDamper @myMesh_m9_13 @myMesh_m10_13 myMesh_K myMesh_Z
+@myMesh_r359 springDamper @myMesh_m9_14 @myMesh_m10_14 myMesh_K myMesh_Z
+@myMesh_r360 springDamper @myMesh_m10_0 @myMesh_m11_0 myMesh_K myMesh_Z
+@myMesh_r361 springDamper @myMesh_m10_1 @myMesh_m11_1 myMesh_K myMesh_Z
+@myMesh_r362 springDamper @myMesh_m10_2 @myMesh_m11_2 myMesh_K myMesh_Z
+@myMesh_r363 springDamper @myMesh_m10_3 @myMesh_m11_3 myMesh_K myMesh_Z
+@myMesh_r364 springDamper @myMesh_m10_4 @myMesh_m11_4 myMesh_K myMesh_Z
+@myMesh_r365 springDamper @myMesh_m10_5 @myMesh_m11_5 myMesh_K myMesh_Z
+@myMesh_r366 springDamper @myMesh_m10_6 @myMesh_m11_6 myMesh_K myMesh_Z
+@myMesh_r367 springDamper @myMesh_m10_7 @myMesh_m11_7 myMesh_K myMesh_Z
+@myMesh_r368 springDamper @myMesh_m10_8 @myMesh_m11_8 myMesh_K myMesh_Z
+@myMesh_r369 springDamper @myMesh_m10_9 @myMesh_m11_9 myMesh_K myMesh_Z
+@myMesh_r370 springDamper @myMesh_m10_10 @myMesh_m11_10 myMesh_K myMesh_Z
+@myMesh_r371 springDamper @myMesh_m10_11 @myMesh_m11_11 myMesh_K myMesh_Z
+@myMesh_r372 springDamper @myMesh_m10_12 @myMesh_m11_12 myMesh_K myMesh_Z
+@myMesh_r373 springDamper @myMesh_m10_13 @myMesh_m11_13 myMesh_K myMesh_Z
+@myMesh_r374 springDamper @myMesh_m10_14 @myMesh_m11_14 myMesh_K myMesh_Z
+@myMesh_r375 springDamper @myMesh_m11_0 @myMesh_m12_0 myMesh_K myMesh_Z
+@myMesh_r376 springDamper @myMesh_m11_1 @myMesh_m12_1 myMesh_K myMesh_Z
+@myMesh_r377 springDamper @myMesh_m11_2 @myMesh_m12_2 myMesh_K myMesh_Z
+@myMesh_r378 springDamper @myMesh_m11_3 @myMesh_m12_3 myMesh_K myMesh_Z
+@myMesh_r379 springDamper @myMesh_m11_4 @myMesh_m12_4 myMesh_K myMesh_Z
+@myMesh_r380 springDamper @myMesh_m11_5 @myMesh_m12_5 myMesh_K myMesh_Z
+@myMesh_r381 springDamper @myMesh_m11_6 @myMesh_m12_6 myMesh_K myMesh_Z
+@myMesh_r382 springDamper @myMesh_m11_7 @myMesh_m12_7 myMesh_K myMesh_Z
+@myMesh_r383 springDamper @myMesh_m11_8 @myMesh_m12_8 myMesh_K myMesh_Z
+@myMesh_r384 springDamper @myMesh_m11_9 @myMesh_m12_9 myMesh_K myMesh_Z
+@myMesh_r385 springDamper @myMesh_m11_10 @myMesh_m12_10 myMesh_K myMesh_Z
+@myMesh_r386 springDamper @myMesh_m11_11 @myMesh_m12_11 myMesh_K myMesh_Z
+@myMesh_r387 springDamper @myMesh_m11_12 @myMesh_m12_12 myMesh_K myMesh_Z
+@myMesh_r388 springDamper @myMesh_m11_13 @myMesh_m12_13 myMesh_K myMesh_Z
+@myMesh_r389 springDamper @myMesh_m11_14 @myMesh_m12_14 myMesh_K myMesh_Z
+@myMesh_r390 springDamper @myMesh_m12_0 @myMesh_m13_0 myMesh_K myMesh_Z
+@myMesh_r391 springDamper @myMesh_m12_1 @myMesh_m13_1 myMesh_K myMesh_Z
+@myMesh_r392 springDamper @myMesh_m12_2 @myMesh_m13_2 myMesh_K myMesh_Z
+@myMesh_r393 springDamper @myMesh_m12_3 @myMesh_m13_3 myMesh_K myMesh_Z
+@myMesh_r394 springDamper @myMesh_m12_4 @myMesh_m13_4 myMesh_K myMesh_Z
+@myMesh_r395 springDamper @myMesh_m12_5 @myMesh_m13_5 myMesh_K myMesh_Z
+@myMesh_r396 springDamper @myMesh_m12_6 @myMesh_m13_6 myMesh_K myMesh_Z
+@myMesh_r397 springDamper @myMesh_m12_7 @myMesh_m13_7 myMesh_K myMesh_Z
+@myMesh_r398 springDamper @myMesh_m12_8 @myMesh_m13_8 myMesh_K myMesh_Z
+@myMesh_r399 springDamper @myMesh_m12_9 @myMesh_m13_9 myMesh_K myMesh_Z
+@myMesh_r400 springDamper @myMesh_m12_10 @myMesh_m13_10 myMesh_K myMesh_Z
+@myMesh_r401 springDamper @myMesh_m12_11 @myMesh_m13_11 myMesh_K myMesh_Z
+@myMesh_r402 springDamper @myMesh_m12_12 @myMesh_m13_12 myMesh_K myMesh_Z
+@myMesh_r403 springDamper @myMesh_m12_13 @myMesh_m13_13 myMesh_K myMesh_Z
+@myMesh_r404 springDamper @myMesh_m12_14 @myMesh_m13_14 myMesh_K myMesh_Z
+@myMesh_r405 springDamper @myMesh_m13_0 @myMesh_m14_0 myMesh_K myMesh_Z
+@myMesh_r406 springDamper @myMesh_m13_1 @myMesh_m14_1 myMesh_K myMesh_Z
+@myMesh_r407 springDamper @myMesh_m13_2 @myMesh_m14_2 myMesh_K myMesh_Z
+@myMesh_r408 springDamper @myMesh_m13_3 @myMesh_m14_3 myMesh_K myMesh_Z
+@myMesh_r409 springDamper @myMesh_m13_4 @myMesh_m14_4 myMesh_K myMesh_Z
+@myMesh_r410 springDamper @myMesh_m13_5 @myMesh_m14_5 myMesh_K myMesh_Z
+@myMesh_r411 springDamper @myMesh_m13_6 @myMesh_m14_6 myMesh_K myMesh_Z
+@myMesh_r412 springDamper @myMesh_m13_7 @myMesh_m14_7 myMesh_K myMesh_Z
+@myMesh_r413 springDamper @myMesh_m13_8 @myMesh_m14_8 myMesh_K myMesh_Z
+@myMesh_r414 springDamper @myMesh_m13_9 @myMesh_m14_9 myMesh_K myMesh_Z
+@myMesh_r415 springDamper @myMesh_m13_10 @myMesh_m14_10 myMesh_K myMesh_Z
+@myMesh_r416 springDamper @myMesh_m13_11 @myMesh_m14_11 myMesh_K myMesh_Z
+@myMesh_r417 springDamper @myMesh_m13_12 @myMesh_m14_12 myMesh_K myMesh_Z
+@myMesh_r418 springDamper @myMesh_m13_13 @myMesh_m14_13 myMesh_K myMesh_Z
+@myMesh_r419 springDamper @myMesh_m13_14 @myMesh_m14_14 myMesh_K myMesh_Z
+
+@in1 frcInput @myMesh_m10_10
+
+
+# Model's total number of masses = 225
+# Model's total number of interactions = 420
+# end of MIMS code generated by generateMesh
+
+
+
+</textarea>
+
+                </div>
+            </div>
+
+
+            <div class="footerDrawer">
+
+
+                <div class="open">
+                    <a href="javascript:;" id="mimsTerminal" class="open-left"><i class="fa fa-terminal"></i></a>
+                    <span class="open-right">
+                        <label for="toggle-autoCompile">Auto Compile</label>
+                        <input type="checkbox" id="toggle-autoCompile" name="autoCompile" value="newsletter" checked>
+                    </span>
+
+                </div>
+
+
+                <div class="content">
+                    <div class="consoleOutput">
+                        <div class="state" id="state">
+                            <span class="feedback-state-head">State : </span>
+                            <span class="feedback-state-content"></span>
+
+
+                        </div>
+                        <div class="error" id="error">
+                            <span class="feedback-error-head">Error : </span>
+                            <span class="feedback-error-content"></span>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="split2">
+            <div class="sidebar">
+
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                                   href="#collapse1" style="display: flex">MIMS Help</a>
+                            </div>
+                        </div>
+
+                        <div id="collapse1" class="accordion-body panel-collapse collapse in">
+
+                            <div id="helpOverlay-browse">
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Browse
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="#">mass</a><br>
+                                        <a class="dropdown-item" href="#">ground</a><br>
+                                        <a class="dropdown-item" href="#">osc</a><br>
+
+                                        <a class="dropdown-item" href="#">spring</a><br>
+                                        <a class="dropdown-item" href="#">damper</a><br>
+                                        <a class="dropdown-item" href="#">springDamper</a><br>
+
+                                        <a class="dropdown-item" href="#">contact</a><br>
+                                        <a class="dropdown-item" href="#">nlContact</a><br>
+                                        <a class="dropdown-item" href="#">nlPluck</a><br>
+                                        <a class="dropdown-item" href="#">nlBow</a><br>
+                                        <a class="dropdown-item" href="#">nlSpring</a><br>
+                                        <a class="dropdown-item" href="#">nlSpringDamper</a><br>
+
+                                        <a class="dropdown-item" href="#">frcInput</a><br>
+                                        <a class="dropdown-item" href="#">frcOutput</a><br>
+                                        <a class="dropdown-item" href="#">posInput</a><br>
+                                        <a class="dropdown-item" href="#">posOutput</a><br>
+
+                                        <a class="dropdown-item" href="#">param</a><br>
+                                        <a class="dropdown-item" href="#">audioParam</a><br>
+
+
+                                        <div class="dropdown-divider"></div>
+                                        <br>
+                                        <a class="dropdown-item" href="#">chain</a><br>
+                                        <a class="dropdown-item" href="#">closedMesh</a><br>
+                                        <a class="dropdown-item" href="#">cornerMesh</a><br>
+                                        <a class="dropdown-item" href="#">mesh</a><br>
+                                        <a class="dropdown-item" href="#">stiffString</a><br>
+                                        <a class="dropdown-item" href="#">string</a><br>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-inner" id="help">
+                                <div id="help-content"> Welcome to (pre-alpha) MIMS-Online </div>
+                                <image href="./images/MI_creative.png"></image>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                                   href="#collapse2" style="display: flex">Script Generator</a>
+                            </div>
+                        </div>
+                        <div id="collapse2" class="accordion-body panel-collapse collapse">
+
+                            <div class="accordion-inner" id="generate">
+
+                                <div class="tips">
+                                    (drag and drop generators into mims scripting area to generate models)
+                                </div>
+                                <div class="generate-content">
+
+                                    <!-- generateString -->
+
+                                    <div class="generator generateString" draggable="true">
+                                        generate String
+                                    </div>
+                                    <div class="generator-param" id="generateString">
+                                        <div class="float-container">
+                                            <label for="generateString_param1">mass number</label>
+                                            <input type="number" id="generateString_param1" value="10" min="1">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param2">Name</label>
+                                            <input type="text" id="generateString_param2" value="myString">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param3">mass value</label>
+                                            <input type="number" step=".01" id="generateString_param3" value="1.0">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param4">stifness value</label>
+                                            <input type="number" step=".0001" id="generateString_param4" value="0.01">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param5">viscosity value</label>
+                                            <input type="number" step=".000001" id="generateString_param5" value="0.0001">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param6">friction (optional)</label>
+                                            <input type="number" step=".000001" id="generateString_param6" value="0.0">
+                                        </div>
+
+                                        <div style="display: flex; flex-direction: row">
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Xmin</label>
+                                                <input type="number" step=".01" id="generateString_param71" value="-10.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Ymin</label>
+                                                <input type="number" step=".01" id="generateString_param72" value="0.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Zmin</label>
+                                                <input type="number" step=".01" id="generateString_param73" value="0.0">
+                                            </div>
+                                        </div>
+                                        <div style="display: flex; flex-direction: row">
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Xmax</label>
+                                                <input type="number" step=".01" id="generateString_param81" value="10.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Ymax</label>
+                                                <input type="number" step=".01" id="generateString_param82" value="0.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Zmax</label>
+                                                <input type="number" step=".01" id="generateString_param83" value="0.0">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- generateRing -->
+
+                                    <div class="generator generateRing" draggable="true">
+                                        generate Ring
+                                    </div>
+                                    <div class="generator-param" id="generateRing">
+                                        <div style="display: flex; flex-direction: row">
+                                            <div class="float-container">
+                                                <label for="generateRing_param11">mass number</label>
+                                                <input type="number" id="generateRing_param11" value="10" min="4">
+                                            </div>
+
+                                            <div class="float-container">
+                                                <label for="generateRing_param12">radius</label>
+                                                <input type="number" id="generateRing_param12" value="3" min="0.0001">
+                                            </div>
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateRing_param2">Name</label>
+                                            <input type="text" id="generateRing_param2" value="myRing">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateRing_param3">mass value</label>
+                                            <input type="number" step=".01" id="generateRing_param3" value="1.0">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateRing_param4">stifness value</label>
+                                            <input type="number" step=".0001" id="generateRing_param4" value="0.01">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateRing_param5">viscosity value</label>
+                                            <input type="number" step=".000001" id="generateRing_param5" value="0.0001">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateRing_param6">friction (optional)</label>
+                                            <input type="number" step=".000001" id="generateRing_param6" value="0.0">
+                                        </div>
+
+                                        <div style="display: flex; flex-direction: row">
+                                            <div class="float-container">
+                                                <label for="generateRing_param71">Xcenter</label>
+                                                <input type="number" step=".01" id="generateRing_param71" value="0.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateRing_param72">Ycenter</label>
+                                                <input type="number" step=".01" id="generateRing_param72" value="0.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateRing_param73">Zcenter</label>
+                                                <input type="number" step=".01" id="generateRing_param73" value="0.0">
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                    <!-- generate Mesh -->
+
+                                    <div class="generator generateMesh" draggable="true">
+                                        generate Mesh
+                                    </div>
+                                    <div class="generator-param" id="generateMesh">
+
+                                        <div style="display: flex; flex-direction: row">
+                                            <div class="float-container">
+                                                <label for="generateString_param11">mass number X</label>
+                                                <input type="number" id="generateString_param11" value="10" min="1">
+                                            </div>
+
+                                            <div class="float-container">
+                                                <label for="generateString_param12">mass number Y</label>
+                                                <input type="number" id="generateString_param12" value="10" min="1">
+                                            </div>
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param2">Name</label>
+                                            <input type="text" id="generateMesh_param2" value="myMesh">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param3">mass value</label>
+                                            <input type="number" step=".01" id="generateMesh_param3" value="1.0">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param4">stifness value</label>
+                                            <input type="number" step=".0001" id="generateMesh_param4" value="0.01">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param5">viscosity value</label>
+                                            <input type="number" step=".000001" id="generateMesh_param5" value="0.0001">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param6">friction (optional)</label>
+                                            <input type="number" step=".000001" id="generateMesh_param6" value="0.0">
+                                        </div>
+
+                                        <div style="display: flex; flex-direction: row">
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Xmin</label>
+                                                <input type="number" step=".01" id="generateMesh_param71" value="-10.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Ymin</label>
+                                                <input type="number" step=".01" id="generateMesh_param72" value="-10.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Zmin</label>
+                                                <input type="number" step=".01" id="generateMesh_param73" value="0.0">
+                                            </div>
+                                        </div>
+                                        <div style="display: flex; flex-direction: row">
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Xmax</label>
+                                                <input type="number" step=".01" id="generateMesh_param8" value="10.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Ymax</label>
+                                                <input type="number" step=".01" id="generateMesh_param81" value="10.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Zmax</label>
+                                                <input type="number" step=".01" id="generateMesh_param82" value="0.0">
+                                            </div>
+                                        </div>
+                                        <div style="display: flex; flex-direction: row">
+                                            <div class="boundaries">
+                                                <label for="boundaries-select">Boundary conditions : </label>
+                                                <select name="boundaries" id="boundaries-select"
+                                                        class="boundaries-select">
+                                                    <option value="none">None</option>
+                                                    <option value="corners">Fixed corners</option>
+                                                    <option value="borders">Fixed borders</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- generate Triangle -->
+
+                                    <div class="generator generateTriangle" draggable="true">
+                                        generate Triangle
+                                    </div>
+                                    <div class="generator-param" id="generateTriangle">
+                                        <div class="float-container">
+                                            <label for="generateString_param1">mass number</label>
+                                            <input type="number" id="generateTriangle_param1" value="10" min="1">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param2">Name</label>
+                                            <input type="text" id="generateTriangle_param2" value="myTriangle">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param3">mass value</label>
+                                            <input type="number" step=".01" id="generateTriangle_param3" value="1.0">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param4">stifness value</label>
+                                            <input type="number" step=".0001" id="generateTriangle_param4" value="0.01">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param5">viscosity value</label>
+                                            <input type="number" step=".000001" id="generateTriangle_param5" value="0.0001">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param6">friction (optional)</label>
+                                            <input type="number" step=".000001" id="generateTriangle_param6" value="0.0">
+                                        </div>
+
+                                        <div style="display: flex; flex-direction: row">
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Xmin</label>
+                                                <input type="number" step=".01" id="generateTriangle_param71" value="-10.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Ymin</label>
+                                                <input type="number" step=".01" id="generateTriangle_param72" value="-10.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Zmin</label>
+                                                <input type="number" step=".01" id="generateTriangle_param73" value="0.0">
+                                            </div>
+                                        </div>
+                                        <div style="display: flex; flex-direction: row">
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Xmax</label>
+                                                <input type="number" step=".01" id="generateTriangle_param81" value="10.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Ymax</label>
+                                                <input type="number" step=".01" id="generateTriangle_param82" value="10.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Zmax</label>
+                                                <input type="number" step=".01" id="generateTriangle_param83" value="0.0">
+                                            </div>
+                                        </div>
+                                        <div style="display: flex; flex-direction: row">
+                                            <div class="boundaries">
+                                                <label for="boundaries-select2">Boundary conditions : </label>
+                                                <select name="boundaries" id="boundaries-select2" class="boundaries-select">
+                                                    <option value="none">None</option>
+                                                    <option value="corners">Fixed corners</option>
+                                                    <option value="borders">Fixed borders</option>
+                                                </select>
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+
+                                    <!-- generate Cube -->
+
+                                    <div class="generator generateCube" draggable="true">
+                                        generate Cube
+                                    </div>
+                                    <div class="generator-param" id="generateCube">
+
+                                        <div style="display: flex; flex-direction: row">
+                                            <div class="float-container">
+                                                <label for="generateString_param11">mass number X</label>
+                                                <input type="number" id="generateCube_param11" value="5" min="1">
+                                            </div>
+
+                                            <div class="float-container">
+                                                <label for="generateString_param12">mass number Y</label>
+                                                <input type="number" id="generateCube_param12" value="5" min="1">
+                                            </div>
+
+                                            <div class="float-container">
+                                                <label for="generateString_param12">mass number Z</label>
+                                                <input type="number" id="generateCube_param13" value="5" min="1">
+                                            </div>
+
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param2">Name</label>
+                                            <input type="text" id="generateCube_param2" value="myCube">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param3">mass value</label>
+                                            <input type="number" step=".01" id="generateCube_param3" value="1.0">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param4">stifness value</label>
+                                            <input type="number" step=".0001" id="generateCube_param4" value="0.01">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param5">viscosity value</label>
+                                            <input type="number" step=".000001" id="generateCube_param5" value="0.0001">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param6">friction (optional)</label>
+                                            <input type="number" step=".000001" id="generateCube_param6" value="0.0">
+                                        </div>
+
+                                        <div style="display: flex; flex-direction: row">
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Xmin</label>
+                                                <input type="number" step=".01" id="generateCube_param71" value="-5.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Ymin</label>
+                                                <input type="number" step=".01" id="generateCube_param72" value="-5.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Zmin</label>
+                                                <input type="number" step=".01" id="generateCube_param73" value="0.0">
+                                            </div>
+                                        </div>
+                                        <div style="display: flex; flex-direction: row">
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Xmax</label>
+                                                <input type="number" step=".01" id="generateCube_param81" value="5.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Ymax</label>
+                                                <input type="number" step=".01" id="generateCube_param82" value="5.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Zmax</label>
+                                                <input type="number" step=".01" id="generateCube_param83" value="10.0">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- generate from JS -->
+
+                                    <div class="generator generateJs" draggable="true">
+                                        generate from JS (soon !)
+                                    </div>
+                                    <!-- ATTENTION POUR LE MOMENT FONCTION MASQUEE -->
+                                    <div class="generator-param" id="generateJs">
+
+                                        <div class="codearea accordion-inner">
+                                            <textarea id="jscode" class="scripting-environment">
+Code
+                                            </textarea>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="generator generateFromText" draggable="true">
+                                        generate from Text
+                                    </div>
+                                    <!-- ATTENTION POUR LE MOMENT FONCTION MASQUEE -->
+                                    <div class="generator-param" id="generateFromText">
+                                        <div class="float-container">
+                                            <label for="generateFromText_param1">Name</label>
+                                            <input type="text" id="generateFromText_param1" value="myTextModel">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateFromText_param2">mass value</label>
+                                            <input type="number" step=".01" id="generateFromText_param2" value="1.0">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateFromText_param3">stifness value</label>
+                                            <input type="number" step=".0001" id="generateFromText_param3" value="0.01">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateFromText_param4">viscosity value</label>
+                                            <input type="number" step=".000001" id="generateFromText_param4" value="0.0001">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateFromText_param5">friction (optional)</label>
+                                            <input type="number" step=".000001" id="generateFromText_param5" value="0.0">
+                                        </div>
+
+                                        <div style="display: flex; flex-direction: row">
+                                            <div class="float-container">
+                                                <label for="generateFromText_param61">Xmin</label>
+                                                <input type="number" step=".01" id="generateFromText_param61" value="-5.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateFromText_param62">Ymin</label>
+                                                <input type="number" step=".01" id="generateFromText_param62" value="-5.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateFromText_param63">Zmin</label>
+                                                <input type="number" step=".01" id="generateFromText_param63" value="0.0">
+                                            </div>
+                                        </div>
+                                        <div style="display: flex; flex-direction: row">
+                                            <div class="float-container">
+                                                <label for="generateFromText_param71">Xmax</label>
+                                                <input type="number" step=".01" id="generateFromText_param71" value="5.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateFromText_param72">Ymax</label>
+                                                <input type="number" step=".01" id="generateFromText_param72" value="5.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateFromText_param73">Zmax</label>
+                                                <input type="number" step=".01" id="generateFromText_param73" value="10.0">
+                                            </div>
+                                        </div>
+
+                                        <div class="textareaContext">
+                                            <textarea id="textToGenerate" name="story" rows="5" cols="33">36.40094718933105,209.59639339447023
+38.93906745910645,199.93201236724855
+41.48162055015564,190.2507525205612
+44.087054315395655,180.6025915883481
+46.69870557785034,170.94440956115722
+49.309721652418375,161.30256620645523
+51.92698669433594,151.638818359375
+54.6124170745723,142.0132773871068
+57.30376892089844,132.38709869384766
+60.10927122281865,122.78364850650543
+62.94275903850795,113.18818344324829
+65.93141826540233,103.65830779522658
+68.97996048927308,94.11473543643953</textarea>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading headerView">
+                            <div class="one">
+                                <div class="panel-title">
+                                    <a class="accordion-toggle openView" data-toggle="collapse" data-parent="#accordion"
+                                       href="#collapse3" style="display: flex">Model View</a>
+                                </div>
+                            </div>
+                            <div class="mims-buttons two" style="float: right; padding-right: 10px">
+                                <a href="javascript:;" id="updateModelinView" alt="refresh View"><i class="fa fa-refresh"></i></a>
+                            </div>
+                            <div class="mims-buttons two" style="float: right; padding-right: 10px">
+                                <a href="javascript:;" id="viewSimulate"></a>
+                            </div>
+                            <div class="mims-buttons two" style="float: right; padding-right: 10px">
+                                <a href="javascript:;" id="viewSettings"><i class="fa fa-paint-brush"></i></a>
+                            </div>
+                            <div class="mims-buttons two" style="float: right; padding-right: 10px">
+                                <a href="javascript:;" id="viewFullscreen" alt="fo Fullscreen"><i class="fa fa-arrows-alt"></i></a>
+                            </div>
+                        </div>
+
+                        <div id="collapse3" class="accordion-body panel-collapse collapse collapse-view ">
+                            <div id="viewOverlay-locker"></div>
+
+                            <div id="viewOverlay-log">
+
+                                <div id="viewOverlay-moduleID"></div>
+
+                                <div id="viewOverlay-param">
+                                    <div class="param-row">
+                                        <div class="float-container">
+                                            <label for="param_M">M</label>
+                                            <input type="number" id="param_M" step="0.01">
+                                        </div>
+                                        <div class="float-container">
+                                            <label for="param_K">K</label>
+                                            <input type="number" id="param_K" step="0.001">
+                                        </div>
+                                        <div class="float-container">
+                                            <label for="param_Z">Z</label>
+                                            <input type="number" id="param_Z" step="0.0001">
+                                        </div>
+                                    </div>
+
+                                    <div class="param-row">
+                                        <div class="float-container">
+                                            <label for="mass_X">X</label>
+                                            <input type="number" id="mass_X" step="0.01">
+                                        </div>
+                                        <div class="float-container">
+                                            <label for="mass_Y">Y</label>
+                                            <input type="number" id="mass_Y" step="0.01">
+                                        </div>
+                                        <div class="float-container">
+                                            <label for="mass_Z">Z</label>
+                                            <input type="number" id="mass_Z" step="0.01">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-inner" id="modelView">
+                                <div id="viewOverlay-simulate">
+                                    <a href="javascript:;" id="simulateInit"><i class="fa fa-fast-backward"></i></a>
+                                    <a href="javascript:;" id="simulatePause"><i class="fa fa-pause"></i></a>
+                                    <a href="javascript:;" id="simulateOneStep"><i class="fa fa-step-forward"></i></a>
+                                    <a href="javascript:;" id="simulateRun"><i class="fa fa-play"></i></a>
+                                    <a href="javascript:;" id="simulateRec"><i class="fa fa-camera"></i></a>
+                                    <a href="javascript:;" id="simulateRec10">x10</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading headerConverter">
+
+                            <div class="left panel-title">
+                                <div id="title">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                                       href="#collapse4">Converter</a>
+                                </div>
+                            </div>
+
+                            <div class="mims-buttons right">
+                                <a href="javascript:;" id="faustRefresh"><i class="fa fa-refresh"></i></a>
+                            </div>
+                            <div class="mims-buttons right">
+
+                                <a href="javascript:;" id="faustRun"><i class="fa fa-play"></i></a>
+                            </div>
+                            <div class="mims-buttons right">
+                                <a href="javascript:;" id="faustExport"><i class="fa fa-save"></i></a>
+                            </div>
+
+                            <div class="center">
+                                <div id="faust" class="panel-title select on">
+                                    Faust
+                                </div>
+                            </div>
+
+                            <div class="mims-buttons center">
+                                <label class="switch">
+                                    <input type="checkbox" class="toggle-converter" id="toggle-converter" onclick="toggleConverter()">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="center">
+                                <div id="gen" class="panel-title select">
+                                    ~gen
+                                </div>
+                            </div>
+
+                            <div class="mims-buttons right">
+                                <a href="javascript:;" id="genRefresh"><i class="fa fa-refresh"></i></a>
+                            </div>
+                            <div class="mims-buttons right">
+                                <a href="javascript:;" id="genExport"><i class="fa fa-save"></i></a>
+                            </div>
+                        </div>
+                        <div id="collapse4" class="accordion-body panel-collapse collapse collapse-converter ">
+                            <div class="codearea accordion-inner">
+                                <textarea id="faustcode" class="scripting-environment">
+
+...
+
+                                </textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--Load JavaScript-->
+
+
+<script type="text/javascript" src="js/mimsOnline/split.js"></script>
+<script type="module" src="js/mimsOnline/mimsControler.js"></script>
+<script type="module" src="js/mimsOnline/GLTFExporter.js"></script>
+
+<script type="module" src="js/mimsOnline/mims3DView.js"></script>
+
+
+<script name="insertcode"> </script>
+
+</body>
+</html>
