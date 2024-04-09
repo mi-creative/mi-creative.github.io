@@ -20,103 +20,152 @@
 
     <body class="single single-portfolio tool">
 
-        <div class="site-wrapper">
-            <div class="doc-loader"></div>
+      <div class="site-wrapper">
+        <div class="doc-loader"></div>
 
-            <!-- Left Part Sidebar -->
-            <div class="menu-left-part">
+        <!-- Left Part Sidebar -->
+        <div class="menu-left-part">
 
-                <!-- Menu from nav.js -->
-                <nav id="header-main-menu"></nav>
+            <!-- Menu from nav.js -->
+            <nav id="header-main-menu"></nav>
 
-                <!-- Hello text in menu from nav.js -->
-                <div id="header-main-text" class="menu-right-text"></div>
+            <!-- Hello text in menu from nav.js -->
+            <div id="header-main-text" class="menu-right-text"></div>
 
+        </div>
+
+        <!-- Right Part Sidebar -->
+        <div id="nav-top" class="menu-right-part">
+            <div class="header-logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="miCreative">
+                </a>               
             </div>
 
-            <!-- Right Part Sidebar -->
-            <div id="nav-top" class="menu-right-part">
-                <div class="header-logo">
-                    <a href="index.html">
-                        <img src="images/logo.png" alt="miCreative">
-                    </a>               
-                </div>
+            <div class="toggle-holder">
+                <div id="toggle">
+                    <div class="menu-line"></div>
+                </div>                
+            </div>   
 
-                <div class="toggle-holder">
-                    <div id="toggle">
-                        <div class="menu-line"></div>
-                    </div>                
-                </div>   
+        </div> 
 
-            </div> 
-
-            <!-- Page Content Holder -->
-            <div id="content" class="site-content">
-                <div class="portfolio-item-wrapper">
-                    <div class="portfolio-content center-relative content-1170">
-                        <div id="slider" class="simple-image-slider-wrapper relative swiper-container">
-                            <div class="swiper-wrapper image-slider slider">
-                                <div class="swiper-slide">
-                                    <img src="images/tools/tool_faust_01.jpg" alt="">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/tools/tool_faust_02.jpg" alt="">
-                                </div>
+        <!-- Page Content Holder -->
+        <div id="content" class="site-content">
+            <div class="portfolio-item-wrapper">
+                <div class="portfolio-content center-relative content-1170">
+                    <div id="slider" class="simple-image-slider-wrapper relative swiper-container">
+                        <div class="swiper-wrapper image-slider slider">
+                            <div class="swiper-slide">
+                                <img src="images/tools/tool_faust_01.jpg" alt="">
                             </div>
-                            <div class="clear"></div>
-                            <div class="swiper-pagination simple-image-slider-pagination swiper-pagination-slider"></div>                                
+                            <!--
+                            <div class="swiper-slide">
+                                <img src="images/tools/tool_faust_02.jpg" alt="">
+                            </div>
+                            -->
                         </div>
-
-                        <div class="two_third">
-                            <h1>mi-Faust</h1>
-                            <div class="medium-text">
-                                mi-faust implements 1D mass-interaction models in the FAUST programming language.
-                            </div>
-                            <br>
-                            <p>
-                                Starting from a scripted model description (see MIMS), mi-faust compiles a physical model into FAUST code. It handles this by generating routing functions between all the masses and all the interactions in the model.
-                            </p>
-                            <p>
-                                Head over to the FAUST community page to see examples of a series of instruments created in mi-faust, and available as web-apps !
-                            </p>
-
-                        </div>
-
-                        <div class="one_third last">
-                            <br>                            
-                            <div class="info-code findit">
-                                <p class="info-code-title">FIND IT</p>
-                                <p class="info-code-content"><a href="https://github.com/rmichon/mi_faust">On Github</a>
-                            </div>
-                            <div class="info-code">
-                                <p class="info-code-title">LAST UPDATE</p>
-                                <p class="info-code-content">19/12/2018</p>
-                            </div>
-                            <div class="info-code">
-                                <p class="info-code-title">RELATED PAPERS</p>
-                                <p class="info-code-content"><a target="_blank" rel="noopener noreferrer" href="paper_lac19.html">LAC 2019</a>
-
-                            </div>
-                            <div class="info-code">
-                                <p class="info-code-title">COMPATIBILITY</p>
-                                <p class="info-code-content">Built in FAUST, compatible with OsX, Linux and Window systems</p>
-                            </div>
-                        </div>
-                        <div class="clear"></div>                            
+                        <div class="clear"></div>
+                        <!--
+                        <div class="swiper-pagination simple-image-slider-pagination swiper-pagination-slider"></div>
+                        -->
                     </div>
-                    <div class="nav-links">
-                        <a class="nav-previous tooltip" data-title="mi-gen~" href="tool_migen.html">
-                            <span class="fa fa-chevron-left" aria-hidden="true"></span>
-                        </a>
-                        <a class="nav-next tooltip" data-title="MIMS" href="tool_MIMS.html">
-                            <span class="fa fa-chevron-right" aria-hidden="true"></span>
-                        </a>
+
+                    <div class="two_third">
+                        <h1><i>mi_Faust</i></h1>
+                        <div class="medium-text">
+                            <i>mi_faust</i> implements 1D mass-interaction models in the FAUST programming language.
+                        </div>
+                        <br>
+                        <p>
+                            Starting from a scripted model description (see MIMS), <i>mi_faust</i> compiles a physical model into FAUST code. It handles this by generating routing functions between all the masses and all the interactions in the model.
+                        </p>
+                        <p>
+                            Head over to the FAUST community page to see examples of a series of instruments created in <i>mi_faust</i>, and available as web-apps !
+                        </p>
+
+                        <br>
+                        <h2>Tutorial</h2>
+
+                        <div class="french">
+                            <p>
+                                Apprenez les rudiments du mass-interaction appliqués en Faust : <a href="tutos/mi_intro_wFaust.html" style="font-weight: 700"> Tutoriel en ligne </a>
+                            </p>
+                        </div>
+                        <div class="english">
+                            <p>
+                                Learn about the very basics of mass-interaction applied in Faust : <a href="tutos/mi_intro_wFaust.html" style="font-weight: 700"> Online tutorial </a>
+                            </p>
+                        </div>
+                        <br>
+
+                        <h2>Workshop</h2>
+                        <div class="french">
+                            <p>
+                                Extrait du <i>Faust Physical Modeling Workshop (1er février 2021)</i>.
+                            </p>
+                        </div>
+
+                        <div class="english">
+                            <p>
+                                Extract from the <i>Faust Physical Modeling Workshop (1st of february 2021)</i>.
+                            </p>
+                        </div>
+                        <img src="images/tools/tool_faust_ws.png">
+                        <p>
+                            Faust has been used for the physical modeling of musical instruments for many years now. Different tools have been developed recently to address the needs of various modeling techniques (e.g., finite difference scheme, waveguides, mass interaction, etc.).
+                            The goal of this one day workshop is to provide a series of interactive one-hour tutorials on these tools as well as some background on their related modeling techniques.
+                        </p>
+
+                        <div>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/tfdSDX2x1CY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <p>
+                            This workshop proposes an introduction to mass-interaction (sometimes referred to as mass-spring) modelling for sound synthesis in the Faust environment. After a brief historic introduction to this field, we will give a hands on tutorial on the mi_faust library, which allows simulating modular physical constructions in Faust, as well as online model scripting tools that allow for efficient model design and code generation. We will conclude with ongoing developments and perspectives, in particular regarding performance issues, possible extensions to 3-DoF physics, and the importance of modelling frameworks that allow for a creative approach to physical model design.
+                        </p>
+
                     </div>
+
+                    <div class="one_third last">
+                        <br>                            
+                        <div class="info-code findit">
+                            <p class="info-code-title">FIND IT</p>
+                            <p class="info-code-content">
+                                <a href="https://github.com/rmichon/mi_faust">On Github</a>
+                                <br>
+                                <a href="https://faustide.grame.fr/?code=https://raw.githubusercontent.com/jameslnrd/mi_introduction_workshop_2020/master/00_BasicOscillator/harmonicOscillator.dsp">Within Faust IDE</a>
+                            </p>
+
+                        </div>
+                        <div class="info-code">
+                            <p class="info-code-title">LAST UPDATE</p>
+                            <p class="info-code-content">08/05/2020</p>
+                        </div>
+                        <div class="info-code">
+                            <p class="info-code-title">RELATED PAPERS</p>
+                            <p class="info-code-content"><a target="_blank" rel="noopener noreferrer" href="paper_lac19.html">LAC 2019</a>
+
+                        </div>
+                        <div class="info-code">
+                            <p class="info-code-title">COMPATIBILITY</p>
+                            <p class="info-code-content">Built in FAUST, compatible with OsX, Linux and Window systems</p>
+                        </div>
+                    </div>
+                    <div class="clear"></div>                            
                 </div>
-                <div class="clear"></div>
-            </div> 
-            <!-- End Page Content Holder -->            
-        </div>
+                <div class="nav-links">
+                    <a class="nav-previous tooltip" data-title="mi-gen~" href="tool_migen.html">
+                        <span class="fa fa-chevron-left" aria-hidden="true"></span>
+                    </a>
+                    <a class="nav-next tooltip" data-title="MIMS" href="tool_MIMS.html">
+                        <span class="fa fa-chevron-right" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div> 
+        <!-- End Page Content Holder -->            
+    </div>
 
         <!--Load JavaScript-->
         <script src="js/jquery.js"></script>

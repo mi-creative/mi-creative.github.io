@@ -4,25 +4,25 @@
 document.getElementById("header-main-menu").innerHTML =
     '<div class="english">'+
     '<ul class="main-menu sm sm-clean">'+
-    '<li> <a href="http://www.mi-creative.eu/index.html">Home</a></li>'+
-    '<li> <a href="http://www.mi-creative.eu/about.html">About</a></li>'+
+    '<li> <a href="https://mi-creative.github.io/index.html">Home</a></li>'+
+    '<li> <a href="https://mi-creative.github.io/about.html">About</a></li>'+
 
-    '<li> <a href="http://www.mi-creative.eu/tools.html" class="has-submenu">Tools</a>'+
+    '<li> <a href="https://mi-creative.github.io/tools.html" class="has-submenu">Tools</a>'+
     '<ul class="sub-menu">'+
-    '<li><a href="http://www.mi-creative.eu/tool_miPhysics.html">miPhysics</a></li>'+
-    '<li><a href="http://www.mi-creative.eu/tool_migen.html">mi-gen~</a></li>'+
-    '<li><a href="http://www.mi-creative.eu/tool_miFaust.html">mi-Faust</a></li>'+
-    '<li><a href="http://www.mi-creative.eu/tool_MIMS.html">MIMS</a></li>' +
+    '<li><a href="https://mi-creative.github.io/tool_miPhysics.html">miPhysics</a></li>'+
+    '<li><a href="https://mi-creative.github.io/tool_migen.html">mi-gen~</a></li>'+
+    '<li><a href="https://mi-creative.github.io/tool_miFaust.html">mi-Faust</a></li>'+
+    '<li><a href="https://mi-creative.github.io/tool_MIMS.html">MIMS</a></li>' +
     '</ul>'+
     '</li>'+
-    '<li> <a href="http://www.mi-creative.eu/projects.html">Projects</a>'+
+    '<li> <a href="https://mi-creative.github.io/projects.html">Projects</a>'+
 
-    '<li> <a href="http://www.mi-creative.eu/papers.html">Papers</a>'+
+    '<li> <a href="https://mi-creative.github.io/papers.html">Papers</a>'+
 
     '</li>'+
-    '<li> <a href="http://www.mi-creative.eu/blog.html">Blog</a></li>'+
+    '<li> <a href="https://mi-creative.github.io/blog.html">Blog</a></li>'+
 
-    '<li><a href="http://www.mi-creative.eu/contact.html">Contact</a></li>'+
+    '<li><a href="https://mi-creative.github.io/contact.html">Contact</a></li>'+
     '</ul>'+
     '</div>'+
 
@@ -35,25 +35,25 @@ document.getElementById("header-main-menu").innerHTML =
 
     '<div class="french">'+
     '<ul class="main-menu sm sm-clean">'+
-    '<li> <a href="http://www.mi-creative.eu/index.html">Page principale</a></li>'+
-    '<li> <a href="http://www.mi-creative.eu/about.html">À propos</a></li>'+
+    '<li> <a href="https://mi-creative.github.io/index.html">Page principale</a></li>'+
+    '<li> <a href="https://mi-creative.github.io/about.html">À propos</a></li>'+
 
-    '<li> <a href="http://www.mi-creative.eu/tools.html" class="has-submenu">Outils</a>'+
+    '<li> <a href="https://mi-creative.github.io/tools.html" class="has-submenu">Outils</a>'+
     '<ul class="sub-menu">'+
-    '<li><a href="http://www.mi-creative.eu/tool_miPhysics.html">miPhysics</a></li>'+
-    '<li><a href="http://www.mi-creative.eu/tool_migen.html">mi-gen~</a></li>'+
-    '<li><a href="http://www.mi-creative.eu/tool_miFaust.html">mi-Faust</a></li>'+
-    '<li><a href="http://www.mi-creative.eu/tool_MIMS.html">MIMS</a></li>' +
+    '<li><a href="https://mi-creative.github.io/tool_miPhysics.html">miPhysics</a></li>'+
+    '<li><a href="https://mi-creative.github.io/tool_migen.html">mi-gen~</a></li>'+
+    '<li><a href="https://mi-creative.github.io/tool_miFaust.html">mi-Faust</a></li>'+
+    '<li><a href="https://mi-creative.github.io/tool_MIMS.html">MIMS</a></li>' +
     '</ul>'+
-    '<li> <a href="http://www.mi-creative.eu/projects.html">Projets</a>'+
+    '<li> <a href="https://mi-creative.github.io/projects.html">Projets</a>'+
 
     '</li>'+
-    '<li> <a href="http://www.mi-creative.eu/papers.html">Publications</a>'+
+    '<li> <a href="https://mi-creative.github.io/papers.html">Publications</a>'+
 
     '</li>'+
-    '<li> <a href="http://www.mi-creative.eu/blog.html">Blog</a></li>'+
+    '<li> <a href="https://mi-creative.github.io/blog.html">Blog</a></li>'+
 
-    '<li><a href="http://www.mi-creative.eu/contact.html">Nous contacter</a></li>'+
+    '<li><a href="https://mi-creative.github.io/contact.html">Nous contacter</a></li>'+
     '</ul>'+
     '</div>'
 
@@ -64,12 +64,12 @@ document.getElementById("header-main-text").innerHTML =
     '<p class="menu-text-title">HELLO</p>'+
     '<div class="english">'+
     '<div class="menu-text">'+
-    'Welcome to mi-creative, an open resource crossing <a href="http://www.mi-creative.eu/blog.html">mass-interaction</a> and digital arts'+
+    'Welcome to mi-creative, an open resource crossing <a href="https://mi-creative.github.io/blog.html">mass-interaction</a> and digital arts'+
     '</div>'+
     '</div>'+
     '<div class="french">'+
     '<div class="menu-text">'+
-    'Bienvenue sur mi-creative, site ressource ouvert à tous, et à toutes formes de croisements entre <a href="http://www.mi-creative.eu/blog.html">masse-interaction</a> and arts numériques'+
+    'Bienvenue sur mi-creative, site ressource ouvert à tous, et à toutes formes de croisements entre <a href="https://mi-creative.github.io/blog.html">masse-interaction</a> and arts numériques'+
     '</div>'+
     '</div>'+
     '<br>'+
