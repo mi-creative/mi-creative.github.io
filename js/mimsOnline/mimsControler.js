@@ -1535,6 +1535,53 @@ document.getElementById("genericFrcInput_btn").addEventListener('click', functio
 
 
 
+
+var rangeSlider = function(){
+    var slider = $('.continuousSlider'),
+        range = $('.continuousSlider_range'),
+        value = $('.continuousSlider_value');
+
+    var minp, maxp, minv, maxv, scale;
+    minp = 1 ;
+    maxp = 100 ;
+
+    range.each(function(){
+        // position will be between 0 and 100
+        minp = $(this).attr('min');
+        maxp = $(this).attr('max');
+        // The result should be between 100 an 10000000
+        minv = Math.log($(this).attr('value')/100) ;
+        maxv = Math.log($(this).attr('value')*100) ;
+        // calculate adjustment factor
+        scale = (maxv-minv) / (maxp-minp);
+        $(this).val((Math.log($(this).attr('value'))-Math.log(minv) / scale + minp));
+    });
+
+    range.on('input', function(){
+        minp = $(this).attr('min');
+        maxp = $(this).attr('max');
+        // position will be between 0 and 100
+        // The result should be between 100 an 10000000
+        minv = Math.log($(this).attr('value')/100);
+        maxv = Math.log($(this).attr('value')*100);
+        // calculate adjustment factor
+        scale = (maxv-minv) / (maxp-minp);
+        $(this).next(value).html(Math.exp(minv + scale*(this.value-minp)).toFixed(10));
+        //$(this).next(value).html(this.value);
+    });
+
+    slider.each(function(){
+
+        value.each(function(){
+            var value = $(this).prev().attr('value');
+            $(this).html(value);
+        });
+    });
+};
+
+
+
+
 function generateParametersControls() {
 
    resetParametersControls();
@@ -1628,48 +1675,6 @@ document.getElementById("zfactorinput").addEventListener("input", function() {
 
 
 
-var rangeSlider = function(){
-    var slider = $('.continuousSlider'),
-        range = $('.continuousSlider_range'),
-        value = $('.continuousSlider_value');
-
-    var minp, maxp, minv, maxv, scale;
-    minp = 1 ;
-    maxp = 100 ;
-
-    range.each(function(){
-        // position will be between 0 and 100
-        minp = $(this).attr('min');
-        maxp = $(this).attr('max');
-        // The result should be between 100 an 10000000
-        minv = Math.log($(this).attr('value')/100) ;
-        maxv = Math.log($(this).attr('value')*100) ;
-        // calculate adjustment factor
-        scale = (maxv-minv) / (maxp-minp);
-        $(this).val((Math.log($(this).attr('value'))-Math.log(minv) / scale + minp));
-    });
-
-    range.on('input', function(){
-        minp = $(this).attr('min');
-        maxp = $(this).attr('max');
-        // position will be between 0 and 100
-        // The result should be between 100 an 10000000
-        minv = Math.log($(this).attr('value')/100);
-        maxv = Math.log($(this).attr('value')*100);
-        // calculate adjustment factor
-        scale = (maxv-minv) / (maxp-minp);
-        $(this).next(value).html(Math.exp(minv + scale*(this.value-minp)).toFixed(10));
-        //$(this).next(value).html(this.value);
-    });
-
-    slider.each(function(){
-
-        value.each(function(){
-            var value = $(this).prev().attr('value');
-            $(this).html(value);
-        });
-    });
-};
 
 function resetParametersControls(){
     document.getElementById("sim_PhysicalParametersControls").innerHTML = "";
