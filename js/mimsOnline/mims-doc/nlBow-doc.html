@@ -1,2 +1,36 @@
 <img class="image"/>
-<h1>Non-linear Bowing Module</h1><br><br>@{name} nlBow @{m1} @{m2} {nlZ} {nlscale} {opt: smooth}<br><br>The bowing interaction is a non-linear linear interaction that allows stick-slip contacts between two material points. If the optional smooth parameter is unset or set to 0, a piecewise linear approximation is used (cf. blue curve). If smooth is set to 1, a smooth mathematical expression (red curve is used).<br><br>Physical Parameters: damping and distance scaling of the pluck.<br><br>Example:<br>@in1 posInput 0.<br>@o1 osc 1.2 0.1 0.001 0. 0.1<br>@nlb nlBow @in1 @o1 0.1 0.001<br>
+<h1>
+    Non-linear Bowing Module
+</h1>
+
+<div class="module_syntaxe">
+    <span class="label">@{name}</span>
+    <span class="name">nlBow</span>
+    <span class="label">@{m1}</span>
+    <span class="label">@{m2}</span>
+    <span class="param">{lnZ}</span>
+    <span class="param">{nlscale}</span>
+    <span class="optional_param">{smooth}</span>
+</div>
+
+<div class="module_desc">
+    The bowing interaction is a non-linear linear interaction that allows stick-slip contacts between two material points. If the optional smooth parameter is unset or set to 0, a piecewise linear approximation is used (cf. blue curve). If smooth is set to 1, a smooth mathematical expression (red curve is used).
+</div>
+
+<div class="param_desc">
+    Damping and distance scaling of the pluck.
+</div>
+
+<div class="init_desc">
+
+</div>
+
+<div class="module_example">
+    Example:
+    <br>
+    @in1 posInput 0.
+    <br>
+    @o1 osc 1.2 0.1 0.001 0. 0.1
+    <br>
+    @nlb nlBow @in1 @o1 0.1 0.001
+</div>

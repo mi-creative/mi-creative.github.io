@@ -1,0 +1,1444 @@
+# MIMS Example : Spiral
+
+@myTextModelM param 0.12
+@myTextModelK param 0.1
+@myTextModelZ param 0.0001
+@myTextModelZosc param 0.0
+
+@myTextModel_m0 osc myTextModelM 0 myTextModelZosc [7.687841167190392 1.4312904710578813 0] 0
+@myTextModel_m1 osc myTextModelM 0 myTextModelZosc [7.685934792795273 1.790390300286056 0] 0
+@myTextModel_m2 osc myTextModelM 0 myTextModelZosc [7.661230184563408 2.149489060179498 0] 0
+@myTextModel_m3 osc myTextModelM 0 myTextModelZosc [7.613720596755698 2.50729007424604 0] 0
+@myTextModel_m4 osc myTextModelM 0 myTextModelZosc [7.543481599574648 2.862495895355643 0] 0
+@myTextModel_m5 osc myTextModelM 0 myTextModelZosc [7.450671154271284 3.2138129863200575 0] 0
+@myTextModel_m6 osc myTextModelM 0 myTextModelZosc [7.3355293922424 3.559956407043863 0] 0
+@myTextModel_m7 osc myTextModelM 0 myTextModelZosc [7.198378089913149 3.8996544921171683 0] 0
+@myTextModel_m8 osc myTextModelM 0 myTextModelZosc [7.039619853290297 4.231653495551679 0] 0
+@myTextModel_m9 osc myTextModelM 0 myTextModelZosc [6.859737003349991 4.5547221972835565 0] 0
+@myTextModel_m10 osc myTextModelM 0 myTextModelZosc [6.659290169833945 4.867656440976017 0] 0
+@myTextModel_m11 osc myTextModelM 0 myTextModelZosc [6.438916597240819 5.169283595355505 0] 0
+@myTextModel_m12 osc myTextModelM 0 myTextModelZosc [6.199328165537569 5.458466924744062 0] 0
+@myTextModel_m13 osc myTextModelM 0 myTextModelZosc [5.941309132533181 5.734109840710332 0] 0
+@myTextModel_m14 osc myTextModelM 0 myTextModelZosc [5.665713610538081 5.9951600348391985 0] 0
+@myTextModel_m15 osc myTextModelM 0 myTextModelZosc [5.37346277162861 6.240613459763459 0] 0
+@myTextModel_m16 osc myTextModelM 0 myTextModelZosc [5.065541806762827 6.469518163834 0] 0
+@myTextModel_m17 osc myTextModelM 0 myTextModelZosc [4.742996635591659 6.680977941792758 0] 0
+@myTextModel_m18 osc myTextModelM 0 myTextModelZosc [4.406930387793565 6.87415581100667 0] 0
+@myTextModel_m19 osc myTextModelM 0 myTextModelZosc [4.058499659088348 7.048277277419075 0] 0
+@myTextModel_m20 osc myTextModelM 0 myTextModelZosc [3.698910559602364 7.202633401374214 0] 0
+@myTextModel_m21 osc myTextModelM 0 myTextModelZosc [3.329414567208218 7.3365836274711995 0] 0
+@myTextModel_m22 osc myTextModelM 0 myTextModelZosc [2.951304200355249 7.4495583886031795 0] 0
+@myTextModel_m23 osc myTextModelM 0 myTextModelZosc [2.5659085242763027 7.541061463272925 0] 0
+@myTextModel_m24 osc myTextModelM 0 myTextModelZosc [2.174588502562546 7.610672071847318 0] 0
+@myTextModel_m25 osc myTextModelM 0 myTextModelZosc [1.778732220614664 7.658046712945605 0] 0
+@myTextModel_m26 osc myTextModelM 0 myTextModelZosc [1.3797499847573924 7.68292073518225 0] 0
+@myTextModel_m27 osc myTextModelM 0 myTextModelZosc [0.9790693266814117 7.6851096215633845 0] 0
+@myTextModel_m28 osc myTextModelM 0 myTextModelZosc [0.5781299163684004 7.664509987134302 0] 0
+@myTextModel_m29 osc myTextModelM 0 myTextModelZosc [0.1783784201059717 7.621100301825862 0] 0
+@myTextModel_m30 osc myTextModelM 0 myTextModelZosc [-0.21873669830095466 7.554941308630049 0] 0
+@myTextModel_m31 osc myTextModelM 0 myTextModelZosc [-0.6117703977779172 7.466176161000547 0] 0
+@myTextModel_m32 osc myTextModelM 0 myTextModelZosc [-0.9992862928516786 7.355030231686754 0] 0
+@myTextModel_m33 osc myTextModelM 0 myTextModelZosc [-1.379861877053731 7.221810656922372 0] 0
+@myTextModel_m34 osc myTextModelM 0 myTextModelZosc [-1.7520937166597363 7.066905581917176 0] 0
+@myTextModel_m35 osc myTextModelM 0 myTextModelZosc [-2.11460260151069 6.890783080769165 0] 0
+@myTextModel_m36 osc myTextModelM 0 myTextModelZosc [-2.466038623251759 6.693989814718332 0] 0
+@myTextModel_m37 osc myTextModelM 0 myTextModelZosc [-2.805086176570736 6.477149386326982 0] 0
+@myTextModel_m38 osc myTextModelM 0 myTextModelZosc [-3.1304688518785753 6.240960409898072 0] 0
+@myTextModel_m39 osc myTextModelM 0 myTextModelZosc [-3.440954209964705 5.986194307092429 0] 0
+@myTextModel_m40 osc myTextModelM 0 myTextModelZosc [-3.7353584165369114 5.713692825952705 0] 0
+@myTextModel_m41 osc myTextModelM 0 myTextModelZosc [-4.012550724653888 5.424365298268874 0] 0
+@myTextModel_m42 osc myTextModelM 0 myTextModelZosc [-4.2714577760175025 5.119185640064405 0] 0
+@myTextModel_m43 osc myTextModelM 0 myTextModelZosc [-4.511067723018268 4.799189107151083 0] 0
+@myTextModel_m44 osc myTextModelM 0 myTextModelZosc [-4.730434137451898 4.465468815908061 0] 0
+@myTextModel_m45 osc myTextModelM 0 myTextModelZosc [-4.928679707800285 4.119172035856501 0] 0
+@myTextModel_m46 osc myTextModelM 0 myTextModelZosc [-5.104999694781814 3.7614962809125814 0] 0
+@myTextModel_m47 osc myTextModelM 0 myTextModelZosc [-5.258665138228277 3.3936851915526773 0] 0
+@myTextModel_m48 osc myTextModelM 0 myTextModelZosc [-5.389025820337572 3.017024240747393 0] 0
+@myTextModel_m49 osc myTextModelM 0 myTextModelZosc [-5.495512935441322 2.6328362684436293 0] 0
+@myTextModel_m50 osc myTextModelM 0 myTextModelZosc [-5.57764149468921 2.2424768595294715 0] 0
+@myTextModel_m51 osc myTextModelM 0 myTextModelZosc [-5.635012408846386 1.8473295915672594 0] 0
+@myTextModel_m52 osc myTextModelM 0 myTextModelZosc [-5.667314318630634 1.4488011522948483 0] 0
+@myTextModel_m53 osc myTextModelM 0 myTextModelZosc [-5.674325077916599 1.04831635915426 0] 0
+@myTextModel_m54 osc myTextModelM 0 myTextModelZosc [-5.655912915053133 0.6473130904061151 0] 0
+@myTextModel_m55 osc myTextModelM 0 myTextModelZosc [-5.612037329097365 0.24723714873852387 0] 0
+@myTextModel_m56 osc myTextModelM 0 myTextModelZosc [-5.542749569489242 -0.1504629259024277 0] 0
+@myTextModel_m57 osc myTextModelM 0 myTextModelZosc [-5.448192875888818 -0.5443410775336908 0] 0
+@myTextModel_m58 osc myTextModelM 0 myTextModelZosc [-5.328602326700086 -0.932958963719738 0] 0
+@myTextModel_m59 osc myTextModelM 0 myTextModelZosc [-5.184304390953933 -1.3148911821701113 0] 0
+@myTextModel_m60 osc myTextModelM 0 myTextModelZosc [-5.0157161267467245 -1.6887304728437904 0] 0
+@myTextModel_m61 osc myTextModelM 0 myTextModelZosc [-4.823344055898524 -2.0530928758464526 0] 0
+@myTextModel_m62 osc myTextModelM 0 myTextModelZosc [-4.607782712306399 -2.4066228271988024 0] 0
+@myTextModel_m63 osc myTextModelM 0 myTextModelZosc [-4.369712869041994 -2.7479981709697263 0] 0
+@myTextModel_m64 osc myTextModelM 0 myTextModelZosc [-4.109899438513025 -3.0759350776187055 0] 0
+@myTextModel_m65 osc myTextModelM 0 myTextModelZosc [-3.8291890677789837 -3.3891928362880925 0] 0
+@myTextModel_m66 osc myTextModelM 0 myTextModelZosc [-3.528507422709481 -3.6865785222401684 0] 0
+@myTextModel_m67 osc myTextModelM 0 myTextModelZosc [-3.208856181813289 -3.9669515012056493 0] 0
+@myTextModel_m68 osc myTextModelM 0 myTextModelZosc [-2.8713097346888574 -4.229227768254184 0] 0
+@myTextModel_m69 osc myTextModelM 0 myTextModelZosc [-2.517011611604545 -4.472384103264979 0] 0
+@myTextModel_m70 osc myTextModelM 0 myTextModelZosc [-2.1471706442087033 -4.69546202149137 0] 0
+@myTextModel_m71 osc myTextModelM 0 myTextModelZosc [-1.7630568763040415 -4.897571495323582 0] 0
+@myTextModel_m72 osc myTextModelM 0 myTextModelZosc [-1.365997234784711 -5.077894480703829 0] 0
+@myTextModel_m73 osc myTextModelM 0 myTextModelZosc [-0.9573709765148664 -5.235688154402748 0] 0
+@myTextModel_m74 osc myTextModelM 0 myTextModelZosc [-0.5386049307144241 -5.370287915922795 0] 0
+@myTextModel_m75 osc myTextModelM 0 myTextModelZosc [-0.11116854505689133 -5.48111011161356 0] 0
+@myTextModel_m76 osc myTextModelM 0 myTextModelZosc [0.3234312405369124 -5.567654501907732 0] 0
+@myTextModel_m77 osc myTextModelM 0 myTextModelZosc [0.7636552766305336 -5.629506405964538 0] 0
+@myTextModel_m78 osc myTextModelM 0 myTextModelZosc [1.2079376283813446 -5.666338547616267 0] 0
+@myTextModel_m79 osc myTextModelM 0 myTextModelZosc [1.654691113888262 -5.677912632487679 0] 0
+@myTextModel_m80 osc myTextModelM 0 myTextModelZosc [2.1023129498350954 -5.664080554731267 0] 0
+@myTextModel_m81 osc myTextModelM 0 myTextModelZosc [2.5491904716097054 -5.624785340909323 0] 0
+@myTextModel_m82 osc myTextModelM 0 myTextModelZosc [2.9937069133824465 -5.560061699596137 0] 0
+@myTextModel_m83 osc myTextModelM 0 myTextModelZosc [3.4342472317340444 -5.47003632604882 0] 0
+@myTextModel_m84 osc myTextModelM 0 myTextModelZosc [3.8692039419064663 -5.354927800650316 0] 0
+@myTextModel_m85 osc myTextModelM 0 myTextModelZosc [4.2969829565784 -5.215046194629622 0] 0
+@myTextModel_m86 osc myTextModelM 0 myTextModelZosc [4.716009396238942 -5.050792347215342 0] 0
+@myTextModel_m87 osc myTextModelM 0 myTextModelZosc [5.124733357905377 -4.862656778379197 0] 0
+@myTextModel_m88 osc myTextModelM 0 myTextModelZosc [5.521635617570059 -4.651218320804404 0] 0
+@myTextModel_m89 osc myTextModelM 0 myTextModelZosc [5.90523324302395 -4.417142379677813 0] 0
+@myTextModel_m90 osc myTextModelM 0 myTextModelZosc [6.274085101909112 -4.1611788991617615 0] 0
+@myTextModel_m91 osc myTextModelM 0 myTextModelZosc [6.626797243541045 -3.884160020013315 0] 0
+@myTextModel_m92 osc myTextModelM 0 myTextModelZosc [6.962028127992557 -3.586997413416203 0] 0
+@myTextModel_m93 osc myTextModelM 0 myTextModelZosc [7.278493693603046 -3.2706793226871334 0] 0
+@myTextModel_m94 osc myTextModelM 0 myTextModelZosc [7.574972231986791 -2.9362673206228145 0] 0
+@myTextModel_m95 osc myTextModelM 0 myTextModelZosc [7.85030906801569 -2.5848927830848787 0] 0
+@myTextModel_m96 osc myTextModelM 0 myTextModelZosc [8.103420994915503 -2.2177530979394255 0] 0
+@myTextModel_m97 osc myTextModelM 0 myTextModelZosc [8.333300521910282 -1.8361076183120737 0] 0
+@myTextModel_m98 osc myTextModelM 0 myTextModelZosc [8.53901978798816 -1.4412733774828972 0] 0
+@myTextModel_m99 osc myTextModelM 0 myTextModelZosc [8.719734275592238 -1.0346205755770015 0] 0
+@myTextModel_m100 osc myTextModelM 0 myTextModelZosc [8.87468619990009 -0.6175678541802725 0] 0
+@myTextModel_m101 osc myTextModelM 0 myTextModelZosc [9.003207614085362 -0.19157738038661876 0] 0
+@myTextModel_m102 osc myTextModelM 0 myTextModelZosc [9.104723199004077 0.24185025315212982 0] 0
+@myTextModel_m103 osc myTextModelM 0 myTextModelZosc [9.178752724682468 0.6811812811090618 0] 0
+@myTextModel_m104 osc myTextModelM 0 myTextModelZosc [9.22491319622953 1.1248541671160694 0] 0
+@myTextModel_m105 osc myTextModelM 0 myTextModelZosc [9.242920633682054 1.5712851260712561 0] 0
+@myTextModel_m106 osc myTextModelM 0 myTextModelZosc [9.232591529962896 2.0188737450163323 0] 0
+@myTextModel_m107 osc myTextModelM 0 myTextModelZosc [9.19384391121416 2.4660086972074033 0] 0
+@myTextModel_m108 osc myTextModelM 0 myTextModelZosc [9.126698081555098 2.9110735111459682 0] 0
+@myTextModel_m109 osc myTextModelM 0 myTextModelZosc [9.031276982838023 3.352452386804064 0] 0
+@myTextModel_m110 osc myTextModelM 0 myTextModelZosc [8.907806163090775 3.78853603395293 0] 0
+@myTextModel_m111 osc myTextModelM 0 myTextModelZosc [8.756613404137774 4.217727508699525 0] 0
+@myTextModel_m112 osc myTextModelM 0 myTextModelZosc [8.578127970530673 4.638448033893393 0] 0
+@myTextModel_m113 osc myTextModelM 0 myTextModelZosc [8.372879492411514 5.049142774729017 0] 0
+@myTextModel_m114 osc myTextModelM 0 myTextModelZosc [8.141496457062466 5.448286554608785 0] 0
+@myTextModel_m115 osc myTextModelM 0 myTextModelZosc [7.884704365945723 5.834389486773468 0] 0
+@myTextModel_m116 osc myTextModelM 0 myTextModelZosc [7.603323536405398 6.20600250377834 0] 0
+@myTextModel_m117 osc myTextModelM 0 myTextModelZosc [7.298266515211864 6.561722760321871 0] 0
+@myTextModel_m118 osc myTextModelM 0 myTextModelZosc [6.970535185366742 6.900198895089471 0] 0
+@myTextModel_m119 osc myTextModelM 0 myTextModelZosc [6.621217520725814 7.2201361253270235 0] 0
+@myTextModel_m120 osc myTextModelM 0 myTextModelZosc [6.251484021259639 7.5203011598067135 0] 0
+@myTextModel_m121 osc myTextModelM 0 myTextModelZosc [5.862583832738824 7.799526914652944 0] 0
+@myTextModel_m122 osc myTextModelM 0 myTextModelZosc [5.455840567253848 8.056717002158642 0] 0
+@myTextModel_m123 osc myTextModelM 0 myTextModelZosc [5.032647837823557 8.290849986618 0] 0
+@myTextModel_m124 osc myTextModelM 0 myTextModelZosc [4.594464520346602 8.500983395825244 0] 0
+@myTextModel_m125 osc myTextModelM 0 myTextModelZosc [4.142809759936782 8.686257442837373 0] 0
+@myTextModel_m126 osc myTextModelM 0 myTextModelZosc [3.6792577399457222 8.845898496831651 0] 0
+@myTextModel_m127 osc myTextModelM 0 myTextModelZosc [3.2054322288205093 8.979222219422496 0] 0
+@myTextModel_m128 osc myTextModelM 0 myTextModelZosc [2.7230009275176634 9.085636432151297 0] 0
+@myTextModel_m129 osc myTextModelM 0 myTextModelZosc [2.233669628203071 9.164643625540002 0] 0
+@myTextModel_m130 osc myTextModelM 0 myTextModelZosc [1.7391762189511084 9.215843157499904 0] 0
+@myTextModel_m131 osc myTextModelM 0 myTextModelZosc [1.2412845420168104 9.238933111226117 0] 0
+@myTextModel_m132 osc myTextModelM 0 myTextModelZosc [0.7417781340828462 9.233711800629663 0] 0
+@myTextModel_m133 osc myTextModelM 0 myTextModelZosc [0.24245386994045148 9.200078935255242 0] 0
+@myTextModel_m134 osc myTextModelM 0 myTextModelZosc [-0.25488447146122795 9.13803636702334 0] 0
+@myTextModel_m135 osc myTextModelM 0 myTextModelZosc [-0.7484326901954859 9.047688556197329 0] 0
+@myTextModel_m136 osc myTextModelM 0 myTextModelZosc [-1.2363926794648634 8.929242619174964 0] 0
+@myTextModel_m137 osc myTextModelM 0 myTextModelZosc [-1.716978940339036 8.78300797602607 0] 0
+@myTextModel_m138 osc myTextModelM 0 myTextModelZosc [-2.188425088287797 8.609395723229213 0] 0
+@myTextModel_m139 osc myTextModelM 0 myTextModelZosc [-2.6489903066973355 8.408917522519339 0] 0
+@myTextModel_m140 osc myTextModelM 0 myTextModelZosc [-3.0969657410583977 8.182184202986527 0] 0
+@myTextModel_m141 osc myTextModelM 0 myTextModelZosc [-3.5306808073178857 7.929903986816726 0] 0
+@myTextModel_m142 osc myTextModelM 0 myTextModelZosc [-3.948509381574155 7.652880296856765 0] 0
+@myTextModel_m143 osc myTextModelM 0 myTextModelZosc [-4.3488758610175715 7.352009313274202 0] 0
+@myTextModel_m144 osc myTextModelM 0 myTextModelZosc [-4.730261065821043 7.028277068431642 0] 0
+@myTextModel_m145 osc myTextModelM 0 myTextModelZosc [-5.0912079592591795 6.682756318933357 0] 0
+@myTextModel_m146 osc myTextModelM 0 myTextModelZosc [-5.43032717595759 6.316603000691 0] 0
+@myTextModel_m147 osc myTextModelM 0 myTextModelZosc [-5.746302322296799 5.931052419343956 0] 0
+@myTextModel_m148 osc myTextModelM 0 myTextModelZosc [-6.0378950300362035 5.527415122268845 0] 0
+@myTextModel_m149 osc myTextModelM 0 myTextModelZosc [-6.303949763158098 5.107072480853063 0] 0
+@myTextModel_m150 osc myTextModelM 0 myTextModelZosc [-6.543398343218453 4.671472003343755 0] 0
+@myTextModel_m151 osc myTextModelM 0 myTextModelZosc [-6.7552641591223725 4.222122382454007 0] 0
+@myTextModel_m152 osc myTextModelM 0 myTextModelZosc [-6.938666086570134 3.7605883105828752 0] 0
+@myTextModel_m153 osc myTextModelM 0 myTextModelZosc [-7.092822085616433 3.2884850608570844 0] 0
+@myTextModel_m154 osc myTextModelM 0 myTextModelZosc [-7.217052425850646 2.807472869240602 0] 0
+@myTextModel_m155 osc myTextModelM 0 myTextModelZosc [-7.310782564444189 2.3192511284652433 0] 0
+@myTextModel_m156 osc myTextModelM 0 myTextModelZosc [-7.3735456833764985 1.8255524176779439 0] 0
+@myTextModel_m157 osc myTextModelM 0 myTextModelZosc [-7.404984816412998 1.3281363839344564 0] 0
+@myTextModel_m158 osc myTextModelM 0 myTextModelZosc [-7.40485460370418 0.8287835042142504 0] 0
+@myTextModel_m159 osc myTextModelM 0 myTextModelZosc [-7.373022636136657 0.3292887422941675 0] 0
+@myTextModel_m160 osc myTextModelM 0 myTextModelZosc [-7.309470439928312 -0.16854487084435732 0] 0
+@myTextModel_m161 osc myTextModelM 0 myTextModelZosc [-7.214293987860412 -0.6629127139578443 0] 0
+@myTextModel_m162 osc myTextModelM 0 myTextModelZosc [-7.087703850753783 -1.1520150847425832 0] 0
+@myTextModel_m163 osc myTextModelM 0 myTextModelZosc [-6.930024919762467 -1.634063719192138 0] 0
+@myTextModel_m164 osc myTextModelM 0 myTextModelZosc [-6.741695705796424 -2.1072882972148257 0] 0
+@myTextModel_m165 osc myTextModelM 0 myTextModelZosc [-6.523267253942244 -2.569942911810127 0] 0
+@myTextModel_m166 osc myTextModelM 0 myTextModelZosc [-6.275401597143858 -3.020312473129227 0] 0
+@myTextModel_m167 osc myTextModelM 0 myTextModelZosc [-5.9988698690618065 -3.456719033679569 0] 0
+@myTextModel_m168 osc myTextModelM 0 myTextModelZosc [-5.6945499372579995 -3.877528003011559 0] 0
+@myTextModel_m169 osc myTextModelM 0 myTextModelZosc [-5.363423727116555 -4.281154232770874 0] 0
+@myTextModel_m170 osc myTextModelM 0 myTextModelZosc [-5.006574072401641 -4.666067945233589 0] 0
+@myTextModel_m171 osc myTextModelM 0 myTextModelZosc [-4.625181262862924 -5.030800501142398 0] 0
+@myTextModel_m172 osc myTextModelM 0 myTextModelZosc [-4.220519170863486 -5.373949939338441 0] 0
+@myTextModel_m173 osc myTextModelM 0 myTextModelZosc [-3.793951058014329 -5.694186347928152 0] 0
+@myTextModel_m174 osc myTextModelM 0 myTextModelZosc [-3.346925021421793 -5.9902569385453255 0] 0
+@myTextModel_m175 osc myTextModelM 0 myTextModelZosc [-2.880969125621906 -6.260990927057765 0] 0
+@myTextModel_m176 osc myTextModelM 0 myTextModelZosc [-2.397686221463985 -6.50530407375939 0] 0
+@myTextModel_m177 osc myTextModelM 0 myTextModelZosc [-1.8987484702468223 -6.722202990578889 0] 0
+@myTextModel_m178 osc myTextModelM 0 myTextModelZosc [-1.3858916008781108 -6.910789089852088 0] 0
+@myTextModel_m179 osc myTextModelM 0 myTextModelZosc [-0.8609089076309502 -7.070262246345386 0] 0
+@myTextModel_m180 osc myTextModelM 0 myTextModelZosc [-0.32564501689912007 -7.199924082921136 0] 0
+@myTextModel_m181 osc myTextModelM 0 myTextModelZosc [0.2180105555896361 -7.299180933610398 0] 0
+@myTextModel_m182 osc myTextModelM 0 myTextModelZosc [0.7681300400613189 -7.367546424353787 0] 0
+@myTextModel_m183 osc myTextModelM 0 myTextModelZosc [1.322754213344897 -7.404643671410277 0] 0
+@myTextModel_m184 osc myTextModelM 0 myTextModelZosc [1.8798993396369568 -7.4102071213298295 0] 0
+@myTextModel_m185 osc myTextModelM 0 myTextModelZosc [2.4375642305538676 -7.3840839608025455 0] 0
+@myTextModel_m186 osc myTextModelM 0 myTextModelZosc [2.9937373992254095 -7.326235162097628 0] 0
+@myTextModel_m187 osc myTextModelM 0 myTextModelZosc [3.546404278134606 -7.236736074483176 0] 0
+@myTextModel_m188 osc myTextModelM 0 myTextModelZosc [4.093554483031571 -7.115776663183645 0] 0
+@myTextModel_m189 osc myTextModelM 0 myTextModelZosc [4.633189087576923 -6.963661294318133 0] 0
+@myTextModel_m190 osc myTextModelM 0 myTextModelZosc [5.163327889780238 -6.780808107636972 0] 0
+@myTextModel_m191 osc myTextModelM 0 myTextModelZosc [5.682016643094052 -6.567748000952431 0] 0
+@myTextModel_m192 osc myTextModelM 0 myTextModelZosc [6.187334220605884 -6.325123172498099 0] 0
+@myTextModel_m193 osc myTextModelM 0 myTextModelZosc [6.677399690869187 -6.053685292904099 0] 0
+@myTextModel_m194 osc myTextModelM 0 myTextModelZosc [7.150379280758266 -5.754293217179249 0] 0
+@myTextModel_m195 osc myTextModelM 0 myTextModelZosc [7.604493193789729 -5.427910386048389 0] 0
+@myTextModel_m196 osc myTextModelM 0 myTextModelZosc [8.038022266238137 -5.075601719505162 0] 0
+@myTextModel_m197 osc myTextModelM 0 myTextModelZosc [8.449314428226174 -4.698530259459343 0] 0
+@myTextModel_m198 osc myTextModelM 0 myTextModelZosc [8.836790950223424 -4.2979533541832815 0] 0
+@myTextModel_m199 osc myTextModelM 0 myTextModelZosc [9.198952451601471 -3.875218517776098 0] 0
+@myTextModel_m200 osc myTextModelM 0 myTextModelZosc [9.53438466240894 -3.431758946723935 0] 0
+@myTextModel_m201 osc myTextModelM 0 myTextModelZosc [9.841763863890883 -2.9690887031145046 0] 0
+@myTextModel_m202 osc myTextModelM 0 myTextModelZosc [10.119862070236351 -2.4887975919860708 0] 0
+@myTextModel_m203 osc myTextModelM 0 myTextModelZosc [10.367551856881512 -1.9925457357978011 0] 0
+@myTextModel_m204 osc myTextModelM 0 myTextModelZosc [10.583810854302932 -1.4820578752938331 0] 0
+@myTextModel_m205 osc myTextModelM 0 myTextModelZosc [10.767725888366407 -0.9591174188645475 0] 0
+@myTextModel_m206 osc myTextModelM 0 myTextModelZosc [10.91849672305085 -0.4255602421973208 0] 0
+@myTextModel_m207 osc myTextModelM 0 myTextModelZosc [11.035439443416237 0.1167317139918218 0] 0
+@myTextModel_m208 osc myTextModelM 0 myTextModelZosc [11.117989409389068 0.6658370475482513 0] 0
+@myTextModel_m209 osc myTextModelM 0 myTextModelZosc [11.165703780365327 1.2198016675311472 0] 0
+@myTextModel_m210 osc myTextModelM 0 myTextModelZosc [11.178263648499964 1.7766457132274098 0] 0
+@myTextModel_m211 osc myTextModelM 0 myTextModelZosc [11.155475704944855 2.334370592046909 0] 0
+@myTextModel_m212 osc myTextModelM 0 myTextModelZosc [11.097273457969706 2.890966119572049 0] 0
+@myTextModel_m213 osc myTextModelM 0 myTextModelZosc [11.003718015589016 3.4444177289050018 0] 0
+@myTextModel_m214 osc myTextModelM 0 myTextModelZosc [10.8749984074489 3.9927137266116723 0] 0
+@myTextModel_m215 osc myTextModelM 0 myTextModelZosc [10.711431427039429 4.533852568977029 0] 0
+@myTextModel_m216 osc myTextModelM 0 myTextModelZosc [10.51346103210144 5.065850131689089 0] 0
+@myTextModel_m217 osc myTextModelM 0 myTextModelZosc [10.281657277981758 5.5867469478610765 0] 0
+@myTextModel_m218 osc myTextModelM 0 myTextModelZosc [10.016714777625417 6.094615387508977 0] 0
+@myTextModel_m219 osc myTextModelM 0 myTextModelZosc [9.719450751319883 6.587566752199173 0] 0
+@myTextModel_m220 osc myTextModelM 0 myTextModelZosc [9.390802546272631 7.063758256191292 0] 0
+@myTextModel_m221 osc myTextModelM 0 myTextModelZosc [9.031824790121334 7.521399880336212 0] 0
+@myTextModel_m222 osc myTextModelM 0 myTextModelZosc [8.643686071080964 7.958761047950681 0] 0
+@myTextModel_m223 osc myTextModelM 0 myTextModelZosc [8.227665182596915 8.374177131032198 0] 0
+@myTextModel_m224 osc myTextModelM 0 myTextModelZosc [7.785146982996153 8.766055746788666 0] 0
+@myTextModel_m225 osc myTextModelM 0 myTextModelZosc [7.317617849308441 9.132882782951292 0] 0
+@myTextModel_m226 osc myTextModelM 0 myTextModelZosc [6.8266607113723445 9.47322823431113 0] 0
+@myTextModel_m227 osc myTextModelM 0 myTextModelZosc [6.313949765947783 9.785751674845343 0] 0
+@myTextModel_m228 osc myTextModelM 0 myTextModelZosc [5.781244805195506 10.069207526729805 0] 0
+@myTextModel_m229 osc myTextModelM 0 myTextModelZosc [5.230385225163133 10.322449917149811 0] 0
+@myTextModel_m230 osc myTextModelM 0 myTextModelZosc [4.663283716802365 10.544437242388064 0] 0
+@myTextModel_m231 osc myTextModelM 0 myTextModelZosc [4.0819196717060855 10.73423637945028 0] 0
+@myTextModel_m232 osc myTextModelM 0 myTextModelZosc [3.4883323107702573 10.89102650938488 0] 0
+@myTextModel_m233 osc myTextModelM 0 myTextModelZosc [2.8846135761743206 11.01410255229684 0] 0
+@myTextModel_m234 osc myTextModelM 0 myTextModelZosc [2.272900796778451 11.102878190159814 0] 0
+@myTextModel_m235 osc myTextModelM 0 myTextModelZosc [1.6553691648067712 11.15688850132237 0] 0
+@myTextModel_m236 osc myTextModelM 0 myTextModelZosc [1.0342240370706435 11.17579212904716 0] 0
+@myTextModel_m237 osc myTextModelM 0 myTextModelZosc [0.41169310175683904 11.159373073692045 0] 0
+@myTextModel_m238 osc myTextModelM 0 myTextModelZosc [-0.20998157470288703 11.107541935288971 0] 0
+@myTextModel_m239 osc myTextModelM 0 myTextModelZosc [-0.8285515790249747 11.020336845478155 0] 0
+@myTextModel_m240 osc myTextModelM 0 myTextModelZosc [-1.4417702474756808 10.897923802048602 0] 0
+@myTextModel_m241 osc myTextModelM 0 myTextModelZosc [-2.0474007818384834 10.740596639068364 0] 0
+@myTextModel_m242 osc myTextModelM 0 myTextModelZosc [-2.643224371692881 10.548776507152063 0] 0
+@myTextModel_m243 osc myTextModelM 0 myTextModelZosc [-3.2270482781930774 10.323010875813353 0] 0
+@myTextModel_m244 osc myTextModelM 0 myTextModelZosc [-3.796713864198818 10.063972093746145 0] 0
+@myTextModel_m245 osc myTextModelM 0 myTextModelZosc [-4.350104530995932 9.772455477164712 0] 0
+@myTextModel_m246 osc myTextModelM 0 myTextModelZosc [-4.885153538885099 9.449376979968243 0] 0
+@myTextModel_m247 osc myTextModelM 0 myTextModelZosc [-5.399851677556814 9.095770362094683 0] 0
+@myTextModel_m248 osc myTextModelM 0 myTextModelZosc [-5.892254775522851 8.71278398151653 0] 0
+@myTextModel_m249 osc myTextModelM 0 myTextModelZosc [-6.360490966554703 8.301677108321677 0] 0
+@myTextModel_m250 osc myTextModelM 0 myTextModelZosc [-6.802767788867111 7.863815850488336 0] 0
+@myTextModel_m251 osc myTextModelM 0 myTextModelZosc [-7.217378951685106 7.400668691354056 0] 0
+@myTextModel_m252 osc myTextModelM 0 myTextModelZosc [-7.60271090552321 6.913801577844669 0] 0
+@myTextModel_m253 osc myTextModelM 0 myTextModelZosc [-7.957249014839654 6.404872709409016 0] 0
+@myTextModel_m254 osc myTextModelM 0 myTextModelZosc [-8.27958347191878 5.875626926699844 0] 0
+@myTextModel_m255 osc myTextModelM 0 myTextModelZosc [-8.568414819440036 5.3278897752725705 0] 0
+@myTextModel_m256 osc myTextModelM 0 myTextModelZosc [-8.82255910066796 4.763561254457542 0] 0
+@myTextModel_m257 osc myTextModelM 0 myTextModelZosc [-9.040952643574803 4.184609270522415 0] 0
+@myTextModel_m258 osc myTextModelM 0 myTextModelZosc [-9.222656365288556 3.593062817422993 0] 0
+@myTextModel_m259 osc myTextModelM 0 myTextModelZosc [-9.366859748342604 2.9910049042591815 0] 0
+@myTextModel_m260 osc myTextModelM 0 myTextModelZosc [-9.472884236266689 2.380565264084762 0] 0
+@myTextModel_m261 osc myTextModelM 0 myTextModelZosc [-9.540186307291018 1.7639128602007794 0] 0
+@myTextModel_m262 osc myTextModelM 0 myTextModelZosc [-9.568359967391672 1.1432482162177635 0] 0
+@myTextModel_m263 osc myTextModelM 0 myTextModelZosc [-9.557138788907494 0.5207956075225617 0] 0
+@myTextModel_m264 osc myTextModelM 0 myTextModelZosc [-9.506397488416928 -0.10120487509699672 0] 0
+@myTextModel_m265 osc myTextModelM 0 myTextModelZosc [-9.416152955513736 -0.7205053430730501 0] 0
+@myTextModel_m266 osc myTextModelM 0 myTextModelZosc [-9.286564789285107 -1.3348581975736842 0] 0
+@myTextModel_m267 osc myTextModelM 0 myTextModelZosc [-9.117935336180718 -1.942024245096416 0] 0
+@myTextModel_m268 osc myTextModelM 0 myTextModelZosc [-8.910709178780628 -2.5397808190356415 0] 0
+@myTextModel_m269 osc myTextModelM 0 myTextModelZosc [-8.665472138577112 -3.125929873172531 0] 0
+@myTextModel_m270 osc myTextModelM 0 myTextModelZosc [-8.382949767524398 -3.69830602558131 0] 0
+@myTextModel_m271 osc myTextModelM 0 myTextModelZosc [-8.064005303110271 -4.254784512926424 0] 0
+@myTextModel_m272 osc myTextModelM 0 myTextModelZosc [-7.709637124818613 -4.7932890342419014 0] 0
+@myTextModel_m273 osc myTextModelM 0 myTextModelZosc [-7.320975724605827 -5.311799445959679 0] 0
+@myTextModel_m274 osc myTextModelM 0 myTextModelZosc [-6.899280197702765 -5.80835931296604 0] 0
+@myTextModel_m275 osc myTextModelM 0 myTextModelZosc [-6.445934203249994 -6.281083212934448 0] 0
+@myTextModel_m276 osc myTextModelM 0 myTextModelZosc [-5.962441520996581 -6.728163862635064 0] 0
+@myTextModel_m277 osc myTextModelM 0 myTextModelZosc [-5.450421122012848 -7.147878970040562 0] 0
+@myTextModel_m278 osc myTextModelM 0 myTextModelZosc [-4.911601783712268 -7.538597805656881 0] 0
+@myTextModel_m279 osc myTextModelM 0 myTextModelZosc [-4.3478163470108875 -7.89878748710499 0] 0
+@myTextModel_m280 osc myTextModelM 0 myTextModelZosc [-3.7609955070663688 -8.227018899292556 0] 0
+@myTextModel_m281 osc myTextModelM 0 myTextModelZosc [-3.1531612663513933 -8.521972333810478 0] 0
+@myTextModel_m282 osc myTextModelM 0 myTextModelZosc [-2.526420014716944 -8.782442674310285 0] 0
+@myTextModel_m283 osc myTextModelM 0 myTextModelZosc [-1.882955278732645 -9.007344253314947 0] 0
+@myTextModel_m284 osc myTextModelM 0 myTextModelZosc [-1.2250201617632008 -9.195715272932304 0] 0
+@myTextModel_m285 osc myTextModelM 0 myTextModelZosc [-0.5549295025516372 -9.34672178947107 0] 0
+@myTextModel_m286 osc myTextModelM 0 myTextModelZosc [0.12494822623157376 -9.459661273907342 0] 0
+@myTextModel_m287 osc myTextModelM 0 myTextModelZosc [0.8121992428667788 -9.533965694436096 0] 0
+@myTextModel_m288 osc myTextModelM 0 myTextModelZosc [1.5043729821692757 -9.569204139029575 0] 0
+@myTextModel_m289 osc myTextModelM 0 myTextModelZosc [2.198990788959616 -9.565084936184931 0] 0
+@myTextModel_m290 osc myTextModelM 0 myTextModelZosc [2.893554751018172 -9.521457309704791 0] 0
+@myTextModel_m291 osc myTextModelM 0 myTextModelZosc [3.5855566380730437 -9.438312519719247 0] 0
+@myTextModel_m292 osc myTextModelM 0 myTextModelZosc [4.272486912739154 -9.315784466053481 0] 0
+@myTextModel_m293 osc myTextModelM 0 myTextModelZosc [4.951843789424789 -9.154149831602265 0] 0
+@myTextModel_m294 osc myTextModelM 0 myTextModelZosc [5.621142300180821 -8.953827670128302 0] 0
+@myTextModel_m295 osc myTextModelM 0 myTextModelZosc [6.277923337197311 -8.715378492249858 0] 0
+@myTextModel_m296 osc myTextModelM 0 myTextModelZosc [6.919762643545784 -8.439502849617678 0] 0
+@myTextModel_m297 osc myTextModelM 0 myTextModelZosc [7.544279709880051 -8.127039381437566 0] 0
+@myTextModel_m298 osc myTextModelM 0 myTextModelZosc [8.149146559423315 -7.778962365156197 0] 0
+@myTextModel_m299 osc myTextModelM 0 myTextModelZosc [8.732096366331518 -7.396378789231953 0] 0
+@myTextModel_m300 osc myTextModelM 0 myTextModelZosc [9.290931916900135 -6.9805248942253755 0] 0
+@myTextModel_m301 osc myTextModelM 0 myTextModelZosc [9.823533813261449 -6.532762259870381 0] 0
+@myTextModel_m302 osc myTextModelM 0 myTextModelZosc [10.327868462490628 -6.054573414230546 0] 0
+@myTextModel_m303 osc myTextModelM 0 myTextModelZosc [10.80199578926775 -5.547556988836124 0] 0
+@myTextModel_m304 osc myTextModelM 0 myTextModelZosc [11.244076632964408 -5.0134224496715944 0] 0
+@myTextModel_m305 osc myTextModelM 0 myTextModelZosc [11.652379803909014 -4.453984365780421 0] 0
+@myTextModel_m306 osc myTextModelM 0 myTextModelZosc [12.025288786207625 -3.8711563164466654 0] 0
+@myTextModel_m307 osc myTextModelM 0 myTextModelZosc [12.36130807449733 -3.266944394538438 0] 0
+@myTextModel_m308 osc myTextModelM 0 myTextModelZosc [12.659069075205707 -2.6434403508177233 0] 0
+@myTextModel_m309 osc myTextModelM 0 myTextModelZosc [12.917335578627679 -2.0028144025149537 0] 0
+@myTextModel_m310 osc myTextModelM 0 myTextModelZosc [13.135008782885393 -1.347307724687532 0] 0
+@myTextModel_m311 osc myTextModelM 0 myTextModelZosc [13.311131838213555 -0.6792246608032926 0] 0
+@myTextModel_m312 osc myTextModelM 0 myTextModelZosc [13.444893905258688 -0.0009246621072378503 0] 0
+@myTextModel_m313 osc myTextModelM 0 myTextModelZosc [13.535633689523209 0.6851859958395963 0] 0
+@myTextModel_m314 osc myTextModelM 0 myTextModelZosc [13.582842470889048 1.3766627051116416 0] 0
+@myTextModel_m315 osc myTextModelM 0 myTextModelZosc [13.586166565105465 2.0710311947962836 0] 0
+@myTextModel_m316 osc myTextModelM 0 myTextModelZosc [13.545409255110357 2.7657963365770613 0] 0
+@myTextModel_m317 osc myTextModelM 0 myTextModelZosc [13.460532198496367 3.458451069795636 0] 0
+@myTextModel_m318 osc myTextModelM 0 myTextModelZosc [13.331656178580282 4.146485400590581 0] 0
+@myTextModel_m319 osc myTextModelM 0 myTextModelZosc [13.159061363174843 4.8273954565937665 0] 0
+@myTextModel_m320 osc myTextModelM 0 myTextModelZosc [12.943186976390322 5.498692551185059 0] 0
+@myTextModel_m321 osc myTextModelM 0 myTextModelZosc [12.684630364531493 6.157912234604357 0] 0
+@myTextModel_m322 osc myTextModelM 0 myTextModelZosc [12.38414550658183 6.8026232954799575 0] 0
+@myTextModel_m323 osc myTextModelM 0 myTextModelZosc [12.042640962963645 7.430436676332199 0] 0
+@myTextModel_m324 osc myTextModelM 0 myTextModelZosc [11.661177218393448 8.039014291104571 0] 0
+@myTextModel_m325 osc myTextModelM 0 myTextModelZosc [11.24096352612829 8.626077655710567 0] 0
+@myTextModel_m326 osc myTextModelM 0 myTextModelZosc [10.783354139995843 9.189416395517469 0] 0
+@myTextModel_m327 osc myTextModelM 0 myTextModelZosc [10.2898440667499 9.726896488782081 0] 0
+@myTextModel_m328 osc myTextModelM 0 myTextModelZosc [9.76206420620975 10.236468313543924 0] 0
+@myTextModel_m329 osc myTextModelM 0 myTextModelZosc [9.201776100085986 10.716174395821625 0] 0
+@myTextModel_m330 osc myTextModelM 0 myTextModelZosc [8.610866062278653 11.164156865086362 0] 0
+@myTextModel_m331 osc myTextModelM 0 myTextModelZosc [7.991338943107969 11.578664569220877 0] 0
+@myTextModel_m332 osc myTextModelM 0 myTextModelZosc [7.345311338763501 11.9580598788338 0] 0
+@myTextModel_m333 osc myTextModelM 0 myTextModelZosc [6.675004464350078 12.300825055476558 0] 0
+@myTextModel_m334 osc myTextModelM 0 myTextModelZosc [5.982736545996708 12.605568225580427 0] 0
+@myTextModel_m335 osc myTextModelM 0 myTextModelZosc [5.2709148670950725 12.871028966087636 0] 0
+@myTextModel_m336 osc myTextModelM 0 myTextModelZosc [4.542027449101578 13.09608339424583 0] 0
+@myTextModel_m337 osc myTextModelM 0 myTextModelZosc [3.798634408559167 13.279748791435253 0] 0
+@myTextModel_m338 osc myTextModelM 0 myTextModelZosc [3.043359016215952 13.421187761029032 0] 0
+@myTextModel_m339 osc myTextModelM 0 myTextModelZosc [2.278878487904816 13.51971186054682 0] 0
+@myTextModel_m340 osc myTextModelM 0 myTextModelZosc [1.5079145482086886 13.574784702128177 0] 0
+@myTextModel_m341 osc myTextModelM 0 myTextModelZosc [0.7332237864772928 13.586024545221278 0] 0
+@myTextModel_m342 osc myTextModelM 0 myTextModelZosc [-0.042412147468436245 13.553206321747517 0] 0
+@myTextModel_m343 osc myTextModelM 0 myTextModelZosc [-0.8161964845916252 13.476263099716085 0] 0
+@myTextModel_m344 osc myTextModelM 0 myTextModelZosc [-1.5853273694116012 13.35528699723642 0] 0
+@myTextModel_m345 osc myTextModelM 0 myTextModelZosc [-2.347007957784559 13.19052952303253 0] 0
+@myTextModel_m346 osc myTextModelM 0 myTextModelZosc [-3.098456536774485 12.98240132553768 0] 0
+@myTextModel_m347 osc myTextModelM 0 myTextModelZosc [-3.836916631901097 12.731471410308636 0] 0
+@myTextModel_m348 osc myTextModelM 0 myTextModelZosc [-4.559667067682593 12.438465700306807 0] 0
+@myTextModel_m349 osc myTextModelM 0 myTextModelZosc [-5.264031939186193 12.104265130212369 0] 0
+@myTextModel_m350 osc myTextModelM 0 myTextModelZosc [-5.947390475651844 11.72990308360523 0] 0
+@myTextModel_m351 osc myTextModelM 0 myTextModelZosc [-6.607186716033073 11.316562310413524 0] 0
+@myTextModel_m352 osc myTextModelM 0 myTextModelZosc [-7.240939032430443 10.865571294759881 0] 0
+@myTextModel_m353 osc myTextModelM 0 myTextModelZosc [-7.846249392859814 10.37840005528367 0] 0
+@myTextModel_m354 osc myTextModelM 0 myTextModelZosc [-8.42081236146186 9.856655443652556 0] 0
+@myTextModel_m355 osc myTextModelM 0 myTextModelZosc [-8.96242385256281 9.302075917367524 0] 0
+@myTextModel_m356 osc myTextModelM 0 myTextModelZosc [-9.468989455552698 8.716525816731249 0] 0
+@myTextModel_m357 osc myTextModelM 0 myTextModelZosc [-9.938532513614783 8.10198915195351 0] 0
+@myTextModel_m358 osc myTextModelM 0 myTextModelZosc [-10.369201729091976 7.460562966107119 0] 0
+@myTextModel_m359 osc myTextModelM 0 myTextModelZosc [-10.759278383851283 6.794450205234085 0] 0
+@myTextModel_m360 osc myTextModelM 0 myTextModelZosc [-11.107183098908191 6.1059522425607256 0] 0
+@myTextModel_m361 osc myTextModelM 0 myTextModelZosc [-11.411482133311056 5.397460962433723 0] 0
+@myTextModel_m362 osc myTextModelM 0 myTextModelZosc [-11.670893159170348 4.671450511507803 0] 0
+@myTextModel_m363 osc myTextModelM 0 myTextModelZosc [-11.884290544390346 3.930468708224261 0] 0
+@myTextModel_m364 osc myTextModelM 0 myTextModelZosc [-12.050710061053621 3.1771281565795952 0] 0
+@myTextModel_m365 osc myTextModelM 0 myTextModelZosc [-12.169353069950452 2.414097081508661 0] 0
+@myTextModel_m366 osc myTextModelM 0 myTextModelZosc [-12.239590073957473 1.6440899300894891 0] 0
+@myTextModel_m367 osc myTextModelM 0 myTextModelZosc [-12.260963728626697 0.8698577636603559 0] 0
+@myTextModel_m368 osc myTextModelM 0 myTextModelZosc [-12.23319119006626 0.09417847908215649 0] 0
+@myTextModel_m369 osc myTextModelM 0 myTextModelZosc [-12.156165894785511 -0.6801531103866267 0] 0
+@myTextModel_m370 osc myTextModelM 0 myTextModelZosc [-12.029958676831809 -1.4503352939797907 0] 0
+@myTextModel_m371 osc myTextModelM 0 myTextModelZosc [-11.854818266399608 -2.213569554000504 0] 0
+@myTextModel_m372 osc myTextModelM 0 myTextModelZosc [-11.631171125731274 -2.9670706802940963 0] 0
+@myTextModel_m373 osc myTextModelM 0 myTextModelZosc [-11.359620660178647 -3.708076886513119 0] 0
+@myTextModel_m374 osc myTextModelM 0 myTextModelZosc [-11.040945798113896 -4.433859881577796 0] 0
+@myTextModel_m375 osc myTextModelM 0 myTextModelZosc [-10.676098914443578 -5.141734857501394 0] 0
+@myTextModel_m376 osc myTextModelM 0 myTextModelZosc [-10.266203091414438 -5.829070379243035 0] 0
+@myTextModel_m377 osc myTextModelM 0 myTextModelZosc [-9.812548830318063 -6.493298091160604 0] 0
+@myTextModel_m378 osc myTextModelM 0 myTextModelZosc [-9.31659006261822 -7.131922273517873 0] 0
+@myTextModel_m379 osc myTextModelM 0 myTextModelZosc [-8.77993959304251 -7.742529151073224 0] 0
+@myTextModel_m380 osc myTextModelM 0 myTextModelZosc [-8.20436394308086 -8.32279596749002 0] 0
+@myTextModel_m381 osc myTextModelM 0 myTextModelZosc [-7.591777645382827 -8.870499737154415 0] 0
+@myTextModel_m382 osc myTextModelM 0 myTextModelZosc [-6.944236913315706 -9.383525692322335 0] 0
+@myTextModel_m383 osc myTextModelM 0 myTextModelZosc [-6.263932837159565 -9.859875401699952 0] 0
+@myTextModel_m384 osc myTextModelM 0 myTextModelZosc [-5.553184037512651 -10.297674446952788 0] 0
+@myTextModel_m385 osc myTextModelM 0 myTextModelZosc [-4.814428823243471 -10.695179716882867 0] 0
+@myTextModel_m386 osc myTextModelM 0 myTextModelZosc [-4.050216891858579 -11.050786277456336 0] 0
+@myTextModel_m387 osc myTextModelM 0 myTextModelZosc [-3.2632005994255664 -11.363033710150674 0] 0
+@myTextModel_m388 osc myTextModelM 0 myTextModelZosc [-2.45612580699391 -11.63061203810025 0] 0
+@myTextModel_m389 osc myTextModelM 0 myTextModelZosc [-1.6318223628418203 -11.852367054848187 0] 0
+@myTextModel_m390 osc myTextModelM 0 myTextModelZosc [-0.7931942350656236 -12.027305157261434 0] 0
+@myTextModel_m391 osc myTextModelM 0 myTextModelZosc [0.05679065941441408 -12.1545976228697 0] 0
+@myTextModel_m392 osc myTextModelM 0 myTextModelZosc [0.915110904816828 -12.233584271888866 0] 0
+@myTextModel_m393 osc myTextModelM 0 myTextModelZosc [1.7787022699875301 -12.263776579642197 0] 0
+@myTextModel_m394 osc myTextModelM 0 myTextModelZosc [2.6444685938565833 -12.244860161718163 0] 0
+@myTextModel_m395 osc myTextModelM 0 myTextModelZosc [3.5092928312072615 -12.176696631864846 0] 0
+@myTextModel_m396 osc myTextModelM 0 myTextModelZosc [4.370048217732624 -12.059324844568861 0] 0
+@myTextModel_m397 osc myTextModelM 0 myTextModelZosc [5.2236095221908805 -11.892961516344808 0] 0
+@myTextModel_m398 osc myTextModelM 0 myTextModelZosc [6.066864337692085 -11.678001171969838 0] 0
+@myTextModel_m399 osc myTextModelM 0 myTextModelZosc [6.8967243729848455 -11.415015469428761 0] 0
+@myTextModel_m400 osc myTextModelM 0 myTextModelZosc [7.710136705874007 -11.104751897595774 0] 0
+@myTextModel_m401 osc myTextModelM 0 myTextModelZosc [8.504094954588695 -10.748131804835232 0] 0
+@myTextModel_m402 osc myTextModelM 0 myTextModelZosc [9.27565033743673 -10.346247800339023 0] 0
+@myTextModel_m403 osc myTextModelM 0 myTextModelZosc [10.021922541220292 -9.900360552096313 0] 0
+@myTextModel_m404 osc myTextModelM 0 myTextModelZosc [10.740110443224737 -9.411894909808382 0] 0
+@myTextModel_m405 osc myTextModelM 0 myTextModelZosc [11.427502531517206 -8.882435466253419 0] 0
+@myTextModel_m406 osc myTextModelM 0 myTextModelZosc [12.081487085408106 -8.313721515283607 0] 0
+@myTextModel_m407 osc myTextModelM 0 myTextModelZosc [12.699562015091068 -7.70764141840252 0] 0
+@myTextModel_m408 osc myTextModelM 0 myTextModelZosc [13.279344385707603 -7.0662263978444955 0] 0
+@myTextModel_m409 osc myTextModelM 0 myTextModelZosc [13.81857948067173 -6.391643827843314 0] 0
+@myTextModel_m410 osc myTextModelM 0 myTextModelZosc [14.315149517861613 -5.686189964350831 0] 0
+@myTextModel_m411 osc myTextModelM 0 myTextModelZosc [14.767081860890741 -4.952282202814523 0] 0
+@myTextModel_m412 osc myTextModelM 0 myTextModelZosc [15.172556750704416 -4.192450859234903 0] 0
+@myTextModel_m413 osc myTextModelM 0 myTextModelZosc [15.529914532255724 -3.4093305001906558 0] 0
+@myTextModel_m414 osc myTextModelM 0 myTextModelZosc [15.837662300522801 -2.605650881570927 0] 0
+@myTextModel_m415 osc myTextModelM 0 myTextModelZosc [16.094479997425005 -1.7842274828720406 0] 0
+@myTextModel_m416 osc myTextModelM 0 myTextModelZosc [16.299225934391814 -0.9479517057589888 0] 0
+@myTextModel_m417 osc myTextModelM 0 myTextModelZosc [16.450941626977517 -0.09978075182645796 0] 0
+@myTextModel_m418 osc myTextModelM 0 myTextModelZosc [16.548856048817207 0.7572727792203473 0] 0
+@myTextModel_m419 osc myTextModelM 0 myTextModelZosc [16.592389197628407 1.6201515339267694 0] 0
+@myTextModel_m420 osc myTextModelM 0 myTextModelZosc [16.581155004816004 2.4857642555505635 0] 0
+@myTextModel_m421 osc myTextModelM 0 myTextModelZosc [16.514963525565307 3.35099680717056 0] 0
+@myTextModel_m422 osc myTextModelM 0 myTextModelZosc [16.393822459915327 4.212723314274058 0] 0
+@myTextModel_m423 osc myTextModelM 0 myTextModelZosc [16.217937973254728 5.0678174089011705 0] 0
+@myTextModel_m424 osc myTextModelM 0 myTextModelZosc [15.987714753125402 5.913163512619704 0] 0
+@myTextModel_m425 osc myTextModelM 0 myTextModelZosc [15.703755409629274 6.7456681332401764 0] 0
+@myTextModel_m426 osc myTextModelM 0 myTextModelZosc [15.366859137388687 7.562271126284536 0] 0
+@myTextModel_m427 osc myTextModelM 0 myTextModelZosc [14.978019626437558 8.3599568907416 0] 0
+@myTextModel_m428 osc myTextModelM 0 myTextModelZosc [14.538422323027063 9.135765440564612 0] 0
+@myTextModel_m429 osc myTextModelM 0 myTextModelZosc [14.049440933050633 9.886803329209933 0] 0
+@myTextModel_m430 osc myTextModelM 0 myTextModelZosc [13.51263328169506 10.610254365087947 0] 0
+@myTextModel_m431 osc myTextModelM 0 myTextModelZosc [12.929736428333804 11.303390131666184 0] 0
+@myTextModel_m432 osc myTextModelM 0 myTextModelZosc [12.302661188138565 11.963580196927808 0] 0
+@myTextModel_m433 osc myTextModelM 0 myTextModelZosc [11.633485921556051 12.588302000237384 0] 0
+@myTextModel_m434 osc myTextModelM 0 myTextModelZosc [10.924449768372035 13.175150464405647 0] 0
+@myTextModel_m435 osc myTextModelM 0 myTextModelZosc [10.177945219067176 13.72184712386531 0] 0
+@myTextModel_m436 osc myTextModelM 0 myTextModelZosc [9.396510137071694 14.22624891830639 0] 0
+@myTextModel_m437 osc myTextModelM 0 myTextModelZosc [8.582819194049819 14.686356496448752 0] 0
+@myTextModel_m438 osc myTextModelM 0 myTextModelZosc [7.739674787640723 15.100322012029956 0] 0
+@myTextModel_m439 osc myTextModelM 0 myTextModelZosc [6.869997470057513 15.466456483695694 0] 0
+@myTextModel_m440 osc myTextModelM 0 myTextModelZosc [5.976815890700266 15.783236515678986 0] 0
+@myTextModel_m441 osc myTextModelM 0 myTextModelZosc [5.063256317160285 16.04931051666867 0] 0
+@myTextModel_m442 osc myTextModelM 0 myTextModelZosc [4.132531758599448 16.263504315310236 0] 0
+@myTextModel_m443 osc myTextModelM 0 myTextModelZosc [3.1879307300047586 16.42482611857355 0] 0
+@myTextModel_m444 osc myTextModelM 0 myTextModelZosc [2.2328056907691156 16.532470878700877 0] 0
+@myTextModel_m445 osc myTextModelM 0 myTextModelZosc [1.2705612137707334 16.585823985099978 0] 0
+@myTextModel_m446 osc myTextModelM 0 myTextModelZosc [0.3046419076725968 16.584464275208347 0] 0
+@myTextModel_m447 osc myTextModelM 0 myTextModelZosc [-0.6614798513855575 16.52816638822449 0] 0
+@myTextModel_m448 osc myTextModelM 0 myTextModelZosc [-1.6243163414649615 16.416902378070837 0] 0
+@myTextModel_m449 osc myTextModelM 0 myTextModelZosc [-2.5803770244322415 16.25084266922375 0] 0
+@myTextModel_m450 osc myTextModelM 0 myTextModelZosc [-3.526181136785514 16.030356265801252 0] 0
+@myTextModel_m451 osc myTextModelM 0 myTextModelZosc [-4.458270302570725 15.756010243778462 0] 0
+@myTextModel_m452 osc myTextModelM 0 myTextModelZosc [-5.373221111584723 15.428568556200084 0] 0
+@myTextModel_m453 osc myTextModelM 0 myTextModelZosc [-6.2676576300452105 15.048990097624873 0] 0
+@myTextModel_m454 osc myTextModelM 0 myTextModelZosc [-7.138263796391204 14.618426045723638 0] 0
+@myTextModel_m455 osc myTextModelM 0 myTextModelZosc [-7.9817956283695 14.138216545744115 0] 0
+@myTextModel_m456 osc myTextModelM 0 myTextModelZosc [-8.795093269808802 13.609886636285985 0] 0
+@myTextModel_m457 osc myTextModelM 0 myTextModelZosc [-9.575092723711936 13.03514152989053 0] 0
+@myTextModel_m458 osc myTextModelM 0 myTextModelZosc [-10.318837339199312 12.415861236497307 0] 0
+@myTextModel_m459 osc myTextModelM 0 myTextModelZosc [-11.023488938696415 11.75409445808048 0] 0
+@myTextModel_m460 osc myTextModelM 0 myTextModelZosc [-11.686338553807882 11.052051969526566 0] 0
+@myTextModel_m461 osc myTextModelM 0 myTextModelZosc [-12.304816757255077 10.312099264717887 0] 0
+@myTextModel_m462 osc myTextModelM 0 myTextModelZosc [-12.876503534073647 9.536748670935687 0] 0
+@myTextModel_m463 osc myTextModelM 0 myTextModelZosc [-13.39913764157896 8.728650937556758 0] 0
+@myTextModel_m464 osc myTextModelM 0 myTextModelZosc [-13.870625445476445 7.890586191512703 0] 0
+@myTextModel_m465 osc myTextModelM 0 myTextModelZosc [-14.289049169001753 7.025454487118942 0] 0
+@myTextModel_m466 osc myTextModelM 0 myTextModelZosc [-14.652674605582764 6.1362658051066745 0] 0
+@myTextModel_m467 osc myTextModelM 0 myTextModelZosc [-14.959958086743738 5.226129672907241 0] 0
+@myTextModel_m468 osc myTextModelM 0 myTextModelZosc [-15.209552907219848 4.298244341072948 0] 0
+@myTextModel_m469 osc myTextModelM 0 myTextModelZosc [-15.40031501162531 3.3558856120148093 0] 0
+@myTextModel_m470 osc myTextModelM 0 myTextModelZosc [-15.531307948986695 2.4023953377841067 0] 0
+@myTextModel_m471 osc myTextModelM 0 myTextModelZosc [-15.601807164567942 1.4411696299102204 0] 0
+@myTextModel_m472 osc myTextModelM 0 myTextModelZosc [-15.611303483822436 0.4756468266966358 0] 0
+@myTextModel_m473 osc myTextModelM 0 myTextModelZosc [-15.559505864210221 -0.49070474737613523 0] 0
+@myTextModel_m474 osc myTextModelM 0 myTextModelZosc [-15.446343364388317 -1.4543991751803276 0] 0
+@myTextModel_m475 osc myTextModelM 0 myTextModelZosc [-15.271966330774092 -2.411945465923427 0] 0
+@myTextModel_m476 osc myTextModelM 0 myTextModelZosc [-15.036746776235713 -3.359860132675273 0] 0
+@myTextModel_m477 osc myTextModelM 0 myTextModelZosc [-14.741277988778691 -4.2946798087256965 0] 0
+@myTextModel_m478 osc myTextModelM 0 myTextModelZosc [-14.386373294490431 -5.212973835864712 0] 0
+@myTextModel_m479 osc myTextModelM 0 myTextModelZosc [-13.973064063103893 -6.111356785157181 0] 0
+@myTextModel_m480 osc myTextModelM 0 myTextModelZosc [-13.502596905688327 -6.986500874368364 0] 0
+@myTextModel_m481 osc myTextModelM 0 myTextModelZosc [-12.976430058155527 -7.8351482467941835 0] 0
+@myTextModel_m482 osc myTextModelM 0 myTextModelZosc [-12.396229032631261 -8.654122978277279 0] 0
+@myTextModel_m483 osc myTextModelM 0 myTextModelZosc [-11.76386146095372 -9.440342959367827 0] 0
+@myTextModel_m484 osc myTextModelM 0 myTextModelZosc [-11.081391199725644 -10.19083135333482 0] 0
+@myTextModel_m485 osc myTextModelM 0 myTextModelZosc [-10.351071715854562 -10.90272783911559 0] 0
+@myTextModel_m486 osc myTextModelM 0 myTextModelZosc [-9.575338727335204 -11.573299388298283 0] 0
+@myTextModel_m487 osc myTextModelM 0 myTextModelZosc [-8.756802193946616 -12.19995070756381 0] 0
+@myTextModel_m488 osc myTextModelM 0 myTextModelZosc [-7.8982376263065 -12.780234161395306 0] 0
+@myTextModel_m489 osc myTextModelM 0 myTextModelZosc [-7.002576744840294 -13.311859252716253 0] 0
+@myTextModel_m490 osc myTextModelM 0 myTextModelZosc [-6.0728975644030605 -13.792701536004548 0] 0
+@myTextModel_m491 osc myTextModelM 0 myTextModelZosc [-5.112413885619699 -14.220811004700135 0] 0
+@myTextModel_m492 osc myTextModelM 0 myTextModelZosc [-4.124464286353778 -14.594419839401375 0] 0
+@myTextModel_m493 osc myTextModelM 0 myTextModelZosc [-3.112500547665274 -14.911949600485263 0] 0
+@myTextModel_m494 osc myTextModelM 0 myTextModelZosc [-2.080075707389426 -15.172017685933369 0] 0
+@myTextModel_m495 osc myTextModelM 0 myTextModelZosc [-1.0308316346721185 -15.373443167868365 0] 0
+@myTextModel_m496 osc myTextModelM 0 myTextModelZosc [0.03151373757837206 -15.515251906244124 0] 0
+@myTextModel_m497 osc myTextModelM 0 myTextModelZosc [1.1031795229545338 -15.596680921767666 0] 0
+@myTextModel_m498 osc myTextModelM 0 myTextModelZosc [2.180335265732179 -15.617182057922557 0] 0
+@myTextModel_m499 osc myTextModelM 0 myTextModelZosc [3.259114565521404 -15.57642484248477 0] 0
+@myTextModel_m500 osc myTextModelM 0 myTextModelZosc [4.33562888621363 -15.474298632166079 0] 0
+@myTextModel_m501 osc myTextModelM 0 myTextModelZosc [5.405981503150592 -15.310913897010531 0] 0
+@myTextModel_m502 osc myTextModelM 0 myTextModelZosc [6.466281541179068 -15.086602775970597 0] 0
+@myTextModel_m503 osc myTextModelM 0 myTextModelZosc [7.512658048050035 -14.80191880808 0] 0
+@myTextModel_m504 osc myTextModelM 0 myTextModelZosc [8.541274056457134 -14.457635857145037 0] 0
+@myTextModel_m505 osc myTextModelM 0 myTextModelZosc [9.548340579173129 -14.054746259824103 0] 0
+@myTextModel_m506 osc myTextModelM 0 myTextModelZosc [10.53013049941535 -13.594458149303891 0] 0
+@myTextModel_m507 osc myTextModelM 0 myTextModelZosc [11.482992275652848 -13.078191990415883 0] 0
+@myTextModel_m508 osc myTextModelM 0 myTextModelZosc [12.403363465904391 -12.507576373984685 0] 0
+@myTextModel_m509 osc myTextModelM 0 myTextModelZosc [13.287783950346444 -11.884442992746939 0] 0
+@myTextModel_m510 osc myTextModelM 0 myTextModelZosc [14.13290885728027 -11.210820888449957 0] 0
+@myTextModel_m511 osc myTextModelM 0 myTextModelZosc [14.935521135654668 -10.488929940260322 0] 0
+@myTextModel_m512 osc myTextModelM 0 myTextModelZosc [15.69254369209466 -9.721173672143664 0] 0
+@myTextModel_m513 osc myTextModelM 0 myTextModelZosc [16.40105112399369 -8.910131343372012 0] 0
+@myTextModel_m514 osc myTextModelM 0 myTextModelZosc [17.05828087194721 -8.058549363976233 0] 0
+@myTextModel_m515 osc myTextModelM 0 myTextModelZosc [17.6616439366922 -7.169332100856909 0] 0
+@myTextModel_m516 osc myTextModelM 0 myTextModelZosc [18.208734901780872 -6.245532014814245 0] 0
+@myTextModel_m517 osc myTextModelM 0 myTextModelZosc [18.697341445022317 -5.290339325636982 0] 0
+@myTextModel_m518 osc myTextModelM 0 myTextModelZosc [19.125453098854756 -4.30707100333116 0] 0
+@myTextModel_m519 osc myTextModelM 0 myTextModelZosc [19.49126937325554 -3.2991593770169665 0] 0
+@myTextModel_m520 osc myTextModelM 0 myTextModelZosc [19.793207159139293 -2.270140199599883 0] 0
+@myTextModel_m521 osc myTextModelM 0 myTextModelZosc [20.029907336506156 -1.223640323538529 0] 0
+@myTextModel_m522 osc myTextModelM 0 myTextModelZosc [20.200240618897624 -0.16336498651442355 0] 0
+@myTextModel_m523 osc myTextModelM 0 myTextModelZosc [20.30331262784849 0.906915235646526 0] 0
+@myTextModel_m524 osc myTextModelM 0 myTextModelZosc [20.33846808372774 1.9833777723598587 0] 0
+@myTextModel_m525 osc myTextModelM 0 myTextModelZosc [20.30529420132948 3.0621616394310465 0] 0
+@myTextModel_m526 osc myTextModelM 0 myTextModelZosc [20.203623176606932 4.1393812203309 0] 0
+@myTextModel_m527 osc myTextModelM 0 myTextModelZosc [20.03353384659883 5.211140194429802 0] 0
+@myTextModel_m528 osc myTextModelM 0 myTextModelZosc [19.795352421564246 6.273545559022793 0] 0
+@myTextModel_m529 osc myTextModelM 0 myTextModelZosc [19.489652365064018 7.322721700340892 0] 0
+@myTextModel_m530 osc myTextModelM 0 myTextModelZosc [19.117253352561953 8.354824466354607 0] 0
+@myTextModel_m531 osc myTextModelM 0 myTextModelZosc [18.67921936534968 9.366055170279843 0] 0
+@myTextModel_m532 osc myTextModelM 0 myTextModelZosc [18.17685584405676 10.352674502085058 0] 0
+@myTextModel_m533 osc myTextModelM 0 myTextModelZosc [17.611706034287927 11.311016298416234 0] 0
+@myTextModel_m534 osc myTextModelM 0 myTextModelZosc [16.98554637922271 12.237501053850288 0] 0
+@myTextModel_m535 osc myTextModelM 0 myTextModelZosc [16.300381098030584 13.128649248748644 0] 0
+@myTextModel_m536 osc myTextModelM 0 myTextModelZosc [15.558435918544134 13.981094294778849 0] 0
+@myTextModel_m537 osc myTextModelM 0 myTextModelZosc [14.762150951567222 14.791595205635076 0] 0
+@myTextModel_m538 osc myTextModelM 0 myTextModelZosc [13.914172795179255 15.557048801791481 0] 0
+@myTextModel_m539 osc myTextModelM 0 myTextModelZosc [13.017345862724035 16.274501503054033 0] 0
+@myTextModel_m540 osc myTextModelM 0 myTextModelZosc [12.074702909237189 16.941160637223298 0] 0
+@myTextModel_m541 osc myTextModelM 0 myTextModelZosc [11.089454895165296 17.554405169285396 0] 0
+@myTextModel_m542 osc myTextModelM 0 myTextModelZosc [10.0649801368847 18.11179592281836 0] 0
+@myTextModel_m543 osc myTextModelM 0 myTextModelZosc [9.004812826069589 18.611085132317413 0] 0
+@myTextModel_m544 osc myTextModelM 0 myTextModelZosc [7.912630892663287 19.05022538020487 0] 0
+@myTextModel_m545 osc myTextModelM 0 myTextModelZosc [6.792243365453576 19.427377805019617 0] 0
+@myTextModel_m546 osc myTextModelM 0 myTextModelZosc [5.647577139997463 19.740919652473544 0] 0
+@myTextModel_m547 osc myTextModelM 0 myTextModelZosc [4.482663314207695 19.98945102600046 0] 0
+@myTextModel_m548 osc myTextModelM 0 myTextModelZosc [3.3016230625680976 20.171800890562807 0] 0
+@myTextModel_m549 osc myTextModelM 0 myTextModelZosc [2.1086531348141904 20.287032240107187 0] 0
+@myTextModel_m550 osc myTextModelM 0 myTextModelZosc [0.9080110232597107 20.33444650035603 0] 0
+@myTextModel_m551 osc myTextModelM 0 myTextModelZosc [-0.296000158312804 20.31358703550862 0] 0
+@myTextModel_m552 osc myTextModelM 0 myTextModelZosc [-1.4990470204510338 20.22424180664305 0] 0
+@myTextModel_m553 osc myTextModelM 0 myTextModelZosc [-2.696781416136112 20.06644519376711 0] 0
+@myTextModel_m554 osc myTextModelM 0 myTextModelZosc [-3.884856080697894 19.840478879960855 0] 0
+@myTextModel_m555 osc myTextModelM 0 myTextModelZosc [-5.058940333583035 19.54687189916823 0] 0
+@myTextModel_m556 osc myTextModelM 0 myTextModelZosc [-6.214735785803416 19.186399740106403 0] 0
+@myTextModel_m557 osc myTextModelM 0 myTextModelZosc [-7.347991993105602 18.760082619798013 0] 0
+@myTextModel_m558 osc myTextModelM 0 myTextModelZosc [-8.45452200878734 18.269182789325534 0] 0
+@myTextModel_m559 osc myTextModelM 0 myTextModelZosc [-9.530217773677142 17.715201027130256 0] 0
+@myTextModel_m560 osc myTextModelM 0 myTextModelZosc [-10.571065282686565 17.099872212324883 0] 0
+@myTextModel_m561 osc myTextModelM 0 myTextModelZosc [-11.57315945472156 16.425160031785325 0] 0
+@myTextModel_m562 osc myTextModelM 0 myTextModelZosc [-12.532718724887575 15.693250880760964 0] 0
+@myTextModel_m563 osc myTextModelM 0 myTextModelZosc [-13.446099182266082 14.906546873368278 0] 0
+@myTextModel_m564 osc myTextModelM 0 myTextModelZosc [-14.309808347935183 14.067658100368462 0] 0
+@myTextModel_m565 osc myTextModelM 0 myTextModelZosc [-15.120518391266094 13.179394080463432 0] 0
+@myTextModel_m566 osc myTextModelM 0 myTextModelZosc [-15.875078847610494 12.244754434980145 0] 0
+@myTextModel_m567 osc myTextModelM 0 myTextModelZosc [-16.570528742706237 11.266918869578106 0] 0
+@myTextModel_m568 osc myTextModelM 0 myTextModelZosc [-17.204108092243775 10.249236451032381 0] 0
+@myTextModel_m569 osc myTextModelM 0 myTextModelZosc [-17.77326870085531 9.1952142268835 0] 0
+@myTextModel_m570 osc myTextModelM 0 myTextModelZosc [-18.275684247903595 8.108505223797906 0] 0
+@myTextModel_m571 osc myTextModelM 0 myTextModelZosc [-18.70925964744735 6.992895871235653 0] 0
+@myTextModel_m572 osc myTextModelM 0 myTextModelZosc [-19.07213955615326 5.852292891645561 0] 0
+@myTextModel_m573 osc myTextModelM 0 myTextModelZosc [-19.362716111204005 4.690709699602692 0] 0
+@myTextModel_m574 osc myTextModelM 0 myTextModelZosc [-19.579635753037728 3.5122523606667038 0] 0
+@myTextModel_m575 osc myTextModelM 0 myTextModelZosc [-19.721805189722527 2.3211051511812144 0] 0
+@myTextModel_m576 osc myTextModelM 0 myTextModelZosc [-19.788396458785385 1.1215157811430636 0] 0
+@myTextModel_m577 osc myTextModelM 0 myTextModelZosc [-19.77885100444591 -0.08221967744345093 0] 0
+@myTextModel_m578 osc myTextModelM 0 myTextModelZosc [-19.69288284599309 -1.285772100572494 0] 0
+@myTextModel_m579 osc myTextModelM 0 myTextModelZosc [-19.53048076156678 -2.4847948038502388 0] 0
+@myTextModel_m580 osc myTextModelM 0 myTextModelZosc [-19.291909468409642 -3.6749391655350827 0] 0
+@myTextModel_m581 osc myTextModelM 0 myTextModelZosc [-18.97770984376988 -4.851870321265064 0] 0
+@myTextModel_m582 osc myTextModelM 0 myTextModelZosc [-18.5886981233398 -6.011282867148822 0] 0
+@myTextModel_m583 osc myTextModelM 0 myTextModelZosc [-18.125964121410735 -7.148916547324291 0] 0
+@myTextModel_m584 osc myTextModelM 0 myTextModelZosc [-17.59086844118677 -8.260571809493413 0] 0
+@myTextModel_m585 osc myTextModelM 0 myTextModelZosc [-16.985038700503345 -9.342125233211986 0] 0
+@myTextModel_m586 osc myTextModelM 0 myTextModelZosc [-16.310364791885192 -10.389544739533399 0] 0
+@myTextModel_m587 osc myTextModelM 0 myTextModelZosc [-15.568993145386143 -11.39890452585127 0] 0
+@myTextModel_m588 osc myTextModelM 0 myTextModelZosc [-14.763320057325805 -12.366399708019188 0] 0
+@myTextModel_m589 osc myTextModelM 0 myTextModelZosc [-13.8959841038577 -13.288360556242703 0] 0
+@myTextModel_m590 osc myTextModelM 0 myTextModelZosc [-12.969857633057314 -14.161266300847865 0] 0
+@myTextModel_m591 osc myTextModelM 0 myTextModelZosc [-11.988037348153068 -14.981758501952372 0] 0
+@myTextModel_m592 osc myTextModelM 0 myTextModelZosc [-10.95383411444191 -15.74665383966479 0] 0
+@myTextModel_m593 osc myTextModelM 0 myTextModelZosc [-9.870761857347816 -16.452956354681582 0] 0
+@myTextModel_m594 osc myTextModelM 0 myTextModelZosc [-8.742525778837518 -17.09786904369896 0] 0
+@myTextModel_m595 osc myTextModelM 0 myTextModelZosc [-7.573009740717229 -17.678804815613407 0] 0
+@myTextModel_m596 osc myTextModelM 0 myTextModelZosc [-6.366263016778667 -18.19339668903227 0] 0
+@myTextModel_m597 osc myTextModelM 0 myTextModelZosc [-5.126486350679222 -18.639507302781524 0] 0
+@myTextModel_m598 osc myTextModelM 0 myTextModelZosc [-3.8580174419996034 -19.015237554218782 0] 0
+@myTextModel_m599 osc myTextModelM 0 myTextModelZosc [-2.565315855429663 -19.318934502751997 0] 0
+@myTextModel_m600 osc myTextModelM 0 myTextModelZosc [-1.2529474199844728 -19.549198359345834 0] 0
+@myTextModel_m601 osc myTextModelM 0 myTextModelZosc [0.07443180096216295 -19.704888585911405 0] 0
+@myTextModel_m602 osc myTextModelM 0 myTextModelZosc [1.412091945474046 -19.78512914042298 0] 0
+@myTextModel_m603 osc myTextModelM 0 myTextModelZosc [2.755246119571968 -19.78931271841335 0] 0
+@myTextModel_m604 osc myTextModelM 0 myTextModelZosc [4.099067444615155 -19.717104104352444 0] 0
+@myTextModel_m605 osc myTextModelM 0 myTextModelZosc [5.438706317380493 -19.568442513430725 0] 0
+@myTextModel_m606 osc myTextModelM 0 myTextModelZosc [6.769307826036009 -19.343542977512538 0] 0
+@myTextModel_m607 osc myTextModelM 0 myTextModelZosc [8.086029257631196 -19.04289670954629 0] 0
+@myTextModel_m608 osc myTextModelM 0 myTextModelZosc [9.384057640300654 -18.667270512144686 0] 0
+@myTextModel_m609 osc myTextModelM 0 myTextModelZosc [10.658627235606758 -18.21770515864777 0] 0
+@myTextModel_m610 osc myTextModelM 0 myTextModelZosc [11.905036961455842 -17.695512782512452 0] 0
+@myTextModel_m611 osc myTextModelM 0 myTextModelZosc [13.118667627562523 -17.102273298924196 0] 0
+@myTextModel_m612 osc myTextModelM 0 myTextModelZosc [14.29499897651965 -16.439829822787296 0] 0
+@myTextModel_m613 osc myTextModelM 0 myTextModelZosc [15.429626396669839 -15.710283095041616 0] 0
+@myTextModel_m614 osc myTextModelM 0 myTextModelZosc [16.518277325713186 -14.915985012888754 0] 0
+@myTextModel_m615 osc myTextModelM 0 myTextModelZosc [17.55682724406696 -14.05953119224039 0] 0
+@myTextModel_m616 osc myTextModelM 0 myTextModelZosc [18.541315182239238 -13.143752604206432 0] 0
+@myTextModel_m617 osc myTextModelM 0 myTextModelZosc [19.467958710658962 -12.171706339388304 0] 0
+@myTextModel_m618 osc myTextModelM 0 myTextModelZosc [20.33316834884728 -11.146665553742901 0] 0
+@myTextModel_m619 osc myTextModelM 0 myTextModelZosc [21.133561337126615 -10.072108518355945 0] 0
+@myTextModel_m620 osc myTextModelM 0 myTextModelZosc [21.865974732998595 -8.951706958316858 0] 0
+@myTextModel_m621 osc myTextModelM 0 myTextModelZosc [22.527477750140847 -7.78931358511214 0] 0
+@myTextModel_m622 osc myTextModelM 0 myTextModelZosc [23.115383314777148 -6.5889489479898735 0] 0
+@myTextModel_m623 osc myTextModelM 0 myTextModelZosc [23.627258788928344 -5.354787646113039 0] 0
+@myTextModel_m624 osc myTextModelM 0 myTextModelZosc [24.060935841610018 -4.091143860878706 0] 0
+@myTextModel_m625 osc myTextModelM 0 myTextModelZosc [24.41451939223834 -2.8024564115171415 0] 0
+@myTextModel_m626 osc myTextModelM 0 myTextModelZosc [24.686395575752485 -1.4932732204658485 0] 0
+@myTextModel_m627 osc myTextModelM 0 myTextModelZosc [24.875238779945278 -0.1682353593732806 0] 0
+@myTextModel_m628 osc myTextModelM 0 myTextModelZosc [24.98001764139527 1.1679393147095531 0] 0
+@myTextModel_m629 osc myTextModelM 0 myTextModelZosc [25 2.5104728744049503 0] 0
+@myTextModel_m630 osc myTextModelM 0 myTextModelZosc [24.934756805799076 3.854544322638617 0] 0
+@myTextModel_m631 osc myTextModelM 0 myTextModelZosc [24.784164946529494 5.195306817889769 0] 0
+@myTextModel_m632 osc myTextModelM 0 myTextModelZosc [24.548408976978628 6.527905066711462 0] 0
+@myTextModel_m633 osc myTextModelM 0 myTextModelZosc [24.227981750135015 7.847492820197466 0] 0
+@myTextModel_m634 osc myTextModelM 0 myTextModelZosc [23.823683924890744 9.14925041465623 0] 0
+@myTextModel_m635 osc myTextModelM 0 myTextModelZosc [23.3366223944761 10.428402284804775 0] 0
+@myTextModel_m636 osc myTextModelM 0 myTextModelZosc [22.76820754726544 11.68023439093787 0] 0
+@myTextModel_m637 osc myTextModelM 0 myTextModelZosc [22.12014946724964 12.900111495553979 0] 0
+@myTextModel_m638 osc myTextModelM 0 myTextModelZosc [21.39445303630646 14.083494248815292 0] 0
+@myTextModel_m639 osc myTextModelM 0 myTextModelZosc [20.59341190671094 15.225955975310775 0] 0
+@myTextModel_m640 osc myTextModelM 0 myTextModelZosc [19.719601444870165 16.323199114331047 0] 0
+@myTextModel_m641 osc myTextModelM 0 myTextModelZosc [18.775870621036255 17.37107131365473 0] 0
+@myTextModel_m642 osc myTextModelM 0 myTextModelZosc [17.765332882866744 18.365581009576324 0] 0
+@myTextModel_m643 osc myTextModelM 0 myTextModelZosc [16.691356000209133 19.302912529019096 0] 0
+@myTextModel_m644 osc myTextModelM 0 myTextModelZosc [15.557551001028486 20.1794406062021 0] 0
+@myTextModel_m645 osc myTextModelM 0 myTextModelZosc [14.36776013536285 20.991744266069922 0] 0
+@myTextModel_m646 osc myTextModelM 0 myTextModelZosc [13.126043999848171 21.736620044615385 0] 0
+@myTextModel_m647 osc myTextModelM 0 myTextModelZosc [11.836667759697725 22.41109448635585 0] 0
+@myTextModel_m648 osc myTextModelM 0 myTextModelZosc [10.504086644858077 23.012435805458345 0] 0
+@myTextModel_m649 osc myTextModelM 0 myTextModelZosc [9.132930625669232 23.53816481804443 0] 0
+@myTextModel_m650 osc myTextModelM 0 myTextModelZosc [7.727988469996937 23.986064930612905 0] 0
+@myTextModel_m651 osc myTextModelM 0 myTextModelZosc [6.294191087795859 24.354191238345955 0] 0
+@myTextModel_m652 osc myTextModelM 0 myTextModelZosc [4.83659433919464 24.64087872732476 0] 0
+@myTextModel_m653 osc myTextModelM 0 myTextModelZosc [3.3603612997912755 24.84474943130604 0] 0
+@myTextModel_m654 osc myTextModelM 0 myTextModelZosc [1.8707440696265607 24.964718626694832 0] 0
+@myTextModel_m655 osc myTextModelM 0 myTextModelZosc [0.37306518390137455 25 0] 0
+@myTextModel_m656 osc myTextModelM 0 myTextModelZosc [-1.1273013120781918 24.950109698163587 0] 0
+@myTextModel_m657 osc myTextModelM 0 myTextModelZosc [-2.6249490479898334 24.81486941708628 0] 0
+@myTextModel_m658 osc myTextModelM 0 myTextModelZosc [-4.114458718076879 24.594408259521792 0] 0
+@myTextModel_m659 osc myTextModelM 0 myTextModelZosc [-5.59041758875528 24.289163613245663 0] 0
+@myTextModel_m660 osc myTextModelM 0 myTextModelZosc [-7.047439090794846 23.89988084638442 0] 0
+@myTextModel_m661 osc myTextModelM 0 myTextModelZosc [-8.480182338286976 23.427611921462244 0] 0
+@myTextModel_m662 osc myTextModelM 0 myTextModelZosc [-9.883371662128868 22.87371288634732 0] 0
+@myTextModel_m663 osc myTextModelM 0 myTextModelZosc [-11.251815879055533 22.23984024209819 0] 0
+@myTextModel_m664 osc myTextModelM 0 myTextModelZosc [-12.580427440753219 21.527946247449165 0] 0
+@myTextModel_m665 osc myTextModelM 0 myTextModelZosc [-13.864241204282362 20.740273118117493 0] 0
+@myTextModel_m666 osc myTextModelM 0 myTextModelZosc [-15.098432893236676 19.8793461089842 0] 0
+@myTextModel_m667 osc myTextModelM 0 myTextModelZosc [-16.27833710447372 18.947965640445084 0] 0
+@myTextModel_m668 osc myTextModelM 0 myTextModelZosc [-17.3994648351709 17.94919831360938 0] 0
+@myTextModel_m669 osc myTextModelM 0 myTextModelZosc [-18.45752041028827 16.886366957720575 0] 0
+@myTextModel_m670 osc myTextModelM 0 myTextModelZosc [-19.448417841995674 15.76303972772137 0] 0
+@myTextModel_m671 osc myTextModelM 0 myTextModelZosc [-20.368296431718992 14.583018228066727 0] 0
+@myTextModel_m672 osc myTextModelM 0 myTextModelZosc [-21.213535677920568 13.350324788237977 0] 0
+@myTextModel_m673 osc myTextModelM 0 myTextModelZosc [-21.980769363383708 12.069188866062099 0] 0
+@myTextModel_m674 osc myTextModelM 0 myTextModelZosc [-22.666898752574618 10.744032626627607 0] 0
+@myTextModel_m675 osc myTextModelM 0 myTextModelZosc [-23.269104962196852 9.379455816275971 0] 0
+@myTextModel_m676 osc myTextModelM 0 myTextModelZosc [-23.78486025247804 7.980219871929037 0] 0
+@myTextModel_m677 osc myTextModelM 0 myTextModelZosc [-24.211938422222545 6.55123143481493 0] 0
+@myTextModel_m678 osc myTextModelM 0 myTextModelZosc [-24.548424111973336 5.097525217216557 0] 0
+@myTextModel_m679 osc myTextModelM 0 myTextModelZosc [-24.792721008971608 3.6242463835390843 0] 0
+@myTextModel_m680 osc myTextModelM 0 myTextModelZosc [-24.94355897284857 2.136632424787482 0] 0
+@myTextModel_m681 osc myTextModelM 0 myTextModelZosc [-25 0.6399946405564485 0] 0
+@myTextModel_m682 osc myTextModelM 0 myTextModelZosc [-24.961442969839705 -0.8603007320393665 0] 0
+@myTextModel_m683 osc myTextModelM 0 myTextModelZosc [-24.82762729285087 -2.358851663638813 0] 0
+@myTextModel_m684 osc myTextModelM 0 myTextModelZosc [-24.59863522690921 -3.8502396858007693 0] 0
+@myTextModel_m685 osc myTextModelM 0 myTextModelZosc [-24.274893063846392 -5.329049392324237 0] 0
+@myTextModel_m686 osc myTextModelM 0 myTextModelZosc [-23.85717101584288 -6.789888002100042 0] 0
+@myTextModel_m687 osc myTextModelM 0 myTextModelZosc [-23.346581896322917 -8.227404923157273 0] 0
+@myTextModel_m688 osc myTextModelM 0 myTextModelZosc [-22.744578525924954 -9.636311261749565 0] 0
+@myTextModel_m689 osc myTextModelM 0 myTextModelZosc [-22.052949939285757 -11.011399184482462 0] 0
+@myTextModel_m690 osc myTextModelM 0 myTextModelZosc [-21.273816323211452 -12.347561034912006 0] 0
+@myTextModel_m691 osc myTextModelM 0 myTextModelZosc [-20.409622761973722 -13.639808223133723 0] 0
+@myTextModel_m692 osc myTextModelM 0 myTextModelZosc [-19.463131764485055 -14.883289739013541 0] 0
+@myTextModel_m693 osc myTextModelM 0 myTextModelZosc [-18.437414655402698 -16.073310253217088 0] 0
+@myTextModel_m694 osc myTextModelM 0 myTextModelZosc [-17.33584174811163 -17.205347692532495 0] 0
+@myTextModel_m695 osc myTextModelM 0 myTextModelZosc [-16.162071457374353 -18.27507033727828 0] 0
+@myTextModel_m696 osc myTextModelM 0 myTextModelZosc [-14.920038282220816 -19.278353261578083 0] 0
+@myTextModel_m697 osc myTextModelM 0 myTextModelZosc [-13.613939785308698 -20.21129405676305 0] 0
+@myTextModel_m698 osc myTextModelM 0 myTextModelZosc [-12.248222518261931 -21.070227909588933 0] 0
+@myTextModel_m699 osc myTextModelM 0 myTextModelZosc [-10.827567038152186 -21.85174181423234 0] 0
+@myTextModel_m700 osc myTextModelM 0 myTextModelZosc [-9.35687196463121 -22.552687941961896 0] 0
+@myTextModel_m701 osc myTextModelM 0 myTextModelZosc [-7.8412372355017474 -23.17019615056242 0] 0
+@myTextModel_m702 osc myTextModelM 0 myTextModelZosc [-6.285946516546467 -23.701685496111633 0] 0
+@myTextModel_m703 osc myTextModelM 0 myTextModelZosc [-4.696448912673013 -24.14487479490088 0] 0
+@myTextModel_m704 osc myTextModelM 0 myTextModelZosc [-3.0783399746948206 -24.497792074203556 0] 0
+@myTextModel_m705 osc myTextModelM 0 myTextModelZosc [-1.4373421222975509 -24.75878305526571 0] 0
+@myTextModel_m706 osc myTextModelM 0 myTextModelZosc [0.2207154940875391 -24.92651842358747 0] 0
+@myTextModel_m707 osc myTextModelM 0 myTextModelZosc [1.8899175864698847 -25 0] 0
+@myTextModel_m708 osc myTextModelM 0 myTextModelZosc [3.564283730840419 -24.978565746824753 0] 0
+@myTextModel_m709 osc myTextModelM 0 myTextModelZosc [5.237789683025483 -24.861893585219267 0] 0
+@myTextModel_m710 osc myTextModelM 0 myTextModelZosc [6.904388953312477 -24.65000396397009 0] 0
+@myTextModel_m711 osc myTextModelM 0 myTextModelZosc [8.558034542019016 -24.34326123947223 0] 0
+@myTextModel_m712 osc myTextModelM 0 myTextModelZosc [10.192700765947748 -23.942373813129727 0] 0
+@myTextModel_m713 osc myTextModelM 0 myTextModelZosc [11.802405123341373 -23.448393014229406 0] 0
+@myTextModel_m714 osc myTextModelM 0 myTextModelZosc [13.381230064796242 -22.86271074023576 0] 0
+@myTextModel_m715 osc myTextModelM 0 myTextModelZosc [14.923344641101487 -22.187055878402617 0] 0
+@myTextModel_m716 osc myTextModelM 0 myTextModelZosc [16.423025905560593 -21.423489478832046 0] 0
+
+@myTextModel_r0 springDamper @myTextModel_m0 @myTextModel_m1 myTextModelK myTextModelZ
+@myTextModel_r1 springDamper @myTextModel_m1 @myTextModel_m2 myTextModelK myTextModelZ
+@myTextModel_r2 springDamper @myTextModel_m2 @myTextModel_m3 myTextModelK myTextModelZ
+@myTextModel_r3 springDamper @myTextModel_m3 @myTextModel_m4 myTextModelK myTextModelZ
+@myTextModel_r4 springDamper @myTextModel_m4 @myTextModel_m5 myTextModelK myTextModelZ
+@myTextModel_r5 springDamper @myTextModel_m5 @myTextModel_m6 myTextModelK myTextModelZ
+@myTextModel_r6 springDamper @myTextModel_m6 @myTextModel_m7 myTextModelK myTextModelZ
+@myTextModel_r7 springDamper @myTextModel_m7 @myTextModel_m8 myTextModelK myTextModelZ
+@myTextModel_r8 springDamper @myTextModel_m8 @myTextModel_m9 myTextModelK myTextModelZ
+@myTextModel_r9 springDamper @myTextModel_m9 @myTextModel_m10 myTextModelK myTextModelZ
+@myTextModel_r10 springDamper @myTextModel_m10 @myTextModel_m11 myTextModelK myTextModelZ
+@myTextModel_r11 springDamper @myTextModel_m11 @myTextModel_m12 myTextModelK myTextModelZ
+@myTextModel_r12 springDamper @myTextModel_m12 @myTextModel_m13 myTextModelK myTextModelZ
+@myTextModel_r13 springDamper @myTextModel_m13 @myTextModel_m14 myTextModelK myTextModelZ
+@myTextModel_r14 springDamper @myTextModel_m14 @myTextModel_m15 myTextModelK myTextModelZ
+@myTextModel_r15 springDamper @myTextModel_m15 @myTextModel_m16 myTextModelK myTextModelZ
+@myTextModel_r16 springDamper @myTextModel_m16 @myTextModel_m17 myTextModelK myTextModelZ
+@myTextModel_r17 springDamper @myTextModel_m17 @myTextModel_m18 myTextModelK myTextModelZ
+@myTextModel_r18 springDamper @myTextModel_m18 @myTextModel_m19 myTextModelK myTextModelZ
+@myTextModel_r19 springDamper @myTextModel_m19 @myTextModel_m20 myTextModelK myTextModelZ
+@myTextModel_r20 springDamper @myTextModel_m20 @myTextModel_m21 myTextModelK myTextModelZ
+@myTextModel_r21 springDamper @myTextModel_m21 @myTextModel_m22 myTextModelK myTextModelZ
+@myTextModel_r22 springDamper @myTextModel_m22 @myTextModel_m23 myTextModelK myTextModelZ
+@myTextModel_r23 springDamper @myTextModel_m23 @myTextModel_m24 myTextModelK myTextModelZ
+@myTextModel_r24 springDamper @myTextModel_m24 @myTextModel_m25 myTextModelK myTextModelZ
+@myTextModel_r25 springDamper @myTextModel_m25 @myTextModel_m26 myTextModelK myTextModelZ
+@myTextModel_r26 springDamper @myTextModel_m26 @myTextModel_m27 myTextModelK myTextModelZ
+@myTextModel_r27 springDamper @myTextModel_m27 @myTextModel_m28 myTextModelK myTextModelZ
+@myTextModel_r28 springDamper @myTextModel_m28 @myTextModel_m29 myTextModelK myTextModelZ
+@myTextModel_r29 springDamper @myTextModel_m29 @myTextModel_m30 myTextModelK myTextModelZ
+@myTextModel_r30 springDamper @myTextModel_m30 @myTextModel_m31 myTextModelK myTextModelZ
+@myTextModel_r31 springDamper @myTextModel_m31 @myTextModel_m32 myTextModelK myTextModelZ
+@myTextModel_r32 springDamper @myTextModel_m32 @myTextModel_m33 myTextModelK myTextModelZ
+@myTextModel_r33 springDamper @myTextModel_m33 @myTextModel_m34 myTextModelK myTextModelZ
+@myTextModel_r34 springDamper @myTextModel_m34 @myTextModel_m35 myTextModelK myTextModelZ
+@myTextModel_r35 springDamper @myTextModel_m35 @myTextModel_m36 myTextModelK myTextModelZ
+@myTextModel_r36 springDamper @myTextModel_m36 @myTextModel_m37 myTextModelK myTextModelZ
+@myTextModel_r37 springDamper @myTextModel_m37 @myTextModel_m38 myTextModelK myTextModelZ
+@myTextModel_r38 springDamper @myTextModel_m38 @myTextModel_m39 myTextModelK myTextModelZ
+@myTextModel_r39 springDamper @myTextModel_m39 @myTextModel_m40 myTextModelK myTextModelZ
+@myTextModel_r40 springDamper @myTextModel_m40 @myTextModel_m41 myTextModelK myTextModelZ
+@myTextModel_r41 springDamper @myTextModel_m41 @myTextModel_m42 myTextModelK myTextModelZ
+@myTextModel_r42 springDamper @myTextModel_m42 @myTextModel_m43 myTextModelK myTextModelZ
+@myTextModel_r43 springDamper @myTextModel_m43 @myTextModel_m44 myTextModelK myTextModelZ
+@myTextModel_r44 springDamper @myTextModel_m44 @myTextModel_m45 myTextModelK myTextModelZ
+@myTextModel_r45 springDamper @myTextModel_m45 @myTextModel_m46 myTextModelK myTextModelZ
+@myTextModel_r46 springDamper @myTextModel_m46 @myTextModel_m47 myTextModelK myTextModelZ
+@myTextModel_r47 springDamper @myTextModel_m47 @myTextModel_m48 myTextModelK myTextModelZ
+@myTextModel_r48 springDamper @myTextModel_m48 @myTextModel_m49 myTextModelK myTextModelZ
+@myTextModel_r49 springDamper @myTextModel_m49 @myTextModel_m50 myTextModelK myTextModelZ
+@myTextModel_r50 springDamper @myTextModel_m50 @myTextModel_m51 myTextModelK myTextModelZ
+@myTextModel_r51 springDamper @myTextModel_m51 @myTextModel_m52 myTextModelK myTextModelZ
+@myTextModel_r52 springDamper @myTextModel_m52 @myTextModel_m53 myTextModelK myTextModelZ
+@myTextModel_r53 springDamper @myTextModel_m53 @myTextModel_m54 myTextModelK myTextModelZ
+@myTextModel_r54 springDamper @myTextModel_m54 @myTextModel_m55 myTextModelK myTextModelZ
+@myTextModel_r55 springDamper @myTextModel_m55 @myTextModel_m56 myTextModelK myTextModelZ
+@myTextModel_r56 springDamper @myTextModel_m56 @myTextModel_m57 myTextModelK myTextModelZ
+@myTextModel_r57 springDamper @myTextModel_m57 @myTextModel_m58 myTextModelK myTextModelZ
+@myTextModel_r58 springDamper @myTextModel_m58 @myTextModel_m59 myTextModelK myTextModelZ
+@myTextModel_r59 springDamper @myTextModel_m59 @myTextModel_m60 myTextModelK myTextModelZ
+@myTextModel_r60 springDamper @myTextModel_m60 @myTextModel_m61 myTextModelK myTextModelZ
+@myTextModel_r61 springDamper @myTextModel_m61 @myTextModel_m62 myTextModelK myTextModelZ
+@myTextModel_r62 springDamper @myTextModel_m62 @myTextModel_m63 myTextModelK myTextModelZ
+@myTextModel_r63 springDamper @myTextModel_m63 @myTextModel_m64 myTextModelK myTextModelZ
+@myTextModel_r64 springDamper @myTextModel_m64 @myTextModel_m65 myTextModelK myTextModelZ
+@myTextModel_r65 springDamper @myTextModel_m65 @myTextModel_m66 myTextModelK myTextModelZ
+@myTextModel_r66 springDamper @myTextModel_m66 @myTextModel_m67 myTextModelK myTextModelZ
+@myTextModel_r67 springDamper @myTextModel_m67 @myTextModel_m68 myTextModelK myTextModelZ
+@myTextModel_r68 springDamper @myTextModel_m68 @myTextModel_m69 myTextModelK myTextModelZ
+@myTextModel_r69 springDamper @myTextModel_m69 @myTextModel_m70 myTextModelK myTextModelZ
+@myTextModel_r70 springDamper @myTextModel_m70 @myTextModel_m71 myTextModelK myTextModelZ
+@myTextModel_r71 springDamper @myTextModel_m71 @myTextModel_m72 myTextModelK myTextModelZ
+@myTextModel_r72 springDamper @myTextModel_m72 @myTextModel_m73 myTextModelK myTextModelZ
+@myTextModel_r73 springDamper @myTextModel_m73 @myTextModel_m74 myTextModelK myTextModelZ
+@myTextModel_r74 springDamper @myTextModel_m74 @myTextModel_m75 myTextModelK myTextModelZ
+@myTextModel_r75 springDamper @myTextModel_m75 @myTextModel_m76 myTextModelK myTextModelZ
+@myTextModel_r76 springDamper @myTextModel_m76 @myTextModel_m77 myTextModelK myTextModelZ
+@myTextModel_r77 springDamper @myTextModel_m77 @myTextModel_m78 myTextModelK myTextModelZ
+@myTextModel_r78 springDamper @myTextModel_m78 @myTextModel_m79 myTextModelK myTextModelZ
+@myTextModel_r79 springDamper @myTextModel_m79 @myTextModel_m80 myTextModelK myTextModelZ
+@myTextModel_r80 springDamper @myTextModel_m80 @myTextModel_m81 myTextModelK myTextModelZ
+@myTextModel_r81 springDamper @myTextModel_m81 @myTextModel_m82 myTextModelK myTextModelZ
+@myTextModel_r82 springDamper @myTextModel_m82 @myTextModel_m83 myTextModelK myTextModelZ
+@myTextModel_r83 springDamper @myTextModel_m83 @myTextModel_m84 myTextModelK myTextModelZ
+@myTextModel_r84 springDamper @myTextModel_m84 @myTextModel_m85 myTextModelK myTextModelZ
+@myTextModel_r85 springDamper @myTextModel_m85 @myTextModel_m86 myTextModelK myTextModelZ
+@myTextModel_r86 springDamper @myTextModel_m86 @myTextModel_m87 myTextModelK myTextModelZ
+@myTextModel_r87 springDamper @myTextModel_m87 @myTextModel_m88 myTextModelK myTextModelZ
+@myTextModel_r88 springDamper @myTextModel_m88 @myTextModel_m89 myTextModelK myTextModelZ
+@myTextModel_r89 springDamper @myTextModel_m89 @myTextModel_m90 myTextModelK myTextModelZ
+@myTextModel_r90 springDamper @myTextModel_m90 @myTextModel_m91 myTextModelK myTextModelZ
+@myTextModel_r91 springDamper @myTextModel_m91 @myTextModel_m92 myTextModelK myTextModelZ
+@myTextModel_r92 springDamper @myTextModel_m92 @myTextModel_m93 myTextModelK myTextModelZ
+@myTextModel_r93 springDamper @myTextModel_m93 @myTextModel_m94 myTextModelK myTextModelZ
+@myTextModel_r94 springDamper @myTextModel_m94 @myTextModel_m95 myTextModelK myTextModelZ
+@myTextModel_r95 springDamper @myTextModel_m95 @myTextModel_m96 myTextModelK myTextModelZ
+@myTextModel_r96 springDamper @myTextModel_m96 @myTextModel_m97 myTextModelK myTextModelZ
+@myTextModel_r97 springDamper @myTextModel_m97 @myTextModel_m98 myTextModelK myTextModelZ
+@myTextModel_r98 springDamper @myTextModel_m98 @myTextModel_m99 myTextModelK myTextModelZ
+@myTextModel_r99 springDamper @myTextModel_m99 @myTextModel_m100 myTextModelK myTextModelZ
+@myTextModel_r100 springDamper @myTextModel_m100 @myTextModel_m101 myTextModelK myTextModelZ
+@myTextModel_r101 springDamper @myTextModel_m101 @myTextModel_m102 myTextModelK myTextModelZ
+@myTextModel_r102 springDamper @myTextModel_m102 @myTextModel_m103 myTextModelK myTextModelZ
+@myTextModel_r103 springDamper @myTextModel_m103 @myTextModel_m104 myTextModelK myTextModelZ
+@myTextModel_r104 springDamper @myTextModel_m104 @myTextModel_m105 myTextModelK myTextModelZ
+@myTextModel_r105 springDamper @myTextModel_m105 @myTextModel_m106 myTextModelK myTextModelZ
+@myTextModel_r106 springDamper @myTextModel_m106 @myTextModel_m107 myTextModelK myTextModelZ
+@myTextModel_r107 springDamper @myTextModel_m107 @myTextModel_m108 myTextModelK myTextModelZ
+@myTextModel_r108 springDamper @myTextModel_m108 @myTextModel_m109 myTextModelK myTextModelZ
+@myTextModel_r109 springDamper @myTextModel_m109 @myTextModel_m110 myTextModelK myTextModelZ
+@myTextModel_r110 springDamper @myTextModel_m110 @myTextModel_m111 myTextModelK myTextModelZ
+@myTextModel_r111 springDamper @myTextModel_m111 @myTextModel_m112 myTextModelK myTextModelZ
+@myTextModel_r112 springDamper @myTextModel_m112 @myTextModel_m113 myTextModelK myTextModelZ
+@myTextModel_r113 springDamper @myTextModel_m113 @myTextModel_m114 myTextModelK myTextModelZ
+@myTextModel_r114 springDamper @myTextModel_m114 @myTextModel_m115 myTextModelK myTextModelZ
+@myTextModel_r115 springDamper @myTextModel_m115 @myTextModel_m116 myTextModelK myTextModelZ
+@myTextModel_r116 springDamper @myTextModel_m116 @myTextModel_m117 myTextModelK myTextModelZ
+@myTextModel_r117 springDamper @myTextModel_m117 @myTextModel_m118 myTextModelK myTextModelZ
+@myTextModel_r118 springDamper @myTextModel_m118 @myTextModel_m119 myTextModelK myTextModelZ
+@myTextModel_r119 springDamper @myTextModel_m119 @myTextModel_m120 myTextModelK myTextModelZ
+@myTextModel_r120 springDamper @myTextModel_m120 @myTextModel_m121 myTextModelK myTextModelZ
+@myTextModel_r121 springDamper @myTextModel_m121 @myTextModel_m122 myTextModelK myTextModelZ
+@myTextModel_r122 springDamper @myTextModel_m122 @myTextModel_m123 myTextModelK myTextModelZ
+@myTextModel_r123 springDamper @myTextModel_m123 @myTextModel_m124 myTextModelK myTextModelZ
+@myTextModel_r124 springDamper @myTextModel_m124 @myTextModel_m125 myTextModelK myTextModelZ
+@myTextModel_r125 springDamper @myTextModel_m125 @myTextModel_m126 myTextModelK myTextModelZ
+@myTextModel_r126 springDamper @myTextModel_m126 @myTextModel_m127 myTextModelK myTextModelZ
+@myTextModel_r127 springDamper @myTextModel_m127 @myTextModel_m128 myTextModelK myTextModelZ
+@myTextModel_r128 springDamper @myTextModel_m128 @myTextModel_m129 myTextModelK myTextModelZ
+@myTextModel_r129 springDamper @myTextModel_m129 @myTextModel_m130 myTextModelK myTextModelZ
+@myTextModel_r130 springDamper @myTextModel_m130 @myTextModel_m131 myTextModelK myTextModelZ
+@myTextModel_r131 springDamper @myTextModel_m131 @myTextModel_m132 myTextModelK myTextModelZ
+@myTextModel_r132 springDamper @myTextModel_m132 @myTextModel_m133 myTextModelK myTextModelZ
+@myTextModel_r133 springDamper @myTextModel_m133 @myTextModel_m134 myTextModelK myTextModelZ
+@myTextModel_r134 springDamper @myTextModel_m134 @myTextModel_m135 myTextModelK myTextModelZ
+@myTextModel_r135 springDamper @myTextModel_m135 @myTextModel_m136 myTextModelK myTextModelZ
+@myTextModel_r136 springDamper @myTextModel_m136 @myTextModel_m137 myTextModelK myTextModelZ
+@myTextModel_r137 springDamper @myTextModel_m137 @myTextModel_m138 myTextModelK myTextModelZ
+@myTextModel_r138 springDamper @myTextModel_m138 @myTextModel_m139 myTextModelK myTextModelZ
+@myTextModel_r139 springDamper @myTextModel_m139 @myTextModel_m140 myTextModelK myTextModelZ
+@myTextModel_r140 springDamper @myTextModel_m140 @myTextModel_m141 myTextModelK myTextModelZ
+@myTextModel_r141 springDamper @myTextModel_m141 @myTextModel_m142 myTextModelK myTextModelZ
+@myTextModel_r142 springDamper @myTextModel_m142 @myTextModel_m143 myTextModelK myTextModelZ
+@myTextModel_r143 springDamper @myTextModel_m143 @myTextModel_m144 myTextModelK myTextModelZ
+@myTextModel_r144 springDamper @myTextModel_m144 @myTextModel_m145 myTextModelK myTextModelZ
+@myTextModel_r145 springDamper @myTextModel_m145 @myTextModel_m146 myTextModelK myTextModelZ
+@myTextModel_r146 springDamper @myTextModel_m146 @myTextModel_m147 myTextModelK myTextModelZ
+@myTextModel_r147 springDamper @myTextModel_m147 @myTextModel_m148 myTextModelK myTextModelZ
+@myTextModel_r148 springDamper @myTextModel_m148 @myTextModel_m149 myTextModelK myTextModelZ
+@myTextModel_r149 springDamper @myTextModel_m149 @myTextModel_m150 myTextModelK myTextModelZ
+@myTextModel_r150 springDamper @myTextModel_m150 @myTextModel_m151 myTextModelK myTextModelZ
+@myTextModel_r151 springDamper @myTextModel_m151 @myTextModel_m152 myTextModelK myTextModelZ
+@myTextModel_r152 springDamper @myTextModel_m152 @myTextModel_m153 myTextModelK myTextModelZ
+@myTextModel_r153 springDamper @myTextModel_m153 @myTextModel_m154 myTextModelK myTextModelZ
+@myTextModel_r154 springDamper @myTextModel_m154 @myTextModel_m155 myTextModelK myTextModelZ
+@myTextModel_r155 springDamper @myTextModel_m155 @myTextModel_m156 myTextModelK myTextModelZ
+@myTextModel_r156 springDamper @myTextModel_m156 @myTextModel_m157 myTextModelK myTextModelZ
+@myTextModel_r157 springDamper @myTextModel_m157 @myTextModel_m158 myTextModelK myTextModelZ
+@myTextModel_r158 springDamper @myTextModel_m158 @myTextModel_m159 myTextModelK myTextModelZ
+@myTextModel_r159 springDamper @myTextModel_m159 @myTextModel_m160 myTextModelK myTextModelZ
+@myTextModel_r160 springDamper @myTextModel_m160 @myTextModel_m161 myTextModelK myTextModelZ
+@myTextModel_r161 springDamper @myTextModel_m161 @myTextModel_m162 myTextModelK myTextModelZ
+@myTextModel_r162 springDamper @myTextModel_m162 @myTextModel_m163 myTextModelK myTextModelZ
+@myTextModel_r163 springDamper @myTextModel_m163 @myTextModel_m164 myTextModelK myTextModelZ
+@myTextModel_r164 springDamper @myTextModel_m164 @myTextModel_m165 myTextModelK myTextModelZ
+@myTextModel_r165 springDamper @myTextModel_m165 @myTextModel_m166 myTextModelK myTextModelZ
+@myTextModel_r166 springDamper @myTextModel_m166 @myTextModel_m167 myTextModelK myTextModelZ
+@myTextModel_r167 springDamper @myTextModel_m167 @myTextModel_m168 myTextModelK myTextModelZ
+@myTextModel_r168 springDamper @myTextModel_m168 @myTextModel_m169 myTextModelK myTextModelZ
+@myTextModel_r169 springDamper @myTextModel_m169 @myTextModel_m170 myTextModelK myTextModelZ
+@myTextModel_r170 springDamper @myTextModel_m170 @myTextModel_m171 myTextModelK myTextModelZ
+@myTextModel_r171 springDamper @myTextModel_m171 @myTextModel_m172 myTextModelK myTextModelZ
+@myTextModel_r172 springDamper @myTextModel_m172 @myTextModel_m173 myTextModelK myTextModelZ
+@myTextModel_r173 springDamper @myTextModel_m173 @myTextModel_m174 myTextModelK myTextModelZ
+@myTextModel_r174 springDamper @myTextModel_m174 @myTextModel_m175 myTextModelK myTextModelZ
+@myTextModel_r175 springDamper @myTextModel_m175 @myTextModel_m176 myTextModelK myTextModelZ
+@myTextModel_r176 springDamper @myTextModel_m176 @myTextModel_m177 myTextModelK myTextModelZ
+@myTextModel_r177 springDamper @myTextModel_m177 @myTextModel_m178 myTextModelK myTextModelZ
+@myTextModel_r178 springDamper @myTextModel_m178 @myTextModel_m179 myTextModelK myTextModelZ
+@myTextModel_r179 springDamper @myTextModel_m179 @myTextModel_m180 myTextModelK myTextModelZ
+@myTextModel_r180 springDamper @myTextModel_m180 @myTextModel_m181 myTextModelK myTextModelZ
+@myTextModel_r181 springDamper @myTextModel_m181 @myTextModel_m182 myTextModelK myTextModelZ
+@myTextModel_r182 springDamper @myTextModel_m182 @myTextModel_m183 myTextModelK myTextModelZ
+@myTextModel_r183 springDamper @myTextModel_m183 @myTextModel_m184 myTextModelK myTextModelZ
+@myTextModel_r184 springDamper @myTextModel_m184 @myTextModel_m185 myTextModelK myTextModelZ
+@myTextModel_r185 springDamper @myTextModel_m185 @myTextModel_m186 myTextModelK myTextModelZ
+@myTextModel_r186 springDamper @myTextModel_m186 @myTextModel_m187 myTextModelK myTextModelZ
+@myTextModel_r187 springDamper @myTextModel_m187 @myTextModel_m188 myTextModelK myTextModelZ
+@myTextModel_r188 springDamper @myTextModel_m188 @myTextModel_m189 myTextModelK myTextModelZ
+@myTextModel_r189 springDamper @myTextModel_m189 @myTextModel_m190 myTextModelK myTextModelZ
+@myTextModel_r190 springDamper @myTextModel_m190 @myTextModel_m191 myTextModelK myTextModelZ
+@myTextModel_r191 springDamper @myTextModel_m191 @myTextModel_m192 myTextModelK myTextModelZ
+@myTextModel_r192 springDamper @myTextModel_m192 @myTextModel_m193 myTextModelK myTextModelZ
+@myTextModel_r193 springDamper @myTextModel_m193 @myTextModel_m194 myTextModelK myTextModelZ
+@myTextModel_r194 springDamper @myTextModel_m194 @myTextModel_m195 myTextModelK myTextModelZ
+@myTextModel_r195 springDamper @myTextModel_m195 @myTextModel_m196 myTextModelK myTextModelZ
+@myTextModel_r196 springDamper @myTextModel_m196 @myTextModel_m197 myTextModelK myTextModelZ
+@myTextModel_r197 springDamper @myTextModel_m197 @myTextModel_m198 myTextModelK myTextModelZ
+@myTextModel_r198 springDamper @myTextModel_m198 @myTextModel_m199 myTextModelK myTextModelZ
+@myTextModel_r199 springDamper @myTextModel_m199 @myTextModel_m200 myTextModelK myTextModelZ
+@myTextModel_r200 springDamper @myTextModel_m200 @myTextModel_m201 myTextModelK myTextModelZ
+@myTextModel_r201 springDamper @myTextModel_m201 @myTextModel_m202 myTextModelK myTextModelZ
+@myTextModel_r202 springDamper @myTextModel_m202 @myTextModel_m203 myTextModelK myTextModelZ
+@myTextModel_r203 springDamper @myTextModel_m203 @myTextModel_m204 myTextModelK myTextModelZ
+@myTextModel_r204 springDamper @myTextModel_m204 @myTextModel_m205 myTextModelK myTextModelZ
+@myTextModel_r205 springDamper @myTextModel_m205 @myTextModel_m206 myTextModelK myTextModelZ
+@myTextModel_r206 springDamper @myTextModel_m206 @myTextModel_m207 myTextModelK myTextModelZ
+@myTextModel_r207 springDamper @myTextModel_m207 @myTextModel_m208 myTextModelK myTextModelZ
+@myTextModel_r208 springDamper @myTextModel_m208 @myTextModel_m209 myTextModelK myTextModelZ
+@myTextModel_r209 springDamper @myTextModel_m209 @myTextModel_m210 myTextModelK myTextModelZ
+@myTextModel_r210 springDamper @myTextModel_m210 @myTextModel_m211 myTextModelK myTextModelZ
+@myTextModel_r211 springDamper @myTextModel_m211 @myTextModel_m212 myTextModelK myTextModelZ
+@myTextModel_r212 springDamper @myTextModel_m212 @myTextModel_m213 myTextModelK myTextModelZ
+@myTextModel_r213 springDamper @myTextModel_m213 @myTextModel_m214 myTextModelK myTextModelZ
+@myTextModel_r214 springDamper @myTextModel_m214 @myTextModel_m215 myTextModelK myTextModelZ
+@myTextModel_r215 springDamper @myTextModel_m215 @myTextModel_m216 myTextModelK myTextModelZ
+@myTextModel_r216 springDamper @myTextModel_m216 @myTextModel_m217 myTextModelK myTextModelZ
+@myTextModel_r217 springDamper @myTextModel_m217 @myTextModel_m218 myTextModelK myTextModelZ
+@myTextModel_r218 springDamper @myTextModel_m218 @myTextModel_m219 myTextModelK myTextModelZ
+@myTextModel_r219 springDamper @myTextModel_m219 @myTextModel_m220 myTextModelK myTextModelZ
+@myTextModel_r220 springDamper @myTextModel_m220 @myTextModel_m221 myTextModelK myTextModelZ
+@myTextModel_r221 springDamper @myTextModel_m221 @myTextModel_m222 myTextModelK myTextModelZ
+@myTextModel_r222 springDamper @myTextModel_m222 @myTextModel_m223 myTextModelK myTextModelZ
+@myTextModel_r223 springDamper @myTextModel_m223 @myTextModel_m224 myTextModelK myTextModelZ
+@myTextModel_r224 springDamper @myTextModel_m224 @myTextModel_m225 myTextModelK myTextModelZ
+@myTextModel_r225 springDamper @myTextModel_m225 @myTextModel_m226 myTextModelK myTextModelZ
+@myTextModel_r226 springDamper @myTextModel_m226 @myTextModel_m227 myTextModelK myTextModelZ
+@myTextModel_r227 springDamper @myTextModel_m227 @myTextModel_m228 myTextModelK myTextModelZ
+@myTextModel_r228 springDamper @myTextModel_m228 @myTextModel_m229 myTextModelK myTextModelZ
+@myTextModel_r229 springDamper @myTextModel_m229 @myTextModel_m230 myTextModelK myTextModelZ
+@myTextModel_r230 springDamper @myTextModel_m230 @myTextModel_m231 myTextModelK myTextModelZ
+@myTextModel_r231 springDamper @myTextModel_m231 @myTextModel_m232 myTextModelK myTextModelZ
+@myTextModel_r232 springDamper @myTextModel_m232 @myTextModel_m233 myTextModelK myTextModelZ
+@myTextModel_r233 springDamper @myTextModel_m233 @myTextModel_m234 myTextModelK myTextModelZ
+@myTextModel_r234 springDamper @myTextModel_m234 @myTextModel_m235 myTextModelK myTextModelZ
+@myTextModel_r235 springDamper @myTextModel_m235 @myTextModel_m236 myTextModelK myTextModelZ
+@myTextModel_r236 springDamper @myTextModel_m236 @myTextModel_m237 myTextModelK myTextModelZ
+@myTextModel_r237 springDamper @myTextModel_m237 @myTextModel_m238 myTextModelK myTextModelZ
+@myTextModel_r238 springDamper @myTextModel_m238 @myTextModel_m239 myTextModelK myTextModelZ
+@myTextModel_r239 springDamper @myTextModel_m239 @myTextModel_m240 myTextModelK myTextModelZ
+@myTextModel_r240 springDamper @myTextModel_m240 @myTextModel_m241 myTextModelK myTextModelZ
+@myTextModel_r241 springDamper @myTextModel_m241 @myTextModel_m242 myTextModelK myTextModelZ
+@myTextModel_r242 springDamper @myTextModel_m242 @myTextModel_m243 myTextModelK myTextModelZ
+@myTextModel_r243 springDamper @myTextModel_m243 @myTextModel_m244 myTextModelK myTextModelZ
+@myTextModel_r244 springDamper @myTextModel_m244 @myTextModel_m245 myTextModelK myTextModelZ
+@myTextModel_r245 springDamper @myTextModel_m245 @myTextModel_m246 myTextModelK myTextModelZ
+@myTextModel_r246 springDamper @myTextModel_m246 @myTextModel_m247 myTextModelK myTextModelZ
+@myTextModel_r247 springDamper @myTextModel_m247 @myTextModel_m248 myTextModelK myTextModelZ
+@myTextModel_r248 springDamper @myTextModel_m248 @myTextModel_m249 myTextModelK myTextModelZ
+@myTextModel_r249 springDamper @myTextModel_m249 @myTextModel_m250 myTextModelK myTextModelZ
+@myTextModel_r250 springDamper @myTextModel_m250 @myTextModel_m251 myTextModelK myTextModelZ
+@myTextModel_r251 springDamper @myTextModel_m251 @myTextModel_m252 myTextModelK myTextModelZ
+@myTextModel_r252 springDamper @myTextModel_m252 @myTextModel_m253 myTextModelK myTextModelZ
+@myTextModel_r253 springDamper @myTextModel_m253 @myTextModel_m254 myTextModelK myTextModelZ
+@myTextModel_r254 springDamper @myTextModel_m254 @myTextModel_m255 myTextModelK myTextModelZ
+@myTextModel_r255 springDamper @myTextModel_m255 @myTextModel_m256 myTextModelK myTextModelZ
+@myTextModel_r256 springDamper @myTextModel_m256 @myTextModel_m257 myTextModelK myTextModelZ
+@myTextModel_r257 springDamper @myTextModel_m257 @myTextModel_m258 myTextModelK myTextModelZ
+@myTextModel_r258 springDamper @myTextModel_m258 @myTextModel_m259 myTextModelK myTextModelZ
+@myTextModel_r259 springDamper @myTextModel_m259 @myTextModel_m260 myTextModelK myTextModelZ
+@myTextModel_r260 springDamper @myTextModel_m260 @myTextModel_m261 myTextModelK myTextModelZ
+@myTextModel_r261 springDamper @myTextModel_m261 @myTextModel_m262 myTextModelK myTextModelZ
+@myTextModel_r262 springDamper @myTextModel_m262 @myTextModel_m263 myTextModelK myTextModelZ
+@myTextModel_r263 springDamper @myTextModel_m263 @myTextModel_m264 myTextModelK myTextModelZ
+@myTextModel_r264 springDamper @myTextModel_m264 @myTextModel_m265 myTextModelK myTextModelZ
+@myTextModel_r265 springDamper @myTextModel_m265 @myTextModel_m266 myTextModelK myTextModelZ
+@myTextModel_r266 springDamper @myTextModel_m266 @myTextModel_m267 myTextModelK myTextModelZ
+@myTextModel_r267 springDamper @myTextModel_m267 @myTextModel_m268 myTextModelK myTextModelZ
+@myTextModel_r268 springDamper @myTextModel_m268 @myTextModel_m269 myTextModelK myTextModelZ
+@myTextModel_r269 springDamper @myTextModel_m269 @myTextModel_m270 myTextModelK myTextModelZ
+@myTextModel_r270 springDamper @myTextModel_m270 @myTextModel_m271 myTextModelK myTextModelZ
+@myTextModel_r271 springDamper @myTextModel_m271 @myTextModel_m272 myTextModelK myTextModelZ
+@myTextModel_r272 springDamper @myTextModel_m272 @myTextModel_m273 myTextModelK myTextModelZ
+@myTextModel_r273 springDamper @myTextModel_m273 @myTextModel_m274 myTextModelK myTextModelZ
+@myTextModel_r274 springDamper @myTextModel_m274 @myTextModel_m275 myTextModelK myTextModelZ
+@myTextModel_r275 springDamper @myTextModel_m275 @myTextModel_m276 myTextModelK myTextModelZ
+@myTextModel_r276 springDamper @myTextModel_m276 @myTextModel_m277 myTextModelK myTextModelZ
+@myTextModel_r277 springDamper @myTextModel_m277 @myTextModel_m278 myTextModelK myTextModelZ
+@myTextModel_r278 springDamper @myTextModel_m278 @myTextModel_m279 myTextModelK myTextModelZ
+@myTextModel_r279 springDamper @myTextModel_m279 @myTextModel_m280 myTextModelK myTextModelZ
+@myTextModel_r280 springDamper @myTextModel_m280 @myTextModel_m281 myTextModelK myTextModelZ
+@myTextModel_r281 springDamper @myTextModel_m281 @myTextModel_m282 myTextModelK myTextModelZ
+@myTextModel_r282 springDamper @myTextModel_m282 @myTextModel_m283 myTextModelK myTextModelZ
+@myTextModel_r283 springDamper @myTextModel_m283 @myTextModel_m284 myTextModelK myTextModelZ
+@myTextModel_r284 springDamper @myTextModel_m284 @myTextModel_m285 myTextModelK myTextModelZ
+@myTextModel_r285 springDamper @myTextModel_m285 @myTextModel_m286 myTextModelK myTextModelZ
+@myTextModel_r286 springDamper @myTextModel_m286 @myTextModel_m287 myTextModelK myTextModelZ
+@myTextModel_r287 springDamper @myTextModel_m287 @myTextModel_m288 myTextModelK myTextModelZ
+@myTextModel_r288 springDamper @myTextModel_m288 @myTextModel_m289 myTextModelK myTextModelZ
+@myTextModel_r289 springDamper @myTextModel_m289 @myTextModel_m290 myTextModelK myTextModelZ
+@myTextModel_r290 springDamper @myTextModel_m290 @myTextModel_m291 myTextModelK myTextModelZ
+@myTextModel_r291 springDamper @myTextModel_m291 @myTextModel_m292 myTextModelK myTextModelZ
+@myTextModel_r292 springDamper @myTextModel_m292 @myTextModel_m293 myTextModelK myTextModelZ
+@myTextModel_r293 springDamper @myTextModel_m293 @myTextModel_m294 myTextModelK myTextModelZ
+@myTextModel_r294 springDamper @myTextModel_m294 @myTextModel_m295 myTextModelK myTextModelZ
+@myTextModel_r295 springDamper @myTextModel_m295 @myTextModel_m296 myTextModelK myTextModelZ
+@myTextModel_r296 springDamper @myTextModel_m296 @myTextModel_m297 myTextModelK myTextModelZ
+@myTextModel_r297 springDamper @myTextModel_m297 @myTextModel_m298 myTextModelK myTextModelZ
+@myTextModel_r298 springDamper @myTextModel_m298 @myTextModel_m299 myTextModelK myTextModelZ
+@myTextModel_r299 springDamper @myTextModel_m299 @myTextModel_m300 myTextModelK myTextModelZ
+@myTextModel_r300 springDamper @myTextModel_m300 @myTextModel_m301 myTextModelK myTextModelZ
+@myTextModel_r301 springDamper @myTextModel_m301 @myTextModel_m302 myTextModelK myTextModelZ
+@myTextModel_r302 springDamper @myTextModel_m302 @myTextModel_m303 myTextModelK myTextModelZ
+@myTextModel_r303 springDamper @myTextModel_m303 @myTextModel_m304 myTextModelK myTextModelZ
+@myTextModel_r304 springDamper @myTextModel_m304 @myTextModel_m305 myTextModelK myTextModelZ
+@myTextModel_r305 springDamper @myTextModel_m305 @myTextModel_m306 myTextModelK myTextModelZ
+@myTextModel_r306 springDamper @myTextModel_m306 @myTextModel_m307 myTextModelK myTextModelZ
+@myTextModel_r307 springDamper @myTextModel_m307 @myTextModel_m308 myTextModelK myTextModelZ
+@myTextModel_r308 springDamper @myTextModel_m308 @myTextModel_m309 myTextModelK myTextModelZ
+@myTextModel_r309 springDamper @myTextModel_m309 @myTextModel_m310 myTextModelK myTextModelZ
+@myTextModel_r310 springDamper @myTextModel_m310 @myTextModel_m311 myTextModelK myTextModelZ
+@myTextModel_r311 springDamper @myTextModel_m311 @myTextModel_m312 myTextModelK myTextModelZ
+@myTextModel_r312 springDamper @myTextModel_m312 @myTextModel_m313 myTextModelK myTextModelZ
+@myTextModel_r313 springDamper @myTextModel_m313 @myTextModel_m314 myTextModelK myTextModelZ
+@myTextModel_r314 springDamper @myTextModel_m314 @myTextModel_m315 myTextModelK myTextModelZ
+@myTextModel_r315 springDamper @myTextModel_m315 @myTextModel_m316 myTextModelK myTextModelZ
+@myTextModel_r316 springDamper @myTextModel_m316 @myTextModel_m317 myTextModelK myTextModelZ
+@myTextModel_r317 springDamper @myTextModel_m317 @myTextModel_m318 myTextModelK myTextModelZ
+@myTextModel_r318 springDamper @myTextModel_m318 @myTextModel_m319 myTextModelK myTextModelZ
+@myTextModel_r319 springDamper @myTextModel_m319 @myTextModel_m320 myTextModelK myTextModelZ
+@myTextModel_r320 springDamper @myTextModel_m320 @myTextModel_m321 myTextModelK myTextModelZ
+@myTextModel_r321 springDamper @myTextModel_m321 @myTextModel_m322 myTextModelK myTextModelZ
+@myTextModel_r322 springDamper @myTextModel_m322 @myTextModel_m323 myTextModelK myTextModelZ
+@myTextModel_r323 springDamper @myTextModel_m323 @myTextModel_m324 myTextModelK myTextModelZ
+@myTextModel_r324 springDamper @myTextModel_m324 @myTextModel_m325 myTextModelK myTextModelZ
+@myTextModel_r325 springDamper @myTextModel_m325 @myTextModel_m326 myTextModelK myTextModelZ
+@myTextModel_r326 springDamper @myTextModel_m326 @myTextModel_m327 myTextModelK myTextModelZ
+@myTextModel_r327 springDamper @myTextModel_m327 @myTextModel_m328 myTextModelK myTextModelZ
+@myTextModel_r328 springDamper @myTextModel_m328 @myTextModel_m329 myTextModelK myTextModelZ
+@myTextModel_r329 springDamper @myTextModel_m329 @myTextModel_m330 myTextModelK myTextModelZ
+@myTextModel_r330 springDamper @myTextModel_m330 @myTextModel_m331 myTextModelK myTextModelZ
+@myTextModel_r331 springDamper @myTextModel_m331 @myTextModel_m332 myTextModelK myTextModelZ
+@myTextModel_r332 springDamper @myTextModel_m332 @myTextModel_m333 myTextModelK myTextModelZ
+@myTextModel_r333 springDamper @myTextModel_m333 @myTextModel_m334 myTextModelK myTextModelZ
+@myTextModel_r334 springDamper @myTextModel_m334 @myTextModel_m335 myTextModelK myTextModelZ
+@myTextModel_r335 springDamper @myTextModel_m335 @myTextModel_m336 myTextModelK myTextModelZ
+@myTextModel_r336 springDamper @myTextModel_m336 @myTextModel_m337 myTextModelK myTextModelZ
+@myTextModel_r337 springDamper @myTextModel_m337 @myTextModel_m338 myTextModelK myTextModelZ
+@myTextModel_r338 springDamper @myTextModel_m338 @myTextModel_m339 myTextModelK myTextModelZ
+@myTextModel_r339 springDamper @myTextModel_m339 @myTextModel_m340 myTextModelK myTextModelZ
+@myTextModel_r340 springDamper @myTextModel_m340 @myTextModel_m341 myTextModelK myTextModelZ
+@myTextModel_r341 springDamper @myTextModel_m341 @myTextModel_m342 myTextModelK myTextModelZ
+@myTextModel_r342 springDamper @myTextModel_m342 @myTextModel_m343 myTextModelK myTextModelZ
+@myTextModel_r343 springDamper @myTextModel_m343 @myTextModel_m344 myTextModelK myTextModelZ
+@myTextModel_r344 springDamper @myTextModel_m344 @myTextModel_m345 myTextModelK myTextModelZ
+@myTextModel_r345 springDamper @myTextModel_m345 @myTextModel_m346 myTextModelK myTextModelZ
+@myTextModel_r346 springDamper @myTextModel_m346 @myTextModel_m347 myTextModelK myTextModelZ
+@myTextModel_r347 springDamper @myTextModel_m347 @myTextModel_m348 myTextModelK myTextModelZ
+@myTextModel_r348 springDamper @myTextModel_m348 @myTextModel_m349 myTextModelK myTextModelZ
+@myTextModel_r349 springDamper @myTextModel_m349 @myTextModel_m350 myTextModelK myTextModelZ
+@myTextModel_r350 springDamper @myTextModel_m350 @myTextModel_m351 myTextModelK myTextModelZ
+@myTextModel_r351 springDamper @myTextModel_m351 @myTextModel_m352 myTextModelK myTextModelZ
+@myTextModel_r352 springDamper @myTextModel_m352 @myTextModel_m353 myTextModelK myTextModelZ
+@myTextModel_r353 springDamper @myTextModel_m353 @myTextModel_m354 myTextModelK myTextModelZ
+@myTextModel_r354 springDamper @myTextModel_m354 @myTextModel_m355 myTextModelK myTextModelZ
+@myTextModel_r355 springDamper @myTextModel_m355 @myTextModel_m356 myTextModelK myTextModelZ
+@myTextModel_r356 springDamper @myTextModel_m356 @myTextModel_m357 myTextModelK myTextModelZ
+@myTextModel_r357 springDamper @myTextModel_m357 @myTextModel_m358 myTextModelK myTextModelZ
+@myTextModel_r358 springDamper @myTextModel_m358 @myTextModel_m359 myTextModelK myTextModelZ
+@myTextModel_r359 springDamper @myTextModel_m359 @myTextModel_m360 myTextModelK myTextModelZ
+@myTextModel_r360 springDamper @myTextModel_m360 @myTextModel_m361 myTextModelK myTextModelZ
+@myTextModel_r361 springDamper @myTextModel_m361 @myTextModel_m362 myTextModelK myTextModelZ
+@myTextModel_r362 springDamper @myTextModel_m362 @myTextModel_m363 myTextModelK myTextModelZ
+@myTextModel_r363 springDamper @myTextModel_m363 @myTextModel_m364 myTextModelK myTextModelZ
+@myTextModel_r364 springDamper @myTextModel_m364 @myTextModel_m365 myTextModelK myTextModelZ
+@myTextModel_r365 springDamper @myTextModel_m365 @myTextModel_m366 myTextModelK myTextModelZ
+@myTextModel_r366 springDamper @myTextModel_m366 @myTextModel_m367 myTextModelK myTextModelZ
+@myTextModel_r367 springDamper @myTextModel_m367 @myTextModel_m368 myTextModelK myTextModelZ
+@myTextModel_r368 springDamper @myTextModel_m368 @myTextModel_m369 myTextModelK myTextModelZ
+@myTextModel_r369 springDamper @myTextModel_m369 @myTextModel_m370 myTextModelK myTextModelZ
+@myTextModel_r370 springDamper @myTextModel_m370 @myTextModel_m371 myTextModelK myTextModelZ
+@myTextModel_r371 springDamper @myTextModel_m371 @myTextModel_m372 myTextModelK myTextModelZ
+@myTextModel_r372 springDamper @myTextModel_m372 @myTextModel_m373 myTextModelK myTextModelZ
+@myTextModel_r373 springDamper @myTextModel_m373 @myTextModel_m374 myTextModelK myTextModelZ
+@myTextModel_r374 springDamper @myTextModel_m374 @myTextModel_m375 myTextModelK myTextModelZ
+@myTextModel_r375 springDamper @myTextModel_m375 @myTextModel_m376 myTextModelK myTextModelZ
+@myTextModel_r376 springDamper @myTextModel_m376 @myTextModel_m377 myTextModelK myTextModelZ
+@myTextModel_r377 springDamper @myTextModel_m377 @myTextModel_m378 myTextModelK myTextModelZ
+@myTextModel_r378 springDamper @myTextModel_m378 @myTextModel_m379 myTextModelK myTextModelZ
+@myTextModel_r379 springDamper @myTextModel_m379 @myTextModel_m380 myTextModelK myTextModelZ
+@myTextModel_r380 springDamper @myTextModel_m380 @myTextModel_m381 myTextModelK myTextModelZ
+@myTextModel_r381 springDamper @myTextModel_m381 @myTextModel_m382 myTextModelK myTextModelZ
+@myTextModel_r382 springDamper @myTextModel_m382 @myTextModel_m383 myTextModelK myTextModelZ
+@myTextModel_r383 springDamper @myTextModel_m383 @myTextModel_m384 myTextModelK myTextModelZ
+@myTextModel_r384 springDamper @myTextModel_m384 @myTextModel_m385 myTextModelK myTextModelZ
+@myTextModel_r385 springDamper @myTextModel_m385 @myTextModel_m386 myTextModelK myTextModelZ
+@myTextModel_r386 springDamper @myTextModel_m386 @myTextModel_m387 myTextModelK myTextModelZ
+@myTextModel_r387 springDamper @myTextModel_m387 @myTextModel_m388 myTextModelK myTextModelZ
+@myTextModel_r388 springDamper @myTextModel_m388 @myTextModel_m389 myTextModelK myTextModelZ
+@myTextModel_r389 springDamper @myTextModel_m389 @myTextModel_m390 myTextModelK myTextModelZ
+@myTextModel_r390 springDamper @myTextModel_m390 @myTextModel_m391 myTextModelK myTextModelZ
+@myTextModel_r391 springDamper @myTextModel_m391 @myTextModel_m392 myTextModelK myTextModelZ
+@myTextModel_r392 springDamper @myTextModel_m392 @myTextModel_m393 myTextModelK myTextModelZ
+@myTextModel_r393 springDamper @myTextModel_m393 @myTextModel_m394 myTextModelK myTextModelZ
+@myTextModel_r394 springDamper @myTextModel_m394 @myTextModel_m395 myTextModelK myTextModelZ
+@myTextModel_r395 springDamper @myTextModel_m395 @myTextModel_m396 myTextModelK myTextModelZ
+@myTextModel_r396 springDamper @myTextModel_m396 @myTextModel_m397 myTextModelK myTextModelZ
+@myTextModel_r397 springDamper @myTextModel_m397 @myTextModel_m398 myTextModelK myTextModelZ
+@myTextModel_r398 springDamper @myTextModel_m398 @myTextModel_m399 myTextModelK myTextModelZ
+@myTextModel_r399 springDamper @myTextModel_m399 @myTextModel_m400 myTextModelK myTextModelZ
+@myTextModel_r400 springDamper @myTextModel_m400 @myTextModel_m401 myTextModelK myTextModelZ
+@myTextModel_r401 springDamper @myTextModel_m401 @myTextModel_m402 myTextModelK myTextModelZ
+@myTextModel_r402 springDamper @myTextModel_m402 @myTextModel_m403 myTextModelK myTextModelZ
+@myTextModel_r403 springDamper @myTextModel_m403 @myTextModel_m404 myTextModelK myTextModelZ
+@myTextModel_r404 springDamper @myTextModel_m404 @myTextModel_m405 myTextModelK myTextModelZ
+@myTextModel_r405 springDamper @myTextModel_m405 @myTextModel_m406 myTextModelK myTextModelZ
+@myTextModel_r406 springDamper @myTextModel_m406 @myTextModel_m407 myTextModelK myTextModelZ
+@myTextModel_r407 springDamper @myTextModel_m407 @myTextModel_m408 myTextModelK myTextModelZ
+@myTextModel_r408 springDamper @myTextModel_m408 @myTextModel_m409 myTextModelK myTextModelZ
+@myTextModel_r409 springDamper @myTextModel_m409 @myTextModel_m410 myTextModelK myTextModelZ
+@myTextModel_r410 springDamper @myTextModel_m410 @myTextModel_m411 myTextModelK myTextModelZ
+@myTextModel_r411 springDamper @myTextModel_m411 @myTextModel_m412 myTextModelK myTextModelZ
+@myTextModel_r412 springDamper @myTextModel_m412 @myTextModel_m413 myTextModelK myTextModelZ
+@myTextModel_r413 springDamper @myTextModel_m413 @myTextModel_m414 myTextModelK myTextModelZ
+@myTextModel_r414 springDamper @myTextModel_m414 @myTextModel_m415 myTextModelK myTextModelZ
+@myTextModel_r415 springDamper @myTextModel_m415 @myTextModel_m416 myTextModelK myTextModelZ
+@myTextModel_r416 springDamper @myTextModel_m416 @myTextModel_m417 myTextModelK myTextModelZ
+@myTextModel_r417 springDamper @myTextModel_m417 @myTextModel_m418 myTextModelK myTextModelZ
+@myTextModel_r418 springDamper @myTextModel_m418 @myTextModel_m419 myTextModelK myTextModelZ
+@myTextModel_r419 springDamper @myTextModel_m419 @myTextModel_m420 myTextModelK myTextModelZ
+@myTextModel_r420 springDamper @myTextModel_m420 @myTextModel_m421 myTextModelK myTextModelZ
+@myTextModel_r421 springDamper @myTextModel_m421 @myTextModel_m422 myTextModelK myTextModelZ
+@myTextModel_r422 springDamper @myTextModel_m422 @myTextModel_m423 myTextModelK myTextModelZ
+@myTextModel_r423 springDamper @myTextModel_m423 @myTextModel_m424 myTextModelK myTextModelZ
+@myTextModel_r424 springDamper @myTextModel_m424 @myTextModel_m425 myTextModelK myTextModelZ
+@myTextModel_r425 springDamper @myTextModel_m425 @myTextModel_m426 myTextModelK myTextModelZ
+@myTextModel_r426 springDamper @myTextModel_m426 @myTextModel_m427 myTextModelK myTextModelZ
+@myTextModel_r427 springDamper @myTextModel_m427 @myTextModel_m428 myTextModelK myTextModelZ
+@myTextModel_r428 springDamper @myTextModel_m428 @myTextModel_m429 myTextModelK myTextModelZ
+@myTextModel_r429 springDamper @myTextModel_m429 @myTextModel_m430 myTextModelK myTextModelZ
+@myTextModel_r430 springDamper @myTextModel_m430 @myTextModel_m431 myTextModelK myTextModelZ
+@myTextModel_r431 springDamper @myTextModel_m431 @myTextModel_m432 myTextModelK myTextModelZ
+@myTextModel_r432 springDamper @myTextModel_m432 @myTextModel_m433 myTextModelK myTextModelZ
+@myTextModel_r433 springDamper @myTextModel_m433 @myTextModel_m434 myTextModelK myTextModelZ
+@myTextModel_r434 springDamper @myTextModel_m434 @myTextModel_m435 myTextModelK myTextModelZ
+@myTextModel_r435 springDamper @myTextModel_m435 @myTextModel_m436 myTextModelK myTextModelZ
+@myTextModel_r436 springDamper @myTextModel_m436 @myTextModel_m437 myTextModelK myTextModelZ
+@myTextModel_r437 springDamper @myTextModel_m437 @myTextModel_m438 myTextModelK myTextModelZ
+@myTextModel_r438 springDamper @myTextModel_m438 @myTextModel_m439 myTextModelK myTextModelZ
+@myTextModel_r439 springDamper @myTextModel_m439 @myTextModel_m440 myTextModelK myTextModelZ
+@myTextModel_r440 springDamper @myTextModel_m440 @myTextModel_m441 myTextModelK myTextModelZ
+@myTextModel_r441 springDamper @myTextModel_m441 @myTextModel_m442 myTextModelK myTextModelZ
+@myTextModel_r442 springDamper @myTextModel_m442 @myTextModel_m443 myTextModelK myTextModelZ
+@myTextModel_r443 springDamper @myTextModel_m443 @myTextModel_m444 myTextModelK myTextModelZ
+@myTextModel_r444 springDamper @myTextModel_m444 @myTextModel_m445 myTextModelK myTextModelZ
+@myTextModel_r445 springDamper @myTextModel_m445 @myTextModel_m446 myTextModelK myTextModelZ
+@myTextModel_r446 springDamper @myTextModel_m446 @myTextModel_m447 myTextModelK myTextModelZ
+@myTextModel_r447 springDamper @myTextModel_m447 @myTextModel_m448 myTextModelK myTextModelZ
+@myTextModel_r448 springDamper @myTextModel_m448 @myTextModel_m449 myTextModelK myTextModelZ
+@myTextModel_r449 springDamper @myTextModel_m449 @myTextModel_m450 myTextModelK myTextModelZ
+@myTextModel_r450 springDamper @myTextModel_m450 @myTextModel_m451 myTextModelK myTextModelZ
+@myTextModel_r451 springDamper @myTextModel_m451 @myTextModel_m452 myTextModelK myTextModelZ
+@myTextModel_r452 springDamper @myTextModel_m452 @myTextModel_m453 myTextModelK myTextModelZ
+@myTextModel_r453 springDamper @myTextModel_m453 @myTextModel_m454 myTextModelK myTextModelZ
+@myTextModel_r454 springDamper @myTextModel_m454 @myTextModel_m455 myTextModelK myTextModelZ
+@myTextModel_r455 springDamper @myTextModel_m455 @myTextModel_m456 myTextModelK myTextModelZ
+@myTextModel_r456 springDamper @myTextModel_m456 @myTextModel_m457 myTextModelK myTextModelZ
+@myTextModel_r457 springDamper @myTextModel_m457 @myTextModel_m458 myTextModelK myTextModelZ
+@myTextModel_r458 springDamper @myTextModel_m458 @myTextModel_m459 myTextModelK myTextModelZ
+@myTextModel_r459 springDamper @myTextModel_m459 @myTextModel_m460 myTextModelK myTextModelZ
+@myTextModel_r460 springDamper @myTextModel_m460 @myTextModel_m461 myTextModelK myTextModelZ
+@myTextModel_r461 springDamper @myTextModel_m461 @myTextModel_m462 myTextModelK myTextModelZ
+@myTextModel_r462 springDamper @myTextModel_m462 @myTextModel_m463 myTextModelK myTextModelZ
+@myTextModel_r463 springDamper @myTextModel_m463 @myTextModel_m464 myTextModelK myTextModelZ
+@myTextModel_r464 springDamper @myTextModel_m464 @myTextModel_m465 myTextModelK myTextModelZ
+@myTextModel_r465 springDamper @myTextModel_m465 @myTextModel_m466 myTextModelK myTextModelZ
+@myTextModel_r466 springDamper @myTextModel_m466 @myTextModel_m467 myTextModelK myTextModelZ
+@myTextModel_r467 springDamper @myTextModel_m467 @myTextModel_m468 myTextModelK myTextModelZ
+@myTextModel_r468 springDamper @myTextModel_m468 @myTextModel_m469 myTextModelK myTextModelZ
+@myTextModel_r469 springDamper @myTextModel_m469 @myTextModel_m470 myTextModelK myTextModelZ
+@myTextModel_r470 springDamper @myTextModel_m470 @myTextModel_m471 myTextModelK myTextModelZ
+@myTextModel_r471 springDamper @myTextModel_m471 @myTextModel_m472 myTextModelK myTextModelZ
+@myTextModel_r472 springDamper @myTextModel_m472 @myTextModel_m473 myTextModelK myTextModelZ
+@myTextModel_r473 springDamper @myTextModel_m473 @myTextModel_m474 myTextModelK myTextModelZ
+@myTextModel_r474 springDamper @myTextModel_m474 @myTextModel_m475 myTextModelK myTextModelZ
+@myTextModel_r475 springDamper @myTextModel_m475 @myTextModel_m476 myTextModelK myTextModelZ
+@myTextModel_r476 springDamper @myTextModel_m476 @myTextModel_m477 myTextModelK myTextModelZ
+@myTextModel_r477 springDamper @myTextModel_m477 @myTextModel_m478 myTextModelK myTextModelZ
+@myTextModel_r478 springDamper @myTextModel_m478 @myTextModel_m479 myTextModelK myTextModelZ
+@myTextModel_r479 springDamper @myTextModel_m479 @myTextModel_m480 myTextModelK myTextModelZ
+@myTextModel_r480 springDamper @myTextModel_m480 @myTextModel_m481 myTextModelK myTextModelZ
+@myTextModel_r481 springDamper @myTextModel_m481 @myTextModel_m482 myTextModelK myTextModelZ
+@myTextModel_r482 springDamper @myTextModel_m482 @myTextModel_m483 myTextModelK myTextModelZ
+@myTextModel_r483 springDamper @myTextModel_m483 @myTextModel_m484 myTextModelK myTextModelZ
+@myTextModel_r484 springDamper @myTextModel_m484 @myTextModel_m485 myTextModelK myTextModelZ
+@myTextModel_r485 springDamper @myTextModel_m485 @myTextModel_m486 myTextModelK myTextModelZ
+@myTextModel_r486 springDamper @myTextModel_m486 @myTextModel_m487 myTextModelK myTextModelZ
+@myTextModel_r487 springDamper @myTextModel_m487 @myTextModel_m488 myTextModelK myTextModelZ
+@myTextModel_r488 springDamper @myTextModel_m488 @myTextModel_m489 myTextModelK myTextModelZ
+@myTextModel_r489 springDamper @myTextModel_m489 @myTextModel_m490 myTextModelK myTextModelZ
+@myTextModel_r490 springDamper @myTextModel_m490 @myTextModel_m491 myTextModelK myTextModelZ
+@myTextModel_r491 springDamper @myTextModel_m491 @myTextModel_m492 myTextModelK myTextModelZ
+@myTextModel_r492 springDamper @myTextModel_m492 @myTextModel_m493 myTextModelK myTextModelZ
+@myTextModel_r493 springDamper @myTextModel_m493 @myTextModel_m494 myTextModelK myTextModelZ
+@myTextModel_r494 springDamper @myTextModel_m494 @myTextModel_m495 myTextModelK myTextModelZ
+@myTextModel_r495 springDamper @myTextModel_m495 @myTextModel_m496 myTextModelK myTextModelZ
+@myTextModel_r496 springDamper @myTextModel_m496 @myTextModel_m497 myTextModelK myTextModelZ
+@myTextModel_r497 springDamper @myTextModel_m497 @myTextModel_m498 myTextModelK myTextModelZ
+@myTextModel_r498 springDamper @myTextModel_m498 @myTextModel_m499 myTextModelK myTextModelZ
+@myTextModel_r499 springDamper @myTextModel_m499 @myTextModel_m500 myTextModelK myTextModelZ
+@myTextModel_r500 springDamper @myTextModel_m500 @myTextModel_m501 myTextModelK myTextModelZ
+@myTextModel_r501 springDamper @myTextModel_m501 @myTextModel_m502 myTextModelK myTextModelZ
+@myTextModel_r502 springDamper @myTextModel_m502 @myTextModel_m503 myTextModelK myTextModelZ
+@myTextModel_r503 springDamper @myTextModel_m503 @myTextModel_m504 myTextModelK myTextModelZ
+@myTextModel_r504 springDamper @myTextModel_m504 @myTextModel_m505 myTextModelK myTextModelZ
+@myTextModel_r505 springDamper @myTextModel_m505 @myTextModel_m506 myTextModelK myTextModelZ
+@myTextModel_r506 springDamper @myTextModel_m506 @myTextModel_m507 myTextModelK myTextModelZ
+@myTextModel_r507 springDamper @myTextModel_m507 @myTextModel_m508 myTextModelK myTextModelZ
+@myTextModel_r508 springDamper @myTextModel_m508 @myTextModel_m509 myTextModelK myTextModelZ
+@myTextModel_r509 springDamper @myTextModel_m509 @myTextModel_m510 myTextModelK myTextModelZ
+@myTextModel_r510 springDamper @myTextModel_m510 @myTextModel_m511 myTextModelK myTextModelZ
+@myTextModel_r511 springDamper @myTextModel_m511 @myTextModel_m512 myTextModelK myTextModelZ
+@myTextModel_r512 springDamper @myTextModel_m512 @myTextModel_m513 myTextModelK myTextModelZ
+@myTextModel_r513 springDamper @myTextModel_m513 @myTextModel_m514 myTextModelK myTextModelZ
+@myTextModel_r514 springDamper @myTextModel_m514 @myTextModel_m515 myTextModelK myTextModelZ
+@myTextModel_r515 springDamper @myTextModel_m515 @myTextModel_m516 myTextModelK myTextModelZ
+@myTextModel_r516 springDamper @myTextModel_m516 @myTextModel_m517 myTextModelK myTextModelZ
+@myTextModel_r517 springDamper @myTextModel_m517 @myTextModel_m518 myTextModelK myTextModelZ
+@myTextModel_r518 springDamper @myTextModel_m518 @myTextModel_m519 myTextModelK myTextModelZ
+@myTextModel_r519 springDamper @myTextModel_m519 @myTextModel_m520 myTextModelK myTextModelZ
+@myTextModel_r520 springDamper @myTextModel_m520 @myTextModel_m521 myTextModelK myTextModelZ
+@myTextModel_r521 springDamper @myTextModel_m521 @myTextModel_m522 myTextModelK myTextModelZ
+@myTextModel_r522 springDamper @myTextModel_m522 @myTextModel_m523 myTextModelK myTextModelZ
+@myTextModel_r523 springDamper @myTextModel_m523 @myTextModel_m524 myTextModelK myTextModelZ
+@myTextModel_r524 springDamper @myTextModel_m524 @myTextModel_m525 myTextModelK myTextModelZ
+@myTextModel_r525 springDamper @myTextModel_m525 @myTextModel_m526 myTextModelK myTextModelZ
+@myTextModel_r526 springDamper @myTextModel_m526 @myTextModel_m527 myTextModelK myTextModelZ
+@myTextModel_r527 springDamper @myTextModel_m527 @myTextModel_m528 myTextModelK myTextModelZ
+@myTextModel_r528 springDamper @myTextModel_m528 @myTextModel_m529 myTextModelK myTextModelZ
+@myTextModel_r529 springDamper @myTextModel_m529 @myTextModel_m530 myTextModelK myTextModelZ
+@myTextModel_r530 springDamper @myTextModel_m530 @myTextModel_m531 myTextModelK myTextModelZ
+@myTextModel_r531 springDamper @myTextModel_m531 @myTextModel_m532 myTextModelK myTextModelZ
+@myTextModel_r532 springDamper @myTextModel_m532 @myTextModel_m533 myTextModelK myTextModelZ
+@myTextModel_r533 springDamper @myTextModel_m533 @myTextModel_m534 myTextModelK myTextModelZ
+@myTextModel_r534 springDamper @myTextModel_m534 @myTextModel_m535 myTextModelK myTextModelZ
+@myTextModel_r535 springDamper @myTextModel_m535 @myTextModel_m536 myTextModelK myTextModelZ
+@myTextModel_r536 springDamper @myTextModel_m536 @myTextModel_m537 myTextModelK myTextModelZ
+@myTextModel_r537 springDamper @myTextModel_m537 @myTextModel_m538 myTextModelK myTextModelZ
+@myTextModel_r538 springDamper @myTextModel_m538 @myTextModel_m539 myTextModelK myTextModelZ
+@myTextModel_r539 springDamper @myTextModel_m539 @myTextModel_m540 myTextModelK myTextModelZ
+@myTextModel_r540 springDamper @myTextModel_m540 @myTextModel_m541 myTextModelK myTextModelZ
+@myTextModel_r541 springDamper @myTextModel_m541 @myTextModel_m542 myTextModelK myTextModelZ
+@myTextModel_r542 springDamper @myTextModel_m542 @myTextModel_m543 myTextModelK myTextModelZ
+@myTextModel_r543 springDamper @myTextModel_m543 @myTextModel_m544 myTextModelK myTextModelZ
+@myTextModel_r544 springDamper @myTextModel_m544 @myTextModel_m545 myTextModelK myTextModelZ
+@myTextModel_r545 springDamper @myTextModel_m545 @myTextModel_m546 myTextModelK myTextModelZ
+@myTextModel_r546 springDamper @myTextModel_m546 @myTextModel_m547 myTextModelK myTextModelZ
+@myTextModel_r547 springDamper @myTextModel_m547 @myTextModel_m548 myTextModelK myTextModelZ
+@myTextModel_r548 springDamper @myTextModel_m548 @myTextModel_m549 myTextModelK myTextModelZ
+@myTextModel_r549 springDamper @myTextModel_m549 @myTextModel_m550 myTextModelK myTextModelZ
+@myTextModel_r550 springDamper @myTextModel_m550 @myTextModel_m551 myTextModelK myTextModelZ
+@myTextModel_r551 springDamper @myTextModel_m551 @myTextModel_m552 myTextModelK myTextModelZ
+@myTextModel_r552 springDamper @myTextModel_m552 @myTextModel_m553 myTextModelK myTextModelZ
+@myTextModel_r553 springDamper @myTextModel_m553 @myTextModel_m554 myTextModelK myTextModelZ
+@myTextModel_r554 springDamper @myTextModel_m554 @myTextModel_m555 myTextModelK myTextModelZ
+@myTextModel_r555 springDamper @myTextModel_m555 @myTextModel_m556 myTextModelK myTextModelZ
+@myTextModel_r556 springDamper @myTextModel_m556 @myTextModel_m557 myTextModelK myTextModelZ
+@myTextModel_r557 springDamper @myTextModel_m557 @myTextModel_m558 myTextModelK myTextModelZ
+@myTextModel_r558 springDamper @myTextModel_m558 @myTextModel_m559 myTextModelK myTextModelZ
+@myTextModel_r559 springDamper @myTextModel_m559 @myTextModel_m560 myTextModelK myTextModelZ
+@myTextModel_r560 springDamper @myTextModel_m560 @myTextModel_m561 myTextModelK myTextModelZ
+@myTextModel_r561 springDamper @myTextModel_m561 @myTextModel_m562 myTextModelK myTextModelZ
+@myTextModel_r562 springDamper @myTextModel_m562 @myTextModel_m563 myTextModelK myTextModelZ
+@myTextModel_r563 springDamper @myTextModel_m563 @myTextModel_m564 myTextModelK myTextModelZ
+@myTextModel_r564 springDamper @myTextModel_m564 @myTextModel_m565 myTextModelK myTextModelZ
+@myTextModel_r565 springDamper @myTextModel_m565 @myTextModel_m566 myTextModelK myTextModelZ
+@myTextModel_r566 springDamper @myTextModel_m566 @myTextModel_m567 myTextModelK myTextModelZ
+@myTextModel_r567 springDamper @myTextModel_m567 @myTextModel_m568 myTextModelK myTextModelZ
+@myTextModel_r568 springDamper @myTextModel_m568 @myTextModel_m569 myTextModelK myTextModelZ
+@myTextModel_r569 springDamper @myTextModel_m569 @myTextModel_m570 myTextModelK myTextModelZ
+@myTextModel_r570 springDamper @myTextModel_m570 @myTextModel_m571 myTextModelK myTextModelZ
+@myTextModel_r571 springDamper @myTextModel_m571 @myTextModel_m572 myTextModelK myTextModelZ
+@myTextModel_r572 springDamper @myTextModel_m572 @myTextModel_m573 myTextModelK myTextModelZ
+@myTextModel_r573 springDamper @myTextModel_m573 @myTextModel_m574 myTextModelK myTextModelZ
+@myTextModel_r574 springDamper @myTextModel_m574 @myTextModel_m575 myTextModelK myTextModelZ
+@myTextModel_r575 springDamper @myTextModel_m575 @myTextModel_m576 myTextModelK myTextModelZ
+@myTextModel_r576 springDamper @myTextModel_m576 @myTextModel_m577 myTextModelK myTextModelZ
+@myTextModel_r577 springDamper @myTextModel_m577 @myTextModel_m578 myTextModelK myTextModelZ
+@myTextModel_r578 springDamper @myTextModel_m578 @myTextModel_m579 myTextModelK myTextModelZ
+@myTextModel_r579 springDamper @myTextModel_m579 @myTextModel_m580 myTextModelK myTextModelZ
+@myTextModel_r580 springDamper @myTextModel_m580 @myTextModel_m581 myTextModelK myTextModelZ
+@myTextModel_r581 springDamper @myTextModel_m581 @myTextModel_m582 myTextModelK myTextModelZ
+@myTextModel_r582 springDamper @myTextModel_m582 @myTextModel_m583 myTextModelK myTextModelZ
+@myTextModel_r583 springDamper @myTextModel_m583 @myTextModel_m584 myTextModelK myTextModelZ
+@myTextModel_r584 springDamper @myTextModel_m584 @myTextModel_m585 myTextModelK myTextModelZ
+@myTextModel_r585 springDamper @myTextModel_m585 @myTextModel_m586 myTextModelK myTextModelZ
+@myTextModel_r586 springDamper @myTextModel_m586 @myTextModel_m587 myTextModelK myTextModelZ
+@myTextModel_r587 springDamper @myTextModel_m587 @myTextModel_m588 myTextModelK myTextModelZ
+@myTextModel_r588 springDamper @myTextModel_m588 @myTextModel_m589 myTextModelK myTextModelZ
+@myTextModel_r589 springDamper @myTextModel_m589 @myTextModel_m590 myTextModelK myTextModelZ
+@myTextModel_r590 springDamper @myTextModel_m590 @myTextModel_m591 myTextModelK myTextModelZ
+@myTextModel_r591 springDamper @myTextModel_m591 @myTextModel_m592 myTextModelK myTextModelZ
+@myTextModel_r592 springDamper @myTextModel_m592 @myTextModel_m593 myTextModelK myTextModelZ
+@myTextModel_r593 springDamper @myTextModel_m593 @myTextModel_m594 myTextModelK myTextModelZ
+@myTextModel_r594 springDamper @myTextModel_m594 @myTextModel_m595 myTextModelK myTextModelZ
+@myTextModel_r595 springDamper @myTextModel_m595 @myTextModel_m596 myTextModelK myTextModelZ
+@myTextModel_r596 springDamper @myTextModel_m596 @myTextModel_m597 myTextModelK myTextModelZ
+@myTextModel_r597 springDamper @myTextModel_m597 @myTextModel_m598 myTextModelK myTextModelZ
+@myTextModel_r598 springDamper @myTextModel_m598 @myTextModel_m599 myTextModelK myTextModelZ
+@myTextModel_r599 springDamper @myTextModel_m599 @myTextModel_m600 myTextModelK myTextModelZ
+@myTextModel_r600 springDamper @myTextModel_m600 @myTextModel_m601 myTextModelK myTextModelZ
+@myTextModel_r601 springDamper @myTextModel_m601 @myTextModel_m602 myTextModelK myTextModelZ
+@myTextModel_r602 springDamper @myTextModel_m602 @myTextModel_m603 myTextModelK myTextModelZ
+@myTextModel_r603 springDamper @myTextModel_m603 @myTextModel_m604 myTextModelK myTextModelZ
+@myTextModel_r604 springDamper @myTextModel_m604 @myTextModel_m605 myTextModelK myTextModelZ
+@myTextModel_r605 springDamper @myTextModel_m605 @myTextModel_m606 myTextModelK myTextModelZ
+@myTextModel_r606 springDamper @myTextModel_m606 @myTextModel_m607 myTextModelK myTextModelZ
+@myTextModel_r607 springDamper @myTextModel_m607 @myTextModel_m608 myTextModelK myTextModelZ
+@myTextModel_r608 springDamper @myTextModel_m608 @myTextModel_m609 myTextModelK myTextModelZ
+@myTextModel_r609 springDamper @myTextModel_m609 @myTextModel_m610 myTextModelK myTextModelZ
+@myTextModel_r610 springDamper @myTextModel_m610 @myTextModel_m611 myTextModelK myTextModelZ
+@myTextModel_r611 springDamper @myTextModel_m611 @myTextModel_m612 myTextModelK myTextModelZ
+@myTextModel_r612 springDamper @myTextModel_m612 @myTextModel_m613 myTextModelK myTextModelZ
+@myTextModel_r613 springDamper @myTextModel_m613 @myTextModel_m614 myTextModelK myTextModelZ
+@myTextModel_r614 springDamper @myTextModel_m614 @myTextModel_m615 myTextModelK myTextModelZ
+@myTextModel_r615 springDamper @myTextModel_m615 @myTextModel_m616 myTextModelK myTextModelZ
+@myTextModel_r616 springDamper @myTextModel_m616 @myTextModel_m617 myTextModelK myTextModelZ
+@myTextModel_r617 springDamper @myTextModel_m617 @myTextModel_m618 myTextModelK myTextModelZ
+@myTextModel_r618 springDamper @myTextModel_m618 @myTextModel_m619 myTextModelK myTextModelZ
+@myTextModel_r619 springDamper @myTextModel_m619 @myTextModel_m620 myTextModelK myTextModelZ
+@myTextModel_r620 springDamper @myTextModel_m620 @myTextModel_m621 myTextModelK myTextModelZ
+@myTextModel_r621 springDamper @myTextModel_m621 @myTextModel_m622 myTextModelK myTextModelZ
+@myTextModel_r622 springDamper @myTextModel_m622 @myTextModel_m623 myTextModelK myTextModelZ
+@myTextModel_r623 springDamper @myTextModel_m623 @myTextModel_m624 myTextModelK myTextModelZ
+@myTextModel_r624 springDamper @myTextModel_m624 @myTextModel_m625 myTextModelK myTextModelZ
+@myTextModel_r625 springDamper @myTextModel_m625 @myTextModel_m626 myTextModelK myTextModelZ
+@myTextModel_r626 springDamper @myTextModel_m626 @myTextModel_m627 myTextModelK myTextModelZ
+@myTextModel_r627 springDamper @myTextModel_m627 @myTextModel_m628 myTextModelK myTextModelZ
+@myTextModel_r628 springDamper @myTextModel_m628 @myTextModel_m629 myTextModelK myTextModelZ
+@myTextModel_r629 springDamper @myTextModel_m629 @myTextModel_m630 myTextModelK myTextModelZ
+@myTextModel_r630 springDamper @myTextModel_m630 @myTextModel_m631 myTextModelK myTextModelZ
+@myTextModel_r631 springDamper @myTextModel_m631 @myTextModel_m632 myTextModelK myTextModelZ
+@myTextModel_r632 springDamper @myTextModel_m632 @myTextModel_m633 myTextModelK myTextModelZ
+@myTextModel_r633 springDamper @myTextModel_m633 @myTextModel_m634 myTextModelK myTextModelZ
+@myTextModel_r634 springDamper @myTextModel_m634 @myTextModel_m635 myTextModelK myTextModelZ
+@myTextModel_r635 springDamper @myTextModel_m635 @myTextModel_m636 myTextModelK myTextModelZ
+@myTextModel_r636 springDamper @myTextModel_m636 @myTextModel_m637 myTextModelK myTextModelZ
+@myTextModel_r637 springDamper @myTextModel_m637 @myTextModel_m638 myTextModelK myTextModelZ
+@myTextModel_r638 springDamper @myTextModel_m638 @myTextModel_m639 myTextModelK myTextModelZ
+@myTextModel_r639 springDamper @myTextModel_m639 @myTextModel_m640 myTextModelK myTextModelZ
+@myTextModel_r640 springDamper @myTextModel_m640 @myTextModel_m641 myTextModelK myTextModelZ
+@myTextModel_r641 springDamper @myTextModel_m641 @myTextModel_m642 myTextModelK myTextModelZ
+@myTextModel_r642 springDamper @myTextModel_m642 @myTextModel_m643 myTextModelK myTextModelZ
+@myTextModel_r643 springDamper @myTextModel_m643 @myTextModel_m644 myTextModelK myTextModelZ
+@myTextModel_r644 springDamper @myTextModel_m644 @myTextModel_m645 myTextModelK myTextModelZ
+@myTextModel_r645 springDamper @myTextModel_m645 @myTextModel_m646 myTextModelK myTextModelZ
+@myTextModel_r646 springDamper @myTextModel_m646 @myTextModel_m647 myTextModelK myTextModelZ
+@myTextModel_r647 springDamper @myTextModel_m647 @myTextModel_m648 myTextModelK myTextModelZ
+@myTextModel_r648 springDamper @myTextModel_m648 @myTextModel_m649 myTextModelK myTextModelZ
+@myTextModel_r649 springDamper @myTextModel_m649 @myTextModel_m650 myTextModelK myTextModelZ
+@myTextModel_r650 springDamper @myTextModel_m650 @myTextModel_m651 myTextModelK myTextModelZ
+@myTextModel_r651 springDamper @myTextModel_m651 @myTextModel_m652 myTextModelK myTextModelZ
+@myTextModel_r652 springDamper @myTextModel_m652 @myTextModel_m653 myTextModelK myTextModelZ
+@myTextModel_r653 springDamper @myTextModel_m653 @myTextModel_m654 myTextModelK myTextModelZ
+@myTextModel_r654 springDamper @myTextModel_m654 @myTextModel_m655 myTextModelK myTextModelZ
+@myTextModel_r655 springDamper @myTextModel_m655 @myTextModel_m656 myTextModelK myTextModelZ
+@myTextModel_r656 springDamper @myTextModel_m656 @myTextModel_m657 myTextModelK myTextModelZ
+@myTextModel_r657 springDamper @myTextModel_m657 @myTextModel_m658 myTextModelK myTextModelZ
+@myTextModel_r658 springDamper @myTextModel_m658 @myTextModel_m659 myTextModelK myTextModelZ
+@myTextModel_r659 springDamper @myTextModel_m659 @myTextModel_m660 myTextModelK myTextModelZ
+@myTextModel_r660 springDamper @myTextModel_m660 @myTextModel_m661 myTextModelK myTextModelZ
+@myTextModel_r661 springDamper @myTextModel_m661 @myTextModel_m662 myTextModelK myTextModelZ
+@myTextModel_r662 springDamper @myTextModel_m662 @myTextModel_m663 myTextModelK myTextModelZ
+@myTextModel_r663 springDamper @myTextModel_m663 @myTextModel_m664 myTextModelK myTextModelZ
+@myTextModel_r664 springDamper @myTextModel_m664 @myTextModel_m665 myTextModelK myTextModelZ
+@myTextModel_r665 springDamper @myTextModel_m665 @myTextModel_m666 myTextModelK myTextModelZ
+@myTextModel_r666 springDamper @myTextModel_m666 @myTextModel_m667 myTextModelK myTextModelZ
+@myTextModel_r667 springDamper @myTextModel_m667 @myTextModel_m668 myTextModelK myTextModelZ
+@myTextModel_r668 springDamper @myTextModel_m668 @myTextModel_m669 myTextModelK myTextModelZ
+@myTextModel_r669 springDamper @myTextModel_m669 @myTextModel_m670 myTextModelK myTextModelZ
+@myTextModel_r670 springDamper @myTextModel_m670 @myTextModel_m671 myTextModelK myTextModelZ
+@myTextModel_r671 springDamper @myTextModel_m671 @myTextModel_m672 myTextModelK myTextModelZ
+@myTextModel_r672 springDamper @myTextModel_m672 @myTextModel_m673 myTextModelK myTextModelZ
+@myTextModel_r673 springDamper @myTextModel_m673 @myTextModel_m674 myTextModelK myTextModelZ
+@myTextModel_r674 springDamper @myTextModel_m674 @myTextModel_m675 myTextModelK myTextModelZ
+@myTextModel_r675 springDamper @myTextModel_m675 @myTextModel_m676 myTextModelK myTextModelZ
+@myTextModel_r676 springDamper @myTextModel_m676 @myTextModel_m677 myTextModelK myTextModelZ
+@myTextModel_r677 springDamper @myTextModel_m677 @myTextModel_m678 myTextModelK myTextModelZ
+@myTextModel_r678 springDamper @myTextModel_m678 @myTextModel_m679 myTextModelK myTextModelZ
+@myTextModel_r679 springDamper @myTextModel_m679 @myTextModel_m680 myTextModelK myTextModelZ
+@myTextModel_r680 springDamper @myTextModel_m680 @myTextModel_m681 myTextModelK myTextModelZ
+@myTextModel_r681 springDamper @myTextModel_m681 @myTextModel_m682 myTextModelK myTextModelZ
+@myTextModel_r682 springDamper @myTextModel_m682 @myTextModel_m683 myTextModelK myTextModelZ
+@myTextModel_r683 springDamper @myTextModel_m683 @myTextModel_m684 myTextModelK myTextModelZ
+@myTextModel_r684 springDamper @myTextModel_m684 @myTextModel_m685 myTextModelK myTextModelZ
+@myTextModel_r685 springDamper @myTextModel_m685 @myTextModel_m686 myTextModelK myTextModelZ
+@myTextModel_r686 springDamper @myTextModel_m686 @myTextModel_m687 myTextModelK myTextModelZ
+@myTextModel_r687 springDamper @myTextModel_m687 @myTextModel_m688 myTextModelK myTextModelZ
+@myTextModel_r688 springDamper @myTextModel_m688 @myTextModel_m689 myTextModelK myTextModelZ
+@myTextModel_r689 springDamper @myTextModel_m689 @myTextModel_m690 myTextModelK myTextModelZ
+@myTextModel_r690 springDamper @myTextModel_m690 @myTextModel_m691 myTextModelK myTextModelZ
+@myTextModel_r691 springDamper @myTextModel_m691 @myTextModel_m692 myTextModelK myTextModelZ
+@myTextModel_r692 springDamper @myTextModel_m692 @myTextModel_m693 myTextModelK myTextModelZ
+@myTextModel_r693 springDamper @myTextModel_m693 @myTextModel_m694 myTextModelK myTextModelZ
+@myTextModel_r694 springDamper @myTextModel_m694 @myTextModel_m695 myTextModelK myTextModelZ
+@myTextModel_r695 springDamper @myTextModel_m695 @myTextModel_m696 myTextModelK myTextModelZ
+@myTextModel_r696 springDamper @myTextModel_m696 @myTextModel_m697 myTextModelK myTextModelZ
+@myTextModel_r697 springDamper @myTextModel_m697 @myTextModel_m698 myTextModelK myTextModelZ
+@myTextModel_r698 springDamper @myTextModel_m698 @myTextModel_m699 myTextModelK myTextModelZ
+@myTextModel_r699 springDamper @myTextModel_m699 @myTextModel_m700 myTextModelK myTextModelZ
+@myTextModel_r700 springDamper @myTextModel_m700 @myTextModel_m701 myTextModelK myTextModelZ
+@myTextModel_r701 springDamper @myTextModel_m701 @myTextModel_m702 myTextModelK myTextModelZ
+@myTextModel_r702 springDamper @myTextModel_m702 @myTextModel_m703 myTextModelK myTextModelZ
+@myTextModel_r703 springDamper @myTextModel_m703 @myTextModel_m704 myTextModelK myTextModelZ
+@myTextModel_r704 springDamper @myTextModel_m704 @myTextModel_m705 myTextModelK myTextModelZ
+@myTextModel_r705 springDamper @myTextModel_m705 @myTextModel_m706 myTextModelK myTextModelZ
+@myTextModel_r706 springDamper @myTextModel_m706 @myTextModel_m707 myTextModelK myTextModelZ
+@myTextModel_r707 springDamper @myTextModel_m707 @myTextModel_m708 myTextModelK myTextModelZ
+@myTextModel_r708 springDamper @myTextModel_m708 @myTextModel_m709 myTextModelK myTextModelZ
+@myTextModel_r709 springDamper @myTextModel_m709 @myTextModel_m710 myTextModelK myTextModelZ
+@myTextModel_r710 springDamper @myTextModel_m710 @myTextModel_m711 myTextModelK myTextModelZ
+@myTextModel_r711 springDamper @myTextModel_m711 @myTextModel_m712 myTextModelK myTextModelZ
+@myTextModel_r712 springDamper @myTextModel_m712 @myTextModel_m713 myTextModelK myTextModelZ
+@myTextModel_r713 springDamper @myTextModel_m713 @myTextModel_m714 myTextModelK myTextModelZ
+@myTextModel_r714 springDamper @myTextModel_m714 @myTextModel_m715 myTextModelK myTextModelZ
+@myTextModel_r715 springDamper @myTextModel_m715 @myTextModel_m716 myTextModelK myTextModelZ
+
+@in1 posInput [7.63 1 10]
+@lien2 springDamper @in1 @myTextModel_m0 0.01 0.0001

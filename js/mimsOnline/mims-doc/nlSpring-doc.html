@@ -1,12 +1,49 @@
+<img class="image"/>
+<h1>
+    Non Linear Spring Module
+</h1>
 
-<!DOCTYPE html>
-<html>
-   <body style="background-color:white;">
-      <h1>Non Linear Spring Module</h1>
-<p>@[<span style="color: #6666ff;"><em>name</em></span>] <strong>nlSpring&nbsp;</strong>@[<span style="color: #ff0000;"><em>connectedMat1</em></span>] @[<span style="color: #ff0000;"><em>connectedMat2</em></span>] [<span style="color: #008000;"><em>stiffness</em></span>] [<span style="color: #008000;"><em>sq_stiff</em></span>] [<span style="color: #008000;"><em>damping</em></span>]</p>
-<p>A visco-elastic spring between two material points, with a non linear (parabolic) component.</p>
-<p><span style="text-decoration: underline;">Topological connections</span>: both material points</p>
-<p><span style="text-decoration: underline;">Physical Parameters</span>: linear stiffness, non-linear (parabolic) stiffness and linear damping</p>
-  </body>
-</html>
+<div class="module_syntaxe">
+    <span class="label">@{name}</span>
+    <span class="name">nlSpring</span>
+    <span class="label">@{m1}</span>
+    <span class="label">@{m2}</span>
+    <span class="param">{stiffness}</span>
+    <span class="param">{sq_stiff}</span>
+    <span class="param">{damping}</span>
+</div>
+
+<div class="module_desc">
+    A visco-elastic spring between two material points, with a non linear (parabolic) component.
+</div>
+
+<div class="param_desc">
+    Linear stiffness, non-linear (parabolic) stiffness and linear damping
+</div>
+
+<div class="init_desc">
+
+</div>
+
+<div class="module_example">
+    Example:
+    <br>
+    @g1 ground 0.
+    <br>
+    @m1 mass 1.2 0. 0.1
+    <br>
+    @sp nlSpring @g1 @m1 0.01 0.00001 0.001
+</div>
+
+
+
+
+
+
+<
+
+
+
+
+
 

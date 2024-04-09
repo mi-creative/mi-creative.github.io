@@ -1,2 +1,41 @@
 <img class="image"/>
-<h1>Bounded Non-linear Contact</h1><br><br>@{name} nlContact @{m1} @{m2} {stiffness} {nl3stiffness} {stiffnessMax} {damping} {opt: thresh}<br><br>This non linear contact connects two material points {@m1} and {@m2} with a viscoelastic collision interaction, using a cubic term.<br>This is useful, as it allows implementing collisions that are soft at low speeds, and become hard at higher speeds.<br>The equivalent stiffness term is clipped beyond the {stiffness_lim} parameter, meaning the interaction will revert to a linear behaviour in extreme ranges (rather than exploding!).<br><br><br>Physical Parameters: linear stiffness, cubic stiffness, bounding stiffness, damping and optional threshold distance.<br><br>Example:<br>@g1 ground 0.<br>@m1 mass 1.2 0. 0.1<br>@sp nlSpring3 @g1 @m1 0.01 0.0001 0.001<br>
+<h1>
+    Bounded Non-linear Contact
+</h1>
+<div class="module_syntaxe">
+    <span class="label">@{name}</span>
+    <span class="name">nlContact</span>
+    <span class="label">@{m1}</span>
+    <span class="label">@{m2}</span>
+    <span class="param">{stiffness}</span>
+    <span class="param">{nl3stiffness}</span>
+    <span class="param">{stiffnessMax}</span>
+    <span class="param">{damping}</span>
+    <span class="optional_param">{thresh}</span>
+</div>
+
+<div class="module_desc">
+    The contact interaction computes a viscoelastic collision between the masses {@m1} and {@m2} when the difference in position between both masses is lower than the given threshold distance.
+    This is useful, as it allows implementing collisions that are soft at low speeds, and become hard at higher speeds.
+    The equivalent stiffness term is clipped beyond the {stiffness_lim} parameter, meaning the interaction will revert to a linear behaviour in extreme ranges (rather than exploding!).
+</div>
+
+<div class="param_desc">
+    Linear stiffness, cubic stiffness, bounding stiffness, damping and optional threshold distance.
+</div>
+
+<div class="init_desc">
+
+</div>
+
+<div class="module_example">
+    Example:
+    <br>
+    @g1 ground 0.
+    <br>
+    @m1 mass 1.2 0. 0.1
+    <br>
+    @sp nlSpring3 @g1 @m1 0.01 0.0001 0.001
+</div>
+
+

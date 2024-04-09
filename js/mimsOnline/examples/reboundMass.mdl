@@ -1,0 +1,6 @@
+# Premier modèle: une masse qui tombe du ciel
+
+@m mass 1 [0 0 0.3] -100
+@g ground [0 0 0]
+
+@c contact @g @m 0.01 0.001

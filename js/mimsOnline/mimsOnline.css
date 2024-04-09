@@ -1,5 +1,21 @@
 @import url("../../css/font-awesome.min.css");
 
+:root {
+    --color-bg-main: #8CC63F;
+    --color-bg-sec: #e4f2d0;
+
+    --color-material_MAS: #c63f8c;
+    --color-material_GND: #3f8cc6;
+    --color-material_PosIN: #e8831e;
+    --color-material_PosOUT: #e8831e;
+    --color-material_FrcIN: #e8de1e;
+    --color-material_FrcOUT: #e8de1e;
+
+    --color-material_REF : #c6793f;
+    --color-material_NLBOW : #3f48c6;
+    --color-material_NLPLUCK : #8b3fc6;
+    --color-material_NLCONTACT : #b93fc6;
+}
 
 html {
     height: 100%;
@@ -7,7 +23,7 @@ html {
 
 .codearea {
     padding: 0px;
-    background-color: var(--light-bg-color);
+    background-color: var(--color-bg-sec);
 }
 
 .codearea-header {
@@ -17,7 +33,7 @@ html {
     color: white;
     font-family: monospace;
     flex: 1;
-    background-color: var(--main-bg-color) ;
+    background-color: var(--color-bg-main) ;
     width: 100%;
 }
 
@@ -49,7 +65,7 @@ html {
 }
 
 .mims-online input[type=text] {
-    background-color: var(--light-bg-color);
+    background-color: var(--color-bg-sec);
     color: var(--third-bg-color);
 }
 
@@ -59,7 +75,7 @@ html {
 }
 
 .mims-online input[type=number] {
-    background-color: var(--light-bg-color);
+    background-color: var(--color-bg-sec);
     color: var(--third-bg-color);
 }
 
@@ -79,7 +95,7 @@ html {
 .mims-online #modelView {
     width: 100%;
     height: 400px;
-    background: var(--light-bg-color);
+    background: var(--color-bg-sec);
 }
 
 .mims-online .collapse-view {
@@ -87,13 +103,12 @@ html {
 }
 
 .mims-online #viewOverlay-log {
-    color: var(--main-bg-color);
+    color: var(--color-bg-main);
     font-weight: bold;
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
-    bottom: 0;
     transition: transform .3s linear;
     width: 100%;
     height: fit-content;
@@ -108,22 +123,21 @@ html {
     z-index: 10;
 
     display: none;
-
 }
 
 .mims-online #viewOverlay-log p {
-    border: 3px solid var(--light-bg-color);
-    background-color: var(--light-bg-color);
+    border: 3px solid var(--color-bg-sec);
+    background-color: var(--color-bg-sec);
     margin-bottom: 0px;
     padding: 5px 15px;
-    color: var(--main-bg-color);
+    color: var(--color-bg-main);
     border-radius: 5px;
     width: fit-content;
 }
 
 .mims-online #viewOverlay-param {
-    color: var(--main-bg-color);
-    background-color: var(--light-bg-color);
+    color: var(--color-bg-main);
+    background-color: var(--color-bg-sec);
     font-weight: bold;
     transition: transform .3s linear;
     width: fit-content;
@@ -133,7 +147,7 @@ html {
 
     margin-top: -5px;
 
-    border: 3px solid var(--light-bg-color);
+    border: 3px solid var(--color-bg-sec);
     border-radius: 5px;
 
     display: flex;
@@ -155,7 +169,6 @@ html {
     flex: 0 1 auto;
     max-width: 100px;
 }
-
 
 
 .mims-online #viewOverlay-locker.locked {
@@ -188,6 +201,324 @@ html {
 }
 
 
+.mims-online #viewOverlay-simulate {
+    color: var(--color-bg-main);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    transition: transform .3s linear;
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    margin-top: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    z-index: 10000000000000;
+
+    display: none;
+}
+
+.mims-online #viewOverlay-simulate .fa {
+    background-color: var(--color-bg-main);
+    padding: 10px;
+    border-radius: 10px;
+    border: 3px solid var(--color-bg-sec);
+}
+
+.mims-online #viewOverlay-simulate .active .fa{
+    background-color: var(--second-bg-color);
+    padding: 10px;
+    border-radius: 10px;
+    border: 3px solid var(--color-bg-sec);
+}
+
+.mims-online #viewOverlay-simulationVisualParameters {
+    flex:1 1 auto;
+    background-color: var(--color-bg-sec);
+    overflow: scroll;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: transform .3s linear;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2000;
+
+    display: none;
+
+    border-left: solid 6px;
+    border-color: var(--color-bg-main);
+}
+
+.mims-online #viewOverlay-simulationVisualParameters .inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.mims-online #viewOverlay-simulationVisualParameters .input {
+    padding-top: 10px;
+    padding-left: 10%;
+    padding-bottom: 10px;
+}
+
+#viewOverlay-simulationVisualParameters .switch{
+    border : solid 1px;
+    border-color: var(--color-bg-main);
+    width : 43px;
+    height: 23px;
+}
+
+#viewOverlay-simulationVisualParameters .slider:before {
+    margin-top: 10px;
+}
+
+#viewOverlay-simulationVisualParameters input:checked + .slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+}
+
+
+.mims-online #viewOverlay-simulationVisualParameters .input.slide-entry {
+    display: flex;
+    width: 100%;
+}
+
+.mims-online #viewOverlay-simulationVisualParameters .input.slide-entry input {
+    width: 40%;
+}
+
+.mims-online #viewOverlay-simulationVisualParameters .input.slide-entry label {
+    width: 60%;
+}
+
+.mims-online #viewOverlay-simulationVisualParameters label {
+    padding-left: 10px;
+}
+
+.mims-online #viewSimulate:before {
+    content: "\f04b";  /* this is your text. You can also use UTF-8 character codes as I do here */
+    font-family: "FontAwesome";
+}
+
+.mims-online #viewSimulate.active:before {
+    content: "\f04d";  /* this is your text. You can also use UTF-8 character codes as I do here */
+    font-family: "FontAwesome";
+}
+
+.mims-online #viewOverlay-simulationControls{
+    flex:1 1 auto;
+    background-color: var(--color-bg-sec);
+    overflow: scroll;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: transform .3s linear;
+
+    width: 100%;
+    height: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1000;
+
+    display: none;
+
+    border-left: solid 6px;
+    border-color: var(--color-bg-main);
+}
+
+.mims-online #viewOverlay-simulationControls .inputs {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.continuousSlider_value {
+    display: flex;
+    position: relative;
+    width: fit-content;
+    color: var(--third-bg-color);
+
+    line-height: 15px;
+    text-align: center;
+    border-radius: 3px;
+    background: var(--color-bg-sec);
+    padding: 2px 5px;
+    margin: 0 auto;
+
+    border: 1px solid var(--color-bg-main);
+
+    margin-top: 7px;
+
+}
+
+#viewOverlay-simulationControls .inputRight{
+    text-align: right;
+    width: 49.5%;
+}
+#viewOverlay-simulationControls .inputLeft{
+    text-align: left;
+    width: 49.5%;
+}
+
+ #viewOverlay-simulationControls .param-row {
+    display: flex;
+    flex-direction: row;
+}
+
+#viewOverlay-simulationControls .float-container {
+    flex: 0 1 auto;
+    width : 50%;
+}
+
+#viewOverlay-simulationControls .float-container.right {
+    margin-right: 0;
+}
+
+#viewOverlay-simulationControls .float-container.right label {
+    width : 100%;
+    text-align: right;
+}
+
+#viewOverlay-simulationControls input#inputRight {
+    text-align: right;
+}
+
+#viewOverlay-simulationControls .header{
+    padding-top: 15px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+#sim_InputsControls {
+    text-align: center;
+}
+
+#sim_InputsControls input {
+    width: 20%;
+}
+
+#sim_InputsControls .continuousSlider_range {
+    width: 100%;
+}
+
+#sim_InputsControls .posInput .header {
+    padding-bottom: 10px;
+}
+
+button {
+    background-color: var(--second-bg-color); /* Green */
+    border: none;
+    color: white !important;
+    padding: 2px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+button {
+    background-color: var(--second-bg-color); /* Green */
+    border: none;
+    color: white !important;
+    padding: 2px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+button:active {
+    font-weight: bold;
+}
+
+.frcInput {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+input[type=range] {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 100%; /* Specific width is required for Firefox. */
+    background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+
+    /* Hides the slider so custom styles can be added */
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid var(--color-bg-main);
+    height: 20px;
+    width: 8px;
+    border-radius: 3px;
+    background: var(--second-bg-color);
+    cursor: pointer;
+    margin-top: -7px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    background: var(--color-bg-main);
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #367ebd;
+}
+
+
 
 /* Ajout JV MIMS-Online V2 */
 
@@ -199,13 +530,11 @@ html {
 
 .mims-online {
     height: 100%;
-    --main-bg-color: #8CC63F;
     --main-bg-color_alt: black;
     --second-bg-color: #c63f8c;
+    --second-bg-color-light : #de9bc7;
     --third-bg-color: #3f8cc6;
-
-
-    --light-bg-color: #e4f2d0;
+    --fourth-bg-color: #c68013;
     --light-bg-color_alt : lightgrey;
 
 }
@@ -221,7 +550,7 @@ html {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: var(--main-bg-color);
+    background-color: var(--color-bg-main);
     color: white;
     text-align: center;
     height: 300px;
@@ -254,7 +583,7 @@ html {
     width: 100%;
     height: 100%;
     padding-right: 5px;
-    background-color: var(--main-bg-color);
+    background-color: var(--color-bg-main);
     padding-bottom: 10px;
     padding-top: 5px;
 }
@@ -271,7 +600,7 @@ html {
 }
 
 .mims-online .panel-heading {
-    background-color: var(--main-bg-color) !important;
+    background-color: var(--color-bg-main) !important;
     border : none !important;
     padding: 5px;
     padding-bottom: 29px;
@@ -303,7 +632,7 @@ html {
 .mims-online #help {
     flex:1 1 auto;
     height: 100%;
-    background-color: var(--light-bg-color);
+    background-color: var(--color-bg-sec);
     overflow: scroll;
 
 }
@@ -312,16 +641,15 @@ html {
 /* Dealing with the generator section */
 .mims-online #generate {
     flex:1 1 auto;
-    background-color: var(--light-bg-color);
+    background-color: var(--color-bg-sec);
     overflow: scroll;
-
 }
 
 .mims-online .tips {
     text-align: center;
     flex: 1 1 auto;
-    background-color: var(--light-bg-color);
-    color: var(--main-bg-color);
+    background-color: var(--color-bg-sec);
+    color: var(--color-bg-main);
     font-family: monospace;
     font-size: 12px;
     padding-top: 10px;
@@ -333,7 +661,7 @@ html {
 
 .mims-online .generate-content .generator{
     width: 100%;
-    background-color: var(--main-bg-color);
+    background-color: var(--color-bg-main);
     padding: 10px;
     margin-top: 5px;
     color: white;
@@ -345,7 +673,7 @@ html {
     font-family: "FontAwesome";
     padding: 5px;
     margin-left: -5px;
-    border: 3px solid var(--light-bg-color);
+    border: 3px solid var(--color-bg-sec);
     margin-right: 5px;
 }
 
@@ -378,7 +706,7 @@ html {
 
 .generator-param {
     padding: 0 18px;
-    background-color: var(--light-bg-color);
+    background-color: var(--color-bg-sec);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
@@ -393,6 +721,12 @@ html {
 .generator-param .paramInput {
     flex: 1 1 auto;
 }
+
+.mims-online #generate #generateFromText {
+    /*max-height: 100px;*/
+}
+
+
 
 
 /** float container */
@@ -431,7 +765,57 @@ html {
 .float-container.active label {
     -webkit-transform: translate(0, 3px) scale(0.75);
     transform: translate(0, 3px) scale(0.75);
-    color: var(--main-bg-color);
+    color: var(--color-bg-main);
+}
+
+.boundaries label {
+    margin: 8px;
+    font-family: monospace !important;
+    font-size: 11px;
+    color: var(--color-bg-main);
+}
+
+.boundaries select {
+    font-family: monospace !important;
+    font-size: 11px;
+    color: var(--third-bg-color) ;
+    background-color: var(--color-bg-sec);
+    border:0px;
+   outline:0px;
+}
+
+
+
+/* Example Loader Section */
+
+
+.mims-online #viewOverlay-examples{
+    flex:1 1 auto;
+    background-color: var(--color-bg-sec);
+    overflow: scroll;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: transform .3s linear;
+
+    width: 100%;
+    height: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1000;
+
+    border-left: solid 6px;
+    border-color: var(--color-bg-main);
+
+    visibility: hidden;
 }
 
 
@@ -440,22 +824,44 @@ html {
 
 
 
+/* Help Section */
 
 
+.mims-online #helpOverlay-browse {
+    color: white;
+    position: absolute;
+    margin-top: 5px;
+    margin-right: 0px;
+    right: 0;
+    z-index: 100;
+}
 
+.mims-online #helpOverlay-browse button {
+    background-color: var(--color-bg-main);
+    font-weight: bold;
+
+}
+
+.mims-online #helpOverlay-browse .dropdown-menu {
+    color: white;
+    background-color: var(--color-bg-main);
+    min-width :inherit;
+    padding: 10px;
+    font-weight: normal;
+    text-align: center;
+}
 
 
 
 .mims-online #help-content{
     padding: 10px;
+    text-align: justify;
 }
 
-
-
-.mims-online #help-content h1, p {
+.mims-online #help-content h1{
     text-align: center;
-    color: var(--main-bg-color);
-    margin-bottom: -20px;
+    color: var(--color-bg-main);
+    margin-bottom: 30px;
 }
 
 .mims-online #help-content img {
@@ -466,6 +872,86 @@ html {
     max-width: 150px;
     width: 30%;
 }
+
+
+.mims-online #help-content .module_syntaxe{
+    font-size: 14px;
+    color: var(--third-bg-color) !important; ;
+    background-color: var(--color-bg-sec);
+    border:0px;
+    outline:0px;
+    margin-bottom: 10px;
+}
+
+.mims-online #help-content .module_desc{
+    margin-bottom: 10px;
+
+}
+
+
+
+
+
+.mims-online #help-content .module_example{
+    border: 3px solid var(--color-bg-sec);
+    background-color: #eeeeee;
+    margin-bottom: 0px;
+    padding: 10px;
+    color: grey;
+    border-radius: 5px;
+    width: fit-content;
+    font-style: italic;
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+.mims-online #help-content .label{
+    color: var(--third-bg-color) !important;
+    font-size: 14px;
+    padding: 0;
+    font-weight: normal;
+}
+
+
+.mims-online #help-content .name {
+    color: black;
+    font-weight: bold;
+}
+
+.mims-online #help-content .param {
+    color: var(--second-bg-color);
+}
+.mims-online #help-content .param_desc::before{
+    content: "Physical Parameters :";
+    color: var(--second-bg-color);
+}
+.mims-online #help-content .param_desc{
+    margin-bottom: 10px;
+}
+
+.mims-online #help-content .optional_param{
+    color: var(--second-bg-color-light);
+
+}
+
+
+
+.mims-online #help-content .init {
+    color: var(--fourth-bg-color);
+}
+.mims-online #help-content .init_desc::before {
+    color: var(--fourth-bg-color);
+    content: "Initial Parameters :";
+}
+.mims-online #help-content .init_desc{
+    margin-bottom: 10px;
+}
+
+
+
+
+
 
 
 .mims-online .sidebar .codearea {
@@ -544,7 +1030,7 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--light-bg-color);
+    background-color: var(--color-bg-sec);
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -562,11 +1048,11 @@ html {
 }
 
 input:checked + .slider {
-    background-color: var(--light-bg-color);
+    background-color: var(--color-bg-sec);
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 1px var(--light-bg-color);
+    box-shadow: 0 0 1px var(--color-bg-sec);
 }
 
 input:checked + .slider:before {
@@ -644,7 +1130,7 @@ input:checked + .slider:before {
 
 .gutter {
     float: left;
-    background-color: var(--main-bg-color);;
+    background-color: var(--color-bg-main);;
     cursor: ew-resize;
     height: 100%;.pan
 width: 30px ;
@@ -662,14 +1148,14 @@ width: 30px ;
 /* Dealing with the bottom consol */
 
 .footerDrawer {
-    background-color: var(--main-bg-color);
+    background-color: var(--color-bg-main);
     width: 100%;
     bottom: 0;
     z-index: 10;
 }
 
 .footerDrawer .open {
-    background-color: var(--main-bg-color);
+    background-color: var(--color-bg-main);
     height: 30px;
     padding-left: 10px;
     padding-top: 5px;
@@ -693,11 +1179,11 @@ width: 30px ;
 }
 
 .collapse-converter{
-    background-color: var(--light-bg-color);
+    background-color: var(--color-bg-sec);
 }
 
 .codearea{
-    background-color: var(--light-bg-color);
+    background-color: var(--color-bg-sec);
 
 }
 
@@ -709,7 +1195,6 @@ width: 30px ;
     color: white;
     font-weight: normal;
     font-family: monospace !important;
-
 }
 
 .footerDrawer #toggle-autoCompile{
@@ -718,14 +1203,13 @@ width: 30px ;
 }
 
 .footerDrawer .content {
-    background-color: var(--light-bg-color);
-    background: var(--main-bg-color);
+    background-color: var(--color-bg-sec);
+    background: var(--color-bg-main);
     display: none;
-
 }
 
 .footerDrawer .consoleOutput {
-    background: var(--light-bg-color);
+    background: var(--color-bg-sec);
     padding: 10px;
     height: auto;
     margin-bottom: 15px;
@@ -752,4 +1236,5 @@ width: 30px ;
 .footerDrawer .consoleOutput .feedback-error-content {
     color: var(--second-bg-color);
 }
+
 

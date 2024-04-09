@@ -102,7 +102,7 @@
 
 
     $(document).ready(function(){
-        $("#viewRefresh").click(function(){
+        $("#updateModelinView").click(function(){
             mims2faust();
             drawScene();
         });
@@ -1109,15 +1109,15 @@ function drawScene() {
     $( "#faustRefresh" ).hide();
     $( "#faustRun" ).hide();
 
-    $( "#viewRefresh" ).hide();
+    $( "#updateModelinView" ).hide();
 
     $("#collapse3").on('shown.bs.collapse', function() {
-        $( "#viewRefresh" ).show( 100, function() {
+        $( "#updateModelinView" ).show( 100, function() {
         });
     });
 
     $("#collapse3").on('hidden.bs.collapse', function() {
-        $( "#viewRefresh" ).hide( 100, function() {
+        $( "#updateModelinView" ).hide( 100, function() {
         });
     });
 

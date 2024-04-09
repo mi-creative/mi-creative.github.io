@@ -1,2 +1,36 @@
 <img class="image"/>
-<h1>Damper Module</h1> <br><br>@{name} damper @{m1} @{m2} {damping}<br><br>The damper connects two material points {@m1} and {@m2} with a linear viscous interaction.<br><br>Physical Parameters: damping.<br><br>Example:<br>@g1 ground 0.<br>@m1 mass 1.2 0. 0.1<br>@d1 damper @g1 @m1 0.01<br>
+<h1>
+    Damper Module
+</h1>
+
+
+
+<div class="module_syntaxe">
+    <span class="label">@{name}</span>
+    <span class="name">damper</span>
+    <span class="label">@{m1}</span>
+    <span class="label">@{m2}</span>
+    <span class="param">{damping}</span>
+</div>
+
+<div class="module_desc">
+    The damper connects two material points {@m1} and {@m2} with a linear viscous interaction.
+</div>
+
+<div class="param_desc">
+    Damping.
+</div>
+
+<div class="init_desc">
+
+</div>
+
+<div class="module_example">
+    Example:
+    <br>
+    @g1 ground 0.
+    <br>
+    @m1 mass 1.2 0. 0.1
+    <br>
+    @d1 damper @g1 @m1 0.01
+</div>
