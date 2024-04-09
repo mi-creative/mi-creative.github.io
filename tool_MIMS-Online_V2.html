@@ -1,0 +1,663 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <title>mi-Creative</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="mi Creative"/>
+    <meta name="keywords" content="Physical, Modeling, Mass, Spring, Digital, Arts, Grenoble, Gipsa"/>
+    <meta name="author" content="miCreative"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="shortcut icon" href="images/favicon.ico"/>
+    <link href='http://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800%7CPlayfair%20Display:700%7CPT%20Serif:400i'
+          rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href='js/mimsOnline/mimsOnline.css'/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="js/mimsOnline/codemirror/lib/codemirror.js"></script>
+    <script src="js/mimsOnline/codemirror/active-line.js"></script>
+
+    <script src="js/mimsOnline/codemirror/mode/javascript.js"></script>
+    <script src="js/mimsOnline/codemirror/mode/faust/faust.js"></script>
+    <script src="js/mimsOnline/codemirror/mode/faust/faustsnippets.js"></script>
+    <script src="js/mimsOnline/codemirror/mode/clike/clike.js"></script>
+    <script src="js/mimsOnline/codemirror/addon/show-hint.js"></script>
+
+
+
+    <link rel="stylesheet" href="js/mimsOnline/codemirror/lib/codemirror.css">
+
+    <script src="js/mimsOnline/three.min.js"></script>
+    <script src="js/mimsOnline/OrbitControls.js"></script>
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/mimsOnline/mimsBrowser.js"></script>
+    <script src="js/mimsOnline/mimsGenerators.js"></script>
+
+
+
+
+</head>
+
+<body class="mims-online" style="display: flex; flex-direction: column;
+">
+<div id="container">
+
+    <div class="split-parent">
+        <div id="split1">
+            <div class="codearea-header">
+                MIMS Scripting Language - Model Name :
+                <input type="text" id="modelName" placeholder="Default">
+                <div class="mims-buttons" style="float: right">
+                    <a href="javascript:;" id="mimsExport"><i class="fa fa-save" style="color: white"></i></a>
+                </div>
+                <div class="mims-buttons" style="float: right; padding-right: 10px">
+                    <a href="javascript:;" id="mimsImport"><i class="fa fa-upload" style="color: white"></i></a>
+                    <input type="file" id="mimsFile" name="mimsFile" ; style="display: none;" accept=".mdl">
+                </div>
+
+            </div>
+            <!-- Page Content Holder -->
+            <div class="mims">
+
+                <div class="codearea">
+
+                    <textarea id="mimscode" class="scripting-environment">
+
+# MIMS script file
+# Script author: James Leonard
+
+@stiffness param 0.5
+@damping param 0.0003
+
+@g1 ground [-9. 0 0]
+@m1 mass 1. [-8 0 0] 0.
+@m2 mass 1. [-7 0 0] 0.
+@m3 mass 1. [-6 0 0] 0.
+@m4 mass 1. [-5 0 0] 0.
+@m5 mass 1. [-4 0 0] 0.
+@m6 mass 1. [-3 0 0] 0.
+@m7 mass 1. [-2 0 0] 0.
+@m8 mass 1. [-1 0 0] 0.
+@m9 mass 1. [0 0 0] 0.
+@m10 mass 1. [1 0 0] 0.
+@m11 mass 1. [2 0 0] 0.
+@m12 mass 1. [3 0 0] 0.
+@m13 mass 1. [4 0 0] 0.
+@m14 mass 1. [5 0 0] 0.
+@m15 mass 1. [6 0 0] 0.
+@m16 mass 1. [7 0 0] 0.
+@m17 mass 1. [8 0 0] 0.
+@g2 ground [9. 0 0]
+
+@s1 springDamper @g1 @m1 stiffness damping
+@s2 springDamper @m1 @m2 stiffness damping
+@s3 springDamper @m2 @m3 stiffness damping
+@s4 springDamper @m3 @m4 stiffness damping
+@s5 springDamper @m4 @m5 stiffness damping
+@s6 springDamper @m5 @m6 stiffness damping
+@s7 springDamper @m6 @m7 stiffness damping
+@s8 springDamper @m7 @m8 stiffness damping
+@s9 springDamper @m8 @m9 stiffness damping
+@s10 springDamper @m9 @m10 stiffness damping
+@s11 springDamper @m10 @m11 stiffness damping
+@s12 springDamper @m11 @m12 stiffness damping
+@s13 springDamper @m12 @m13 stiffness damping
+@s14 springDamper @m13 @m14 stiffness damping
+@s15 springDamper @m14 @m15 stiffness damping
+@s16 springDamper @m15 @m16 stiffness damping
+@s17 springDamper @m16 @m17 stiffness damping
+@s18 springDamper @m17 @g2 stiffness damping
+
+
+# Add force input to the model
+@in1 frcInput @m7
+
+# Add position output from the string
+@out1 posOutput @m2
+
+
+# end of MIMS script
+
+                            </textarea>
+
+                </div>
+            </div>
+
+            <div class="footerDrawer">
+
+
+                <div class="open">
+                    <a href="javascript:;" id="mimsTerminal" class="open-left"><i class="fa fa-terminal"></i></a>
+                    <span class="open-right">
+                        <label for="toggle-autoCompile">Auto Compile</label>
+                        <input type="checkbox" id="toggle-autoCompile" name="autoCompile" value="newsletter" checked>
+                    </span>
+
+                </div>
+
+
+                <div class="content">
+                    <div class="consoleOutput">
+                        <div class="state" id="state">
+                            <span class="feedback-state-head">State : </span>
+                            <span class="feedback-state-content"></span>
+
+
+                        </div>
+                        <div class="error" id="error">
+                            <span class="feedback-error-head">Error : </span>
+                            <span class="feedback-error-content"></span>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="split2">
+            <div class="sidebar">
+
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                                   href="#collapse1" style="display: flex">MIMS Help</a>
+                            </div>
+                        </div>
+                        <div id="collapse1" class="accordion-body panel-collapse collapse">
+
+                            <div class="accordion-inner" id="help">
+                                <div id="help-content"> Welcome to MIMS-Online </div>
+                                <image href="./images/MI_creative.png"></image>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                                   href="#collapse2" style="display: flex">Script Generator</a>
+                            </div>
+                        </div>
+                        <div id="collapse2" class="accordion-body panel-collapse collapse in">
+
+                            <div class="accordion-inner" id="generate">
+
+                                <div class="tips">
+                                    (drag and drop generators into mims scripting area to generate models)
+                                </div>
+                                <div class="generate-content">
+
+                                    <!-- generateString -->
+
+                                    <div class="generator generateString" draggable="true">
+                                        generate String
+                                    </div>
+                                    <div class="generator-param" id="generateString">
+                                        <div class="float-container">
+                                            <label for="generateString_param1">mass number</label>
+                                            <input type="number" id="generateString_param1" value="10" min="1">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param2">Name</label>
+                                            <input type="text" id="generateString_param2" value="myString">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param3">mass value</label>
+                                            <input type="number" step=".01" id="generateString_param3" value="1.0">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param4">stifness value</label>
+                                            <input type="number" step=".0001" id="generateString_param4" value="0.01">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param5">viscosity value</label>
+                                            <input type="number" step=".000001" id="generateString_param5" value="0.0001">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param6">friction (optional)</label>
+                                            <input type="number" step=".000001" id="generateString_param6" value="0.0">
+                                        </div>
+
+                                        <div style="display: flex; flex-direction: row">
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Xmin</label>
+                                                <input type="number" step=".01" id="generateString_param71" value="-10.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Ymin</label>
+                                                <input type="number" step=".01" id="generateString_param72" value="0.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Zmin</label>
+                                                <input type="number" step=".01" id="generateString_param73" value="0.0">
+                                            </div>
+                                        </div>
+                                        <div style="display: flex; flex-direction: row">
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Xmax</label>
+                                                <input type="number" step=".01" id="generateString_param81" value="10.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Ymax</label>
+                                                <input type="number" step=".01" id="generateString_param82" value="0.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Zmax</label>
+                                                <input type="number" step=".01" id="generateString_param83" value="0.0">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- generate Mesh -->
+
+                                    <div class="generator generateMesh" draggable="true">
+                                        generate Mesh
+                                    </div>
+                                    <div class="generator-param" id="generateMesh">
+
+                                        <div style="display: flex; flex-direction: row">
+                                            <div class="float-container">
+                                                <label for="generateString_param11">mass number X</label>
+                                                <input type="number" id="generateString_param11" value="10" min="1">
+                                            </div>
+
+                                            <div class="float-container">
+                                                <label for="generateString_param12">mass number Y</label>
+                                                <input type="number" id="generateString_param12" value="10" min="1">
+                                            </div>
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param2">Name</label>
+                                            <input type="text" id="generateMesh_param2" value="myMesh">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param3">mass value</label>
+                                            <input type="number" step=".01" id="generateMesh_param3" value="1.0">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param4">stifness value</label>
+                                            <input type="number" step=".0001" id="generateMesh_param4" value="0.01">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param5">viscosity value</label>
+                                            <input type="number" step=".000001" id="generateMesh_param5" value="0.0001">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param6">friction (optional)</label>
+                                            <input type="number" step=".000001" id="generateMesh_param6" value="0.0">
+                                        </div>
+
+                                        <div style="display: flex; flex-direction: row">
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Xmin</label>
+                                                <input type="number" step=".01" id="generateMesh_param71" value="-10.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Ymin</label>
+                                                <input type="number" step=".01" id="generateMesh_param72" value="-10.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Zmin</label>
+                                                <input type="number" step=".01" id="generateMesh_param73" value="0.0">
+                                            </div>
+                                        </div>
+                                        <div style="display: flex; flex-direction: row">
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Xmax</label>
+                                                <input type="number" step=".01" id="generateMesh_param8" value="10.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Ymax</label>
+                                                <input type="number" step=".01" id="generateMesh_param81" value="10.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Zmax</label>
+                                                <input type="number" step=".01" id="generateMesh_param82" value="0.0">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- generate Triangle -->
+
+                                    <div class="generator generateTriangle" draggable="true">
+                                        generate Triangle
+                                    </div>
+                                    <div class="generator-param" id="generateTriangle">
+                                        <div class="float-container">
+                                            <label for="generateString_param1">mass number</label>
+                                            <input type="number" id="generateTriangle_param1" value="10" min="1">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param2">Name</label>
+                                            <input type="text" id="generateTriangle_param2" value="myTriangle">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param3">mass value</label>
+                                            <input type="number" step=".01" id="generateTriangle_param3" value="1.0">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param4">stifness value</label>
+                                            <input type="number" step=".0001" id="generateTriangle_param4" value="0.01">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param5">viscosity value</label>
+                                            <input type="number" step=".000001" id="generateTriangle_param5" value="0.0001">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param6">friction (optional)</label>
+                                            <input type="number" step=".000001" id="generateTriangle_param6" value="0.0">
+                                        </div>
+
+                                        <div style="display: flex; flex-direction: row">
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Xmin</label>
+                                                <input type="number" step=".01" id="generateTriangle_param71" value="-10.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Ymin</label>
+                                                <input type="number" step=".01" id="generateTriangle_param72" value="-10.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Zmin</label>
+                                                <input type="number" step=".01" id="generateTriangle_param73" value="0.0">
+                                            </div>
+                                        </div>
+                                        <div style="display: flex; flex-direction: row">
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Xmax</label>
+                                                <input type="number" step=".01" id="generateTriangle_param81" value="10.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Ymax</label>
+                                                <input type="number" step=".01" id="generateTriangle_param82" value="10.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Zmax</label>
+                                                <input type="number" step=".01" id="generateTriangle_param83" value="0.0">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- generate Cube -->
+
+                                    <div class="generator generateCube" draggable="true">
+                                        generate Cube
+                                    </div>
+                                    <div class="generator-param" id="generateCube">
+
+                                        <div style="display: flex; flex-direction: row">
+                                            <div class="float-container">
+                                                <label for="generateString_param11">mass number X</label>
+                                                <input type="number" id="generateCube_param11" value="5" min="1">
+                                            </div>
+
+                                            <div class="float-container">
+                                                <label for="generateString_param12">mass number Y</label>
+                                                <input type="number" id="generateCube_param12" value="5" min="1">
+                                            </div>
+
+                                            <div class="float-container">
+                                                <label for="generateString_param12">mass number Z</label>
+                                                <input type="number" id="generateCube_param13" value="5" min="1">
+                                            </div>
+
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param2">Name</label>
+                                            <input type="text" id="generateCube_param2" value="myCube">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param3">mass value</label>
+                                            <input type="number" step=".01" id="generateCube_param3" value="1.0">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param4">stifness value</label>
+                                            <input type="number" step=".0001" id="generateCube_param4" value="0.01">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param5">viscosity value</label>
+                                            <input type="number" step=".000001" id="generateCube_param5" value="0.0001">
+                                        </div>
+
+                                        <div class="float-container">
+                                            <label for="generateString_param6">friction (optional)</label>
+                                            <input type="number" step=".000001" id="generateCube_param6" value="0.0">
+                                        </div>
+
+                                        <div style="display: flex; flex-direction: row">
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Xmin</label>
+                                                <input type="number" step=".01" id="generateCube_param71" value="-5.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Ymin</label>
+                                                <input type="number" step=".01" id="generateCube_param72" value="-5.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Zmin</label>
+                                                <input type="number" step=".01" id="generateCube_param73" value="0.0">
+                                            </div>
+                                        </div>
+                                        <div style="display: flex; flex-direction: row">
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Xmax</label>
+                                                <input type="number" step=".01" id="generateCube_param81" value="5.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Ymax</label>
+                                                <input type="number" step=".01" id="generateCube_param82" value="5.0">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="generateString_param6">Zmax</label>
+                                                <input type="number" step=".01" id="generateCube_param83" value="10.0">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- generate from JS -->
+
+                                    <div class="generator generateJs" draggable="true">
+                                        generate from JS
+                                    </div>
+                                    <div class="generator-param" id="generateJs">
+
+                                        <div class="codearea accordion-inner">
+                                            <textarea id="jscode" class="scripting-environment">
+
+Code
+
+                                            </textarea>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading headerView">
+                            <div class="one">
+                                <div class="panel-title">
+                                    <a class="accordion-toggle openView" data-toggle="collapse" data-parent="#accordion"
+                                       href="#collapse3" style="display: flex">Model View</a>
+                                </div>
+                            </div>
+                            <div class="mims-buttons two" style="float: right; padding-right: 10px">
+                                <a href="javascript:;" id="viewRefresh" alt="refresh View"><i class="fa fa-refresh"></i></a>
+                            </div>
+                        </div>
+
+                        <div id="collapse3" class="accordion-body panel-collapse collapse collapse-view ">
+                            <div id="viewOverlay-locker"></div>
+
+                            <div id="viewOverlay-log">
+
+                                    <div id="viewOverlay-moduleID"></div>
+
+                                    <div id="viewOverlay-param">
+                                        <div class="param-row">
+                                            <div class="float-container">
+                                                <label for="param_M">M</label>
+                                                <input type="number" id="param_M" step="0.01">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="param_K">K</label>
+                                                <input type="number" id="param_K" step="0.001">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="param_Z">Z</label>
+                                                <input type="number" id="param_Z" step="0.0001">
+                                            </div>
+                                        </div>
+
+                                        <div class="param-row">
+                                            <div class="float-container">
+                                                <label for="mass_X">X</label>
+                                                <input type="number" id="mass_X" step="0.01">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="mass_Y">Y</label>
+                                                <input type="number" id="mass_Y" step="0.01">
+                                            </div>
+                                            <div class="float-container">
+                                                <label for="mass_Z">Z</label>
+                                                <input type="number" id="mass_Z" step="0.01">
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <div class="accordion-inner" id="modelView"></div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading headerConverter">
+
+                            <div class="left panel-title">
+                                <div id="title">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                                       href="#collapse4">Converter</a>
+                                </div>
+                            </div>
+
+                            <div class="mims-buttons right">
+                                <a href="javascript:;" id="faustRefresh"><i class="fa fa-refresh"></i></a>
+                            </div>
+                            <div class="mims-buttons right">
+
+                                <a href="javascript:;" id="faustRun"><i class="fa fa-gear"></i></a>
+                            </div>
+                            <div class="mims-buttons right">
+                                <a href="javascript:;" id="faustExport"><i class="fa fa-save"></i></a>
+                            </div>
+
+                            <div class="center">
+                                <div id="faust" class="panel-title select on">
+                                    Faust
+                                </div>
+                            </div>
+
+                            <div class="mims-buttons center">
+                                <label class="switch">
+                                    <input type="checkbox" class="toggle-converter" id="toggle-converter" onclick="toggleConverter()">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+
+                            <div class="center">
+                                <div id="gen" class="panel-title select">
+                                    ~gen
+                                </div>
+                            </div>
+
+                            <div class="mims-buttons right">
+                                <a href="javascript:;" id="genRefresh"><i class="fa fa-refresh"></i></a>
+                            </div>
+                            <div class="mims-buttons right">
+                                <a href="javascript:;" id="genExport"><i class="fa fa-save"></i></a>
+                            </div>
+                        </div>
+                        <div id="collapse4" class="accordion-body panel-collapse collapse collapse-converter ">
+                            <div class="codearea accordion-inner">
+                                <textarea id="faustcode" class="scripting-environment">
+
+...
+
+                                </textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+<!--Load JavaScript-->
+
+
+<script type="text/javascript" src="js/mimsOnline/split.js"></script>
+<script type="text/javascript" src="js/mimsOnline/mims-online_V3.js"></script>
+
+<script type="text/javascript" src="js/mimsOnline/mims3DView.js"></script>
+
+<script name="insertcode"> </script>
+
+
+
+</body>
+</html>

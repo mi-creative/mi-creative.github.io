@@ -1,0 +1,2 @@
+<img class="image"/>
+<h1>Force Input Module</h1><br><br>@{input_name} frcInput @{mass_to_send_force_to}<br><br>This allows to send an external force (audio rate signal) to a mass element inside the model. It must be named in[1,2,...] as this will define the corresponding inlet of the generated gen~ or Faust object for the force signal.<br><br>Example:<br># Send force signal to a harmonic oscillator<br>@o1 osc 1 0.1 0.0.1 0. 0.8<br>@in1 frcInput @o1<br>

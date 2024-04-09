@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html lang="en-US" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <title>mi-Creative</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="description" content="mi Creative" />
+        <meta name="keywords" content="Physical, Modeling, Mass, Spring, Digital, Arts, Grenoble, Gipsa" />
+        <meta name="author" content="miCreative" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link rel="shortcut icon" href="../images/favicon.ico" />
+        <link href='http://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800%7CPlayfair%20Display:700%7CPT%20Serif:400i' rel='stylesheet' type='text/css'>		
+        <link rel="stylesheet" type="text/css"  href='../style.css' />
+
+
+        <!--[if lt IE 9]>
+        <script src="../js/html5shiv.js"></script>
+        <script src="../js/respond.min.js"></script>
+        <![endif]-->         
+    </head>
+
+    <body class="single single-post tuto">
+
+        <div class="site-wrapper">                  
+            <div class="doc-loader"></div>
+
+            <!-- Left Part Sidebar -->
+            <div class="menu-left-part">
+
+                <!-- Menu from nav.js -->
+                <nav id="header-main-menu"></nav>
+
+                <!-- Hello text in menu from nav.js -->
+                <div id="header-main-text" class="menu-right-text"></div>
+
+            </div>
+
+            <!-- Right Part Sidebar -->
+            <div id="nav-top" class="menu-right-part">
+                <div class="header-logo">
+                    <a href="../index.html">
+                        <img src="../images/logo.png" alt="miCreative">
+                    </a>               
+                </div>
+
+                <div class="toggle-holder">
+                    <div id="toggle">
+                        <div class="menu-line"></div>
+                    </div>                
+                </div>   
+
+            </div> 
+
+            <!-- Page Content Holder -->
+            <div id="content" class="site-content">
+                <article>
+                    <div class="single-post-header-content content-1170 center-relative">
+
+                        <div class="post-wrapper center-relative">
+                            <div class="single-content-wrapper content-960 center-relative">
+                                <h1 class="entry-title">
+                                    mi-Physics Tutorial
+                                </h1>
+
+                                <div class="post-info-wrapper">
+                                    <div class="sticky-spacer">
+                                        <div class="entry-info sections">
+                                            <a class="active" href="#part1">part1</a>
+                                            <br>
+                                            <a href="#part2">part2</a>
+                                            <br>
+                                            <a href="#part3">part3</a>
+                                            <br>
+                                            <a href="#part4">part4</a>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="entry-content">
+
+
+                                    <h2 id="part1" class="section">Stepping aside from a sound-based approach</h2>
+                                    <p>The mass-interaction (MI) approach presented here allows to address the modelling question from any kind of preliminary phenomenological consideration. In simpler terms, one could create a virtual physical model with the sole aim to observe a visual rendering of its motion through time, or with the intent to explore the properties of an interaction model, or further still considering the motion of a virtual mechanical deformation as a sound source. Ultimately, every single object designed in MI with a specific idea and modality in mind can be considered (as it is) for its complementary modalities.</p>
+                                    <p>This property gives MI a strong potential in the fields of sound synthesis, interaction modelling, visual rendering, to create multisensory virtual objects. Of course, the latter raises questions as to the various contexts in which one can build and simulate such objects.</p>
+                                    <p>The following section describes a scenario followed by the authors, stemming from visual considerations in a visual rendering software, and progressively leading to explore the resulting objects for their acoustical properties and playability (including via Haptic interaction) - all within this visual rendering software.</p>
+                                    <h2 id="part2" class="section">Computing and rendering mechanical motion</h2>
+                                    <p>Mass-interaction physical modelling has long been studied and used within the domain of visual arts<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>, resulting in a string of concepts and tools [12, 13]. On the basis of these visual considerations and the will to increase accessibility to MI modelling through open-source software, the authors recently developed <em>miPhysics</em>, a compact JAVA library then targeted essentially for the Processing environment (a software sketchbook &amp; language widely used for prototyping and creating visual and interactive arts). This tool was naturally written to allow designing and computing the motion of point-based models, described as an arrangement of masses and interactions in up to 3 spatial dimensions, and each mass possessing up to 3 degrees of freedom.</p>
+                                    <p>The flexibility of a framework such as Processing allows for efficient interactive modelling and naturally leads to consider aspects such as real-time parameter control, <em>on-the-fly</em> topology/geometry alterations, as well as numerous rendering methods for large models. Despite the fact that it is, by essence, a prototyping environment (therefore not necessarily well optimised for complex scene rendering), large-scale models composed of tens of thousands - and sometimes over a hundred thousand - elements run in real-time (cf. fig.3) at physics computation rates from 250 Hz up to several kHz, and visual display rates around 60 FPS.</p>
+                                    <div class="figure">
+                                        <img src="../images/papers/smc2019_proc/MI_Physics_SMC001.jpg" title="fig:" alt="Snapshots of real-time miPhysics models running in Processing at 250Hz. The first model counts 100000 modules (50k masses, 50k interactions). The second counts 60000 modules (15k masses, 45k interactions).[fig:bigVisual]" />
+                                        <img src="../images/papers/smc2019_proc/MI_Physics_SMC002.jpg" title="fig:" alt="Snapshots of real-time miPhysics models running in Processing at 250Hz. The first model counts 100000 modules (50k masses, 50k interactions). The second counts 60000 modules (15k masses, 45k interactions).[fig:bigVisual]" />
+                                        <p class="caption">Figure 3. Snapshots of real-time miPhysics models running in Processing at 250Hz. The first model counts 100000 modules (50k masses, 50k interactions). The second counts 60000 modules (15k masses, 45k interactions).</p>
+                                    </div>
+                                    <h2 id="part3" class="section">From motion and physical interaction to sound</h2>
+                                    <p>While observing the visual motion such rendered models, a recurring interrogation quickly became: “wow, how would that <em>sound</em>?”. Unable to contain ourselves, we then started cranking simulation rates up to 44.1kHz in an audio thread, connecting “microphones” into these virtual scenes in the simplest way possible (applying the motion of one or more mass elements directly to a loudspeaker - direct output from <em>very</em> localised listening points with no considerations of sound propagation through an aerial medium), and there you have it: multisensory sound and visual objects at your fingertips, directly within Processing (cf. fig.4).</p>
+                                    <p>...well, as such the last statement is not strictly true - actually <em>touching</em> these objects requires force-feedback interaction. This was integrated using the Haply<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a> open-source device (shown in fig.5) as detailed in [14].</p>
+                                    <div class="figure">
+                                        <img src="../images/papers/smc2019_proc/MI_Physics_SMC003.jpg" alt="Snapshot of a miPhysics real-time model running in Processing at 44.1kHz, containing 708 modules (172 masses, 536 interactions) and playable by mouse control." />
+                                        <p class="caption">Figure 4. Snapshot of a <em>miPhysics</em> real-time model running in Processing at 44.1kHz, containing 708 modules (172 masses, 536 interactions) and playable by mouse control.</p>
+                                    </div>
+                                    <div class="figure">
+                                        <img src="../images/papers/smc2019_proc/haplyString.jpeg" alt="Direct haptic interaction with a mass-interaction model of a 3D string using the Haply device." />
+                                        <p class="caption">Figure 5. Direct haptic interaction with a mass-interaction model of a 3D string using the Haply device.</p>
+                                    </div>
+                                    <p>This leaves us with an entirely open environment in which virtual objects can be synthesised in real time in a 3 dimensions and 3 degrees of freedom space, and are accessible to all of our senses, save for smell and taste. This constitutes a result in itself, especially given that many of today’s aspects of sound and music research (interaction mapping, model visual rendering, VR-reinforced presence...) address larger considerations than sound alone.</p>
+                                    <p>But that’s not all<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>, since another historical [15] and still very actual state of the art problem in sound synthesis [9] naturally finds some solutions when Newton’s equations are finally <em>given some space</em><a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a> : non-linearities.</p>
+                                    <p>Now that we have presented our position in regards to a research dedicated to mass-interaction physics and teased at some early results, it seems a good time to introduce (or reintroduce) the scientific and technological concepts behind mass-interaction physical modelling.</p>
+                                    <h2 id="part4" class="section">Part4</h2>
+
+
+                                </div>
+                                <div class="clear"></div>                                    
+                            </div>                               
+                        </div>
+                    </div>
+                </article>
+
+                <div class="clear"></div>
+            </div> 
+            <!-- End Page Content Holder -->            
+        </div>
+
+        <!--Load JavaScript-->
+        <script src="../js/jquery.js"></script>
+        <script src='../js/jquery.smartmenus.min.js'></script>
+        <script src='../js/jquery.prettyPhoto.js'></script>
+        <script src="../js/jquery.sticky-kit.min.js"></script>
+        <script src='../js/imagesloaded.pkgd.js'></script>
+        <script src='../js/jquery.fitvids.js'></script>
+        <script src='../js/tipper.js'></script>
+        <script src='../js/swiper.min.js'></script>
+        <script src='../nav.js'></script>
+        <script src='../js/main.js'></script>
+        <script>
+            (function() {
+                'use strict';
+
+                var section = document.querySelectorAll(".section");
+                var sections = {};
+                var i = 0;
+
+                Array.prototype.forEach.call(section, function(e) {
+                    sections[e.id] = e.offsetTop;
+                });
+
+                window.onscroll = function() {
+                    var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+
+                    for (i in sections) {
+                        if (sections[i] <= scrollPosition) {
+                            document.querySelector('.active').setAttribute('class', ' ');
+                            document.querySelector('a[href*=' + i + ']').setAttribute('class', 'active');
+                        }
+                    }
+                };
+            })();
+        </script>
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,2 @@
+<img class="image"/>
+<h1>Force Output Module</h1><br><br>@{name} frcOutput @{observed_mass}<br><br>This allows to send the force buffer of a mass element inside the model to an output. It must be named in[1,2,...] as this will define the outlet number of the generated gen~ or Faust object.<br><br>Example:<br># Listen to the force buffer (equivalent to acceleration) of a harmonic oscillator<br>@o1 osc 1 0.1 0.0.1 0. 0.8<br>@out1 frcOutput @o1<br><br>

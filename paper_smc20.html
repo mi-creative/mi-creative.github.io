@@ -1,0 +1,601 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <title>mi-Creative</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="description" content="mi Creative" />
+        <meta name="keywords" content="Physical, Modeling, Mass, Spring, Digital, Arts, Grenoble, Gipsa" />
+        <meta name="author" content="miCreative" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link rel="shortcut icon" href="images/favicon.ico" />    
+        <link href='http://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800%7CPlayfair%20Display:700%7CPT%20Serif:400i' rel='stylesheet' type='text/css'>		
+        <link rel="stylesheet" type="text/css"  href='style.css' />
+
+        <!--[if lt IE 9]>
+                <script src="js/html5shiv.js"></script>            
+                <script src="js/respond.min.js"></script>                   
+        <![endif]-->         
+    </head>
+
+    <body class="single single-post paper">
+
+        <div class="site-wrapper">                  
+            <div class="doc-loader"></div>
+
+            <!-- Left Part Sidebar -->
+            <div class="menu-left-part">
+
+                <!-- Menu from nav.js -->
+                <nav id="header-main-menu"></nav>
+
+                <!-- Hello text in menu from nav.js -->
+                <div id="header-main-text" class="menu-right-text"></div>
+
+            </div>
+
+            <!-- Right Part Sidebar -->
+            <div id="nav-top" class="menu-right-part">
+                <div class="header-logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="miCreative">
+                    </a>               
+                </div>
+
+                <div class="toggle-holder">
+                    <div id="toggle">
+                        <div class="menu-line"></div>
+                    </div>                
+                </div>   
+
+            </div> 
+
+            <!-- Page Content Holder -->
+            <div id="content" class="site-content">
+                <article>
+                    <div class="single-post-header-content content-1170 center-relative">
+                        <div id="slider" class="simple-image-slider-wrapper relative swiper-container">
+                            <div class="swiper-wrapper image-slider slider">
+                                <div class="swiper-slide">
+                                    <video id="player1" style="width:100%;" poster="images/papers/paper_smc20_head.png" preload="none" controls playsinline webkit-playsinline>
+                                        <source src="video/SMC_200609.m4v" type="video/mp4">
+                                    </video>
+                                </div>
+                                <!--
+
+                                <div class="swiper-slide">
+                                    <img src="images/papers/paper_smc20_head.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/image_43.jpg" alt="">
+                                </div>
+                                -->
+                            </div>
+                            <div class="clear"></div>
+                            <div class="swiper-pagination simple-image-slider-pagination swiper-pagination-slider"></div>                                
+                        </div>
+
+                        <div class="post-wrapper center-relative">
+                            <div class="single-content-wrapper content-960 center-relative">
+                                <h1 class="entry-title">
+                                    Design and Implementation of Real-Time Physically-Based Virtual Instruments : a Balancing Act
+                                </h1>
+                                <h1 class="entry-subtitle">
+                                    Sound and Music Computing Conference 2020
+                                </h1>
+
+                                <div class="post-info-wrapper">
+                                    <div class="sticky-spacer">
+                                        <div class="entry-info">
+                                            <div>
+                                                <div class="text-holder">
+                                                    DATE
+                                                </div>
+                                                <div class="entry-date published">
+                                                    June 2020
+                                                </div>                                                    
+                                            </div>
+                                            <div>
+                                                <div class="text-holder">
+                                                    AUTHOR
+                                                </div>
+                                                <div class="author-nickname">
+                                                    <a href="#" rel="author">
+                                                        James Leonard,
+                                                    </a><br>
+                                                    <a href="#" rel="author">
+                                                        Jerome Villeneuve
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="text-holder">
+                                                    DOWNLOAD
+                                                </div>
+                                                <div class="cat-links">
+                                                    <ul>
+                                                        <li>
+                                                            <a target="_blank" rel="noopener noreferrer" href="https://smc2020torino.it/adminupload/file/SMCCIM_2020_paper_116.pdf">On SMC Website</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="entry-content">
+                                    <div class="paper-abstract">
+                                        <p>
+                                            In recent years, real-time physically-based solutions for sound synthesis have become a common practice both in academia and commercial applications, driven jointly by the increase in computing power and advances in modelling and simulation techniques. However, designing and implementing such instruments and the means for expressive interaction with them still poses several challenges, factors to be balanced by the instrument creator depending on his or her needs. This paper discusses these concerns through the prism of mass-interaction physical modelling. First, a short review on the topics of computation and expressive control of real-time physical models is proposed, followed by the introduction of the physical proxy, a new mass-interaction modelling element yielding new possibilities for expressive interaction via dynamically interpolated topological connections. Three case-studies of physically-based virtual musical instruments are then presented and discussed, particularly in regards to computational aspects, with benchmarks of various possible implementations. Finally, we offer some insight on the balance that one must consider between model and control complexity, and between software genericity and performance, when building physical models for real-time sound synthesis.                                    </div>
+
+
+
+
+
+
+<!--
+
+
+                                    <h1 id="sec:introduction">Introduction</h1>
+                                    <p>Over the last few decades, physically-based sound synthesis methods have evolved from computationally expensive &amp; mostly non real-time techniques to one of the most active fields in Computer Music, now widely employed in digital sound synthesis, including in various commercialised solutions. Alongside historic methods, such as digital waveguides [1], modal synthesis [2] or lumped mass-interaction modelling [3], recent trends show an increasing number of methods rooted in mechanical and acoustical simulation, such as finite-difference-time-domain systems (FDTD) [5] or finite-element modelling [6]. Moreover, scattering techniques can be used to connect wave-based methods to Kirchhoff-based methods [6], enabling hybrid modelling strategies and thus benefiting from the strengths of each individual paradigm.</p>
+                                    <h2 id="tools-for-physical-modelling-sound-synthesis">Tools for physical modelling sound-synthesis</h2>
+                                    <p>Advances in physical modelling and simulation techniques have, in most cases, been accompanied by the development of frameworks and tools allowing the afferent concepts to be manipulated. However, approaches differ significantly depending on the end goal:</p>
+                                    <ul>
+                                        <li><p>A number of tools, such as the Synthesis Toolkit [7] or Block Compiler [6] allow for expert users to design complex numerical simulations of musical instruments. They generally require a solid background in both computing and physics, and as such are targeted for the researcher or engineer rather than the musician or composer.</p></li>
+                                        <li><p>Other tools hide some of the inner complexity of discrete-time physical models, offering more approachable concepts so that a composer or musician may be able to assimilate and incorporate them into a creative process, with little prior scientific knowledge. GENESIS [8] and MODALYS [2] are examples of such systems.</p></li>
+                                    </ul>
+                                    <h2 id="modularity-considerations">Modularity considerations</h2>
+                                    <p>Another distinction between tools for creation by means of physical modelling is the degree of modularity that is made available to the user:</p>
+                                    <ul>
+                                        <li><p>Non-modular systems such as model-based digital pianos<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>[9], the Brass project [10] or Physical Audio’s reverb plate<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> present the user with a fixed physical model to play, possibly allowing him/her to manipulate physical parameters or chose between several modes of excitation, etc.</p></li>
+                                        <li><p>Semi-modular systems generally propose a base of common physical structures (strings, plates, etc.) available as primitives that can be assembled together to create virtual objects [2, 11, 12].</p></li>
+                                        <li><p>Entirely-modular systems such as GENESIS [8] allow the user to design virtual structures “from the ground up” by assembling basic physical elements (masses, springs, non-linear interactions).</p></li>
+                                    </ul>
+                                    <p>We note that as methods such as finite-difference time-domain schemes evolve, offering evermore realistic synthesised sound, the inherent complexity of such models renders intuitive modification of the instruments difficult for non-expert users; higher-level tools are generally limited to a semi-modular approach [13] by connecting plates, strings or bars through locally handled lumped interactions.</p>
+                                    <p>Systems aiming for a more fundamental, constructivist, type of modularity must strike a compromise by leaning on physical formulations that can be split into fundamental “atomic” elements: such is the case of mass-interaction physical modelling.</p>
+                                    <h2 id="modular-physical-modelling-for-artistic-creation">Modular physical modelling for artistic creation</h2>
+                                    <h3 id="unsupervised-modelling">(Unsupervised!) modelling</h3>
+                                    <p>The study of mass-interaction modelling for musical creation is largely documented, essentially through work conducted since the early 80’s at ACROE [3, 8]. One of the key features of this approach - and an essential distinction from most other physical modelling methods - is that virtual physical objects can be designed intuitively (or empirically) by assembling basic physical elements into a network.</p>
+                                    <p>In this case, “modelling” does not necessarily refer to creating a virtual simulation that presents similar behaviour to that of an existing physical instrument (see [14]); rather, modelling is the activity of exploring virtual mechanical constructions in order to discover behaviours and sounds that are judged interesting (regardless of any criteria of realism). Emphasis is consequently placed on providing various tools for the construction, generation and analysis of virtual physical networks in order to assist the composer or musician during the design process [15, 16].</p>
+                                    <h3 id="towards-open-tools-for-mass-interaction-modelling">Towards open tools for mass-interaction modelling</h3>
+                                    <p>Recent years show a regain of interest for modular and more accessible physically-based synthesis methods such as mass-interaction modelling, stimulated partly by the possibilities of force-feedback interaction with such models [17, 18].</p>
+                                    <p>Efforts have been made to provide accessible open-source tools for environments such as Max/MSP. The <em>HSP</em> project [19] presents masses and interactions directly as Max objects, that can be interconnected to form a network. However, the single sample delay needed for the position/force feedback loop imposes that Max runs with a <em>VectorSize</em> of 1, hindering the performance of general audio workflow in order to preserve the integrity and stability of the discrete physical computation.</p>
+                                    <p><em>Synth-A-Modeler</em> [20] is based on the Faust compiler<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> and allows creating and compiling mass-interaction models (and also hybrid models with waveguide and modal synthesis) for a variety of targets (PureData, Max, standalone, etc.). Compiled models are then available as black-box objects that can be acted upon and observed through inlets and outlets.</p>
+                                    <h3 id="presented-work-mi-gen">Presented work: mi-gen </h3>
+                                    <p>By leveraging the properties of the gen system, the work presented in this paper allows for efficient implementation of mass-interaction models within Max/MSP. These models can be generated using a dedicated scripting tool, or coded directly within gen’s <em>codebox</em> object, leaving the user free to modify them at any time. Large scale models can be designed (with guaranteed single-sample loopback), visualised, interacted with, and integrated into complex workflows within Max.</p>
+                                    <p>First, we provide a brief introduction to algorithmic and computational aspects of mass-interaction physical modelling. Then, we present how such models can be coded and computed with the mi-gen toolbox. Examples and system performance are then discussed, with perspectives for future work.</p>
+                                    <h1 id="sec:massint">Mass-Interaction Physical Modelling Basics</h1>
+                                    <p>As the name suggests, mass-interaction models are composed on the one side of <em>mass-type</em> elements, and on the other <em>interaction-type</em> elements. The modularity of the formalism stems from the fact that the basic equations for each are discretised individually, and can then be assembled freely by following a small number of connection rules [3, 22, 23]. The principles of mass-interaction modelling can operate on position and force data of any spatial dimension (scalar values, 2D or 3D vectors, etc.). The equations below and the implementation in this paper are 1D, meaning that all masses move along a single axis.</p>
+                                    <p>A discrete-time implementation of a punctual mass is obtained by applying the second order central difference scheme to Newton’s second law (\( f \) is the force applied to the mass, \( m \) is its inertia, \( a \) its acceleration, and \( x \) its position):</p>
+                                    <p><br />
+                                        <span class="math">$$\label{eq:massNewton}
+f = ma = m \frac{d^2 x}{dt^2}$$
+                                        </span><br /></p>
+                                    <p>Resulting in the following normalised form (with discrete-time positions and forces noted  \( X \) and \( F \)):</p>
+                                    <p><br />
+                                        <span class="math">$$\label{eq:discretetimemass}
+X_{(n+1)} = 2 X_{(n)}- X_{(n-1)} + \frac{F_{(n)}}{M}$$
+                                        </span><br /></p>
+                                    <p>With \( M \), the discrete time inertial parameter defined as \( M = m/ΔT^2 \) (where \( ΔT \) is the sampling interval).</p>
+                                    <p>As an example of a simple interaction element, the visco-elastic force applied by a linear spring (with stiffness coefficient \( k \), damping coefficient \( z \) and resting length of \( l_{0}=0 \)) connecting a mass \( m_{2} \) at the position \( x_{2} \) to a mass \( m_{1} \) at the position \( x_{1} \) is given by:</p>
+                                    <p><br />
+                                        <span class="math">$$\label{eq:HookeSpring}
+f_{{1\rightarrow2}} = -k (x_2 - x_1) - z \frac{d (x_2 - x_1)}{dt}$$
+                                        </span><br /></p>
+                                    <p>Approximating the velocity by applying the backward Euler difference scheme, we obtain:</p>
+                                    <p>
+                                        <br />
+
+                                        <span class="math">
+\begin{align}
+F_{(n)} =&amp; -K (X_{2(n)} - X_{1(n)}) \nonumber \\
+ &amp; -Z((X_{2(n)} - X_{2(n-1)}) \\
+ &amp; - (X_{1(n)} - X_{1(n-1)})) \nonumber
+\end{align}
+                                        </span>
+                                        <br />
+                                    </p>
+                                    <p>With the discrete-time stiffness parameter \( K = k \), and the discrete-time damping parameter \( Z = z/ΔT \). The resulting force is applied symmetrically to each mass (Newton’s third law):</p>
+                                    <p><br />
+                                        <span class="math">
+\begin{align}
+F_{1(n)} -= F_{(n)} \nonumber \\
+F_{2(n)} += F_{(n)}
+\end{align}
+                                        </span>
+                                        <br /></p>
+                                    <p>Each interaction acting upon a mass effectively sums its calculated force into a buffer, which equates (after weighting by \( M \) ) to the total acceleration applied to the mass during this time-step. The computation of a mass-interaction network consists in a closed-loop computation of the masses and of the interactions. By convention, we will say that the vibration of 1D topological structures occurs along the <em>z</em> axis.</p>
+                                    <h1 id="the-mi-gen-library">The mi-gen library</h1>
+                                    <p>The mi-gen toolbox is an open-source Max package, available on GitHub<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>. It is composed of several documentation and example patches, as well as a library of functions for gen’s <em>codebox</em> object. Codebox is a textual coding environment within gen (based on a syntax similar to C), giving access to all gen specific functions such as <em>History</em>, <em>Delay</em>, <em>Buffer/Data</em> access, etc.</p>
+                                    <p>As in all gen patches, feedback paths with a single sample of delay are possible regardless of Max’s <em>VectorSize</em>, which is crucial for implementing the closed loop calculations of equations ([eq:discretetimemass]) and ([eq:springDampAll]) for all of the masses and interactions in the physical model. Figure 1 shows a Max patch centred around a “fretted string” gen physical model.</p>
+                                    <p><img src="images/papers/smc2019_gen/screenStr.jpg" alt="image" /></p>
+                                    <p class="caption">Figure 1. Screenshot of a Max patch implementing a string model. Control parameters are sent as messages to the gen~ patch, and external position and force inputs are provided as audio-rate signals.</p>
+
+                                    <h2 id="code-structure">Code structure</h2>
+                                    <p>The sequence in Figure 2 shows the code structure of a simple model: a harmonic oscillator (a mass, connected to a fixed point by a dampened spring) that can be subjected a force input via the first inlet of the <em>codebox</em> object, and can be struck using a contact interaction (with stiffness, damping and threshold distance parameters) by another mass whose position is controlled by the second inlet.</p>
+
+
+                                    <div class="figure">
+
+                                    <div class="code">
+                                        <pre><code>
+<span class="co">// Model data structures</span>
+Data m_in2(<span class="dv">3</span>);
+Data gnd(<span class="dv">3</span>);
+Data m1(<span class="dv">3</span>);
+
+<span class="co">// Control Rate Parameters</span>
+Param Z(<span class="fl">0.0001</span>);
+Param K(<span class="fl">0.01</span>);
+Param M(<span class="dv">1</span>.);
+
+History model_init(<span class="dv">0</span>);
+<span class="co">// Model init phase</span>
+<span class="kw">if</span>(model_init == <span class="dv">0</span>){
+    init_mat(m_in2, <span class="dv">1</span>, <span class="dv">1</span>);
+    init_mat(gnd, <span class="dv">0</span>, <span class="dv">0</span>);
+    init_mat(m1, <span class="dv">0</span>, <span class="dv">0</span>);
+    model_init = <span class="dv">1</span>;
+}
+
+<span class="co">// Model computation</span>
+update_input_pos(m_in2, in2);
+compute_ground(gnd);
+compute_mass(m1, M);
+compute_contact(m1, m_in2, <span class="fl">0.1</span>, <span class="dv">0</span>, <span class="dv">0</span>);
+apply_input_force(m1, in1);
+compute_spring_damper(m1, gnd, K, Z);
+
+out1 =  get_pos(m1);
+                                            </code></pre>
+
+                                    </div>
+                                        <p class="caption">Figure 2. A simple mass-interaction model expressed in <i>genexpr</i> code, using the mi-gen~ library.</p>
+
+                                    </div>
+                                    <h3 id="physical-variables-and-initial-states">Physical variables and initial states</h3>
+                                    <p>Material points of the model (including “avatars” for external position inputs) are stored as <em>Data</em> objects (equivalent to an array of floating point 64-bit values). Each one is composed of three values, corresponding respectively to the point’s current position, previous position, and accumulated force buffer. These attributes are set to initial conditions during an initialisation phase. By convention, modules are set with an initial position and velocity (inferred by the previous position), and with null acceleration.</p>
+                                    <p>Interactions have no physical variables other than their own parameters, since an interaction acts directly (and symmetrically) on the <em>Data</em> structures of the two masses that it connects.</p>
+                                    <h3 id="computational-loop">Computational loop</h3>
+                                    <p>The simulation of the model’s dynamics is performed by computing all of the mass-type algorithms then all of the interaction type algorithms, for each time step (each audio sample in our case). All of the physical algorithms are implemented inside the <em>migen-lib.genexpr</em> file.</p>
+                                    <p>External position inputs are applied to the “avatar” modules during the mass-phase, and external force inputs are applied to corresponding masses during the interaction-phase. Position and/or force values from “observed” masses are collected at the end of the cycle and routed to outputs.</p>
+                                    <h3 id="parameters-of-the-physical-algorithms">Parameters of the physical algorithms</h3>
+                                    <p>The physical parameters expressed inside mi-gen are <em>normalised discrete-time</em> parameters as previously defined. On the one hand, this renders the behaviour of models dependent on the sample rate for a given set of parameters, on the other it provides a direct view of stability conditions, defined at each mass as \(4M > K + 2Z\) (with \(M\) the inertia of the mass, and \(K\) and \(Z\) the summed stiffness and damping applied to this mass by interactions - see Appendix bellow). Translations to and from standard unit parameters can easily be established allowing the user to manipulate either one.</p>
+                                    <p>Parameters may be:</p>
+                                    <ul>
+                                        <li><p>hard-coded values that are immutable once the patch is compiled,</p></li>
+                                        <li><p>control-rate parameters that can be dynamically modified by sending messages to the gen object,</p></li>
+                                        <li><p>audio-rate parameters, added as signal inputs to the <em>codebox</em> patch.</p></li>
+                                    </ul>
+                                    <p>The latter is preferable for fast-varying parameters [24], for instance in cases such as dynamically re-tuning the pitch of a model according to input MIDI notes.</p>
+                                    <h2 id="the-mims-scripting-system">The MIMS scripting system</h2>
+                                    <p>Although creating physical models directly in <em>codebox</em> is fairly intuitive, designing larger scale objects is much easier using higher level tools to describe the topology. <span style="font-variant: small-caps;">MIMS</span><a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> (Mass-Interaction Model Scripter) is a basic editor written in Python for this purpose, providing compilation into dsp code for either gen or FAUST [21].</p>
+                                    <p>Models are described in a format similar to PNSL [21]: each physical element is given a unique identifier, or label (e.g. <em>@mass1</em>), that can be referenced by other elements (e.g. when connecting an interaction between two masses). For instance:</p>
+                                    <p style="text-align: center"><strong>@spr <span style="color: #507dcd">springDamper</span> @m1 @m2 <span style="color: #cd3633">0.1 0.001</span> </strong></p>
+                                    <p>creates a dampened spring connecting masses <em>m1</em> and <em>m2</em> with a discrete-time stiffness of 0.1 and discrete-time damping of 0.001. The inputs and outputs of the gen patch are also based on labels:</p>
+                                    <p style="text-align: center"><strong>@in1 <span style="color: #507dcd">frcInput</span> @m1 </strong></p>
+                                    <p style="text-align: center"><strong>@out2 <span style="color: #507dcd">posOutput</span> @m2 </strong></p>
+                                    <p>routes a force signal from the inlet <em>in1</em> to the mass <em>m2</em> and routes an observation of <em>m2</em>’s position to the outlet <em>out2</em>.</p>
+                                    <p>Parameters also function as labels and can be used in place of hard-coded values in the definition of any module’s parameters as follows:</p>
+                                    <p style="text-align: center"><strong>@M <span style="color: #507dcd">param</span> <span style="color: #cd3633"> 1</span> </strong></p>
+                                    <p style="text-align: center"><strong>@K <span style="color: #507dcd">param</span> <span style="color: #cd3633"> 0.01</span> </strong></p>
+                                    <p style="text-align: center"><strong>@Z <span style="color: #507dcd">param</span> <span style="color: #cd3633"> 0.001</span> </strong></p>
+                                    <p style="text-align: center">...</p>
+                                    <p style="text-align: center"><strong>@cel <span style="color: #507dcd">osc</span> M K Z 0. 0.1</span> </strong></p>                                    <p>The above code creates labelled inertia, stiffness and damping control-rate parameters and then creates an integrated harmonic oscillator with these parameters, set at initial position \(z=0\) with an initial velocity of \(0.1\) metres-per-sample. Audio-rate parameter inputs are automatically placed after any explicitly defined inputs for the patcher.</p>
+                                    <p>MIMS also provides rudimentary functions for automated generation of larger scale topological structures, such as strings, rectangular, triangular and hexagonal membranes.</p>
+                                    <h1 id="real-time-visualisation">Real-time visualisation</h1>
+
+
+
+
+                                    <h2 id="visualising-deformations-using-motion-buffers">Visualising deformations using Motion Buffers</h2>
+                                    <div class="figure">
+                                        <img src="images/papers/smc2019_gen/mesh_render.jpeg" alt="Vibratory deformations of a mesh attached at each corner. Underlying physical model: 20x20 masses. NURBS-based rendering in Jitter." />
+                                        <p class="caption">Figure 3. Vibratory deformations of a mesh attached at each corner. Underlying physical model: 20x20 masses. NURBS-based rendering in Jitter.</p>
+                                    </div>
+                                    <p>So far, we have only been able to observe points of a physical model that we route to outlets at the audio rate. However, understanding the behaviour of a mass-interaction model is greatly facilitated by visualising the deformations of the entire object, even if we only “listen” to it in a few points. This is achieved by creating <em>motion buffers</em>. Motion buffers are simple MSP buffer objects, used a little unconventionally: instead of storing a temporal waveform, the buffer stores an instantaneous snapshot of the positions of a set of masses. MIMS provides two uses for motion buffers:</p>
+                                    <ul>
+                                        <li><p>A 1-channel generic buffer, containing the motion of all the mass-type elements in the model along the <em>z</em> axis (in order of creation).</p></li>
+                                        <li><p>Specific 3-channel buffers, containing the motion of a set of mass-type elements in the model along the <em>z</em> axis, as well as fixed <em>x</em> and <em>y</em> coordinates. Masses are added to buffers by adding the buffer name and extra <em>x, y</em> coordinates after the standard module parameters.</p></li>
+                                    </ul>
+                                    <p>The former allows quick visualisation of the model state by drawing the motion buffer with the plot object. The latter is useful for creating visual arrangements that correspond to the topological nature of a mass-interaction network, e.g. grid-based distributions along <em>x</em> and <em>y</em> according to generated mesh patterns, which allows to represent modal deformations and wave propagation along the matter.</p>
+                                    <p>Inside the gen patch, the motion buffers are refreshed with new positions once every 200 audio steps (a rate of 220.5 Hz for a sampling rate of 44.1kHz). This limits the computational costs of writing the data, as it is only used for visualisation purposes.</p>
+                                    <h2 id="rendering-techniques">Rendering techniques</h2>
+                                    <p>Within Max, Jitter offers powerful tools for visual rendering, including surface rendering algorithms such as <em>Non-Uniform, Rational, B splines</em> (NURBS). This technique is used to render smooth curves and surfaces from a limited number of control points (in our case, the <em>x, y, z</em> positions of the masses of a physical model). Using specific motion buffers as discussed above, simple model topologies such as strings and rectangular membranes can be rendered as shown in Figure 3.</p>
+                                    <h1 id="benchmarking-experimentation">Benchmarking &amp; experimentation</h1>
+                                    <p>The mi-gen toolbox provides a set of tutorial and example patches<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>, showing a hands-on approach to designing models and control/interaction strategies within Max/MSP.</p>
+                                    <h2 id="performance-benchmark">Performance benchmark</h2>
+                                    <p>Table 1 shows the results of a selection of models (mostly examples from the toolbox), in terms of complexity, compile-time of the gen patcher, and CPU usage within Max.</p>
+                                    <div style="width: 85%; display: block; margin-left: auto; margin-right: auto">
+                                        <table>
+                                            <thead>
+                                            <tr class="header">
+                                                <th align="center">Model Name</th>
+                                                <th align="center">N. Masses</th>
+                                                <th align="center">N. Int.</th>
+                                                <th align="center">Comp. Time</th>
+                                                <th align="center">CPU Load</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr class="odd">
+                                                <td align="center"><code>1000 Mass String</code></td>
+                                                <td align="center">1000</td>
+                                                <td align="center">1002</td>
+                                                <td align="center">&#8734</td>
+                                                <td align="center">-</td>
+                                            </tr>
+                                            <tr class="even">
+                                                <td align="center"><code>Mesh (25x20)</code></td>
+                                                <td align="center">506</td>
+                                                <td align="center">965</td>
+                                                <td align="center">3 min</td>
+                                                <td align="center">67%</td>
+                                            </tr>
+                                            <tr class="odd">
+                                                <td align="center"><code>Mesh (15x15)</code></td>
+                                                <td align="center">225</td>
+                                                <td align="center">435</td>
+                                                <td align="center">22 sec</td>
+                                                <td align="center">15%</td>
+                                            </tr>
+                                            <tr class="even">
+                                                <td align="center"><code>Fretted String</code></td>
+                                                <td align="center">155</td>
+                                                <td align="center">203</td>
+                                                <td align="center">7.7 sec</td>
+                                                <td align="center">8%</td>
+                                            </tr>
+                                            <tr class="odd">
+                                                <td align="center"><code>Bowed String</code></td>
+                                                <td align="center">152</td>
+                                                <td align="center">159</td>
+                                                <td align="center">5.8 sec</td>
+                                                <td align="center">7%</td>
+                                            </tr>
+                                            <tr class="odd">
+                                                <td align="center"><code>Plucked Harmonics</code></td>
+                                                <td align="center">152</td>
+                                                <td align="center">158</td>
+                                                <td align="center">5.4 sec</td>
+                                                <td align="center">6%</td>
+                                            </tr>
+                                            <tr class="even">
+                                                <td align="center"><code>Drunk Triangles*</code></td>
+                                                <td align="center">4</td>
+                                                <td align="center">5</td>
+                                                <td align="center">1 sec</td>
+                                                <td align="center">~16%</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <p class="caption">Table 1. Benchmarking: Number of masses and interactions, compilation time, and Max/MSP CPU load. Measurements were made on a Dell Precision 5530 running Windows 10 & Max 7.3.5. Specs: Intel i7-8850H 4 cores at 2.6GHz, 16GB RAM, 44.1kHz sampling rate, buffer size & vector size of 256 samples. * Drunk Triangles is a small model instantiated dynamically with up to 100 voices, using poly~.</p>
+                                    </div>
+
+                                    <p>Results show that the main limitation for large scale models stems from the gen compilation phase: models with approx. 650 modules take over 20 seconds to compile, but only occupy around 15 % of the CPU when running. The load displayed by the Max/MSP monitor is reasonable for all models that pass the compilation phase, and shows no noticeable difference whether the visualisation of motion data is active or not.</p>
+                                    <p>Beyond a certain volume of codebox code, the compilation of the patch hangs (cf. the 1000 Mass String in Table [bench]). Reasons for this limitation will be investigated. It is worth noting that the authors experienced similar issues with the Faust compiler [21].</p>
+                                    <p>Performance of complex models can be optimised by means of dynamically allocated voices using the poly system, as is the case in the <em>Drunk Triangles</em> example, which contains up to 100 instances of a simple mass dropping and bouncing on a “triangle” resonator (shown in Figure 4). Each instance is tuned according to a pseudo random sequence generated with Max’s <em>drunk</em> object, and frees its voice when it detects that the mass has stopped bouncing. Figure 5 shows a visual representation of the entire instrument.</p>
+                                    <div class="figure">
+                                        <div style="width: 60%; display: block; margin-left: auto; margin-right: auto">
+                                        <img src="images/papers/smc2019_gen/ArrayofTriangles_V2.jpg" alt="Schematic representation of the Drunk Triangles model." />
+                                        </div>
+                                        <p class="caption">Figure 4. Schematic representation of the <em>Drunk Triangles</em></p>
+                                    </div>
+                                    <div class="figure">
+                                        <img src="images/papers/smc2019_gen/triangles_sim.png" alt="Visual representation of the Drunk Triangles polyphonic instrument: bouncing masses in red, resonating structures in blue." />
+                                        <p class="caption">Figure 5. Visual representation of the <em>Drunk Triangles</em> polyphonic instrument: bouncing masses in red, resonating structures in blue.</p>
+                                    </div>
+                                    <h2 id="the-fretted-string-model">The fretted string model</h2>
+                                    <p>Plucked or struck string instruments have long been a topic of interest in physical modelling, from the acoustical properties of the string itself [25] to the non-linear collisions [26, 27] that occur in fretted instruments. Below we present a simple mass-interaction implementation of such a model.</p>
+                                    <h3 id="fretting-mechanisms-in-1d-space">Fretting mechanisms in 1D space</h3>
+                                    <p>Previous work by the authors [28] presented fretted string mass-interaction models with an analogy to the guitar fretboard, where certain string masses are pinned down against fixed points, set underneath them. However, this poses problems since, unlike in real life where fretting gestures are orthogonal to strumming ones, in the 1D virtual model the string is excited in the same axis as the fretting gesture. This forces frets to be placed very low and distributed unevenly beneath the string in order to avoid fret buzz.</p>
+                                    <p>A more functional analogy in our case comes from the tuning forks found on concert harps. When rotated by operating the instrument’s pedals, they apply pressure in both directions simultaneously, pinning the string without causing excess displacement. Within Max, it is straightforward to setup two opposite position signals that operate the tuning fork “clamp”, and to replicate the mechanism in as many points as desired.</p>
+                                    <h3 id="model-description-and-behaviour">Model description and behaviour</h3>
+                                    <p>The vibrating model is a simple string attached between two fixed points. An external force input triggers a mass that moves downwards and collides with the string. Multiple external position inputs control seven frets (or clamps), positioned at intervals corresponding to the diatonic scale. The height of the frets and the speed of the clamping mechanisms can be modified in real-time: we can choose to completely avoid any fret-buzz, or dial in just enough for things to sound lively and interesting... or even go crazy with extremely rattly down-tuned strings! The Max patch is shown in Figure 1.</p>
+                                    <div class="figure">
+                                        <img src="images/papers/smc2019_gen/StringPinch.jpg" alt="Schematic representation of the fretted string model (clamping mechanisms on the left side)." />
+                                        <p class="caption">Figure 6. Schematic representation of the fretted string model (clamping mechanisms on the left side).</p>
+                                    </div>
+                                    <h3 id="physical-interaction-realism">“Physical Interaction” Realism</h3>
+                                    <p>Once again, we stress that the created model does not strive for any true acoustical realism: indeed, the string’s masses are limited to transverse motion, it is modelled with linear springs, has no vibrating body, the discrete number of masses imposes slightly off-key fret positions... the list goes on. However, even in this extremely reductive model, careful physical interaction design brings forth perceptually important emergent non-linear behaviour, inferring character and unpredictability to the instrument.</p>
+                                    <p>We could say that the mass-interaction paradigm yields <em>physical interaction realism</em>, in the sense that it faithfully represents anything that can be represented with Newtonian point-based mechanics, and that any path the user chooses to follow from there on - be it searching to reproduce real-life phenomena or exploring the unknown - is entirely up to him.</p>
+                                    <h1 id="discussion">DISCUSSION</h1>
+                                    <p>This paper has presented mi-gen, a new library and set of tools for mass-interaction physical modelling sound synthesis in Max/MSP. In comparison to existing tools, it offers efficient computation entirely within Max, without precompiling the models into static black boxes. This allows for on-the-fly iterative model design, direct access to physical parameters and to the model state (which can be visualised using any method seen fit) and - maybe most importantly - it empowers the user by providing a hands-on programming framework for 1D mass-interaction physics, with vast possibilities for customisation. As such, it constitutes a new experimentation ground for combining mass-interaction physics with the immense panoply of signal-based tools available inside of Max, for any sound synthesis, transformation or analysis purpose.</p>
+                                    <p>An immediate perspective of this work is integration with affordable force feedback systems (such as the FireFader or the Haply<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> device). A more fundamental perspective for musical creation is considering sound synthesis with 3D mass-interaction models, as modelling virtual objects with spatial attributes naturally addresses many of the limitations of 1D modelling, in particular regarding non-linear dynamics.</p>
+                                    <p>It is our hope that this work will constitute another step towards opening mass-interaction modelling to a larger spectrum of users, in the Computer Music community and beyond. Despite the apparent simplicity of the formalism, we are convinced that much has still to be said, discovered, and experimented.</p>
+                                    <h1 id="sec:app">Appendix: Stability Conditions For The Harmonic Oscillator</h1>
+                                    <p>Following equations ([eq:discretetimemass]) and ([eq:springDampAll]), the discrete time recurrence of the linear harmonic oscillator composed of a mass, dampened spring and a fixed point can be expressed (in the absence of external forces other than the spring) as:</p>
+                                    <p>
+                                        <br />
+                                        <span class="math">$$ X_{(n+1)} + \Big(\frac{K\!+\!Z}{M}\!-\!2\Big).X_{(n)}\!+\!\Big(1\!-\!\frac{Z}{M}\Big).X_{(n-1)} = 0 $$
+                                        </span>
+                                        <br />
+                                    </p>
+                                    <p>The associated characteristic polynomial is:</p>
+                                    <p><br />
+                                        <span class="math">$$ r^2 + A.r\!+\!B = 0 $$
+                                        </span><br/>
+                                    </p>
+                                    <p>with \( A = (\frac{K\!+\!Z}{M}\!-\!2) \) and \(B = (1\!-\!\frac{Z}{M})\), giving the discriminant \( Δ=A^2-4B \).
+                                    </p>
+                                    <h2 id="case-1-oscillating-conditions-delta-0">Case 1: Oscillating conditions (<span class="math">Δ &lt; 0</span>)</h2>
+                                    <p>If
+                                        \( Δ &lt; 0 \) equation ([eq:charac]) possesses complex roots and gives an oscillating solution. We can therefore express the physical parameters that bound oscillating solutions as:</p>
+                                    <p><br />
+                                        <span class="math">$$\
+\Big(\frac{K\!+\!Z}{M}\!-\!2\Big)^2 - 4\Big(1\!-\!\frac{Z}{M}\Big) &lt; 0$$
+                                        </span><br /></p>
+                                    <p>Which can be developed into:</p>
+                                    <p><br />
+                                        <span class="math">
+                                            $$(K + Z)^2 &lt; 4KM$$
+                                        </span><br /></p>
+                                    <p>The pseudo-periodic resulting oscillator is of the form:</p>
+                                    <p><br />
+
+                                        <span class="math">$$\
+\begin{align}
+X_{(n)} &amp; = \chi\rho^n cos(n\omega_p + \varphi) \\
+% with \\
+% \rho &amp; = \sqrt{B} \\
+% \omega_p &amp; = \arccos\Big(-\frac{A}{2\sqrt{B}}\Big)
+\end{align}$$
+                                        </span><br /></p>
+                                    <p>With \( rho = \sqrt{B} \) and \( omega_p = \arccos(-\frac{A}{2\sqrt{B}}) \). Oscillations converge towards 0 for \( 0&lt;\frac{Z}{M}&lt;1 \) and are divergent otherwise.</p>
+                                    <h2 id="case-2-non-oscillating-conditions-delta-geq-0">Case 2: Non-oscillating conditions (<span class="math">Δ ≥ 0</span>)</h2>
+                                    <p> \( Δ = 0 \) leads to a single real root and a solution of the form:</p>
+                                    <p><br />
+                                        <span class="math">$$\label{eq:nonOscForm}
+\begin{align}
+X_{(n)} &amp; = (\alpha + \beta n) \Big(-\frac{A}{2}\Big)^n \\
+&amp; = (\alpha + \beta n) \Big(1 - \frac{K\!+\!Z}{2M}\Big)^n \nonumber
+\end{align}$$
+                                        </span><br /></p>
+                                    <p>This condition equates to critical damping in the oscillator:</p>
+                                    <p><br />
+                                        <span class="math">$$
+Z = 2 \sqrt{KM} - K$$</span><br /></p>
+                                    <p>This solution converges if  \( |1-\sqrt{\frac{K}{M}}| &lt; 1 \) , resulting in the following stability limits:</p>
+                                    <p><br />
+                                        <span class="math">$$
+0 &lt; \sqrt{\frac{K}{M}} &lt; 2$$</span><br /></p>
+                                    <p>If \( Δ &gt; 0 \), equation ([eq:charac]) has two real roots <span class="math"><em>r</em><sub>1</sub>
+                                    </span> and
+                                        <span class="math"><em>r</em><sub>2</sub>
+                                        </span> and the solution is of the form:</p>
+                                    <p><br />
+                                        <span class="math">
+                                            $$ X_{(n)}=\alpha(r_{1})_{n}+\beta(r_{2})_{n} $$
+                                        </span><br /></p>
+                                    <p>with roots:</p>
+                                    <p><br />
+                                        <span class="math">$$
+r_{1,2} = \frac{-A \pm \sqrt{\Delta}}{2}$$
+                                        </span><br /></p>
+                                    <p> \( X_{(n)} \) converges towards zero if \( ∣r_{1}∣&lt; 1 \) and \( ∣r_{2}∣&lt; 1 \). Taking \( |\frac{-A + \sqrt{\Delta}}{2}| &lt; 1 \) we can express two inequalities:</p>
+                                    <p><br /><span class="math">$$\label{eq:rootRes}
+\begin{align}
+\sqrt{\Delta} &amp; &lt; 2-A \\
+\sqrt{\Delta} &amp; &lt; 2+A \nonumber
+\end{align}$$</span><br /></p>
+                                    <p>Which after developing \( Δ \) and squaring the inequalities (assuming \( 0 &lt; K + Z &lt; 4M \) so that both sides are positive) results in:</p>
+                                    <p><br /><span class="math">$$
+\begin{align}
+A-B &amp; &lt; 1 \\
+A+B &amp; &gt; -1 \nonumber
+\end{align}$$</span><br /></p>
+                                    <p>Leading to the final stability conditions as functions of \( M \), \( K \) and \( Z \):</p>
+                                    <p><br />
+                                        <span class="math">$$
+\begin{align}
+\frac{K}{M} &amp; &gt; 0 \\
+K + 2Z &amp; &lt; 4M \nonumber
+\end{align}$$
+                                        </span><br /></p>
+                                    <h2 id="final-stability-conditions">Final stability conditions</h2>
+                                    <p>The stability conditions and regimes for our mass-interaction harmonic oscillator are given in Figure 7. The oscillator is numerically stable if the stiffness, damping and mass parameters verify:</p>
+                                    <p><span class="math">$$K+2Z &lt; 4M \nonumber$$</span></p>
+                                    <p><span class="math">$$K/M &gt; 0 \nonumber$$</span></p>
+                                    <p>Additionally the system will be in an oscillatory regime if the same parameters verify:</p>
+                                    <p><span class="math">$$(K+Z)^2 &lt; 4KM \nonumber$$</span></p>
+                                    <p><span class="math">$$0 &lt; Z/M &lt; 1 \nonumber$$</span></p>
+                                    <div class="figure">
+                                        <img src="images/papers/smc2019_gen/oscStabilitySMC.png" alt="Stability conditions for the harmonic oscillator." />
+                                        <p class="caption">Figure 7. Stability conditions for the harmonic oscillator.</p>
+                                    </div>
+                                    <p>Generally speaking, the static regime stability condition for a mass connected to any number of linear springs and/or dampers can be expressed by analysing the harmonic oscillator with \( K_{eq} = ∑K \) and \( Z_{eq} = ∑Z \).</p>
+                                    <div class="footnotes">
+                                        <hr />
+                                        <ol>
+                                            <li id="fn1"><p><a href="https://www.pianoteq.com/">www.pianoteq.com</a><a href="#fnref1">↩</a></p></li>
+                                            <li id="fn2"><p><a href="https://physicalaudio.co.uk/PA1">https://physicalaudio.co.uk/PA1</a><a href="#fnref2">↩</a></p></li>
+                                            <li id="fn3"><p>Recent work on the formalisation of mass-interaction networks in FAUST was also conducted by the authors [21].<a href="#fnref3">↩</a></p></li>
+                                            <li id="fn4"><p><a href="https://github.com/mi-creative/mi-gen">https://github.com/mi-creative/mi-gen</a><a href="#fnref4">↩</a></p></li>
+                                            <li id="fn5"><p><a href="https://github.com/mi-creative/MIMS">https://github.com/mi-creative/MIMS</a><a href="#fnref5">↩</a></p></li>
+                                            <li id="fn6"><p>Video demonstrations are provided at: <a href="http://www.mi-creative.eu/tool_migen.html">mi-creative.eu/tool_migen.html</a><a href="#fnref6">↩</a></p></li>
+                                            <li id="fn7"><p><a href="http://haply.co">http://haply.co</a><a href="#fnref7">↩</a></p></li>
+                                        </ol>
+                                    </div>
+
+
+
+                                    <h1 id="bibliography">Bibliography</h1>
+                                    <p>[1] J. O. Smith, “Physical modeling using digital waveguides,” Computer Music Journal, vol. 16, no. 4, pp. 74–91, Winter 1992.
+                                    <p>[2] J.-M. Adrien, “The missing link: Modal synthesis,” in Representations of musical signals. MIT Press, 1991, pp. 269–298.
+                                    <p>[3] C. Cadoz, A. Luciani, and J. L. Florens, “Cordis-anima: a modeling and simulation system for sound and image synthesis: the general formalism,” Computer music journal, vol. 17, no. 1, pp. 19–29, 1993.
+                                    <p>[4] S. Bilbao, Numerical Sound Synthesis: Finite Difference Schemes and Simulation in Musical Acoustics. Chichester, UK: John Wiley and Sons, 2009.
+                                    <p>[5] R. Panneton and N. Atalla, “An efficient finite element scheme for solving the three-dimensional poroelasticity problem in acoustics,” The Journal of the Acoustical Society of America, vol. 101, no. 6, pp. 3287–3298, 1997.
+                                    <p>[6] R. Rabenstein, S. Petrausch, A. Sarti, G. De Sanctis, C. Erkut, and M. Karjalainen, “Blocked-based physical modeling for digital sound synthesis,” IEEE Signal Processing Magazine, vol. 24, no. 2, pp. 42–54, 2007.
+                                    <p>[7] P. Cook and G. Scavone, “The Synthesis Toolkit (stk),” in Proceedings of the International Computer Music Conference (ICMC-99), Beijing, China, 1999.
+                                    <p>[8] N. Castagne and C. Cadoz, “Genesis: a friendly musician-oriented environment for mass-interaction physical modeling,” in ICMC 2002-International Computer Music Conference. MPublishing, 2002, pp. 330– 337.
+                                    <p>[9] B. Bank and J. Chabassier, “Model-based digital pianos: from physics to sound synthesis,” IEEE Signal Processing Magazine, 2018.
+                                    <p>[10] C. Vergez and P. Tisserand, “The brass project, from physical models to virtual musical instruments: Playability issues,” in International Symposium on Computer Music Modeling and Retrieval. Springer, 2005, pp. 24–33.
+                                    <p>[11] S. Bilbao, “A modular percussion synthesis environment,” in Proc. of the 12th Int. Conference on Digital Audio Effects (DAFx-09), 2009.
+                                    <p>[12] S. Bilbao, A. Torin, P. Graham, J. Perry, and G. Delap, “Modular physical modeling synthesis environments on gpu”, in ICMC, 2014.
+                                    <p>[13] C. J. Webb and S. Bilbao, “On the limits of real-time physical modelling synthesis with a modular environment,” in Proceedings of the International Conference on Digital Audio Effects, 2015, p. 65.
+                                    <p>[14] V. Välimäki and T. Takala,“Virtualmusicalinstruments. natural sound using physical models,” Organised Sound, vol. 1, no. 2, pp. 75–86, 1996.
+                                    <p>[15] J. Villeneuve, C. Cadoz, and N. Castagne ́, “Visual representation in genesis as a tool for physical modeling, sound synthesis and musical composition,” in New Interfaces for Musical Expression 2015, 2015, pp. 195–200.
+                                    <p>[16] J. Villeneuve and C. Cadoz, “Understanding and tuning mass-interaction networks through their modal representation,” in 40th International Computer Music Conference/11th Sound and Music Computing Conference, 2014, pp. 1490–1496.
+                                    <p>[17] E. Berdahl, “An introduction to the Synth-A-Modeler compiler: Modular and open-source sound synthesis using physical models,” in Proceedings of the Linux Audio Conference (LAC-12), Stanford, USA, May 2012.
+                                    <p>[18] J. Leonard, N. Castagne ́, C. Cadoz, and A. Luciani, The MSCI Platform: A Framework for the Design and Simulation of Multisensory Virtual Musical Instruments. Cham: Springer International Publishing, 2018, pp. 151– 169.
+                                    <p>[19] D. Overholt, A. Kontogeorgakopoulos, and E. Berdahl, “Hsp v2: Haptic signal processing with extensions for physical modeling,” Haptic Audio and Interaction Design 2010 Program and Papers, pp. 61–62, 2010.
+                                    <p>[20] E. Berdahl and A. Kontogeorgakopoulos, “The firefader: Simple, open-source, and reconfigurable haptic force feedback for musicians,” Computer Music Journal, vol. 37, no. 1, pp. 23–34, 2013.
+                                    <p>[21] J. Leonard, J. Villeneuve, R. Michon, S. Letz, and Y.Orlarey, “Formalizing mass-interaction physical modeling in FAUST,” in Linux Audio Conference (LAC’19). Stanford University, USA, 2019.
+                                    <p>[22] E. Incerti and C. Cadoz, “Mode ́lisations et simulations de structures vibrantes en CORDIS. Mate ́riaux et parame`tres pour la cre ́ation musicale,” in Deuxie`mes Journe ́es d’Informatique musicale, Paris, France, 1995, pp. 173–183.
+                                    <p>[23] A. Kontogeorgakopoulos and C. Cadoz, “Cordis anima physical modeling and simulation system analysis,” in 4th Sound and Music Computing Conference 2007. National and Kapodistrian University of Athens, 2007, pp. 275–282.
+                                    <p>[24] E. Berdahl, “Audio-rate modulation of physical model parameters,” in ICMC, 2014.
+                                    <p>[25] T. Tolonen, V. Valimaki, and M. Karjalainen,“Modeling of tension modulation nonlinearity in plucked strings,” IEEE Transactions on Speech and Audio Processing, vol. 8, no. 3, pp. 300–310, 2000.
+                                    <p>[26] S. Bilbao, A. Torin, and V. Chatziioannou, “Numerical modeling of collisions in musical instruments,” Acta Acustica united with Acustica, vol. 101, no. 1, pp. 155– 173, 2015.
+                                    <p>[27] G. Evangelista and F. Eckerholm, “Player–instrument interaction models for digital waveguide synthesis of guitar: Touch and collisions,” IEEE transactions on audio, speech, and language processing, vol. 18, no. 4, pp. 822–832, 2010.
+                                    <p>[28] J. Leonard and C. Cadoz, “Physical modelling concepts for a collection of multisensory virtual musical instruments,” in Proceedings of the Conference on New Interfaces for Musical (NIME15), Baton Rouge, USA, May 2015.
+
+
+                                </div>
+                                <div class="clear"></div>                                    
+                            </div>                               
+                        </div>
+                    </div>
+                </article>
+                <div class="nav-links"> 
+                    <a class="nav-previous tooltip" data-title="LAC 2019" href="paper_haid19.html">
+                        <span class="fa fa-chevron-left" aria-hidden="true"></span> 
+                    </a> 
+                    <a class="nav-next tooltip" data-title="SMC 2019 (2)" href="paper_smc19_proc.html">
+                        <span class="fa fa-chevron-right" aria-hidden="true"></span> 
+                    </a>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+
+
+
+
+
+
+
+            -->
+
+
+
+            <!-- End Page Content Holder -->            
+        </div>
+
+        <!--Load JavaScript-->
+        <script src="js/jquery.js"></script>
+        <script src='js/jquery.smartmenus.min.js'></script>
+        <script src='js/jquery.prettyPhoto.js'></script>
+        <script src="js/jquery.sticky-kit.min.js"></script>
+        <script src='js/imagesloaded.pkgd.js'></script>
+        <script src='js/jquery.fitvids.js'></script>
+        <script src='js/tipper.js'></script>
+        <script src='js/swiper.min.js'></script>
+        <script src='nav.js'></script>
+        <script src='js/main.js'></script>
+
+        <!--Equation Display-->
+        <script src="js/MathJax/MathJax.js?config=default"></script>
+
+    </body>
+</html>

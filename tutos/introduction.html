@@ -1,0 +1,1042 @@
+<!DOCTYPE HTML>
+<html lang="en-US" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>mi-Creative</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="mi Creative" />
+    <meta name="keywords" content="Physical, Modeling, Mass, Spring, Digital, Arts, Grenoble, Gipsa" />
+    <meta name="author" content="miCreative" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="shortcut icon" href="../images/favicon.ico" />
+    <link href='http://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800%7CPlayfair%20Display:700%7CPT%20Serif:400i' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css"  href='../style.css' />
+
+    <!--Equation Display-->
+    <script src="../js/MathJax/MathJax.js?config=default"></script>
+
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.js"></script>
+    <script src="../js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="single single-post tuto">
+
+<div class="site-wrapper">
+    <div class="doc-loader"></div>
+
+    <!-- Left Part Sidebar -->
+    <div class="menu-left-part">
+
+        <!-- Menu from nav.js -->
+        <nav id="header-main-menu"></nav>
+
+        <!-- Hello text in menu from nav.js -->
+        <div id="header-main-text" class="menu-right-text"></div>
+
+    </div>
+
+    <!-- Right Part Sidebar -->
+    <div id="nav-top" class="menu-right-part">
+        <div class="header-logo">
+            <a href="../index.html">
+                <img src="../images/logo.png" alt="miCreative">
+            </a>
+        </div>
+
+        <div class="toggle-holder">
+            <div id="toggle">
+                <div class="menu-line"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Page Content Holder -->
+    <div id="content" class="site-content">
+        <article>
+            <div class="single-post-header-content content-1170 center-relative">
+
+                <div class="post-wrapper center-relative">
+                    <div class="single-content-wrapper content-960 center-relative">
+                        <h1 class="entry-title">
+                            <div class="post-type">
+                                Tutorial
+                            </div>
+                            Introduction to mass-interaction physical modelling
+                        </h1>
+
+                        <div class="post-info-wrapper">
+                            <div class="sticky-spacer">
+                                <div class="entry-info sections">
+                                    <nav>
+                                        <ul>
+                                            <li class="sec"><a href="#section1" class="active">Background in classical mechanics</a></li>
+                                            <li class="sec"><a href="#section2">Numerical methods for discrete-time physics simulation</a></li>
+                                            <li class="sub"><a href="#section2-sub1">Basic approaches to physically-based sound synthesis</a></li>
+                                            <li class="sub"><a href="#section2-sub2">Illustration by example: an ideal string</a></li>
+                                            <li class="sub"><a href="#section2-sub3">Remarks on finite difference schemes and mass-interaction models</a></li>
+                                            <li class="sub"><a href="#section2-sub4">History</a></li>
+                                            <li class="sec"><a href="#section3">A Basic Mass-Interaction Scheme</a></li>
+                                            <li class="sub"><a href="#section3-sub1">A possible discrete-time scheme for punctual masses</a></li>
+                                            <li class="sub"><a href="#section3-sub2">A possible implementation of a damped spring</a></li>
+                                            <li class="sub"><a href="#section3-sub3">Composing elements: oscillator</a></li>
+                                            <li class="sub"><a href="#section3-sub4">Is this a good scheme?</a></li>
+                                            <li class="sec"><a href="#section4">Model Design and Implementation</a></li>
+                                            <li class="sub"><a href="#section4-sub1">Ground Rules</a></li>
+                                            <li class="sub"><a href="#section4-sub2">A more general block diagram for the harmonic oscillator</a></li>
+                                            <li class="sub"><a href="#section4-sub3">Building Physical Networks: MIMS</a></li>
+                                            <li class="sec"><a href="#section4-sub4">A guided tour based on the oscillator</a></li>
+                                            <li class="sub"><a href="#section4-sub4-sub1">Hammer Time</a></li>
+                                            <li class="sub"><a href="#section4-sub4-sub2">Using gravity</a></li>
+                                            <li class="sub"><a href="#section4-sub4-sub3">Plucking the Oscillator</a></li>
+                                            <li class="sub"><a href="#section4-sub4-sub4">Bowing the Oscillator</a></li>
+                                            <li class="sub"><a href="#section4-sub4-sub5">Non Linear Oscillator</a></li>
+                                            <li class="sec"><a href="#section4-sub5">Building More Complex Models</a></li>
+                                            <li class="sub"><a href="#section4-sub5-sub1">Two Mass Chain</a></li>
+                                            <li class="sub"><a href="#section4-sub5-sub2">Tiny String</a></li>
+                                            <li class="sub"><a href="#section4-sub5-sub3">Some Larger Examples</a></li>
+                                            <li class="sub"><a href="#section4-sub6">Leveraging physical models within Faust</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="entry-content">
+
+
+                            <p>
+                                In this first of a series of online MI tutorials, we’ll be looking into the fundamentals of  mass-interaction physical modelling for sound synthesis. First off, we’ll start with a short introduction placing its history and place within the wider scope of physical modelling techniques, and then we’ll get down into the grizzly algorithms and implementation details. For this, we will be working with the online Mass Interaction Model Scripting tool (MIMS), as well as the Faust environment (specifically the online FaustIDE which will allow us to run all of our models directly from a browser).
+                            </p>
+                            <p>
+                                By the end of this tutorial you should have a decent understanding of mass-interaction principles, know enough to start creating your own physical models with MIMS, be able to test these models using Faust, and even use the great Faust utilities to compile these models into code for almost any target (VST plugin, embedded platforms, Unity, Max, Pure Data, etc) !
+                            </p>
+                            <p>
+                                Without further ado, let’s get started.
+                            </p>
+
+
+
+                            <h2 id="section1" class="section">
+                                Background in classical mechanics
+                            </h2>
+                            <p>
+                                One of the most elementary approaches to solve problems in classical mechanics is to model systems as constructions of basic elements (such as punctual masses) which act upon each other through various interaction forces, such as gravitational forces, springs obeying Hookes Law, and so forth. The system is then solved by combining the partial differential equations (PDEs) governing each element and interaction into a global PDE system.
+                            </p>
+                            <div class="image">
+                                <img src="./introduction_images/01_mecha_TMP.png"/>
+                            </div>
+                            <p class="legend">
+                                Two masses linked by springs, between two fixed points
+                            </p>
+                            <p>
+                                In simple cases like the above, systems may be solved exactly to obtain the equations of motion for a given mass of the system. However, for more complex scenarios, systems will generally be solved using numerical methods.
+                            </p>
+
+
+
+
+
+
+                            <h2 id="section2" class="section">
+                                Numerical methods for discrete-time physics simulation
+                            </h2>
+
+                            <p>
+                                There are a panoply of ways in which computers can be used to model and simulate physical systems: finite difference schemes, finite element analysis, lumped methods (such as mass-interaction systems)... in the realm of sound synthesis, we can also mention methods more grounded in signal processing, such as digital waveguides, wave digital filters, or modal synthesis techniques.
+                            </p>
+
+                            <div class="image">
+                                <img src="./introduction_images/mesh_propagation.gif"/>
+                            </div>
+                            <p>
+                                In musical acoustics, we are often interested in simulating physical structures more complex than the simple mechanical example presented above: we might want to approximate a string, a plate, or even a 3D acoustical propagation space. This brings us to some key questions:
+                            </p>
+                            <ul>
+                                <li>
+                                    Do we still want to describe our physical system as a construction of basic physical components, or is it preferable to mathematically express a more complex “integrated” system?
+                                </li>
+                                <li>
+                                    A consequence and follow-up question stemming from the above is : where do we put the line between real (i.e. continuous time) physics and virtual (i.e. discrete time) simulation: in other words, do we formulate a physical problem formally, then solve it numerically, or do we create a discrete-time paradigm in which we can directly express physical constructions ?                                </li>
+                            </ul>
+
+
+                            <h3 id="section2-sub1" class="section">
+                                Basic approaches to physically-based sound synthesis
+                            </h3>
+                            <p>
+                                Different paradigms for physically-based sound synthesis approach these considerations from different angles. For instance:
+                            </p>
+
+                            <ul>
+                                <li>
+                                    In modal synthesis, we formulate mathematical models of (generally linear) physical systems in order to obtain their modal decomposition into spectral components (an assembly of sinusoidal vibration modes with specific frequencies and damping times. Once we have this, we can simply synthesize the sound of the model by means of additive synthesis.
+                                </li>
+                                <li>
+                                    In waveguide methods, we decompose physical motion into travelling waves in opposite directions, linked together by scattering junctions (such as reflexions at the bridge of a string, contact with an obstacle in which some waves are reflected backwards and others are transmitted forwards, etc.).
+                                </li>
+                                <li>
+                                    In finite difference numerical methods, we formulate the mathematics for a given problem. Once we can express the maths of the continuous time system, we can figure out ways to discretise the system so that it can be solved numerically.
+                                </li>
+                                <li>
+                                    In mass-interaction modelling (often referred to as mass-spring), the idea is to build systems using discretised approximations of elementary physical elements that can be assembled to form complex networks: the physical behaviour emerges from the designed physical network.
+                                </li>
+                            </ul>
+
+                            <h3 id="section2-sub2" class="section">
+                                Illustration by example: an ideal string
+                            </h3>
+                            <p>
+                                To ground this in a simple concrete example, let’s say we wanted to model and simulated a simple ideal string:
+                            </p>
+
+                            <ul>
+                                <li>
+                                    Using modal synthesis we would calculate the modes then use a resonator bank to synthesise the sound.
+                                </li>
+                                <li>
+                                    Using waveguides we would implement some delay lines with appropriate lengths, boundaries and junctions for input.
+                                </li>
+                                <li>
+                                    Using the finite difference approach, we would express equations for the continuous time system using the 1D wave equation with given boundary conditions, then discretise it using a spatial grid (decomposing continuous matter into discrete set of grid points) and a temporal update scheme (allowing to calculate the dynamics of the system from a given initial state).
+                                </li>
+                                <li>
+                                    Using the mass-interaction approach, we would consider the string as an assembly of punctual masses connected by springs, and then use the discrete equations for each of them to update the system over time.
+                                </li>
+                            </ul>
+
+                            <h3 id="section2-sub3" class="section">
+                                Remarks on finite difference schemes and mass-interaction models:
+                            </h3>
+                            <p>
+                                Finite Difference methods rely on mathematical formulations of (possibly complex) physical systems. This integration gives leverage for a variety of numerical resolution schemes that may be explicit (future values may be calculated only based on current (and possibly previous) values) or implicit (requiring iterative solvers to calculate future values). The choice of a discretisation scheme affects both numerical stability and the amount of discrepancy (such as numerical dispersion) between the discrete-time system and the continuous time model.
+                            </p>
+                            <p>
+                                However, these methods are generally only semi-modular in that they allow to connect various macro structures together (such as strings, plates, beams) through interactions. There is no simple way to create a structure that has not been mathematically formalised beforehand, and for some irregular or inhomogeneous physical constructions this might well be impossible.
+                            </p>
+                            <br>
+                            <p>
+                                Mass-interaction schemes are more limited in terms of discretisation schemes, due to their modularity: since all systems are broken down into discrete-time mass algorithms and discrete-time interaction algorithms, discretisation schemes are rather limited. On the other hand, this modularity means that any kind of model can be assembled from the ground up.
+                            </p>
+
+                            <p class="note">
+                                Note: there are several cases (notably ideal linear strings and meshes) in which lumped mass-interaction methods and finite difference schemes yield exactly the same result, with grid points being equivalent to punctual masses. For more on this, we refer readers to the first chapters of Stefan Bilbao’s book <a href="https://ccrma.stanford.edu/~bilbao/nssold/booktoplast">Numerical Sound Synthesis</a>.
+                            </p>
+
+
+                            <h3 id="section2-sub4" class="section">
+                                History of mass-interaction physics
+                            </h3>
+                            <ul>
+                                <li>
+                                    <a href="https://www.jstor.org/stable/3680567" target="_blank">CORDIS-ANIMA</a> can be considered as the original mass-interaction physical modelling formalism, coming into existence in its prototypical form at ACROE as soon as the early eighties, including pioneering views as to the potential of <a href="https://hal.archives-ouvertes.fr/file/index/docid/878815/filename/CLF81_Revue_Acoustique.pdf" target="_blank">coupling with force-feedback technologies</a>. It forms the basis for Mimesis, an environment for 3D physical modelling destined for animation, and <a href="http://www.acroe-ica.org/en/products/software/genesis" target="_blank">Genesis</a>, an environment for physical modelling sound synthesis based on 1D mass-interaction networks - both of which are off-line modelling and simulation tools providing advanced user interfaces for designing complex mass-interaction physical models.
+                                </li>
+                                <li>
+                                    Following years saw the emergence of several direct variations on Cordis-Anima, providing open implementations for sound synthesis in the form of <a href="https://www.cambridge.org/core/journals/organised-sound/article/tao-a-physical-modelling-system-and-related-issues/140FB30D474F0CF043AAA5792F00BB21" target="_blank">Tao</a>, <a href="http://drpichon.free.fr/ch/IMG/pdf/2004_pmpd_icmc.pdf" target="_blank">Pmpd's</a> integration into Pure Data, or <a href="https://www.researchgate.net/profile/David_Howard7/publication/268295183_Cymatic_Restoring_the_Physical_Manifestation_of_Digital_Sound_Using_Haptic_Interfaces_to_Control_a_New_Computer_Based_Musical_Instrument/links/54c1e4380cf2d03405c5da4b/Cymatic-Restoring-the-Physical-Manifestation-of-Digital-Sound-Using-Haptic-Interfaces-to-Control-a-New-Computer-Based-Musical-Instrument.pdf" target="_blank">Cymatic</a>, a tool allowing for model design and real-time force-feedback interaction.
+                                </li>
+                                <li>
+                                    A third wave of mass-interaction tools have appeared in the last decade, driven by open-source initiatives: <a href="http://www.alexandros-k.com/media/HAID2010.pdf" target="_blank">HSP</a> (haptic signal processing) provided a first means for audio rate simulation in Max/MSP, whereas <a href="http://lac.linuxaudio.org/2012/papers/34.pdf" target="_blank">Synth-a-modeler</a> provides a first Faust-based engine allowing compilation for a variety of targets and platforms. It has since been extended with a modelling user interface and bridges allowing for interconnection between mass-interaction, waveguide and modal synthesis elements. And in the last two years, we can add <a href="http://www.mi-creative.eu/paper_lac19.html" target="_blank">mi-faust</a> (a different take on mass-interaction models in Faust, and the basis of this tutorial material), <a href="http://www.mi-creative.eu/paper_smc19_proc.html" target="_blank">miPhysics</a> (Java library for visual audio and haptic 3D mass-interaction models) and <a href="http://www.mi-creative.eu/paper_smc19_gen.html" target="_blank">mi-gen~</a> (an efficient mass-interaction framework allowing to compile models into gen~ code).
+                                </li>
+                            </ul>
+
+
+
+
+
+
+
+                            <h2 id="section3" class="section">
+                                A Basic Mass-Interaction Scheme
+                            </h2>
+
+                            <p>
+                                So, we’ve established that mass-interaction schemes form discrete time algorithms for elementary physical components of two types: masses and interactions. As you probably know, many different numerical approximations can be used to integrate PDEs, from simple Euler methods, to higher order integrators such as 4th order Runge-Kutta, etc.
+                            </p>
+                            <p>
+                                For an extensive review of numerical methods for sound synthesis, we refer you to Stefan Bilbao’s book, and Valimäki et al.’s state of the art paper (provide links).
+                            </p>
+
+
+                            <h3 id="section3-sub1" class="section">
+                                A possible discrete-time scheme for punctual masses
+                            </h3>
+                            <p>
+                                The motion equation for a continuous time mass is given by Newton’s second law:
+                            </p>
+                            <div class="equation">
+                                \begin{equation}
+                                \label{eq:fma}
+                                \begin{aligned}
+                                f = ma = m \frac{d^2 x}{dt^2}
+                                \end{aligned}
+                                \end{equation}
+                            </div>
+                            <p>
+                                Where <span class="math"><em>f</em></span> is the force applied to the mass, <span class="math"><em>m</em></span> is its inertia <span class="math"><em>a</em></span> its acceleration, and <span class="math"><em>x</em></span> its position. Applying the second-order central difference scheme, with the sampling interval noted <span class="math">Δ<em>T</em></span>, a discrete equation of the mass can be formulated as follows:
+                            </p>
+                            <div class="equation">
+                                \begin{equation}
+                                \label{eq:centered}
+                                \begin{aligned}
+                                f(t) = m.\frac{x(t\!+\!\Delta{T}) - 2 x (t) + x(t\!-\!\Delta{T}) }{\Delta{T}^2}
+                                \end{aligned}
+                                \end{equation}
+                            </div>
+                            <p>
+                                Equation (2) can be normalized to unity, and rearranged in order to express the mass’ position update scheme (discrete-time positions and forces are noted <span class="math"><em>X</em></span> and <span class="math"><em>F</em></span>) :
+                            </p>
+                            <div class="equation">
+                                \begin{equation}
+                                \label{eq:discretetimemass}
+                                \begin{aligned}
+                                X_{(n+1)} = 2 X_{(n)}- X_{(n-1)} + \frac{F_{(n)}}{M}
+                                \end{aligned}
+                                \end{equation}
+                            </div>
+                            <p>
+                                With M, the discrete time inertial parameter defined as :
+                            </p>
+                            <div class="equation">
+                                \begin{equation}
+                                \label{eq:Mm}
+                                \begin{aligned}
+                                M =\frac{m}{\Delta{T}^2}
+                                \end{aligned}
+                                \end{equation}
+                            </div>
+                            <p>
+                                Hence, the basic discrete-time mass module produces new position data based on its current position, previous position, the “discrete-time” mass parameter <span class="math"><em>M</em></span>, and the sum of forces applied to the mass from the previous interaction computation step.
+                            </p>
+                            <p>
+                                The initial position <span class="math"><em>X</em><sub>(0)</sub></span>, delayed initial position <span class="math"><em>X</em><sub>( − 1)</sub></span> (which infers initial velocity) and initial force <span class="math"><em>F</em><sub>(0)</sub></span> must be supplied at the start of the computation.
+                            </p>
+
+
+
+
+                            <h3 id="section3-sub1-sub1" class="section_off">
+                                Implementation in Faust
+                            </h3>
+
+                            <p class="note">
+                                <strong>FAUST</strong> (Functional Audio Streams) is, as the name suggests, a functional programming language for audio or any kind of digital signal processing. Its syntax allows expressing signal processing algorithms efficiently, which are transformed into functional block diagrams.<br />
+                                Atop of the language, FAUST allows exporting algorithms to virtually any target language or platform, so it’s a great tool for highly cross-platform audio development.
+                                And to finish things off, the FAUST team are at the forefront of audio technologies on the web: you can write, compile and test FAUST code directly on your browser with a dedicated IDE !
+                                <br><br />
+                                For more information: <a href="https://faust.grame.fr/" target="_blank">https://faust.grame.fr/</a> <br />
+                                Online IDE: <a href="https://faustide.grame.fr/" target="_blank">https://faustide.grame.fr/</a> <br />
+                                Faust documentation: <a href="https://faustdoc.grame.fr/" target="_blank">https://faustdoc.grame.fr/</a> <br />
+                                Faust mass-interaction library documentation: <a href="https://faustlibraries.grame.fr/libs/mi/" target="_blank">https://faustlibraries.grame.fr/libs/mi/</a>
+
+                            </p>
+
+<div class="faust">
+                            <pre><code>
+mass(m, grav, x0, xr0) = equation
+with{
+  A = 2;
+  B = -1;
+  C = 1/m;
+  equation = x
+    letrec{
+        'x = A*(x : initState(x0))
+           + B*(x' : initState((xr0,x0)))
+           + (_-grav)*(C);
+    };
+};
+                            </code></pre>
+</div>
+
+
+                            <div class="image">
+                                <img src="./introduction_images/03_massDiagram.png"/>
+                            </div>
+                            <p class="legend">
+                                Block diagram of the mass algorithm
+                            </p>
+
+
+                            <h3 id="section3-sub2" class="section">
+                                A possible implementation of a damped spring
+                            </h3>
+                            <p>The elastic force applied by a linear spring with a stiffness <span class="math"><em>k</em></span> and a resting length of <span class="math"><em>l</em><sub>0</sub> = 0</span> connecting a mass <span class="math"><em>m</em>2</span> at the position <span class="math"><em>x</em><sub>2</sub></span> to a mass <span class="math"><em>m</em>1</span> at the position <span class="math"><em>x</em><sub>1</sub></span> is given by Hookes law:</p>
+                            <div class="equation">
+                                \begin{equation}\label{eq:HookeSpring}
+                                \begin{aligned}
+                                f_{s{1\rightarrow2}} = -k.(x_2 - x_1)
+                                \end{aligned}
+                                \end{equation}
+                            </div>
+                            <p>The exact equivalent of this equation in discrete time is :</p>
+                            <div class="equation">
+                                \begin{equation}\label{eq:discreteSpring2}
+                                \begin{aligned}
+                                F_{s{1\rightarrow2}(n)} = -K.(X_{2(n)} - X_{1(n)})
+                                \end{aligned}
+                                \end{equation}
+                            </div>
+                            <p>Where the discrete-time stiffness parameter <span class="math"><em>K</em> = <em>k</em></span>. The friction force applied by a linear damper with a damping parameter <span class="math"><em>z</em></span> connecting the same two masses is :</p>
+                            <div class="equation">
+                                \begin{equation}\label{eq:Damper}
+                                \begin{aligned}
+                                f_{d{1\rightarrow2}} = -z.\frac{d (x_2\! -\! x_1)}{dt}
+                                \end{aligned}
+                                \end{equation}
+                            </div>
+                            <p>Using the Backward Euler difference scheme, the frictional force can be formulated in discrete-time as :</p>
+                            <div class="equation">
+                                \begin{equation}\label{eq:DiscreteDamper}
+                                \begin{aligned}
+                                f_{d{1\rightarrow2}}(t) = -z .\frac{(x_2(t)\!  -\!  x_1(t)) - (x_2(t\! -\! \Delta{T}) - x_1(t\! -\! \Delta{T}))}{\Delta{T}}
+                                \end{aligned}
+                                \end{equation}
+                            </div>
+                            <p>Which after normalization becomes :</p>
+                            <div class="equation">
+                                \begin{equation}\label{eq:normDamper}
+                                \begin{aligned}
+                                F_{d{1\rightarrow2}(n)} = -Z .((X_{2(n)}\!-\!X_{2(n-1)})\!-\!(X_{1(n)} - X_{1(n-1)}))
+                                \end{aligned}
+                                \end{equation}
+                            </div>
+                            <p>With the discrete time inertial parameter <span class="math"><em>Z</em></span> defined as :</p>
+                            <div class="equation">
+                                \begin{equation}\label{eq:discreteDampParam}
+                                \begin{aligned}
+                                Z =\frac{z}{\Delta{T}}
+                                \end{aligned}
+                                \end{equation}
+                            </div>
+                            <p>The global equation of the force applied by the dampened spring is composed of <span class="math"><em>F</em><sub><em>s</em></sub></span> and <span class="math"><em>F</em><sub><em>d</em></sub></span> :</p>
+                            <div class="equation">
+                                \begin{equation}\label{eq:springDampAll}
+                                \begin{aligned}
+                                F_{(n)} =&amp; -K.(X_{2(n)}\!-\!X_{1(n)})\\
+                                &amp; -Z .((X_{2(n)}\!-\!X_{2(n-1)}) - (X_{1(n)}\!-\!X_{1(n-1)}))
+                                \end{aligned}
+                                \end{equation}
+                            </div>
+                            <p>It is applied symmetrically to each mass (Newton’s third law):</p>
+                            <div class="equation">
+                                \begin{equation}\label{eq:springFrcApply}
+                                \begin{aligned}
+                                F_{{2\rightarrow1}(n)} &amp;= - F_{(n)} \\
+                                F_{{1\rightarrow2}(n)} &amp;= + F_{(n)}
+                                \end{aligned}
+                                \end{equation}
+                            </div>
+
+
+
+
+                            <h3 id="section3-sub2-sub1" class="section_off">
+                                Implementation in Faust
+                            </h3>
+
+                            <div class="faust">
+                            <pre><code>
+springDamper(k, z, x1r0, x2r0, x1, x2) = k*deltapos + z*deltavel <: *(-1),_
+with{
+    deltapos = x1-x2;
+    deltavel = (x1 - x1' : initState(x1r0)) - (x2 - x2' : initState(x2r0));
+};
+                            </code></pre>
+                            </div>
+
+                            <p class="legend">
+                                Faust implementation of the spring damper algorithm
+                            </p>
+                            <div class="image">
+                                <img src="./introduction_images/04_springDamper.png"/>
+                                <img src="./introduction_images/05_deltaPos.png" style="max-width: 40%"/>
+                                <img src="./introduction_images/06_deltaVel.png" style="max-width: 90%">
+
+                            </div>
+                            <p class="legend">
+                                Block diagram of the spring damper algorithm
+                            </p>
+
+
+
+
+
+
+
+
+                            <h3 id="section3-sub3" class="section">
+                                Composing elements: oscillator
+                            </h3>
+                            <p>
+                                A linear harmonic oscillator is obtained by combining equations (3) and (11), in the case where <span class="math"><em>X</em><sub>1</sub></span> is a fixed point set to <span class="math"><em>X</em><sub>1(<em>n</em>)</sub> = 0</span>, <span class="math"><em>n</em> ∈ Z</span>. This results in :
+                            </p>
+                            <div class="equation">
+                                \begin{equation}\label{eq:discreteOsc}
+                                \begin{aligned}
+                                X_{(n+1)} = \Big(2\!-\!\frac{K\!+\!Z}{M}\Big).X_{(n)} + \Big(\frac{Z}{M}\!-\!1\Big).X_{(n-1)} + \frac{F_{(n)}}{M}
+                                \end{aligned}
+                                \end{equation}
+                            </div>
+                            <p>
+                                Put it all together and voilà. We have a discrete time oscillator.
+                            </p>
+                            <p class="note">
+                                We invite you to check <a href="../paper_smc19_gen.html">SMC 2019 paper</a> about stability considerations.
+                            </p>
+
+
+                            <h3 id="section3-sub3-sub1" class="section_off">
+                                How this looks in Faust
+                            </h3>
+                            <div class="image">
+                                <img src="./introduction_images/06_oscillatorLoop.png"/>
+                            </div>
+                            <p class="legend">
+                                Block diagram of the coupled ground, mass and spring damper system.
+                            </p>
+
+
+
+
+                            <h3 id="section3-sub4" class="section">
+                                Is this a good scheme?
+                            </h3>
+                            <p>
+                                The discretisation scheme developed here is explicit, not unconditionally stable, presents some numerical dispersion and frequency warping… but it is simple and efficient, and it is energy conserving, which is a very important property for simulated acoustical systems, which are generally stiff and rather undamped.
+                            </p>
+                            <p>
+                                As a comparison point: many computer graphics mass-spring approaches aim to obtain numerical stability at the lowest possible sampling rate, and are not too concerned with overdamping often induced by implicit integration schemes (Keyser and House’s book <a href="https://www.routledge.com/Physically-Based-Modeling-and-Animation/House-Keyser/p/book/9781482234602">Foundations of Physically-based Modeling and Animation</a> is a great resource on this topic).
+                            </p>
+                            <p>
+                                If you would like to go deeper into mass-interaction discretisation schemes and their properties, dive into these papers by Dan Morgan and Sanzheng Qiao: <a href="https://dl.acm.org/doi/pdf/10.1145/1370256.1370266">Accuracy and stability in mass-spring systems for sound synthesis</a> and <a href="https://link.springer.com/content/pdf/10.1155/2009/947823.pdf">Analysis of damped mass-spring systems for sound synthesis</a>. Alexandros K’s paper <a href="https://hal.archives-ouvertes.fr/file/index/docid/439313/filename/KoC_Conf_SMC.pdf">CORDIS-ANIMA System Analysis</a> is also a good entry point.
+                            </p>
+
+
+
+                            <h2 id="section4" class="section">
+                                Model Design and Implementation
+                            </h2>
+                            <h3 id="section4-sub1" class="section">
+                                Ground Rules
+                            </h3>
+                            <p>
+                                To recap briefly, mass-interactions models are topological networks build with very simple connexion rules:
+                            </p>
+                            <ul>
+                                <li>
+                                    Masses are nodes of the network. They receive forces from connected interactions and output their position to the interactions.
+                                </li>
+                                <li>
+                                    An interaction connects a mass to another mass through a certain interaction force. Interactions are calculated by calculating a force according to the positions and/or velocities of the two connected masses, and output equal and opposite forces to both masses.
+                                </li>
+                                <li>
+                                    Any number of interactions may connect to a mass. However, an interaction may only connect two physical elements together.
+                                </li>
+                            </ul>
+                            <p>
+                                The most extensive theoretical description of modular mass-interaction formalism is given in the founding CORDIS-ANIMA <a href="https://www.jstor.org/stable/3680567">article</a>. Although implementations have varied after this, core concepts remain very similar.
+                            </p>
+
+                            <h3 id="section4-sub2" class="section">
+                                A more general block diagram for the harmonic oscillator
+                            </h3>
+                            <p>
+                                The above oscillator is correct in terms of signal routing, but we can’t do much with it as it is totally hermetic and has no inputs and no outputs. To solve this, we can create a slightly more complex and general routing for the block diagram. It contains routing functions that pass mass positions to interactions, and interaction forces back to masses, and passes any input and output functions through.
+                            </p>
+
+                            <div class="faust">
+                            <pre><code>
+in1 = button("Frc Input 1"): ba.impulsify * 0.25;
+OutGain = 1;
+model = (
+    mass(1., 0, 0., 0.),
+    ground(0.),
+    par(i, nbFrcIn,_):
+    RoutingMassToLink ,
+    par(i, nbFrcIn,_):
+    springDamper(0.1, 0.0003, 0., 0.),
+    par(i, nbOut+nbFrcIn, _):
+    RoutingLinkToMass
+)~par(i, nbMass, _):
+par(i, nbMass, !), par(i, nbOut , _)
+with{
+    RoutingMassToLink(m0, m1) = /* routed positions */ m1, m0, /* outputs */ m0;
+    RoutingLinkToMass(l0_f1, l0_f2, p_out1, f_in1) = /* routed forces  */ f_in1 + l0_f2, l0_f1, /* pass-through */ p_out1;
+    nbMass = 2;
+    nbFrcIn = 1;
+    nbOut = 1;
+};
+process = in1 : model:*(OutGain);
+                            </code></pre>
+                            </div>
+
+                            <div class="image">
+                                <img src="./introduction_images/07_oscillatorRouting.png"/>
+                            </div>
+                            <p class="legend">
+                                A slightly more general block diagram for the harmonic oscillator.
+                            </p>
+
+
+
+                            <h3 id="section4-sub3" class="section">
+                                Building Physical Networks: MIMS
+                            </h3>
+                            <p class="legend">
+                                MIMS (Mass Interaction Model Scripter) is a scripting tool that allows expressing mass-interaction models in the simplest possible manner, by describing the topological network abstracted from any implementation specificities. It allows to:
+                            </p>
+                            <ul>
+                                <li>
+                                    Create and connect physical elements
+                                </li>
+                                <li>
+                                    Define labelled parameters that can be used for physical parameters.
+                                </li>
+                                <li>
+                                    Create position and/or force inputs and outputs allowing to interact with the physical model.
+                                </li>
+                            </ul>
+
+                            <p class="note" style="text-align: center">
+                                An online version of MIMS is available here:
+                                <br>
+                                <a href="http://mi-creative.eu/tool_MIMS-Online_V2.html" style="font-weight: bold;">MIMS Online</a>
+                                <br>
+                                It allows generating model code for Faust and gen~ (a low level DSP engine in Max/MSP).
+
+                            </p>
+
+
+
+
+
+                            <h2 id="section4-sub4" class="section">
+                                A guided tour based on the oscillator
+                            </h2>
+                            <p>
+                                Now that we have a relatively clear picture of how basic mass-interaction models are built and how elements can be expressed in Faust, let’s get to some practical work:
+                            </p>
+                            <p>
+                                Below, you will find three codes for the harmonic oscillator. Each one is expressed in the form of a MIMS model script (.mdl file) and a Faust implementation, partially generated from the MIMS description.
+                            </p>
+
+                            <p class="step">
+                                Open the three variations of the harmonic oscillator
+                            </p>
+                            <p class="step">
+                                All three models are equivalent, and only differ by use they make of integrated elements (such as the oscillator, or spring-damper). Explore the code and block diagrams to understand what differs between them.
+                            </p>
+
+                            <!-- Code & Button to Faust -->
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content" id="harmonicOscillator"><div class="code" ></div></div><a class="link" href="javascript:;" target="editor"><button type="button" class="mi-button" style="float: right;">Try in FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a><br><br>
+
+
+                            <!-- Code & Button to Faust -->
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content" id="harmonicOscillator2"><div class="code" ></div></div><a class="link" href="javascript:;" target="editor"><button type="button" class="mi-button" style="float: right;">Try in FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a><br><br>
+
+
+                            <!-- Code & Button to Faust -->
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content" id="harmonicOscillator3"><div class="code" ></div></div><a class="link" href="javascript:;" target="editor"><button type="button" class="mi-button" style="float: right;">Try in FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a><br><br>
+
+
+                            <p>
+                                If we want some real time control over the models that we create, we can use labelled parameters to specify module properties. This way, we can modify the parameters of several modules at the same time, hook a parameter up to some user interface controls, etc.
+                            </p>
+                            <p>
+                                In MIMS scripts this is done via the param and audioParam primitives, which allow defining parameters at a control rate or at audio signal rate. There is no real actual difference between control rate and audio rate parameters in Faust, as all signals run at audio rate.
+                            </p>
+
+                            <p class="step">
+                                Open the Faust codes below to familiarize yourself with the way parameters are defined and can be controlled or hooked up to UI elements.
+                            </p>
+
+                            <!-- Code & Button to Faust -->
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content" id="01_ParamControl"><div class="code" ></div></div><a class="link" href="javascript:;" target="editor"><button type="button" class="mi-button" style="float: right;">Try in FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a><br><br>
+
+                            <!-- Code & Button to Faust -->
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content" id="02_AudioParamControl"><div class="code" ></div></div><a class="link" href="javascript:;" target="editor"><button type="button" class="mi-button" style="float: right;">Try in FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a><br><br>
+
+                            <p>
+                                So, now we have an oscillator that we can control by sending force impulses to it and changing its physical properties, but where can we go from here? Let’s stick with the oscillator as the simplest vibrating object, and explore other ways of interacting with it.
+                            </p>
+
+                            <p class="note">
+                                Note: listening to a position of a mass is like placing a contact microphone on a table: although you will get sound produced by the motion of the table, you it will not sound the same as the table’s vibration creating acoustic pressure waves through a medium (air), bouncing of surfaces (reflexions), some combination of which makes its way to your ears… but more complex listening situations are a topic for another day.
+                            </p>
+
+                            <h3 id="section4-sub4-sub1" class="section">
+                                Hammer Time
+                            </h3>
+                            <p>
+                                If we want some more interesting excitation than just sending bolts of force to the oscillator, we’ll have to build some things around it, for instance a hammer.
+                            </p>
+                            <p>
+                                A hammer can be as simple as creating another mass in the system, initially placed above or below  the oscillator and configured with an initial velocity, and adding a contact interaction between the hammer and the oscillator (a viscoelastic interaction that is active when the modules are interpenetrating).
+                            </p>
+                            <p>
+                                If we want to be able to hit the oscillator several times, the above won’t quite do: the hammer will strike once, then be sent flying, never to come back. We can solve this by attaching the hammer to a fixed point via a slack spring damper, configured near critical damping. Sending force impulses to the hammer will launch it towards the oscillator, and the critically damped spring system will bring the hammer gently back to its resting position.
+                            </p>
+
+                            <p class="step">
+                                Open the hammer example code below.
+                            </p>
+                            <p class="step">
+                                Using the Faust IDE plotting tools, we can observe the contact between the hammer and the oscillator.
+                            </p>
+                            <p class="step">
+                                Try changing the contact parameters (stiffness and damping) to see how the behaviour changes.
+                            </p>
+                            <p class="step">
+                                You can also change the properties of the hammer spring system to experiment with rebounds.
+                            </p>
+
+                            <!-- Code & Button to Faust -->
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content" id="03_HammerTime"><div class="code" ></div></div><a class="link" href="javascript:;" target="editor"><button type="button" class="mi-button" style="float: right;">Try in FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a><br><br>
+
+                            <div class="image">
+                                <img src="./introduction_images/08_Hammer_TMP.png" style="max-width: 60%; padding-top: 20px"/>
+                            </div>
+
+                            <h3 id="section4-sub4-sub2" class="section">
+                                Using gravity
+                            </h3>
+                            <p>
+                                Another way that we could use the hammer is to set it up with some gravity, so that it falls down onto the oscillator, bounces for a while until it stops:
+                            </p>
+                            <p class="step">
+                                Open the gravity example code below.
+                            </p>
+                            <p class="step">
+                                Experiment with some parameters: the gravity value, stiffness and damping of the contact between hammer and oscillator, etc.
+                            </p>
+
+                            <div class="image">
+                                <img src="./introduction_images/09_Gravity_TMP.png" style="max-width: 60%; padding-top: 20px"/>
+                            </div>
+
+                            <!-- Code & Button to Faust -->
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content" id="04_Gravity"><div class="code" ></div></div><a class="link" href="javascript:;" target="editor"><button type="button" class="mi-button" style="float: right;">Try in FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a><br><br>
+                            <p>
+                                Now, instead of inputting forces into our physical system, we are going to create a special type of mass, one whose position can be controlled from the outside world.
+                            </p>
+
+                            <h3 id="section4-sub4-sub3" class="section">
+                                Plucking the Oscillator
+                            </h3>
+                            <p>
+                                A “pluck” interaction may be constructed as a piecewise linear elastic interaction between two masses: upon contact, the masses push away from each other, until reaching a tipping point at which the plucking mass “moves through” the other mass.
+                                Note that in order to be able to pluck either upwards or downwards, the non linear function must be symmetrical.
+                            </p>
+                            <p class="step">
+                                Open the plucked oscillator example below.
+                            </p>
+                            <p class="step">
+                                Move the position controlled mass around with the slider: can you see when the mass presses into the oscillator, and when it is released? Use the plot tools in Faust IDE to visualise both the picking mass and the oscillator
+                            </p>
+                            <div class="image">
+                                <img src="./introduction_images/11_pluckModel_TMP.png" style="max-width: 60%; padding-top: 20px"/>
+                            </div>
+                            <div class="image">
+                                <img src="./introduction_images/10_pluckInter.png" style="max-width: 50%; padding-top: 20px; padding-bottom: 20px"/>
+                            </div>
+
+
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content" id="05_PluckedOscillator"><div class="code" ></div></div><a class="link" href="javascript:;" target="editor"><button type="button" class="mi-button" style="float: right;">Try in FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a><br><br>
+
+                            <h3 id="section4-sub4-sub4" class="section">
+                                Bowing the Oscillator
+                            </h3>
+                            <p>
+                                Similarly, non-linear viscous interactions can be designed to model friction between physical elements (this is covered extensively in theoretical musical acoustics, such as in Rossing and Fletcher’s book). Up to a given threshold in relative velocity, a sticking force tends to make the masses drag each other along. Past the tipping point, the masses slide until reaching the sticky section of the interaction again. This is called stick-slip motion.
+                            </p>
+                            <p class="step">
+                                Open the bowed oscillator example below.
+                            </p>
+                            <p class="step">
+                                Move the position controlled mass around with the slider: isn’t this the coolest squeaky sound that you’ve ever heard?
+                            </p>
+                            <p class="step">
+                                Play around with the bowing speed. The resulting pitch varies dynamically, since the bow/oscillator combination is a nonlinear system
+                            </p>
+
+                            <div class="image">
+                                <img src="./introduction_images/11_bowModel_TMP.png" style="max-width: 60%; padding-top: 20px"/>
+                            </div>
+
+                            <div class="image">
+                                <img src="./introduction_images/12_bowInter.png" style="max-width: 50%; padding-top: 20px; padding-bottom: 20px"/>
+                            </div>
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content" id="06_BowedOscillator"><div class="code" ></div></div><a class="link" href="javascript:;" target="editor"><button type="button" class="mi-button" style="float: right;">Try in FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a><br><br>
+
+                            <h3 id="section4-sub4-sub5" class="section">
+                                Non Linear Oscillator
+                            </h3>
+                            <p>
+                                Of course, the oscillator itself may display some non-linear properties, for instance by implementing springs that are slightly more complex and whose stiffness depends on their elongation.
+                            </p>
+                            <p class="step">
+                                Open the nonlinear oscillator example below.
+                            </p>
+                            <p class="step">
+                                Use the slider to change the scale of the nonlinear term in the oscillator’s spring.
+                            </p>
+                            <p class="step">
+                                Can you hear the pitch glide when striking the oscillator? Try hitting it harder, softer, changing the coefficients of the nonlinear spring, etc.
+                            </p>
+
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content" id="07_NonLinearOscillator"><div class="code" ></div></div><a class="link" href="javascript:;" target="editor"><button type="button" class="mi-button" style="float: right;">Try in FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a><br><br>
+
+                            <h2 id="section4-sub5" class="section">
+                                Building More Complex Models
+                            </h2>
+                            <h3 id="section4-sub5-sub1" class="section">
+                                Two Mass Chain
+                            </h3>
+                            <p>
+                                Moving on to bigger things, let's build a model slightly more complex than the oscillator: a chain with two masses and a fixed point:
+                            </p>
+                            <p class="step">
+                                Open the  2 mass chain example below.
+                            </p>
+                            <p class="step">
+                                Listen to the sound, have a glimpse at the spectrogram: how does the second mass contribute to the system?
+                            </p>
+                            <p class="step">
+                                Open up the MIMS online scripter and try out some other constructions: what happens with three chained masses? Or when inhomogeneous parameters are used?
+                            </p>
+
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content" id="08_TwoMassChain"><div class="code" ></div></div><a class="link" href="javascript:;" target="editor"><button type="button" class="mi-button" style="float: right;">Try in FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a><br><br>
+
+                            <h3 id="section4-sub5-sub2" class="section">
+                                Tiny String
+                            </h3>
+                            <p>
+                                Continuing on this path, we can build a short string, composed of 8 masses, two fixed points and spring-dampers.
+                            </p>
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content" id="09_TinyString"><div class="code" ></div></div><a class="link" href="javascript:;" target="editor"><button type="button" class="mi-button" style="float: right;">Try in FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a><br><br>
+                            <p>
+                                If we look at the block diagram and the routing functions: it’s beginning to get quite hairy… this is why generation tools such as MIMS are vital for designing more complex models.
+                            </p>
+
+
+                            <h3 id="section4-sub5-sub3" class="section">
+                                Some Larger Examples
+                            </h3>
+                            <p>
+                                The examples below show some larger constructions that are possible with tools like MIMS, starting to sound like plausible physical vibrating structures. Have a look through all of them, and test them out in the Faust IDE:
+                            </p>
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content" id="10_PluckedString"><div class="code" ></div></div><a class="link" href="javascript:;" target="editor"><button type="button" class="mi-button" style="float: right;">Try in FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a><br><br>
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content" id="11_BowedString"><div class="code" ></div></div><a class="link" href="javascript:;" target="editor"><button type="button" class="mi-button" style="float: right;">Try in FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a><br><br>
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content" id="12_TriangleMesh"><div class="code" ></div></div><a class="link" href="javascript:;" target="editor"><button type="button" class="mi-button" style="float: right;">Try in FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a><br><br>
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content" id="13_Construction"><div class="code" ></div></div><a class="link" href="javascript:;" target="editor"><button type="button" class="mi-button" style="float: right;">Try in FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a><br><br>
+
+                            <h3 id="section4-sub6" class="section">
+                                Leveraging physical models within Faust
+                            </h3>
+                            <p>
+                                There are some pretty neat things that Faust can help us with when designing physically-based sound synthesis systems. One of them is inherent handling of polyphony. While we won’t go too deep into specifics here (head over to the Faust documentation for that), we will quickly demonstrate how easy it is to create a polyphonic instrument with dynamically allocated mass-interaction models.
+                            </p>
+                            <p class="step">
+                                Open the  Polyphonic example below in the Faust IDE
+                            </p>
+                            <p class="step">
+                                Activate Faust’s poly voices mode (located on the left panel) to a number of voices (e.g 16), and activate the computer keyboard as MIDI input (on the right panel).
+                            </p>
+                            <p class="step">
+                                Tap some keys, mess around with model parameters: there you have it, a polyphonic instrument based on several voices of a very simple physical model!
+                            </p>
+
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content" id="14_Polyphonic"><div class="code" ></div></div><a class="link" href="javascript:;" target="editor"><button type="button" class="mi-button" style="float: right;">Try in FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a><br><br>
+                            <p>
+                                Another possibility is using physical models not for their output as synthesised sound, but as any other sound or control unit in a modular setup. For instance, the model below uses a very slack short string as an amplitude LFO to modulate a white noise signal:
+                            </p>
+                            <p class="step">
+                                Open the  PhysicalLFO example below in the Faust IDE.
+                            </p>
+                            <p class="step">
+                                Can you explain why the modulation pattern starts quite complex and gradually becomes more regular?
+                            </p>
+                            <p class="step">
+                                Try changing physical parameters and observe the effect on the sound output.
+                            </p>
+
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content" id="15_PhysicalLFO"><div class="code" ></div></div><a class="link" href="javascript:;" target="editor"><button type="button" class="mi-button" style="float: right;">Try in FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a><br><br>
+<!--
+                            <h2 id="section5" class="section">
+                                Spatiality in Physical Models
+                            </h2>
+                            <h3 id="section5-sub1" class="section">
+                                Topology vs. Degrees-of-freedom
+                            </h3>
+                            <p>
+                                Everyone can do 2D or 3D topologies (waveguide mesh, FD room acoustics, etc.), matter is generally considered to move only along one degree of freedom (largely based on theoretical acoustics)... but real matter actually moves in 3D.
+                            </p>
+
+                            <p class="note">
+                                Note: there are several cases (notably ideal linear strings and meshes) in which lumped mass-interaction methods and finite difference schemes yield exactly the same result, with grid points being equivalent to punctual masses. Cf Stefan Bilbao’s book.
+                            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <br>
+                            <p> "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                            </p>
+
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content">
+                                <div class="code">
+                                        <pre><code>
+
+# MIMS script file
+
+                                            </code></pre>
+                                </div>
+                            </div>
+                            <a href="#" target="editor">
+                                <button type="button" class="mi-button">Try in FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a>
+                            <br>
+
+                            <h2 id="audioparamcontrol" class="section">Audio Param Control</h2>
+                            <p>Controlling Physical Parameters with Audio Signals</p>
+
+                            <p> "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                            </p>
+
+-->
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <div class="clear"></div>
+    </div>
+    <!-- End Page Content Holder -->
+</div>
+
+<!--Load JavaScript-->
+<script src="../js/jquery.js"></script>
+<script src='../js/jquery.smartmenus.min.js'></script>
+<script src='../js/jquery.prettyPhoto.js'></script>
+<script src="../js/jquery.sticky-kit.min.js"></script>
+<script src='../js/imagesloaded.pkgd.js'></script>
+<script src='../js/jquery.fitvids.js'></script>
+<script src='../js/tipper.js'></script>
+<script src='../js/swiper.min.js'></script>
+<script src='../nav.js'></script>
+<script src='../js/main.js'></script>
+<script>
+    (function() {
+        'use strict';
+
+        var section = document.querySelectorAll(".section");
+        var sections = {};
+        var i = 0;
+
+        Array.prototype.forEach.call(section, function(e) {
+            sections[e.id] = e.offsetTop;
+        });
+
+        window.onscroll = function() {
+            var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+
+            for (i in sections) {
+                if (sections[i] <= scrollPosition) {
+                    document.querySelector('.active').setAttribute('class', ' ');
+                    document.querySelector('a[href*=' + i + ']').setAttribute('class', 'active');
+                }
+            }
+        };
+    })();
+</script>
+<script>
+
+    $(function(){
+
+        loadMDL('harmonicOscillator','https://raw.githubusercontent.com/jameslnrd/mi_introduction_workshop_2020/master/00_BasicOscillator/harmonicOscillator');
+        loadMDL('harmonicOscillator2','https://raw.githubusercontent.com/jameslnrd/mi_introduction_workshop_2020/master/00_BasicOscillator/harmonicOscillator2');
+        loadMDL('harmonicOscillator3','https://raw.githubusercontent.com/jameslnrd/mi_introduction_workshop_2020/master/00_BasicOscillator/harmonicOscillator3');
+        loadMDL('01_ParamControl','https://raw.githubusercontent.com/jameslnrd/mi_introduction_workshop_2020/master/01_ParamControl/paramOsc');
+        loadMDL('02_AudioParamControl','https://raw.githubusercontent.com/jameslnrd/mi_introduction_workshop_2020/master/02_AudioParamControl/audioParamOsc');
+        loadMDL('03_HammerTime','https://raw.githubusercontent.com/jameslnrd/mi_introduction_workshop_2020/master/03_HammerTime/hammerOsc');
+        loadMDL('04_Gravity','https://raw.githubusercontent.com/jameslnrd/mi_introduction_workshop_2020/master/04_Gravity/bouncingOsc');
+        loadMDL('05_PluckedOscillator','https://raw.githubusercontent.com/jameslnrd/mi_introduction_workshop_2020/master/05_PluckedOscillator/pluckedOsc');
+        loadMDL('06_BowedOscillator','https://raw.githubusercontent.com/jameslnrd/mi_introduction_workshop_2020/master/06_BowedOscillator/bowedOsc');
+        loadMDL('07_NonLinearOscillator','https://raw.githubusercontent.com/jameslnrd/mi_introduction_workshop_2020/master/07_NonLinearOscillator/nlOsc');
+        loadMDL('08_TwoMassChain','https://raw.githubusercontent.com/jameslnrd/mi_introduction_workshop_2020/master/08_TwoMassChain/2massChain');
+        loadMDL('09_TinyString','https://raw.githubusercontent.com/jameslnrd/mi_introduction_workshop_2020/master/09_TinyString/tinyString');
+        loadMDL('10_PluckedString','https://raw.githubusercontent.com/jameslnrd/mi_introduction_workshop_2020/master/10_PluckedString/pluckedString');
+        loadMDL('11_BowedString','https://raw.githubusercontent.com/jameslnrd/mi_introduction_workshop_2020/master/11_BowedString/bowedString');
+        loadMDL('12_TriangleMesh','https://raw.githubusercontent.com/jameslnrd/mi_introduction_workshop_2020/master/12_TriangleMesh/triangleMesh');
+        loadMDL('13_Construction','https://raw.githubusercontent.com/jameslnrd/mi_introduction_workshop_2020/master/13_Construction/construction');
+        loadMDL('14_Polyphonic','https://raw.githubusercontent.com/jameslnrd/mi_introduction_workshop_2020/master/14_Polyphonic/polyTriangle');
+        loadMDL('15_PhysicalLFO','https://raw.githubusercontent.com/jameslnrd/mi_introduction_workshop_2020/master/15_PhysicalLFO/physicalLFO');
+
+        function loadMDL(id, url){
+            var mimsUrl = url.concat(".mdl");
+            var xhr= new XMLHttpRequest();
+
+            xhr.open('GET', mimsUrl, true);
+            xhr.onreadystatechange= function() {
+                if (this.readyState!==4) return;
+                if (this.status!==200) return;
+
+                var code_core = this.responseText;
+                var code_header = "<br><pre><code>";
+                var code_footer = "</code></pre><br>";
+                var code = code_header.concat(code_core).concat(code_footer);
+
+                var url_prefix = "https://faustide.grame.fr/?code=";
+                var fausUrl = url_prefix.concat(url).concat(".dsp");
+
+                document.getElementById(id).children[0].innerHTML = code;
+                document.getElementById(id).nextSibling.href = fausUrl;
+            };
+            xhr.send();
+        }
+    });
+
+
+</script>
+
+
+
+
+</body>
+</html>

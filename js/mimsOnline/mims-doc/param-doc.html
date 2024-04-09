@@ -1,0 +1,5 @@
+<img class="image"/>
+
+<h1>Parameter Module</h1>
+<br>
+<br>@{name} param {initial_value}<br><br>This creates a named floating point parameter that can be used throughout the model script to control any desired value.<br>In Max/MSP, the parameter is modified by sending "{name} {value}" messages to the gendsp patch.<br><br>Examples:<br><br># Create a named parameter for stiffness and damping<br>@K param 0.01<br>@Z param 0.001<br><br># Create a harmonic oscillator that uses these parameters<br># (no @ used when using the parameters as arguments)<br><br>@o1 osc 1 K Z 0. 0.8<br><br># sending messages for K and Z will dynamically tune the oscillator.<br>

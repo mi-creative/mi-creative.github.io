@@ -57,94 +57,32 @@
                         <div id="slider" class="simple-image-slider-wrapper relative swiper-container">
                             <div class="swiper-wrapper image-slider slider">
                                 <div class="swiper-slide">
-                                    <img src="images/tools/tool_mims_00.jpg" alt="">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/tools/tool_mims_01.jpg" alt="">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/tools/tool_mims_02.jpg" alt="">
+                                    <img src="images/tools/tool_mims_02.png" alt="">
                                 </div>
 
                             </div>
                             <div class="clear"></div>
-                            <div class="swiper-pagination simple-image-slider-pagination swiper-pagination-slider swip"></div>
-                        </div>
-
-                        <div class="one">
-                            <h1>MIMS</h1>
-                            <div class="medium-text">
-                                Mass Interaction Model Scripter allows designing mass-interaction models with a unified simple scripting language.
-                            </div>
-                            <br>
-                            <p>
-                                MIMS is very much a work in progress, and has seen several implementations and tweaks over the last couple of years. While the tool is destined to evolve into a unified and complete framework for 1D, 2D or 3D mass-interaction models with advanced functionalities, current versions will allow you to start creating physical models and running them either in FAUST (using mi_faust) or in Max/MSP (using mi-gen~).
-                            </p>
-                            <p>
-                                In the past years, MIMS has been ported in several environments and languages. A first prototype was developed as a Python stand-alone application (still available down below). More recently, javascript/NodeJS versions have been created. One has been directly integrated into mi-gen~ (running in Max/MSP). The other runs in a generic web-based application.
-                            </p>
-
-
+                            <div class="swiper-pagination simple-image-slider-pagination swiper-pagination-slider"></div>                                
                         </div>
 
                         <div class="two_third">
-                            <h3>MIMS_online</h3>
+                            <h1>MIMS</h1>
+                            <div class="medium-text">
+                                Mass Interaction Model Scripter allows to generate, describe and tune 1D MI models with a simple scripting language.
+                            </div>
+                            <br>
                             <p>
-                                MIMS_online is a javascript-based tool that allows to describe physical models with a simple and concise syntax, focused on the physical topology and parameters. The model script is then parsed and can be compiled into DSP code for real-time simulation. As of yet, MIMS_online compiles 1D models either into gen~ dsp code (for Max/MSP), or into FAUST dsp code (with a small limitation on some macro structures that are not yet implemented in FAUST). Additionally, simple scripts allow for the generation of regular topologies such as strings, meshes or volumes, and models can be visualised and interacted with via a 3D rendering window.
+                                MIMS is a simple graphical application, written in Python (using PyQt). Users can create 1D mass-interaction models by simply describing their topology, physical parameters, inputs and outputs. These descriptions can then be compiled into FAUST code (see mi-faust), or gen~ dsp code (see mi-gen).
                             </p>
                             <p>
-                                MIMS_online is still in pre-alpha version, so be kind to the many bugs you might find and please report them to the MI team !
+                                Somewhere along the way, MIMS should be replaced by a clean and simpler web-based application. But for the brave of heart, install Python and start generating models !
                             </p>
-                            <p>
-                                Happy modelling !
-                            </p>
+
 
                         </div>
 
                         <div class="one_third last">
                             <br>                            
-                            <div class="info-code findit">
-                                <p class="info-code-title"> FIND IT</p>
-                                <p class="info-code-content"><a target="_blank" rel="noopener noreferrer" href="./tool_MIMS_online.html">Online</a>
-                            </div>
-
-                            <div class="info-code">
-                                <p class="info-code-title">COMPATIBILITY</p>
-                                <p class="info-code-content">Tested in Chrome</p>
-                            </div>
-                        </div>
-
-                        <div class="two_third">
-                            <h3>MIMS4Max</h3>
-                            <p>
-                                MIMS is also available directly inside the mi-gen~ toolkit! It runs on NodeJS (which means it will only run in Max 8) and uses the same scripting and compilation engine as the online version. Models can be compiled to gen~ code or FAUST dsp, and the compiler informs of any errors in real time. A large base of examples using mi-gen~/MIMS4Max are available in the Max package and should help you get started!
-                            </p>
-
-
-                        </div>
-
-                        <div class="one_third last">
-                            <br>
-                            <div class="info-code findit">
-                                <p class="info-code-title"> FIND IT</p>
-                                <p class="info-code-content"><a target="_blank" rel="noopener noreferrer" href="./tool_migen.html">Within mi-gen~</a>
-                            </div>
-                            <div class="info-code">
-                                <p class="info-code-title">COMPATIBILITY</p>
-                                <p class="info-code-content">MAX 8 running on OsX & Windows</p>
-                            </div>
-                        </div>
-
-                        <div class="two_third">
-                            <h3>“Legacy” MIMS</h3>
-                            <p>
-                                The first prototype of MIMS is based in Python (using PyQt) and was presented in papers in LAC’19 and SMC’19. Although it is still available, it is no longer maintained and certain scripting and compilation features are not supported. We strongly recommend using either the online or the Max-based versions of MIMS as they will continue to be updated, but feel free to check out this old version if you like old-school Qt apps !
-                            </p>
-
-                        </div>
-
-                        <div class="one_third last">
-                            <br>
                             <div class="info-code findit">
                                 <p class="info-code-title"> FIND IT</p>
                                 <p class="info-code-content"><a target="_blank" rel="noopener noreferrer" href="https://github.com/mi-creative/MIMS">On Github</a>
@@ -155,7 +93,7 @@
                             </div>
                             <div class="info-code">
                                 <p class="info-code-title">RELATED PAPERS</p>
-                                <p class="info-code-content" style="margin-bottom: 0px"><a href="##">SMC 2019</a>
+                                <p class="info-code-content" style="margin-bottom: 0px"><a href="##">SMC 2019 - Under Review</a>
                                 <p class="info-code-content"><a href="paper_lac19.html">LAC 2019</a>
 
                             </div>

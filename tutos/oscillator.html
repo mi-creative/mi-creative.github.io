@@ -1,0 +1,356 @@
+<!DOCTYPE HTML>
+<html lang="en-US" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>mi-Creative</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="mi Creative" />
+    <meta name="keywords" content="Physical, Modeling, Mass, Spring, Digital, Arts, Grenoble, Gipsa" />
+    <meta name="author" content="miCreative" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="shortcut icon" href="../images/favicon.ico" />
+    <link href='http://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800%7CPlayfair%20Display:700%7CPT%20Serif:400i' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css"  href='../style.css' />
+
+
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.js"></script>
+    <script src="../js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="single single-post tuto">
+
+<div class="site-wrapper">
+    <div class="doc-loader"></div>
+
+    <!-- Left Part Sidebar -->
+    <div class="menu-left-part">
+
+        <!-- Menu from nav.js -->
+        <nav id="header-main-menu"></nav>
+
+        <!-- Hello text in menu from nav.js -->
+        <div id="header-main-text" class="menu-right-text"></div>
+
+    </div>
+
+    <!-- Right Part Sidebar -->
+    <div id="nav-top" class="menu-right-part">
+        <div class="header-logo">
+            <a href="../index.html">
+                <img src="../images/logo.png" alt="miCreative">
+            </a>
+        </div>
+
+        <div class="toggle-holder">
+            <div id="toggle">
+                <div class="menu-line"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Page Content Holder -->
+    <div id="content" class="site-content">
+        <article>
+            <div class="single-post-header-content content-1170 center-relative">
+
+                <div class="post-wrapper center-relative">
+                    <div class="single-content-wrapper content-960 center-relative">
+                        <h1 class="entry-title">
+                            mi-Oscillator Tutorial
+                        </h1>
+
+                        <div class="post-info-wrapper">
+                            <div class="sticky-spacer">
+                                <div class="entry-info sections">
+                                    <nav>
+                                        <ul>
+                                            <li><a href="#basicoscillator" class="active">Basic Oscillator</a></li>
+                                            <li><a href="#paramcontrol">Param Control</a></li>
+                                            <li><a href="#audioparamcontrol">Audio Param Control</a></li>
+                                            <li><a href="#hammertime">Hammer Time</a></li>
+                                            <li><a href="#gravity">Gravity</a></li>
+                                            <li><a href="#pluckedoscillator">Plucked Oscillator</a></li>
+                                            <li><a href="#bowedoscillator">Bowed Oscillator</a></li>
+                                            <li><a href="#nonlinearoscillator">Non Linear Oscillator</a></li>
+                                            <li><a href="#numericalstability">Numerical Stability</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="entry-content">
+
+
+                            <h2 id="basicoscillator" class="section">Basic Oscillator</h2>
+                            <p>Our first physical model: the harmonic oscillator</p>
+                            <p>An oscillator can either be declared as an osc module, or created by assembling a mass, a spring damper and a ground module.</p>
+
+                            <p> "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                            </p>
+
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content">
+                                <div class="code">
+                                        <pre><code>
+
+# MIMS script file
+
+                                            </code></pre>
+                                </div>
+                            </div>
+                            <a href="#" target="editor">
+                                <button type="button" class="mi-button">Essayer dans FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a>
+                            <br>
+
+                            <h2 id="paramcontrol" class="section">Param Control</h2>
+                            <p>Controlling Physical Parameters with messages</p>
+                            <p> "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                            </p>
+
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content">
+                                <div class="code">
+                                        <pre><code>
+
+# MIMS script file
+# Script author: James Leonard
+
+@K param 0.1000
+@Z param 0.0003
+
+# Integrated harmonic oscillator
+# with param-controlled K and Z
+@o osc 1.0000 K Z 0.0000 0.0000
+
+# Add force input to the model
+@in1 frcInput @o
+
+# Add position output from the oscillator
+@out1 posOutput @o
+
+# end of MIMS script
+
+                                            </code></pre>
+                                </div>
+                            </div>
+
+
+                            <a href="https://faustide.grame.fr/?code=https://mi-creative.eu/tutos/oscillator_code/faustMockup.dsp" target="editor">
+                                <button type="button" class="mi-button">Essayer dans FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a>
+
+                            <br>
+                            <p> "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                            </p>
+
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content">
+                                <div class="code">
+                                        <pre><code>
+
+# MIMS script file
+
+                                            </code></pre>
+                                </div>
+                            </div>
+                            <a href="#" target="editor">
+                                <button type="button" class="mi-button">Essayer dans FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a>
+                            <br>
+
+                            <h2 id="audioparamcontrol" class="section">Audio Param Control</h2>
+                            <p>Controlling Physical Parameters with Audio Signals</p>
+
+                            <p> "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                            </p>
+
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content">
+                                <div class="code">
+                                        <pre><code>
+
+# MIMS script file
+
+                                            </code></pre>
+                                </div>
+                            </div>
+                            <a href="#" target="editor">
+                                <button type="button" class="mi-button">Essayer dans FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a>
+                            <br>
+
+                            <h2 id="hammertime" class="section">Hammer Time</h2>
+                            <p>Striking our Oscillator with a Hammer</p>
+
+                            <p> "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                            </p>
+
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content">
+                                <div class="code">
+                                        <pre><code>
+
+# MIMS script file
+
+                                            </code></pre>
+                                </div>
+                            </div>
+                            <a href="#" target="editor">
+                                <button type="button" class="mi-button">Essayer dans FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a>
+                            <br>
+
+                            <h2 id="gravity" class="section">Gravity</h2>
+                            <p>Gravity and a bouncing Hammer</p>
+
+                            <p> "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                            </p>
+
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content">
+                                <div class="code">
+                                        <pre><code>
+
+# MIMS script file
+
+                                            </code></pre>
+                                </div>
+                            </div>
+                            <a href="#" target="editor">
+                                <button type="button" class="mi-button">Essayer dans FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a>
+                            <br>
+
+                            <h2 id="pluckedoscillator" class="section">Plucked Oscillator</h2>
+                            <p>A Plucked Harmonic Oscillator</p>
+
+                            <p> "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                            </p>
+
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content">
+                                <div class="code">
+                                        <pre><code>
+
+# MIMS script file
+
+                                            </code></pre>
+                                </div>
+                            </div>
+                            <a href="#" target="editor">
+                                <button type="button" class="mi-button">Essayer dans FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a>
+                            <br>
+
+                            <h2 id="bowedoscillator" class="section">Bowed Oscillator</h2>
+                            <p>A Bowed Harmonic Oscillator</p>
+
+                            <p> "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                            </p>
+
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content">
+                                <div class="code">
+                                        <pre><code>
+
+# MIMS script file
+
+                                            </code></pre>
+                                </div>
+                            </div>
+                            <a href="#" target="editor">
+                                <button type="button" class="mi-button">Essayer dans FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a>
+                            <br>
+
+                            <h2 id="nonlinearoscillator" class="section">Non Linear Oscillator</h2>
+                            <p>A Non-Linear Oscillator</p>
+
+                            <p> "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                            </p>
+
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content">
+                                <div class="code">
+                                        <pre><code>
+
+# MIMS script file
+
+                                            </code></pre>
+                                </div>
+                            </div>
+                            <a href="#" target="editor">
+                                <button type="button" class="mi-button">Essayer dans FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a>
+                            <br>
+
+                            <h2 id="numericalstability" class="section">Numerical Stability</h2>
+                            <p>Numerical Stability of the Harmonic Oscillator</p>
+
+                            <p> "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                            </p>
+
+                            <button type="button" class="collapsible">MIMS Script</button>
+                            <div class="collapsible-content">
+                                <div class="code">
+                                        <pre><code>
+
+# MIMS script file
+
+                                            </code></pre>
+                                </div>
+                            </div>
+                            <a href="#" target="editor">
+                                <button type="button" class="mi-button">Essayer dans FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a>
+                            <br>
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <div class="clear"></div>
+    </div>
+    <!-- End Page Content Holder -->
+</div>
+
+<!--Load JavaScript-->
+<script src="../js/jquery.js"></script>
+<script src='../js/jquery.smartmenus.min.js'></script>
+<script src='../js/jquery.prettyPhoto.js'></script>
+<script src="../js/jquery.sticky-kit.min.js"></script>
+<script src='../js/imagesloaded.pkgd.js'></script>
+<script src='../js/jquery.fitvids.js'></script>
+<script src='../js/tipper.js'></script>
+<script src='../js/swiper.min.js'></script>
+<script src='../nav.js'></script>
+<script src='../js/main.js'></script>
+<script>
+    (function() {
+        'use strict';
+
+        var section = document.querySelectorAll(".section");
+        var sections = {};
+        var i = 0;
+
+        Array.prototype.forEach.call(section, function(e) {
+            sections[e.id] = e.offsetTop;
+        });
+
+        window.onscroll = function() {
+            var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+
+            for (i in sections) {
+                if (sections[i] <= scrollPosition) {
+                    document.querySelector('.active').setAttribute('class', ' ');
+                    document.querySelector('a[href*=' + i + ']').setAttribute('class', 'active');
+                }
+            }
+        };
+    })();
+</script>
+
+
+
+
+</body>
+</html>

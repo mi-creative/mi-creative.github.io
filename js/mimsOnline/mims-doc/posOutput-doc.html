@@ -1,0 +1,2 @@
+<img class="image"/>
+<h1>Position Output Module</h1><br>@{name} posOutput @{observed_mass}<br><br>This allows to send the position of a mass element inside the model to an output. It must be named out[1,2,...] as this will define the outlet number of the generated gen~ or Faust dsp object.<br><br>Example:<br># Listen to the position of a harmonic oscillator<br>@o1 osc 1 0.1 0.0.1 0. 0.8<br>@out1 posOutput @o1<br>

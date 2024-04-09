@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <title>mi-Creative</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="description" content="mi Creative" />
+        <meta name="keywords" content="Physical, Modeling, Mass, Spring, Digital, Arts, Grenoble, Gipsa" />
+        <meta name="author" content="miCreative" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link rel="shortcut icon" href="images/favicon.ico" />    
+        <link href='http://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800%7CPlayfair%20Display:700%7CPT%20Serif:400i' rel='stylesheet' type='text/css'>		
+        <link rel="stylesheet" type="text/css"  href='style.css' />
+
+        <!--[if lt IE 9]>
+                <script src="js/html5shiv.js"></script>            
+                <script src="js/respond.min.js"></script>                   
+        <![endif]-->
+
+        <script src="js/mimsOnline/codemirror/lib/codemirror.js"></script>
+        <link rel="stylesheet" href="js/mimsOnline/codemirror/lib/codemirror.css">
+        <script src="js/mimsOnline/codemirror/mode/javascript.js"></script>
+        <script src="js/mimsOnline/codemirror/mode/faust/faust.js"></script>
+        <script src="js/mimsOnline/codemirror/mode/faust/faustsnippets.js"></script>
+        <script src="js/mimsOnline/codemirror/mode/clike/clike.js"></script>
+        <script src="js/mimsOnline/three.min.js"></script>
+        <script src="js/mimsOnline/OrbitControls.js"></script>
+
+
+
+    </head>
+
+    <body class="single single-portfolio tool mims-online">
+
+        <div class="site-wrapper">
+            <div class="doc-loader"></div>
+
+            <!-- Left Part Sidebar -->
+            <div class="menu-left-part">
+
+                <!-- Menu from nav.js -->
+                <nav id="header-main-menu"></nav>
+
+                <!-- Hello text in menu from nav.js -->
+                <div id="header-main-text" class="menu-right-text"></div>
+
+            </div>
+
+            <!-- Right Part Sidebar -->
+            <div id="nav-top" class="menu-right-part">
+                <div class="header-logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="miCreative">
+                    </a>               
+                </div>
+
+                <div class="toggle-holder">
+                    <div id="toggle">
+                        <div class="menu-line"></div>
+                    </div>                
+                </div>   
+
+            </div> 
+
+            <!-- Page Content Holder -->
+            <div id="content" class="site-content">
+                <div class="portfolio-item-wrapper">
+                    <div class="portfolio-content center-relative content-1170">
+
+
+                        <div>
+                            <h1>MIMS-Online</h1>
+                            <div class="medium-text">
+                                Mass Interaction Model Scripter allows to generate, describe and tune 1D MI models with a simple scripting language.
+                            </div>
+                            <br>
+                            <p>
+                                MIMS is a simple graphical application, written in Python (using PyQt). Users can create 1D mass-interaction models by simply describing their topology, physical parameters, inputs and outputs. These descriptions can then be compiled into FAUST code (see mi-faust), or gen~ dsp code (see mi-gen).
+                            </p>
+                            <p>
+                                Somewhere along the way, MIMS should be replaced by a clean and simpler web-based application. But for the brave of heart, install Python and start generating models !
+                            </p>
+
+                            <div class="codearea">
+                                <div class="codearea-header">
+                                    MIMS Scripting Language - Model Name :
+                                    <input type="text" id="modelName" placeholder="Default">
+                                </div>
+                                <textarea id="mimscode" class="scripting-environment">
+
+# MIMS script file
+# Script author: James Leonard
+
+@stiffness param 0.5
+@damping param 0.0003
+
+@g ground [0 0 0]
+@m1 mass 1. [0 1. 0] 0.
+@m2 mass 1. [0 2. 0] 0.
+@m3 mass 1. [0 3. 0] 0.
+@m4 mass 1. [0 4. 0] 0.
+@m5 mass 1. [0 5. 0] 0.
+@m6 mass 1. [0 6. 0] 0.
+@m7 mass 1. [0 7. 0] 0.
+@m8 mass 1. [0 8. 0] 0.
+@g2 ground [0 10. 0]
+
+@s1 springDamper @g @m1 stiffness damping
+@s2 springDamper @m1 @m2 stiffness damping
+@s3 springDamper @m2 @m3 stiffness damping
+@s4 springDamper @m3 @m4 stiffness damping
+@s5 springDamper @m4 @m5 stiffness damping
+@s6 springDamper @m5 @m6 stiffness damping
+@s7 springDamper @m6 @m7 stiffness damping
+@s8 springDamper @m7 @m8 stiffness damping
+@s9 springDamper @m8 @g2 stiffness damping
+
+
+# Add force input to the model
+@in1 frcInput @m7
+
+# Add position output from the string
+@out1 posOutput @m2
+
+
+# end of MIMS script
+                                </textarea>
+                                <div class="codearea-header">MIMS Consol </div>
+
+                            </div>
+
+                            <a href="javascript:;">
+                                <button type="button" class="mi-button" style="float: left" id="mimsDownload">Download as .mdl  &nbsp;&nbsp;<span class="fa fa-chevron-down" aria-hidden="true"></span></button></a>
+
+                            <a href="#faustcode">
+                                <button type="button" class="mi-button" style="float: right" id="mims2Faust">Express in FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-down" aria-hidden="true"></span></button></a>
+
+                            <br>
+                            <br>
+
+                            <div id="modelView">
+
+                            </div>
+
+                            <br>
+
+                            <div class="codearea">
+                                <div class="codearea-header">FAUST Scripting Language</div>
+
+                                <textarea id="faustcode" class="scripting-environment">
+
+...
+                                </textarea>
+                            </div>
+
+                            <a href="javascript:;" target="editor">
+                                <button type="button" class="mi-button" style="float: left" id="dspDownload">Download as .dsp  &nbsp;&nbsp;<span class="fa fa-chevron-down" aria-hidden="true"></span></button></a>
+                            <a href="#" target="editor">
+                                <button type="button" class="mi-button" style="float: right">Launch in FAUST  &nbsp;&nbsp;<span class="fa fa-chevron-right" aria-hidden="true"></span></button></a>
+
+                            <br>
+
+                        </div>
+
+
+                        <div class="clear"></div>                            
+                    </div>
+
+                </div>
+                <div class="clear"></div>
+            </div> 
+            <!-- End Page Content Holder -->            
+        </div>
+
+
+        <!--Load JavaScript-->
+
+
+        <script src="js/jquery.js"></script>
+        <script src='js/jquery.smartmenus.min.js'></script>
+        <script src='js/jquery.prettyPhoto.js'></script>
+        <script src="js/jquery.sticky-kit.min.js"></script>
+        <script src='js/imagesloaded.pkgd.js'></script>
+        <script src='js/jquery.fitvids.js'></script>
+        <script src='js/tipper.js'></script>
+        <script src='nav.js'></script>
+        <script src='js/main.js'></script>
+        <script src="js/mimsOnline/codemirror/mims-online.js"> </script>
+
+    </body>
+</html>

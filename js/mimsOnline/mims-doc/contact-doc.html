@@ -1,0 +1,2 @@
+<img class="image"/>
+<h1>Contact Module</h1><br><br>@{name} contact @{m1} @{m2} {stiffness} {damping} {opt: thresh}<br><br>The contact interaction computes a viscoelastic collision between the masses {@m1} and {@m2} when the difference in position between both masses is lower than the given threshold distance.<br><br>Physical Parameters: stiffness, damping and (optional) threshold distance.<br><br>Example:<br>@g1 ground 0.<br>@m1 mass 1.2 0. 0.1<br>@c contact @g1 @m1 0.01 0.001 0.<br>
